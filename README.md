@@ -1,6 +1,16 @@
 # Nuvanaah Website
 
-Premium medical-grade wigs and hair solutions for cancer patients.
+Premium cancer care products (mastectomy bras, chemotherapy accessories, wigs, lymphedema solutions) with empathetic design.
+
+## 📋 Development Roadmap
+
+**See [DEVELOPMENT_ROADMAP.md](./DEVELOPMENT_ROADMAP.md) for the complete 6-week development plan**, including:
+- Phase 1: Foundation & Homepage ✅ (In Progress)
+- Phase 2: Product Catalog
+- Phase 3: Checkout & Authentication
+- Phase 4: Content & Special Features
+- Phase 5: Integrations
+- Phase 6: Polish & Launch
 
 ## 🚀 Quick Start
 
