@@ -3,16 +3,19 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Heart, Shield, Truck, Check, Phone, Filter, X } from 'lucide-react'
-import { products, Product } from '@/lib/products-data'
+import { products, getAllCategories, getProductsByCategory } from '@/lib/products-data'
+import type { Product } from '@/lib/types'
 
-// Categories
+// Get categories dynamically from products
+const allCategories = getAllCategories()
 const categories = [
-  { id: 'all', name: 'All Products', count: products.length },
-  { id: 'mastectomy', name: 'Post-Surgery Essentials', count: products.filter(p => p.category === 'Post-Surgery Essentials').length },
-  { id: 'chemotherapy', name: 'Chemo Comfort Wear', count: products.filter(p => p.category === 'Chemo Comfort Wear').length },
-  { id: 'wigs', name: 'Wig Care & Accessories', count: products.filter(p => p.category === 'Wig Care & Accessories').length },
-  { id: 'lymphedema', name: 'Compression & Recovery', count: products.filter(p => p.category === 'Compression & Recovery').length },
-  { id: 'premium-wigs', name: 'Premium Wigs', count: products.filter(p => p.category === 'Premium Wigs').length },
+  { id: 'all', name: 'All Products', slug: 'all', count: products.length },
+  ...allCategories.map(cat => ({
+    id: cat.slug,
+    name: cat.name,
+    slug: cat.slug,
+    count: cat.count
+  }))
 ]
 
 export default function ProductsPage() {
@@ -22,20 +25,13 @@ export default function ProductsPage() {
   // Filter products by category
   const filteredProducts = selectedCategory === 'all'
     ? products
-    : products.filter(p => {
-      if (selectedCategory === 'mastectomy') return p.category === 'Post-Surgery Essentials'
-      if (selectedCategory === 'chemotherapy') return p.category === 'Chemo Comfort Wear'
-      if (selectedCategory === 'wigs') return p.category === 'Wig Care & Accessories'
-      if (selectedCategory === 'lymphedema') return p.category === 'Compression & Recovery'
-      if (selectedCategory === 'premium-wigs') return p.category === 'Premium Wigs'
-      return true
-    })
+    : getProductsByCategory(selectedCategory)
 
   // Group products by category for display
   const groupedProducts = selectedCategory === 'all'
-    ? categories.slice(1).map(cat => ({
+    ? allCategories.map(cat => ({
       category: cat.name,
-      products: products.filter(p => p.category === cat.name)
+      products: getProductsByCategory(cat.slug)
     })).filter(g => g.products.length > 0)
     : [{ category: categories.find(c => c.id === selectedCategory)?.name || '', products: filteredProducts }]
 
@@ -215,23 +211,13 @@ export default function ProductsPage() {
                           {product.name}
                         </h3>
 
-                        {/* Tagline */}
-                        <p className="text-sm text-gray-500 italic mb-3">{product.tagline}</p>
-
-                        {/* Features */}
-                        <div className="space-y-1 mb-4">
-                          {product.features.slice(0, 2).map((feature, idx) => (
-                            <div key={idx} className="flex items-center gap-2 text-xs text-gray-600">
-                              <Check className="w-3 h-3 text-teal-500" />
-                              <span>{feature}</span>
-                            </div>
-                          ))}
-                        </div>
+                        {/* Short Description */}
+                        <p className="text-sm text-gray-500 mb-3 line-clamp-2">{product.short_description}</p>
 
                         {/* Price & CTA */}
                         <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                           <div>
-                            <p className="text-xl font-bold text-gray-900">₹{product.price.toLocaleString()}</p>
+                            <p className="text-xl font-bold text-gray-900">₹{parseInt(product.price).toLocaleString()}</p>
                             <p className="text-xs text-gray-500">Free shipping</p>
                           </div>
                           <span className="bg-teal-500 text-white px-4 py-2 rounded-xl text-sm font-semibold group-hover:bg-teal-600 transition-colors">
