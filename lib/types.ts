@@ -9,6 +9,9 @@ export interface Product {
   category: 'mastectomy' | 'chemotherapy' | 'wigs' | 'lymphedema'
   sizes: string[]
   sku: string
+  inStock?: boolean
+  rating?: number
+  reviewCount?: number
 }
 
 export interface CartItem {

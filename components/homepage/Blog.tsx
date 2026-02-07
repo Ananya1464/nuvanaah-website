@@ -12,7 +12,7 @@ export default function Blog() {
       excerpt: 'A comprehensive guide to what you can expect during your mastectomy recovery, from hospital to home.',
       category: 'Recovery',
       readTime: '8 min read',
-      image: '📅',
+      image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80',
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ export default function Blog() {
       excerpt: 'Everything you need to know about selecting the perfect breast form for comfort and confidence.',
       category: 'Products',
       readTime: '6 min read',
-      image: '💝',
+      image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80',
     },
     {
       id: 3,
@@ -30,7 +30,7 @@ export default function Blog() {
       excerpt: 'Doctor-approved tips for keeping your chemo port clean, comfortable, and protected.',
       category: 'Tips',
       readTime: '5 min read',
-      image: '💊',
+      image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80',
     },
   ]
 
@@ -65,10 +65,12 @@ export default function Blog() {
               className="group card-content overflow-hidden"
             >
               {/* Image Area */}
-              <div className="h-48 bg-gradient-to-br from-teal-50 to-cream-100 flex items-center justify-center relative overflow-hidden">
-                <span className="text-6xl transition-transform group-hover:scale-110 duration-300">
-                  {post.image}
-                </span>
+              <div className="h-48 relative overflow-hidden">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-300"
+                />
                 {/* Category Badge */}
                 <span className="absolute top-4 left-4 bg-teal-500 text-white text-xs font-semibold px-3 py-1 rounded-full">
                   {post.category}

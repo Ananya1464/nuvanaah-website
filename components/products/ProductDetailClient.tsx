@@ -10,6 +10,8 @@ import {
 } from 'lucide-react'
 import { useCart } from '@/lib/cart-context'
 import { useWishlist } from '@/lib/wishlist-context'
+import { getProductImages } from '@/lib/product-images'
+import ProductImageGallery from './ProductImageGallery'
 
 // Product type definition
 export interface ProductData {
@@ -38,6 +40,9 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
     const router = useRouter()
     const { addItem } = useCart()
     const { isInWishlist, toggleItem } = useWishlist()
+
+    // Get product images from mapping
+    const productImages = getProductImages(product.id)
 
     const [selectedSize, setSelectedSize] = useState<string>(product.sizes?.[0] || '')
     const [selectedColor, setSelectedColor] = useState(product.colors?.[0] || null)
@@ -144,52 +149,39 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
                     {/* Left: Product Image */}
-                    <div className="space-y-4">
-                        {/* Main Image */}
-                        <div className="relative bg-gradient-to-br from-teal-50 via-cream-50 to-white rounded-3xl p-12 lg:p-16 aspect-square flex items-center justify-center group">
-                            <ShoppingBag className="w-40 h-40 text-teal-400/60" />
-
-                            {/* Badges */}
-                            <div className="absolute top-6 left-6 flex flex-col gap-2">
-                                {savings > 0 && (
-                                    <span className="bg-green-500 text-white text-sm font-bold px-3 py-1 rounded-full">
-                                        Save {savingsPercent}%
-                                    </span>
-                                )}
-                                <span className="bg-gold-400 text-gray-900 text-sm font-bold px-3 py-1 rounded-full">
-                                    Bestseller
+                    <div className="relative">
+                        <ProductImageGallery 
+                            images={productImages} 
+                            productName={product.name}
+                        />
+                        
+                        {/* Floating Badges */}
+                        <div className="absolute top-6 left-6 flex flex-col gap-2 z-10">
+                            {savings > 0 && (
+                                <span className="bg-green-500 text-white text-sm font-bold px-3 py-1 rounded-full shadow-lg">
+                                    Save {savingsPercent}%
                                 </span>
-                            </div>
-
-                            {/* Wishlist Button */}
-                            <button
-                                onClick={handleWishlistToggle}
-                                className={`absolute top-6 right-6 w-12 h-12 rounded-full flex items-center justify-center transition-all ${isWishlisted
-                                    ? 'bg-red-100 text-red-500'
-                                    : 'bg-white shadow-soft text-gray-400 hover:text-red-500'
-                                    }`}
-                            >
-                                <Heart className={`w-6 h-6 ${isWishlisted ? 'fill-current' : ''}`} />
-                            </button>
-
-                            {/* Share Button */}
-                            <button className="absolute bottom-6 right-6 w-10 h-10 rounded-full bg-white shadow-soft flex items-center justify-center text-gray-400 hover:text-teal-600 transition-colors">
-                                <Share2 className="w-5 h-5" />
-                            </button>
+                            )}
+                            <span className="bg-gold-400 text-gray-900 text-sm font-bold px-3 py-1 rounded-full shadow-lg">
+                                Bestseller
+                            </span>
                         </div>
 
-                        {/* Thumbnails (placeholder) */}
-                        <div className="flex gap-3">
-                            {[1, 2, 3, 4].map((i) => (
-                                <button
-                                    key={i}
-                                    className={`w-20 h-20 rounded-xl border-2 flex items-center justify-center bg-gradient-to-br from-teal-50 to-cream-50 ${i === 1 ? 'border-teal-500' : 'border-transparent hover:border-gray-200'
-                                        }`}
-                                >
-                                    <ShoppingBag className="w-8 h-8 text-teal-300" />
-                                </button>
-                            ))}
-                        </div>
+                        {/* Wishlist Button */}
+                        <button
+                            onClick={handleWishlistToggle}
+                            className={`absolute top-6 right-6 w-12 h-12 rounded-full flex items-center justify-center transition-all z-10 shadow-lg ${isWishlisted
+                                ? 'bg-red-100 text-red-500'
+                                : 'bg-white text-gray-400 hover:text-red-500'
+                                }`}
+                        >
+                            <Heart className={`w-6 h-6 ${isWishlisted ? 'fill-current' : ''}`} />
+                        </button>
+
+                        {/* Share Button */}
+                        <button className="absolute bottom-24 right-6 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-400 hover:text-teal-600 transition-colors z-10">
+                            <Share2 className="w-5 h-5" />
+                        </button>
                     </div>
 
                     {/* Right: Product Info */}

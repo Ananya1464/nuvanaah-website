@@ -72,10 +72,10 @@ export default function ChemoSideEffectsArticle() {
                     </div>
                 </section>
 
-                <div className="bg-gradient-to-r from-teal-600 to-teal-700 text-white rounded-2xl p-8 text-center mb-12">
-                    <Heart className="w-12 h-12 mx-auto mb-4" />
-                    <h2 className="text-2xl font-semibold mb-3">Remember: It's Temporary</h2>
-                    <p className="text-teal-100">Most side effects improve within weeks after treatment ends. Hair grows back. Energy returns.</p>
+                <div className="bg-gradient-to-r from-teal-600 to-teal-700 rounded-2xl p-8 text-center mb-12">
+                    <Heart className="w-12 h-12 mx-auto mb-4 text-white" />
+                    <h2 className="text-2xl font-semibold mb-3 text-white">Remember: It's Temporary</h2>
+                    <p className="text-white">Most side effects improve within weeks after treatment ends. Hair grows back. Energy returns.</p>
                 </div>
 
                 <div className="bg-white border border-gray-200 rounded-2xl p-8 text-center">

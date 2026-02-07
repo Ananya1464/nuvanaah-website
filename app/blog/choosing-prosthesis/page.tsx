@@ -227,7 +227,7 @@ export default function ChoosingProsthesisArticle() {
                                     <ShoppingBag className="w-20 h-20 text-teal-300" />
                                 </div>
                                 <div>
-                                    <h4 className="text-xl font-bold text-gray-900 mb-2">NUAANA Silicone Breast Prosthesis</h4>
+                                    <h4 className="text-xl font-bold text-gray-900 mb-2">Nuvanaah Silicone Breast Prosthesis</h4>
                                     <p className="text-gray-600 mb-4">
                                         Medical-grade silicone with natural movement. Temperature adaptive, concave back for comfort. Includes cotton cover and carrying case.
                                     </p>
@@ -276,10 +276,10 @@ export default function ChoosingProsthesisArticle() {
                     </section>
 
                     {/* CTA */}
-                    <div className="bg-gradient-to-r from-teal-600 to-teal-700 text-white rounded-2xl p-8 md:p-12 text-center mb-12">
-                        <Heart className="w-16 h-16 mx-auto mb-6 opacity-90" />
-                        <h2 className="text-3xl font-semibold mb-4">Need Personalized Advice?</h2>
-                        <p className="text-xl leading-relaxed mb-6 text-teal-100">
+                    <div className="bg-gradient-to-r from-teal-600 to-teal-700 rounded-2xl p-8 md:p-12 text-center mb-12">
+                        <Heart className="w-16 h-16 mx-auto mb-6 opacity-90 text-white" />
+                        <h2 className="text-3xl font-semibold mb-4 text-white">Need Personalized Advice?</h2>
+                        <p className="text-xl leading-relaxed mb-6 text-white">
                             Our trained fitters offer free consultation calls. We'll help you find the perfect prosthesis for your body and lifestyle.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -121,11 +121,11 @@ export default function MentalWellnessArticle() {
                     </div>
                 </section>
 
-                <div className="bg-gradient-to-r from-teal-600 to-teal-700 text-white rounded-2xl p-8 text-center mb-12">
-                    <Heart className="w-12 h-12 mx-auto mb-4" />
-                    <h2 className="text-2xl font-semibold mb-3">You Are Stronger Than You Know</h2>
-                    <p className="text-teal-100 mb-4">Cancer is hard. But you're facing it. That takes incredible strength. On your hardest days, remember: you've already survived 100% of your worst days.</p>
-                    <p className="text-xl font-semibold">You've got this. ❤️</p>
+                <div className="bg-gradient-to-r from-teal-600 to-teal-700 rounded-2xl p-8 text-center mb-12">
+                    <Heart className="w-12 h-12 mx-auto mb-4 text-white" />
+                    <h2 className="text-2xl font-semibold mb-3 text-white">You Are Stronger Than You Know</h2>
+                    <p className="text-white mb-4">Cancer is hard. But you're facing it. That takes incredible strength. On your hardest days, remember: you've already survived 100% of your worst days.</p>
+                    <p className="text-xl font-semibold text-white">You've got this. ❤️</p>
                 </div>
 
                 <div className="border-t border-gray-200 pt-12">

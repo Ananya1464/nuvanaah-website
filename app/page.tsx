@@ -1,37 +1,37 @@
 import Hero from '@/components/homepage/Hero'
-import OpeningContent from '@/components/homepage/OpeningContent'
-import WhyChooseUs from '@/components/homepage/WhyChooseUs'
 import TrustBadges from '@/components/homepage/TrustBadges'
+import OurPromise from '@/components/homepage/OurPromise'
 import Categories from '@/components/homepage/Categories'
-import BrandStatement from '@/components/homepage/BrandStatement'
-import Testimonials from '@/components/homepage/Testimonials'
+import TestimonialsCarousel from '@/components/homepage/TestimonialsCarousel'
+import HowWeHelp from '@/components/homepage/HowWeHelp'
 import Partners from '@/components/homepage/Partners'
 import Blog from '@/components/homepage/Blog'
 import Newsletter from '@/components/homepage/Newsletter'
 import Footer from '@/components/homepage/Footer'
+import FloatingHelpButton from '@/components/FloatingHelpButton'
 
 export default function Home() {
   return (
     <main>
-      {/* Hero Section */}
+      {/* Hero with Category Slideshow */}
       <Hero />
 
-      {/* Opening Content - Critical for SEO */}
-      <OpeningContent />
+      {/* Trust Badges */}
+      <TrustBadges />
 
-      {/* Why Choose Nuvanaah */}
-      <WhyChooseUs />
+      {/* Our Promise - Value Propositions */}
+      <OurPromise />
 
-      {/* Categories */}
+      {/* Product Categories */}
       <Categories />
 
-      {/* Brand Statement */}
-      <BrandStatement />
+      {/* Customer Testimonials */}
+      <TestimonialsCarousel />
 
-      {/* Testimonials */}
-      <Testimonials />
+      {/* Journey Timeline */}
+      <HowWeHelp />
 
-      {/* Partners */}
+      {/* Partners & Recognition */}
       <Partners />
 
       {/* Blog/Guides */}
@@ -42,6 +42,9 @@ export default function Home() {
 
       {/* Footer */}
       <Footer />
+
+      {/* Floating Help Button */}
+      <FloatingHelpButton />
     </main>
   )
 }

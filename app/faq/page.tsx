@@ -1,13 +1,40 @@
 'use client'
 
 import { useState } from 'react'
-import { Search, ChevronDown, ChevronUp, MessageCircle, Phone, Mail } from 'lucide-react'
+import { ChevronDown, ChevronUp, Phone, MessageCircle, Mail, Heart, ShoppingBag, HelpCircle, Users } from 'lucide-react'
 import Link from 'next/link'
 
 // SEO Note: For metadata, create a separate layout.tsx in app/faq/ directory
 // or use next/head for dynamic meta tags
 
-const faqCategories = ['All', 'General', 'Products', 'Shipping & Returns', 'Consultations', 'Account']
+const situationCards = [
+  {
+    icon: Heart,
+    title: "I'm preparing for surgery",
+    description: "Learn about post-surgery products and what to expect",
+    category: 'Products',
+  },
+  {
+    icon: ShoppingBag,
+    title: "I need help with sizing",
+    description: "Find the right fit for your needs",
+    category: 'Products',
+  },
+  {
+    icon: HelpCircle,
+    title: "I have questions about my order",
+    description: "Track orders, returns, exchanges, and delivery",
+    category: 'Shipping & Returns',
+  },
+  {
+    icon: Users,
+    title: "I'd like personal guidance",
+    description: "Talk to our care team about your specific needs",
+    category: 'Consultations',
+  },
+]
+
+const faqCategories = ['All', 'General', 'Products', 'Shipping & Returns', 'Payments & Orders', 'Consultations', 'Account']
 
 const faqData: Record<string, Array<{ q: string; a: string }>> = {
   General: [
@@ -34,7 +61,7 @@ const faqData: Record<string, Array<{ q: string; a: string }>> = {
   ],
   Products: [
     {
-      q: 'How do I find the right size for a mastectomy bra?',
+      q: 'How can I find the right size for a mastectomy bra?',
       a: 'We provide detailed size guides on each product page. You can also book a free consultation with our specialists to get personalized recommendations. We offer easy exchanges if the size doesn\'t fit perfectly.',
     },
     {
@@ -114,7 +141,7 @@ const faqData: Record<string, Array<{ q: string; a: string }>> = {
       a: 'Our consultants provide product guidance and wellness support, not medical advice. For medical concerns, please consult your healthcare provider. We work alongside your medical team.',
     },
   ],
-  'Shipping & Returns': [
+  'Payments & Orders': [
     {
       q: 'What payment methods do you accept?',
       a: 'We accept all major credit/debit cards, UPI, net banking, digital wallets, and cash on delivery. Razorpay powers our secure payment gateway.',
@@ -170,10 +197,9 @@ const faqData: Record<string, Array<{ q: string; a: string }>> = {
 
 export default function FAQPage() {
   const [selectedCategory, setSelectedCategory] = useState('All')
-  const [searchTerm, setSearchTerm] = useState('')
   const [expandedIndices, setExpandedIndices] = useState<Set<number>>(new Set())
 
-  // Get FAQs based on category and search
+  // Get FAQs based on category
   const getFilteredFaqs = () => {
     let faqs: Array<{ q: string; a: string }> = []
 
@@ -183,14 +209,6 @@ export default function FAQPage() {
       })
     } else {
       faqs = faqData[selectedCategory] || []
-    }
-
-    if (searchTerm.trim()) {
-      faqs = faqs.filter(
-        (faq) =>
-          faq.q.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          faq.a.toLowerCase().includes(searchTerm.toLowerCase())
-      )
     }
 
     return faqs
@@ -208,39 +226,53 @@ export default function FAQPage() {
     setExpandedIndices(newSet)
   }
 
+  const handleSituationClick = (category: string) => {
+    setSelectedCategory(category)
+    setExpandedIndices(new Set())
+    // Scroll to FAQ section
+    document.getElementById('faq-list')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="bg-gradient-to-b from-teal-50 to-white px-4 py-16 md:py-24 pt-24">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-light text-gray-900 mb-4">
-            Frequently Asked <span className="font-semibold text-teal-600">Questions</span>
+      <div className="bg-gradient-to-b from-gray-50 to-white px-4 py-16 md:py-20 pt-24">
+        <div className="max-w-3xl mx-auto text-center">
+          <h1 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">
+            How can we <span className="font-semibold text-teal-600">help you today</span>?
           </h1>
-          <p className="text-xl text-gray-600 mb-8">
-            Find answers to common questions about our products, services, and support.
+          <p className="text-lg text-gray-600">
+            You don't need to know the right questions. Browse by situation, or scroll down to explore all topics.
           </p>
         </div>
       </div>
 
-      {/* Search Section */}
+      {/* Situation Cards */}
       <div className="max-w-4xl mx-auto px-4 py-8">
-        <div className="relative">
-          <Search className="absolute left-4 top-4 w-5 h-5 text-gray-400" />
-          <input
-            type="text"
-            placeholder="Search FAQs..."
-            value={searchTerm}
-            onChange={(e) => {
-              setSearchTerm(e.target.value)
-              setExpandedIndices(new Set())
-            }}
-            className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-200"
-          />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {situationCards.map((card, idx) => (
+            <button
+              key={idx}
+              onClick={() => handleSituationClick(card.category)}
+              className="bg-white border border-gray-200 rounded-xl p-6 text-left hover:border-teal-300 hover:shadow-md transition-all group"
+            >
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-teal-50 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-teal-100 transition-colors">
+                  <card.icon className="w-5 h-5 text-teal-600" />
+                </div>
+                <div>
+                  <h3 className="font-medium text-gray-900 mb-1">{card.title}</h3>
+                  <p className="text-sm text-gray-500 line-clamp-1">{card.description}</p>
+                </div>
+              </div>
+            </button>
+          ))}
         </div>
       </div>
 
       {/* Category Filter */}
-      <div className="max-w-4xl mx-auto px-4 pb-8">
+      <div id="faq-list" className="max-w-4xl mx-auto px-4 py-8 scroll-mt-24">
+        <p className="text-sm text-gray-400 mb-3">Or browse by topic</p>
         <div className="flex flex-wrap gap-2">
           {faqCategories.map((category) => (
             <button
@@ -249,9 +281,9 @@ export default function FAQPage() {
                 setSelectedCategory(category)
                 setExpandedIndices(new Set())
               }}
-              className={`px-4 py-2 rounded-full font-medium transition-colors ${selectedCategory === category
-                  ? 'bg-teal-600 text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${selectedCategory === category
+                ? 'bg-teal-100 text-teal-700 border border-teal-200'
+                : 'bg-gray-50 text-gray-500 border border-gray-100 hover:bg-gray-100 hover:text-gray-600'
                 }`}
             >
               {category}
@@ -263,14 +295,14 @@ export default function FAQPage() {
       {/* FAQ Accordion */}
       <div className="max-w-4xl mx-auto px-4 pb-16">
         {filteredFaqs.length > 0 ? (
-          <div className="space-y-4">
+          <div className="space-y-3">
             {filteredFaqs.map((faq, idx) => (
               <div key={idx} className="border border-gray-200 rounded-lg overflow-hidden">
                 <button
                   onClick={() => toggleExpand(idx)}
-                  className="w-full flex items-center justify-between p-6 hover:bg-cream-50 transition-colors"
+                  className="w-full flex items-center justify-between p-5 hover:bg-gray-50 transition-colors"
                 >
-                  <span className="text-lg font-medium text-gray-900 text-left">{faq.q}</span>
+                  <span className="text-base font-medium text-gray-900 text-left">{faq.q}</span>
                   {expandedIndices.has(idx) ? (
                     <ChevronUp className="w-5 h-5 text-teal-600 flex-shrink-0 ml-4" />
                   ) : (
@@ -278,7 +310,7 @@ export default function FAQPage() {
                   )}
                 </button>
                 {expandedIndices.has(idx) && (
-                  <div className="border-t border-gray-200 bg-cream-50 p-6 text-gray-700 leading-relaxed">
+                  <div className="border-t border-gray-100 bg-gray-50 p-5 text-gray-600 leading-relaxed">
                     {faq.a}
                   </div>
                 )}
@@ -287,84 +319,65 @@ export default function FAQPage() {
           </div>
         ) : (
           <div className="text-center py-12">
-            <p className="text-gray-600 text-lg">
-              No results found for "{searchTerm}". Try a different search term.
+            <p className="text-gray-600">
+              No questions found in this category.
             </p>
           </div>
         )}
       </div>
 
-      {/* Contact Support Section */}
-      <div className="bg-cream-50 px-4 py-16">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-            Can't Find Your Answer?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Email Support */}
-            <div className="bg-white rounded-lg p-8 border border-gray-200 text-center">
-              <Mail className="w-12 h-12 text-amber-600 mx-auto mb-4" />
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Email Us</h3>
-              <p className="text-gray-600 mb-4">
-                Send us an email and we'll respond within 2 hours.
-              </p>
-              <a
-                href="mailto:support@nuana.com"
-                className="text-amber-600 hover:text-amber-700 font-medium"
-              >
-                support@nuana.com
-              </a>
-            </div>
+      {/* Still Need Help - Support Panel */}
+      <div className="bg-gray-50 px-4 py-16">
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-white rounded-2xl p-8 md:p-10 border border-gray-100 shadow-sm text-center">
+            <h2 className="text-xl font-semibold text-gray-900 mb-3">
+              Still need help?
+            </h2>
+            <p className="text-gray-600 mb-8 max-w-lg mx-auto">
+              If you can't find your answer here, reach out to us. We're here to listen and support you.
+            </p>
 
-            {/* Phone Support */}
-            <div className="bg-white rounded-lg p-8 border border-gray-200 text-center">
-              <Phone className="w-12 h-12 text-sage-600 mx-auto mb-4" />
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Call Us</h3>
-              <p className="text-gray-600 mb-4">
-                Speak to our team directly. Available 9 AM - 6 PM IST.
-              </p>
-              <div className="space-y-1">
-                <a href="tel:+919819461612" className="block text-sage-600 hover:text-sage-700 font-medium">
-                  +91-9819461612
-                </a>
-                <a href="tel:+919967711116" className="block text-sage-600 hover:text-sage-700 font-medium text-sm">
-                  +91-9967711116
-                </a>
-              </div>
-            </div>
-
-            {/* WhatsApp Support */}
-            <div className="bg-white rounded-lg p-8 border border-gray-200 text-center">
-              <MessageCircle className="w-12 h-12 text-green-600 mx-auto mb-4" />
-              <h3 className="text-lg font-bold text-gray-900 mb-2">WhatsApp</h3>
-              <p className="text-gray-600 mb-4">
-                Quick messages answered within 30 minutes.
-              </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="https://wa.me/919819461612"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-green-600 hover:text-green-700 font-medium"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-green-50 text-green-700 rounded-full font-medium hover:bg-green-100 transition-colors"
               >
-                Start Chat
+                <MessageCircle className="w-5 h-5" />
+                WhatsApp
+              </a>
+              <a
+                href="tel:+919819461612"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-teal-50 text-teal-700 rounded-full font-medium hover:bg-teal-100 transition-colors"
+              >
+                <Phone className="w-5 h-5" />
+                Call Us
+              </a>
+              <a
+                href="mailto:care@nuvanaah.com"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-amber-50 text-amber-700 rounded-full font-medium hover:bg-amber-100 transition-colors"
+              >
+                <Mail className="w-5 h-5" />
+                Email
               </a>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Book Consultation CTA */}
-      <div className="max-w-4xl mx-auto px-4 py-16">
-        <div className="bg-gradient-to-r from-teal-50 to-cream-50 rounded-lg p-8 md:p-12 border border-teal-200 text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Need Personalized Help?</h2>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Book a free consultation with our wellness specialists to get personalized guidance on products and care.
+      {/* Talk to a Specialist CTA */}
+      <div className="max-w-3xl mx-auto px-4 py-16">
+        <div className="text-center">
+          <h2 className="text-xl font-semibold text-gray-900 mb-3">Need personalized guidance?</h2>
+          <p className="text-gray-600 mb-6">
+            Our care specialists can help you find what's right for your situation.
           </p>
           <Link
             href="/consultations"
-            className="inline-block bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-8 rounded-lg transition-colors shadow-lg hover:shadow-xl"
+            className="inline-block bg-teal-600 hover:bg-teal-700 text-white font-medium py-3 px-8 rounded-full transition-colors"
           >
-            Book Free Consultation
+            Talk to a Care Specialist
           </Link>
         </div>
       </div>

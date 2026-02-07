@@ -2,101 +2,8 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { ShoppingBag, Heart, Shield, Truck, Check, Phone, Filter, X } from 'lucide-react'
-
-// Product data
-const products = [
-  {
-    id: 'mastectomy-bra',
-    name: 'NUAANA Prosthetic Bra - Post Mastectomy Comfort Bra',
-    tagline: 'gentle support after surgery',
-    description: 'Gentle support designed specifically for post-mastectomy recovery.',
-    price: 2999,
-    category: 'Post-Surgery Essentials',
-    features: ['Hidden prosthetic pockets', 'Body-safe fabric', 'Adjustable straps'],
-    inStock: true,
-  },
-  {
-    id: 'silicone-breast-form',
-    name: 'NUAANA Partial Breast Form - Silicone Prosthesis',
-    tagline: 'organic, soft material',
-    description: 'Organic, soft material breast prosthesis designed for natural comfort.',
-    price: 8999,
-    category: 'Post-Surgery Essentials',
-    features: ['Medical-grade silicone', 'Natural weight', 'Temperature adaptive'],
-    inStock: true,
-  },
-  {
-    id: 'chemo-port-shirt',
-    name: 'ChemoPort Access Shirt - Dual Zipper Design',
-    tagline: 'easy port access for chemo',
-    description: 'Easy-access shirt designed for chemotherapy port patients.',
-    price: 1999,
-    category: 'Chemo Comfort Wear',
-    features: ['Quick port access', 'Bamboo fabric', 'Discreet design'],
-    inStock: true,
-  },
-  {
-    id: 'drainage-bag-holder',
-    name: 'Post-Surgery Drainage Bag Holder',
-    tagline: 'hands-free drain management',
-    description: 'Hands-free drainage bag management system for recovery.',
-    price: 1299,
-    category: 'Post-Surgery Essentials',
-    features: ['4 secure pockets', 'Adjustable strap', 'Machine washable'],
-    inStock: true,
-  },
-  {
-    id: 'chemo-port-pillow',
-    name: 'ChemoPort Protection Pillow - Seatbelt Guard',
-    tagline: 'protects port from seatbelt',
-    description: 'Protective cushion to prevent seatbelt pressure on ports.',
-    price: 999,
-    category: 'Chemo Comfort Wear',
-    features: ['Cushioned protection', 'Ergonomic design', 'Portable'],
-    inStock: true,
-  },
-  {
-    id: 'mastectomy-camisole',
-    name: 'Post-Mastectomy Camisole with Drain Pockets',
-    tagline: 'all-in-one recovery wear',
-    description: 'All-in-one post-surgery camisole with drain management.',
-    price: 2499,
-    category: 'Post-Surgery Essentials',
-    features: ['Built-in drain pockets', 'Prosthesis support', 'Cotton fabric'],
-    inStock: true,
-  },
-  {
-    id: 'wig-grip-band',
-    name: 'Medical Wig Grip Band',
-    tagline: 'secure wig hold',
-    description: 'Medical wig grip band prevents wig slipping during chemo.',
-    price: 599,
-    category: 'Wig Care & Accessories',
-    features: ['Non-slip silicone', 'Velvet soft', 'Adjustable fit'],
-    inStock: true,
-  },
-  {
-    id: 'lymphedema-sleeve',
-    name: 'Lymphedema Compression Arm Sleeve',
-    tagline: 'reduces arm swelling',
-    description: 'Medical-grade compression sleeve for lymphedema care.',
-    price: 1799,
-    category: 'Compression & Recovery',
-    features: ['Graduated compression', 'Moisture-wicking', 'UV protection'],
-    inStock: true,
-  },
-  {
-    id: 'breast-form-adhesive',
-    name: 'Breast Form Medical Adhesive',
-    tagline: 'secure prosthesis hold',
-    description: 'Medical-grade adhesive for breast prosthesis.',
-    price: 1299,
-    category: 'Post-Surgery Essentials',
-    features: ['Strong 12-16hr hold', 'Water-resistant', 'Easy removal'],
-    inStock: true,
-  },
-]
+import { Heart, Shield, Truck, Check, Phone, Filter, X } from 'lucide-react'
+import { products, Product } from '@/lib/products-data'
 
 // Categories
 const categories = [
@@ -105,6 +12,7 @@ const categories = [
   { id: 'chemotherapy', name: 'Chemo Comfort Wear', count: products.filter(p => p.category === 'Chemo Comfort Wear').length },
   { id: 'wigs', name: 'Wig Care & Accessories', count: products.filter(p => p.category === 'Wig Care & Accessories').length },
   { id: 'lymphedema', name: 'Compression & Recovery', count: products.filter(p => p.category === 'Compression & Recovery').length },
+  { id: 'premium-wigs', name: 'Premium Wigs', count: products.filter(p => p.category === 'Premium Wigs').length },
 ]
 
 export default function ProductsPage() {
@@ -119,6 +27,7 @@ export default function ProductsPage() {
       if (selectedCategory === 'chemotherapy') return p.category === 'Chemo Comfort Wear'
       if (selectedCategory === 'wigs') return p.category === 'Wig Care & Accessories'
       if (selectedCategory === 'lymphedema') return p.category === 'Compression & Recovery'
+      if (selectedCategory === 'premium-wigs') return p.category === 'Premium Wigs'
       return true
     })
 
@@ -268,14 +177,16 @@ export default function ProductsPage() {
                       className="group card-product"
                     >
                       {/* Product Image */}
-                      <div className="card-product-image relative">
-                        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-teal-50 to-cream-100">
-                          <ShoppingBag className="w-16 h-16 text-teal-300" />
-                        </div>
+                      <div className="card-product-image relative overflow-hidden">
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
 
                         {/* Wishlist Button */}
                         <button
-                          className="absolute top-4 right-4 w-10 h-10 bg-white rounded-full shadow-soft flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-teal-50"
+                          className="absolute top-4 right-4 w-10 h-10 bg-white rounded-full shadow-soft flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-teal-50 z-10"
                           onClick={(e) => {
                             e.preventDefault()
                             // Add to wishlist logic
@@ -286,7 +197,7 @@ export default function ProductsPage() {
 
                         {/* In Stock Badge */}
                         {product.inStock && (
-                          <span className="absolute top-4 left-4 bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full">
+                          <span className="absolute top-4 left-4 bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full z-10">
                             In Stock
                           </span>
                         )}

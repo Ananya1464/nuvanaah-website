@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Check, Users, TrendingUp, Clock, DollarSign, User } from 'lucide-react'
+import { Check } from 'lucide-react'
 
 const hospitalPartners = [
   { name: 'Tata Memorial Hospital', city: 'Mumbai' },

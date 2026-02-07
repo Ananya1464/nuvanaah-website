@@ -82,8 +82,8 @@ export default function ContactPage() {
               </div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Email Us</h3>
               <div className="space-y-3 mb-6">
-                <a href="mailto:support@nuana.com" className="block text-lg font-semibold text-amber-600 hover:text-amber-700">
-                  support@nuana.com
+                <a href="mailto:care@nuvanaah.com" className="block text-lg font-semibold text-amber-600 hover:text-amber-700">
+                  care@nuvanaah.com
                 </a>
                 <div className="flex items-center gap-2 text-gray-600">
                   <Clock className="w-4 h-4" />
@@ -256,69 +256,38 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Free Consultation Section */}
+      {/* Talk to a Care Specialist Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-teal-50 to-green-50 rounded-2xl p-8 md:p-12 border border-teal-100">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-semibold text-gray-900 mb-4">
-                Book a Free Consultation
-              </h2>
-              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-                Not sure which products are right for your situation? Our trained specialists offer free, no-pressure consultations via phone, WhatsApp video, or in-person (select cities).
-              </p>
-            </div>
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 md:p-12 border border-gray-100 shadow-sm text-center">
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              Talk to a Care Specialist
+            </h2>
+            <p className="text-gray-600 mb-8 max-w-xl mx-auto leading-relaxed">
+              Not sure what's right for you? Our trained care team is here to listen, guide, and support you — with no pressure to buy.
+            </p>
 
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
-              <div className="bg-white rounded-lg p-6">
-                <h3 className="font-semibold text-gray-900 mb-3">What to Expect:</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li className="flex items-start">
-                    <span className="text-teal-600 mr-2">•</span>
-                    <span><strong>Duration:</strong> 15-30 minutes (or as long as you need)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-teal-600 mr-2">•</span>
-                    <span><strong>Topics:</strong> Product recommendations, sizing guidance, post-surgery care tips</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-teal-600 mr-2">•</span>
-                    <span><strong>No Pressure:</strong> We're here to help, not to sell</span>
-                  </li>
-                </ul>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
+              <div className="flex items-center gap-3 text-gray-700">
+                <div className="w-10 h-10 bg-teal-50 rounded-full flex items-center justify-center">
+                  <Phone className="w-5 h-5 text-teal-600" />
+                </div>
+                <span>Phone consultation (India-wide)</span>
               </div>
-
-              <div className="bg-white rounded-lg p-6">
-                <h3 className="font-semibold text-gray-900 mb-3">Available In:</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li className="flex items-start">
-                    <span className="text-green-600 mr-2">✓</span>
-                    <span>Phone consultation (India-wide)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-600 mr-2">✓</span>
-                    <span>WhatsApp video call (India-wide)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-600 mr-2">✓</span>
-                    <span>Home appointments (Mumbai, Delhi, Bangalore, Pune)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-600 mr-2">✓</span>
-                    <span>In-person at partner hospitals</span>
-                  </li>
-                </ul>
+              <div className="flex items-center gap-3 text-gray-700">
+                <div className="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center">
+                  <MessageCircle className="w-5 h-5 text-green-600" />
+                </div>
+                <span>WhatsApp video consultation (India-wide)</span>
               </div>
             </div>
 
-            <div className="text-center">
-              <Link
-                href="/consultations"
-                className="inline-block bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 text-white px-8 py-4 rounded-full font-semibold transition shadow-lg hover:shadow-xl"
-              >
-                Schedule Consultation
-              </Link>
-            </div>
+            <Link
+              href="/consultations"
+              className="inline-block bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-full font-medium transition shadow-sm hover:shadow-md"
+            >
+              Talk to a Care Specialist
+            </Link>
           </div>
         </div>
       </section>
@@ -342,9 +311,9 @@ export default function ContactPage() {
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Address</h3>
                   <p className="text-gray-700 leading-relaxed">
-                    Nuvanaah | K-Hair India<br />
-                    [Your Full Street Address]<br />
-                    [Area], Mumbai - [Pincode]<br />
+                    Nuvanaah<br />
+                    [Street Address]<br />
+                    [Area], Mumbai – [Pincode]<br />
                     Maharashtra, India
                   </p>
                 </div>
@@ -425,7 +394,7 @@ export default function ContactPage() {
             <div className="bg-cream-50 rounded-xl p-6 border border-amber-100">
               <h3 className="font-semibold text-gray-900 mb-2">Do you offer bulk discounts?</h3>
               <p className="text-gray-700 text-sm leading-relaxed">
-                Yes, we have special pricing for hospitals, cancer support groups, and NGOs. Email support@nuana.com with your requirements.
+                Yes, we have special pricing for hospitals, cancer support groups, and NGOs. Email partnerships@nuvanaah.com with your requirements.
               </p>
             </div>
           </div>

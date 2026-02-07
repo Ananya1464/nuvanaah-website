@@ -4,9 +4,9 @@ import { motion } from 'framer-motion'
 import { MapPin, Phone, Mail, Heart } from 'lucide-react'
 
 const locations = [
-  { city: 'Mumbai', phone: '+91 9819461612' },
-  { city: 'Delhi', phone: '+91 9819461612' },
-  { city: 'Bangalore', phone: '+91 9819461612' }
+  { city: 'Mumbai', phone: '+91 XXXXX XXXXX' },
+  { city: 'Delhi', phone: '+91 XXXXX XXXXX' },
+  { city: 'Bangalore', phone: '+91 XXXXX XXXXX' }
 ]
 
 export default function Footer() {
@@ -67,8 +67,8 @@ export default function Footer() {
               </div>
               <div className="flex gap-3">
                 <Phone className="w-5 h-5 text-sage-400 flex-shrink-0 mt-1" />
-                <a href="tel:+919819461612" className="hover:text-sage-400 transition">
-                  +91 9819461612
+                <a href="tel:+91XXXXXXXXXX" className="hover:text-sage-400 transition">
+                  +91 XXXXX XXXXX
                 </a>
               </div>
             </div>

@@ -1,160 +1,334 @@
 'use client'
 
-import { ArrowRight, Play, Shield, Heart, Truck, Phone, Star } from 'lucide-react'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { ArrowRight, Sparkles, Heart } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 export default function Hero() {
-  return (
-    <section className="relative min-h-[95vh] flex items-center overflow-hidden bg-luxury">
-      {/* Luxury Background Effects */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Gold accent circles */}
-        <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-br from-gold-200/20 to-transparent rounded-full filter blur-3xl animate-float" />
-        <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-gradient-to-br from-teal-100/30 to-transparent rounded-full filter blur-3xl" />
-        <div className="absolute top-1/2 left-1/3 w-72 h-72 bg-gradient-to-br from-brown-100/20 to-transparent rounded-full filter blur-2xl" />
+  const [mounted, setMounted] = useState(false)
+  const [currentSlide, setCurrentSlide] = useState(0)
 
-        {/* Subtle pattern overlay */}
-        <div className="absolute inset-0 opacity-[0.015]" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }} />
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // Auto-advance slideshow
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length)
+    }, 4000) // Change slide every 4 seconds
+    return () => clearInterval(timer)
+  }, [])
+
+  // Slideshow content
+  const slides = [
+    {
+      title: 'Welcome to Nuvanaah',
+      description: '45+ years of medical expertise in cancer care products',
+      icon: '🏠',
+      link: '/about',
+      linkText: 'Learn Our Story'
+    },
+    {
+      title: 'Post-Surgery Essentials',
+      description: 'Mastectomy bras & prosthetics starting ₹659',
+      icon: '🎀',
+      link: '/products/category/post-surgery-essentials',
+      linkText: 'Shop Recovery Products'
+    },
+    {
+      title: 'Chemotherapy Support',
+      description: 'Protective masks & medical bags from ₹329',
+      icon: '💊',
+      link: '/products/category/chemotherapy-support',
+      linkText: 'View Treatment Essentials'
+    },
+    {
+      title: 'Medical & Premium Wigs',
+      description: 'Human hair wigs from ₹9,899 to ₹29,149',
+      icon: '💇‍♀️',
+      link: '/products/category/hair-loss-solutions',
+      linkText: 'Explore Hair Solutions'
+    },
+    {
+      title: 'Lymphedema Care',
+      description: 'Medical compression sleeves at ₹2,749',
+      icon: '🤲',
+      link: '/products/category/lymphedema-management',
+      linkText: 'Shop Compression Wear'
+    }
+  ]
+
+  // Floating particles animation (reduced for performance)
+  const particles = Array.from({ length: 8 }, (_, i) => ({
+    id: i,
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    delay: Math.random() * 2,
+    duration: 4 + Math.random() * 2,
+  }))
+
+  return (
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-cream-50 via-white to-sage-50">
+      {/* Animated Background Gradient Orbs - Optimized */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          animate={{
+            scale: [1, 1.15, 1],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-0 -right-40 w-96 h-96 bg-gradient-to-br from-teal-200/30 to-sage-200/30 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 30,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-gradient-to-br from-sage-200/30 to-cream-200/30 rounded-full blur-3xl"
+        />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+      {/* Floating Particles */}
+      {mounted && particles.map((particle) => (
+        <motion.div
+          key={particle.id}
+          className="absolute w-2 h-2 bg-teal-300/40 rounded-full"
+          style={{
+            left: `${particle.x}%`,
+            top: `${particle.y}%`,
+          }}
+          animate={{
+            y: [0, -100, 0],
+            opacity: [0, 1, 0],
+          }}
+          transition={{
+            duration: particle.duration,
+            delay: particle.delay,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+      ))}
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-center lg:text-left">
-            {/* Luxury Badge */}
-            <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-sm border border-gold-200 rounded-full px-5 py-2.5 mb-10 shadow-soft">
-              <div className="flex -space-x-1">
+            {/* Trust Badge with Animation */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-md mb-8 border border-teal-100"
+            >
+              <div className="flex items-center">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-gold-400 fill-gold-400" />
+                  <motion.svg
+                    key={i}
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.1 * i, duration: 0.3 }}
+                    className="w-4 h-4 text-teal-600 fill-current"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                  </motion.svg>
                 ))}
               </div>
               <span className="text-sm font-semibold text-gray-700">45+ Years Trusted Legacy</span>
-            </div>
+            </motion.div>
 
-            {/* Main Headline - Luxury Typography */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-gray-900 mb-8 leading-[1.1]">
-              Your Crown of{' '}
-              <span className="text-gradient-gold italic">Confidence</span>
-            </h1>
+            {/* Main Heading with Staggered Animation */}
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-4xl sm:text-5xl lg:text-6xl font-light text-gray-900 mb-6 leading-tight"
+            >
+              Care that supports you through{' '}
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 0.6 }}
+                className="text-teal-600 font-semibold relative inline-block"
+              >
+                treatment
+                <motion.div
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 0.8, delay: 1 }}
+                  className="absolute bottom-2 left-0 right-0 h-3 bg-teal-200/50 -z-10"
+                />
+              </motion.span>
+              .
+            </motion.h1>
 
-            {/* Elegant Accent Line */}
-            <div className="hidden lg:flex items-center gap-4 mb-8">
-              <div className="h-px w-16 bg-gradient-to-r from-gold-400 to-gold-500" />
-              <span className="text-gold-600 text-sm font-medium uppercase tracking-widest">Premium Care</span>
-            </div>
-
-            {/* Subheadline */}
-            <p className="text-lg sm:text-xl text-gray-600 mb-12 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              Exquisite cancer care products designed with <em className="text-gray-800 not-italic font-medium">dignity</em>,
-              {' '}<em className="text-gray-800 not-italic font-medium">comfort</em>, and{' '}
-              <em className="text-gray-800 not-italic font-medium">compassion</em>.
-            </p>
+            {/* Description */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0"
+            >
+              Thoughtfully designed cancer care products with dignity, comfort, and compassion.
+            </motion.p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-14">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            >
               <Link
                 href="/products"
-                className="btn-primary text-lg px-12 py-5"
+                className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
               >
-                Explore Collection
-                <ArrowRight className="w-5 h-5" />
+                Explore Products
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href="/consultations"
-                className="btn-secondary text-lg px-10 py-4"
+                className="group inline-flex items-center justify-center gap-2 bg-white hover:bg-cream-50 text-teal-700 border-2 border-teal-600 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-0.5"
               >
                 Book Consultation
+                <Heart className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </Link>
-            </div>
+            </motion.div>
 
-            {/* Luxury Trust Indicators */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-8 text-sm text-gray-500">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center shadow-soft">
-                  <Truck className="w-5 h-5 text-green-600" />
+            {/* Government Badge */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="mt-8 inline-flex items-center gap-3 text-sm text-gray-600"
+            >
+              <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-lg border border-gray-200">
+                <span className="text-2xl">🇮🇳</span>
+                <div className="text-left">
+                  <p className="font-semibold text-gray-900">Govt. Recognized</p>
+                  <p className="text-xs text-gray-600">Startup India</p>
                 </div>
-                <span className="font-medium">Free Shipping</span>
               </div>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-teal-50 to-teal-100 flex items-center justify-center shadow-soft">
-                  <Heart className="w-5 h-5 text-teal-600" />
-                </div>
-                <span className="font-medium">Doctor Endorsed</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold-50 to-gold-100 flex items-center justify-center shadow-soft">
-                  <Phone className="w-5 h-5 text-gold-600" />
-                </div>
-                <span className="font-medium">COD Available</span>
-              </div>
-            </div>
+            </motion.div>
           </div>
 
-          {/* Right Content - Hero Visual */}
-          <div className="relative lg:pl-8">
-            {/* Main Hero Card - Premium Style */}
-            <div className="relative rounded-[2.5rem] overflow-hidden shadow-luxury aspect-[4/5] sm:aspect-square lg:aspect-[4/5]">
-              {/* Gradient Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-teal-100 via-cream-50 to-gold-50" />
+          {/* Right Visual - Category Slideshow */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.4 }}
+            className="relative mt-12 lg:mt-0"
+          >
+            <div className="relative w-full aspect-square max-w-md lg:max-w-lg mx-auto">
+              {/* Rotating Gradient Ring */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 rounded-full bg-gradient-to-r from-teal-400 via-sage-400 to-teal-400 p-1"
+              >
+                <div className="w-full h-full rounded-full bg-gradient-to-br from-cream-50 to-white" />
+              </motion.div>
 
-              {/* Gold Accent Border */}
-              <div className="absolute inset-0 rounded-[2.5rem] border-2 border-gold-200/50" />
+              {/* Slideshow Content */}
+              <div className="absolute inset-0 flex items-center justify-center p-12">
+                <motion.div
+                  key={currentSlide}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5 }}
+                  className="text-center"
+                >
+                  {/* Icon */}
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.1, 1],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                    className="text-6xl mb-6"
+                  >
+                    {slides[currentSlide].icon}
+                  </motion.div>
 
-              {/* Decorative Elements */}
-              <div className="absolute top-8 right-8 w-24 h-24 bg-white/60 backdrop-blur-sm rounded-full animate-float" style={{ animationDelay: '0.5s' }} />
-              <div className="absolute bottom-16 left-8 w-16 h-16 bg-gold-200/40 rounded-full animate-float" style={{ animationDelay: '1s' }} />
+                  {/* Title */}
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+                    {slides[currentSlide].title}
+                  </h3>
 
-              {/* Content Overlay */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-10 text-center">
-                <div className="w-28 h-28 bg-white rounded-full flex items-center justify-center shadow-luxury mb-8 animate-glow">
-                  <Heart className="w-14 h-14 text-teal-500" />
-                </div>
-                <h3 className="text-3xl font-medium text-gray-800 mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
-                  Compassionate Care
-                </h3>
-                <p className="text-gray-600 max-w-xs leading-relaxed">
-                  Products designed with dignity for your healing journey
-                </p>
+                  {/* Description */}
+                  <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                    {slides[currentSlide].description}
+                  </p>
 
-                {/* Play Video Button */}
-                <button className="mt-10 flex items-center gap-4 bg-white/95 hover:bg-white px-8 py-4 rounded-full shadow-card transition-luxury hover:shadow-luxury group">
-                  <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Play className="w-5 h-5 text-white ml-0.5" />
-                  </div>
-                  <span className="font-semibold text-gray-800">Watch Our Story</span>
-                </button>
+                  {/* Link */}
+                  <Link
+                    href={slides[currentSlide].link}
+                    className="inline-flex items-center gap-2 text-teal-600 font-semibold hover:text-teal-700 transition-colors"
+                  >
+                    {slides[currentSlide].linkText}
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </motion.div>
+              </div>
+
+              {/* Slide Indicators */}
+              <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2">
+                {slides.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      index === currentSlide
+                        ? 'bg-teal-600 w-8'
+                        : 'bg-gray-300 hover:bg-gray-400'
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
               </div>
             </div>
-
-            {/* Floating Card - Stats (Premium) */}
-            <div className="absolute -bottom-6 -left-6 lg:-left-12 bg-white rounded-3xl shadow-luxury p-6 border border-gray-100/50 animate-fade-in-up">
-              <div className="flex items-center gap-5">
-                <div className="w-14 h-14 bg-gradient-to-br from-teal-100 to-teal-50 rounded-2xl flex items-center justify-center">
-                  <Shield className="w-7 h-7 text-teal-600" />
-                </div>
-                <div>
-                  <p className="text-3xl font-bold text-gray-900">10,000+</p>
-                  <p className="text-sm text-gray-500 font-medium">Happy Patients</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Floating Card - Award (Premium) */}
-            <div className="absolute -top-4 -right-4 lg:-right-8 bg-white rounded-2xl shadow-card p-5 border border-gold-100 hidden sm:block">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-gold-100 to-gold-50 rounded-xl flex items-center justify-center">
-                  <span className="text-2xl">🏆</span>
-                </div>
-                <div>
-                  <p className="text-sm font-bold text-gray-900">Govt. Recognized</p>
-                  <p className="text-xs text-gray-500">Startup India</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          </motion.div>
         </div>
+      </div>
+
+      {/* Bottom Wave Decoration */}
+      <div className="absolute bottom-0 left-0 right-0">
+        <svg
+          className="w-full h-24 text-white"
+          viewBox="0 0 1440 120"
+          fill="currentColor"
+          preserveAspectRatio="none"
+        >
+          <motion.path
+            initial={{ d: "M0,64L1440,64L1440,120L0,120Z" }}
+            animate={{
+              d: [
+                "M0,64L1440,64L1440,120L0,120Z",
+                "M0,80L1440,48L1440,120L0,120Z",
+                "M0,64L1440,64L1440,120L0,120Z",
+              ],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        </svg>
       </div>
     </section>
   )

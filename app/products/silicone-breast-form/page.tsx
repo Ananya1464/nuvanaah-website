@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const product: ProductData = {
   id: 'silicone-breast-form',
-  name: 'NUAANA Silicone Breast Prosthesis',
+  name: 'Nuvanaah Silicone Breast Prosthesis',
   tagline: 'natural comfort, restored confidence',
   price: 8999,
   comparePrice: 11999,

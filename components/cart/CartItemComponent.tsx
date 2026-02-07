@@ -20,7 +20,7 @@ export default function CartItemComponent({
     <div className="flex gap-4 py-6 border-b border-gray-200">
       {/* Product Image */}
       <Link
-        href={`/products/${item.productId}`}
+        href={`/products/${item.id}`}
         className="relative w-20 h-20 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0"
       >
         <Image
@@ -34,7 +34,7 @@ export default function CartItemComponent({
       {/* Product Details */}
       <div className="flex-1 min-w-0">
         <Link
-          href={`/products/${item.productId}`}
+          href={`/products/${item.id}`}
           className="block font-semibold text-gray-800 hover:text-amber-600 truncate"
         >
           {item.name}
@@ -48,14 +48,14 @@ export default function CartItemComponent({
       {/* Quantity Controls */}
       <div className="flex items-center gap-3">
         <button
-          onClick={() => onQuantityChange(item.productId, item.quantity - 1)}
+          onClick={() => onQuantityChange(item.id, item.quantity - 1)}
           className="p-1 border border-gray-300 rounded hover:border-amber-600 transition"
         >
           <Minus className="w-4 h-4 text-gray-600" />
         </button>
         <span className="w-6 text-center font-semibold">{item.quantity}</span>
         <button
-          onClick={() => onQuantityChange(item.productId, item.quantity + 1)}
+          onClick={() => onQuantityChange(item.id, item.quantity + 1)}
           className="p-1 border border-gray-300 rounded hover:border-amber-600 transition"
         >
           <Plus className="w-4 h-4 text-gray-600" />
@@ -71,7 +71,7 @@ export default function CartItemComponent({
 
       {/* Remove Button */}
       <button
-        onClick={() => onRemove(item.productId)}
+        onClick={() => onRemove(item.id)}
         className="p-2 text-red-500 hover:bg-red-50 rounded transition"
       >
         <Trash2 className="w-5 h-5" />

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Calendar, Clock, User, Mail, Phone, MapPin } from 'lucide-react'
+import { Clock } from 'lucide-react'
 
 export default function ConsultationsPage() {
   const [step, setStep] = useState<'type' | 'date' | 'details' | 'confirmation'>(

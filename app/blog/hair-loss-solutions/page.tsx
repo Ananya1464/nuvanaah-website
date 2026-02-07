@@ -88,10 +88,10 @@ export default function HairLossSolutionsArticle() {
                     </ul>
                 </section>
 
-                <div className="bg-gradient-to-r from-teal-600 to-teal-700 text-white rounded-2xl p-8 text-center mb-12">
-                    <Heart className="w-12 h-12 mx-auto mb-4" />
-                    <h2 className="text-2xl font-semibold mb-3">Remember: Hair Grows Back</h2>
-                    <p className="text-teal-100 mb-4">Your new hair often comes back thicker! Many survivors actually like their post-chemo hair better. This is temporary.</p>
+                <div className="bg-gradient-to-r from-teal-600 to-teal-700 rounded-2xl p-8 text-center mb-12">
+                    <Heart className="w-12 h-12 mx-auto mb-4 text-white" />
+                    <h2 className="text-2xl font-semibold mb-3 text-white">Remember: Hair Grows Back</h2>
+                    <p className="text-white mb-4">Your new hair often comes back thicker! Many survivors actually like their post-chemo hair better. This is temporary.</p>
                 </div>
 
                 <div className="bg-white border border-gray-200 rounded-2xl p-8 text-center">

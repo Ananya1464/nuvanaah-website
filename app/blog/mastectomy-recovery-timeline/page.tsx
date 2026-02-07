@@ -475,16 +475,16 @@ export default function MastectomyRecoveryArticle() {
           </section>
 
           {/* Final Thoughts */}
-          <div className="bg-gradient-to-r from-teal-600 to-teal-700 text-white rounded-2xl p-8 md:p-12 text-center mb-12">
-            <Heart className="w-16 h-16 mx-auto mb-6 opacity-90" />
-            <h2 className="text-3xl font-semibold mb-4">Final Thoughts</h2>
-            <p className="text-xl leading-relaxed mb-6">
+          <div className="bg-gradient-to-r from-teal-600 to-teal-700 rounded-2xl p-8 md:p-12 text-center mb-12">
+            <Heart className="w-16 h-16 mx-auto mb-6 text-white opacity-90" />
+            <h2 className="text-3xl font-semibold mb-4 text-white">Final Thoughts</h2>
+            <p className="text-xl leading-relaxed mb-6 text-white">
               Mastectomy recovery isn't linear. Some days you'll feel strong, others you'll feel exhausted by noon. Both are normal. Be patient with yourself. Celebrate small victories.
             </p>
-            <p className="text-lg leading-relaxed">
+            <p className="text-lg leading-relaxed text-white">
               Your body just went through major surgery to save your life. It deserves kindness, not criticism. Recovery takes time, but you will heal—physically and emotionally.
             </p>
-            <p className="text-2xl font-semibold mt-6">You've got this. And we're here to help. ❤️</p>
+            <p className="text-2xl font-semibold mt-6 text-white">You've got this. And we're here to help. ❤️</p>
           </div>
 
           {/* Related Articles */}

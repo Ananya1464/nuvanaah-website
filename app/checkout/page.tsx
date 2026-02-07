@@ -5,8 +5,8 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import {
   Check, ChevronLeft, ShoppingBag, MapPin, CreditCard,
-  ClipboardCheck, Truck, Shield, Phone, ArrowRight,
-  Banknote, Building2, Smartphone
+  ClipboardCheck, Truck, Shield, ArrowRight,
+  Banknote, Smartphone
 } from 'lucide-react'
 import { useCart } from '@/lib/cart-context'
 
@@ -523,7 +523,7 @@ export default function CheckoutPage() {
                   <button
                     onClick={handlePlaceOrder}
                     disabled={isSubmitting}
-                    className="btn-gold px-12 py-5 text-lg disabled:opacity-70"
+                    className="btn-primary px-12 py-5 text-lg disabled:opacity-70"
                   >
                     {isSubmitting ? (
                       <>
