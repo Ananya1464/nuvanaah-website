@@ -13,20 +13,20 @@ export default function Logo({ variant = 'default', className = '', href = '/' }
   const logoContent = (
     <div className={`flex items-center gap-3 ${className}`}>
       {variant !== 'text-only' && (
-        <div className="relative w-12 h-12">
+        <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-sm bg-white">
           <Image
             src="/logo.jpeg"
             alt="Nuvanaah Logo"
             width={48}
             height={48}
-            className="w-full h-full object-contain"
+            className="h-full w-full object-contain object-center"
             priority
           />
         </div>
       )}
       <span
         className={`text-2xl font-semibold tracking-tight ${
-          variant === 'white' ? 'text-white' : 'text-teal-600'
+          variant === 'white' ? 'text-white' : 'text-[#884d53]'
         }`}
       >
         Nuvanaah

@@ -1,140 +1,90 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useParams, useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { 
   Star, ShoppingCart, Heart, Share2, Truck, RotateCcw, Shield,
-  ChevronDown, Zap, Leaf, Check, AlertCircle
+  ChevronDown, Check
 } from 'lucide-react'
-
-// Mock product data (will come from WooCommerce in production)
-const mockProduct = {
-  id: 1,
-  name: 'Post-Mastectomy Support Bra',
-  price: 1499,
-  originalPrice: 1799,
-  rating: 4.8,
-  reviewCount: 156,
-  inStock: true,
-  image: 'https://images.unsplash.com/photo-1541099810657-8d76c3c324a3?w=800&h=800&fit=crop',
-  images: [
-    'https://images.unsplash.com/photo-1541099810657-8d76c3c324a3?w=800&h=800&fit=crop',
-    'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&h=800&fit=crop',
-    'https://images.unsplash.com/photo-1506629082632-11c94d3a5db9?w=800&h=800&fit=crop',
-  ],
-  category: 'Mastectomy',
-  description: 'Rediscover comfort with our post-mastectomy bra, engineered for healing. Designed specifically for the recovery journey after surgery, this bra provides gentle support without compromising comfort. Made with soft, breathable materials that work with your sensitive skin—not against it.',
-  keyHighlights: [
-    { icon: 'leaf', text: 'Gentle on sensitive skin' },
-    { icon: 'zap', text: 'Secure yet comfortable support' },
-    { icon: 'check', text: 'Seamless recovery design' },
-  ],
-  trustBadges: [
-    'Doctor Recommended',
-    'Skin-Friendly Materials',
-    'Discreet Packaging',
-  ],
-  details: {
-    material: '85% Cotton, 15% Spandex',
-    sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
-    color: 'Nude',
-    care: 'Hand wash in warm water. Do not bleach. Air dry.',
-  },
-  materialsWhyItWorks: {
-    materials: [
-      {
-        name: '85% Cotton',
-        benefit: 'Breathable and soft for post-surgery skin',
-        details: 'Cotton fiber allows airflow, reducing heat and build-up during recovery. Gentle on sensitive areas, as recommended for healing skin.',
-      },
-      {
-        name: '15% Spandex',
-        benefit: 'Gentle stretch without pressure',
-        details: 'Provides support throughout chemotherapy or radiation without compromising comfort. Flat-lock seams minimize friction on scars—doctor-recommended for recovery phases.',
-      },
-    ],
-    reassurance: 'Every material is chosen for comfort during recovery. Skin-friendly, hypoallergenic, and tested for sensitive skin.',
-  },
-  benefits: [
-    'Wire-free design for comfort',
-    'Soft, breathable fabric',
-    'Gentle on sensitive skin',
-    'Hidden seams to minimize friction',
-    'Adjustable straps for custom fit',
-    'Machine washable and durable',
-    'Perfect for day and night wear',
-  ],
-  features: [
-    'Seamless construction for ultimate comfort',
-    'Adjustable straps for personalized fit',
-    'Wider band to distribute weight evenly',
-    'Pocket-friendly design (optional prosthesis)',
-    'Quick-dry technology',
-    'Ultra-soft tag-free labels',
-  ],
-  careInstructions: [
-    'Hand wash gently in lukewarm water',
-    'Use mild, fragrance-free soap',
-    'Rinse thoroughly until water runs clear',
-    'Gently squeeze out excess water',
-    'Air dry flat or hang to dry',
-    'Avoid direct sunlight and heat sources',
-    'Do not bleach or use fabric softener',
-  ],
-  relatedProducts: [
-    {
-      id: 2,
-      name: 'Silicone Breast Prosthesis',
-      price: 4999,
-      image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&h=400&fit=crop',
-    },
-    {
-      id: 3,
-      name: 'Chemo Port Shirt',
-      price: 2499,
-      image: 'https://images.unsplash.com/photo-1506629082632-11c94d3a5db9?w=400&h=400&fit=crop',
-    },
-  ],
-  faqs: [
-    {
-      question: 'Can I wear this immediately after surgery?',
-      answer: 'We recommend waiting until your surgeon gives clearance, typically 2-4 weeks post-op. Start with our soft post-op bra first, then transition to this support bra as directed by your healthcare provider.',
-      category: 'Recovery',
-    },
-    {
-      question: 'Is this bra suitable for prosthetic wear?',
-      answer: 'Yes! Our pocket-friendly design accommodates both light and heavier prosthetics. The wider band distributes weight evenly, reducing shoulder strain.',
-      category: 'Product Use',
-    },
-    {
-      question: 'How long will the bra last?',
-      answer: 'With proper care (hand washing and air drying), our bras typically last 1-2 years with daily wear. The quality materials maintain elasticity and comfort throughout use.',
-      category: 'Care & Maintenance',
-    },
-    {
-      question: 'Is this safe if I have radiation therapy?',
-      answer: 'Yes, our materials are skin-safe and won\'t interfere with treatment. The breathable cotton blend reduces irritation during and after radiation. Always consult your oncologist for specific guidance.',
-      category: 'Medical Conditions',
-    },
-    {
-      question: 'What if the bra doesn\'t fit after a month?',
-      answer: 'Bodies change during recovery. We offer free exchanges for 30 days if your size changes. Contact our support team—we\'re here to ensure your comfort journey.',
-      category: 'Returns & Exchanges',
-    },
-  ],
-}
+import { getProductById, isVariableProduct } from '@/lib/products-data'
+import { getProductImages } from '@/lib/product-images'
+import type { Product, ProductVariation } from '@/lib/types'
 
 export default function ProductDetailPage() {
-  const [selectedSize, setSelectedSize] = useState('')
+  const params = useParams()
+  const router = useRouter()
+  const [product, setProduct] = useState<Product | null>(null)
+  const [productImages, setProductImages] = useState<string[]>([])
+  const [selectedVariation, setSelectedVariation] = useState<ProductVariation | null>(null)
   const [quantity, setQuantity] = useState(1)
   const [selectedImage, setSelectedImage] = useState(0)
   const [isFavorited, setIsFavorited] = useState(false)
   const [activeTab, setActiveTab] = useState('description')
   const [expandedFAQ, setExpandedFAQ] = useState(0)
+  const [loading, setLoading] = useState(true)
 
-  const discountPercent = Math.round(
-    ((mockProduct.originalPrice - mockProduct.price) / mockProduct.originalPrice) * 100
-  )
+  // Load product data
+  useEffect(() => {
+    if (params.id) {
+      const productId = String(params.id)
+      const foundProduct = getProductById(productId)
+      
+      if (foundProduct) {
+        setProduct(foundProduct)
+        
+        // For variable products, set first variation as default
+        if (isVariableProduct(foundProduct) && foundProduct.variations && foundProduct.variations.length > 0) {
+          setSelectedVariation(foundProduct.variations[0])
+          // Get images from first variation
+          const varImages = foundProduct.variations[0].images?.map(img => img.src) || []
+          setProductImages(varImages.length > 0 ? varImages : (foundProduct.images?.map(img => img.src) || []))
+        } else {
+          // For simple products, get images from product
+          const images = getProductImages(foundProduct.slug || String(productId))
+          setProductImages(images.length > 0 ? images : (foundProduct.images?.map(img => img.src).filter((src): src is string => !!src) || []))
+        }
+        setLoading(false)
+      } else {
+        // Product not found - redirect to products page
+        router.push('/products')
+      }
+    }
+  }, [params.id, router])
+
+  // Handle variation change
+  const handleVariationChange = (variation: ProductVariation) => {
+    setSelectedVariation(variation)
+    // Update images when variation changes
+    const varImages = variation.images?.map(img => img.src) || []
+    if (varImages.length > 0) {
+      setProductImages(varImages)
+      setSelectedImage(0) // Reset to first image
+    }
+  }
+
+  // Get current price and stock status
+  const currentPrice = selectedVariation ? selectedVariation.price : product?.price
+  const currentRegularPrice = selectedVariation ? selectedVariation.regular_price : product?.regular_price
+  const currentStockStatus = selectedVariation ? selectedVariation.stock_status : product?.stock_status
+  const isVariable = product && isVariableProduct(product)
+
+  // Calculate discount if there's a regular price
+  const hasDiscount = currentRegularPrice && Number(currentRegularPrice) > Number(currentPrice)
+  const discountPercent = hasDiscount
+    ? Math.round(((Number(currentRegularPrice) - Number(currentPrice!)) / Number(currentRegularPrice)) * 100)
+    : 0
+
+  if (loading || !product) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading product...</p>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -144,7 +94,7 @@ export default function ProductDetailPage() {
         <span className="mx-2">/</span>
         <a href="/products" className="hover:text-amber-600">Products</a>
         <span className="mx-2">/</span>
-        <span className="text-gray-900">{mockProduct.name}</span>
+        <span className="text-gray-900">{product.name}</span>
       </div>
 
       {/* Main Product Section */}
@@ -155,8 +105,8 @@ export default function ProductDetailPage() {
             {/* Main Image */}
             <div className="relative w-full aspect-square rounded-lg overflow-hidden bg-gray-100 border border-gray-200">
               <Image
-                src={mockProduct.images[selectedImage]}
-                alt={mockProduct.name}
+                src={productImages[selectedImage] || product.image || 'https://images.unsplash.com/photo-1584512814423-69f8b3e1d919?w=800&h=800&fit=crop'}
+                alt={product.name}
                 fill
                 className="object-cover"
               />
@@ -169,7 +119,7 @@ export default function ProductDetailPage() {
 
             {/* Thumbnail Images */}
             <div className="grid grid-cols-3 gap-2">
-              {mockProduct.images.map((img, idx) => (
+              {productImages.map((img, idx) => (
                 <button
                   key={idx}
                   onClick={() => setSelectedImage(idx)}
@@ -181,7 +131,7 @@ export default function ProductDetailPage() {
                 >
                   <Image
                     src={img}
-                    alt={`${mockProduct.name} ${idx + 1}`}
+                    alt={`${product.name} ${idx + 1}`}
                     fill
                     className="object-cover"
                   />
@@ -195,96 +145,100 @@ export default function ProductDetailPage() {
             {/* Category & Title */}
             <div>
               <p className="text-sm text-amber-600 font-semibold uppercase tracking-wide mb-2">
-                {mockProduct.category}
+                {product.categories && product.categories.length > 0 
+                  ? (typeof product.categories[0] === 'string' ? product.categories[0] : product.categories[0].name)
+                  : 'Product'}
               </p>
               <h1 className="text-4xl font-bold text-gray-900">
-                {mockProduct.name}
+                {product.name}
               </h1>
             </div>
 
-            {/* Key Highlights */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {mockProduct.keyHighlights.map((highlight, idx) => {
-                const iconMap: Record<string, React.ReactNode> = {
-                  leaf: <Leaf className="w-5 h-5" />,
-                  zap: <Zap className="w-5 h-5" />,
-                  check: <Check className="w-5 h-5" />,
-                }
-                return (
-                  <div key={idx} className="flex items-start gap-3 p-3 bg-amber-50 rounded-lg">
-                    <span className="text-amber-600 flex-shrink-0">
-                      {iconMap[highlight.icon]}
-                    </span>
-                    <span className="text-sm text-gray-700 font-medium">{highlight.text}</span>
-                  </div>
-                )
-              })}
+            {/* Product Description */}
+            <div className="text-gray-700">
+              <p>{product.description || product.short_description}</p>
             </div>
 
-            {/* Trust Badges */}
-            <div className="flex flex-wrap gap-3 py-4 border-y border-gray-200">
-              {mockProduct.trustBadges.map((badge, idx) => (
-                <div key={idx} className="flex items-center gap-2 text-sm text-gray-700">
-                  <Check className="w-4 h-4 text-green-600" />
-                  {badge}
-                </div>
-              ))}
-            </div>
 
             {/* Rating */}
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className={`w-5 h-5 ${
-                      i < Math.round(mockProduct.rating)
-                        ? 'fill-amber-500 text-amber-500'
-                        : 'text-gray-300'
-                    }`}
-                  />
-                ))}
+            {product.rating && product.rating > 0 && (
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className={`w-5 h-5 ${
+                        i < Math.round(product.rating || 0)
+                          ? 'fill-amber-500 text-amber-500'
+                          : 'text-gray-300'
+                      }`}
+                    />
+                  ))}
+                </div>
+                <span className="text-gray-700 font-semibold">{product.rating} out of 5</span>
+                <span className="text-gray-500">({product.reviewCount || 0} reviews)</span>
               </div>
-              <span className="text-gray-700 font-semibold">{mockProduct.rating} out of 5</span>
-              <span className="text-gray-500">({mockProduct.reviewCount} reviews)</span>
-            </div>
+            )}
 
             {/* Price */}
             <div className="space-y-2">
               <div className="flex items-center gap-4">
                 <span className="text-4xl font-bold text-gray-900">
-                  ₹{mockProduct.price.toLocaleString('en-IN')}
+                  ₹{Number(currentPrice).toLocaleString('en-IN')}
                 </span>
-                <span className="text-lg text-gray-400 line-through">
-                  ₹{mockProduct.originalPrice.toLocaleString('en-IN')}
-                </span>
+                {hasDiscount && (
+                  <>
+                    <span className="text-lg text-gray-400 line-through">
+                      ₹{Number(currentRegularPrice).toLocaleString('en-IN')}
+                    </span>
+                    <span className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      {discountPercent}% OFF
+                    </span>
+                  </>
+                )}
               </div>
+              {isVariable && (
+                <p className="text-sm text-gray-600">
+                  Price varies by length
+                </p>
+              )}
               <p className="text-sm text-gray-600">
                 Inclusive of all taxes
               </p>
             </div>
 
-            {/* Size Selector */}
-            <div>
-              <label className="block text-sm font-semibold text-gray-800 mb-3">
-                Select Size
-              </label>
-              <div className="grid grid-cols-4 gap-2">
-                {mockProduct.details.sizes.map((size) => (
-                  <button
-                    key={size}
-                    onClick={() => setSelectedSize(size)}
-                    className={`py-2 px-3 rounded-lg border-2 font-semibold transition ${
-                      selectedSize === size
-                        ? 'border-amber-600 bg-amber-50 text-amber-900'
-                        : 'border-gray-200 hover:border-amber-200 text-gray-800'
-                    }`}
-                  >
-                    {size}
-                  </button>
-                ))}
+            {/* Length Selector for Variable Products */}
+            {isVariable && product.variations && product.variations.length > 0 && (
+              <div>
+                <label className="block text-sm font-semibold text-gray-800 mb-3">
+                  Select Length {selectedVariation && <span className="text-teal-600">({selectedVariation.length})</span>}
+                </label>
+                <div className="grid grid-cols-3 gap-2">
+                  {product.variations.map((variation) => (
+                    <button
+                      key={variation.id}
+                      onClick={() => handleVariationChange(variation)}
+                      className={`py-3 px-4 rounded-lg border-2 font-semibold transition ${
+                        selectedVariation?.id === variation.id
+                          ? 'border-teal-600 bg-teal-50 text-teal-900'
+                          : 'border-gray-200 hover:border-teal-200 text-gray-800'
+                      }`}
+                    >
+                      <div className="text-center">
+                        <div className="text-lg font-bold">{variation.length}</div>
+                        <div className="text-xs text-gray-600 mt-1">₹{Number(variation.price).toLocaleString('en-IN')}</div>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+                {selectedVariation && (
+                  <p className="text-sm text-gray-600 mt-2">
+                    {selectedVariation.description}
+                  </p>
+                )}
               </div>
-            </div>
+            )}
+
 
             {/* Quantity */}
             <div>
@@ -311,11 +265,11 @@ export default function ProductDetailPage() {
             {/* CTA Buttons */}
             <div className="flex gap-4 pt-4">
               <button
-                disabled={!selectedSize || !mockProduct.inStock}
-                className="flex-1 bg-amber-600 hover:bg-amber-700 disabled:bg-gray-300 text-white py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition"
+                disabled={currentStockStatus !== 'instock' || (isVariable && !selectedVariation) || false}
+                className="flex-1 bg-amber-600 hover:bg-amber-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition"
               >
                 <ShoppingCart className="w-5 h-5" />
-                Add to Cart
+                {currentStockStatus === 'instock' ? 'Add to Cart' : 'Out of Stock'}
               </button>
               <button
                 onClick={() => setIsFavorited(!isFavorited)}
@@ -386,248 +340,145 @@ export default function ProductDetailPage() {
           </div>
 
           {/* Tab Content */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 gap-12">
             {/* Description Tab */}
             {activeTab === 'description' && (
-              <>
-                <div>
-                  <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-                    About This Product
-                  </h2>
-                  <p className="text-gray-700 leading-relaxed mb-6 text-lg">
-                    {mockProduct.description}
-                  </p>
-                  <p className="text-gray-600 leading-relaxed">
-                    Designed with your recovery journey in mind, this bra combines medical knowledge with comfort engineering. Every seam, every fabric choice, and every feature has been thoughtfully created to support your healing and rebuild your confidence.
-                  </p>
-                </div>
-                <div className="bg-sage-50 rounded-lg p-8">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Why Choose Us?</h3>
-                  <ul className="space-y-3">
-                    {[
-                      'Designed in consultation with medical professionals',
-                      'Tested on sensitive and post-treatment skin',
-                      'Made with hypoallergenic, premium materials',
-                      'Backed by a 30-day comfort guarantee',
-                      'Discreet packaging for your privacy',
-                    ].map((reason, idx) => (
-                      <li key={idx} className="flex gap-3 text-gray-700">
-                        <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                        {reason}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </>
+              <div>
+                <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+                  About This Product
+                </h2>
+                <p className="text-gray-700 leading-relaxed mb-6 text-lg">
+                  {product.description || product.short_description}
+                </p>
+              </div>
             )}
 
             {/* Features Tab */}
             {activeTab === 'features' && (
-              <>
-                <div>
-                  <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-                    Key Benefits
-                  </h2>
-                  <ul className="space-y-4">
-                    {mockProduct.benefits.map((benefit, idx) => (
-                      <li key={idx} className="flex gap-4">
-                        <Check className="w-6 h-6 text-amber-600 flex-shrink-0" />
-                        <span className="text-gray-700 text-lg">{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
+              <div>
+                <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+                  Product Features
+                </h2>
+                <div className="text-gray-700 leading-relaxed">
+                  <p>{product.description || product.short_description}</p>
                 </div>
-                <div>
-                  <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-                    Smart Features
-                  </h2>
-                  <ul className="space-y-4">
-                    {mockProduct.features.map((feature, idx) => (
-                      <li key={idx} className="flex gap-4">
-                        <Zap className="w-6 h-6 text-amber-600 flex-shrink-0" />
-                        <span className="text-gray-700 text-lg">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </>
+              </div>
             )}
 
             {/* Materials Tab */}
             {activeTab === 'materials' && (
-              <>
-                <div>
-                  <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-                    Materials & Why It Works
-                  </h2>
-                  <div className="space-y-6">
-                    {mockProduct.materialsWhyItWorks.materials.map((material, idx) => (
-                      <div key={idx} className="border-l-4 border-amber-600 pl-4">
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                          {material.name}
-                        </h3>
-                        <p className="text-amber-700 font-medium text-sm mb-2">
-                          {material.benefit}
-                        </p>
-                        <p className="text-gray-700">
-                          {material.details}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
+              <div>
+                <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+                  Materials & Care
+                </h2>
+                <div className="text-gray-700 leading-relaxed">
+                  <p>{product.description || product.short_description}</p>
                 </div>
-                <div className="bg-green-50 rounded-lg p-8">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                    <AlertCircle className="w-6 h-6 text-green-600" />
-                    Why This Matters
-                  </h3>
-                  <p className="text-gray-700 leading-relaxed mb-6">
-                    {mockProduct.materialsWhyItWorks.reassurance}
-                  </p>
-                  <div className="bg-white rounded p-4 border border-green-200">
-                    <p className="text-sm text-gray-600">
-                      ✓ Hypoallergenic & dermatologist tested
-                      <br />✓ No harsh chemicals or dyes
-                      <br />✓ Sustainable & ethically sourced
-                      <br />✓ Certified for sensitive skin
-                    </p>
-                  </div>
-                </div>
-              </>
+              </div>
             )}
 
             {/* Care Tab */}
             {activeTab === 'care' && (
-              <>
-                <div>
-                  <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-                    How to Use
-                  </h2>
-                  <ol className="space-y-4">
-                    {[
-                      'Put on the bra by fastening the back closure',
-                      'Adjust straps for a comfortable, snug fit',
-                      'Ensure the band sits parallel to the ground',
-                      'If using a prosthetic, gently place it in the pocket',
-                      'Wear throughout the day for everyday comfort',
-                    ].map((step, idx) => (
-                      <li key={idx} className="flex gap-4">
-                        <span className="flex items-center justify-center w-8 h-8 rounded-full bg-amber-600 text-white font-semibold flex-shrink-0">
-                          {idx + 1}
-                        </span>
-                        <span className="text-gray-700 text-lg pt-0.5">{step}</span>
-                      </li>
-                    ))}
-                  </ol>
-                </div>
-                <div>
-                  <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-                    Care Instructions
-                  </h2>
+              <div>
+                <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+                  Care Instructions
+                </h2>
+                <div className="text-gray-700 leading-relaxed">
                   <ul className="space-y-3">
-                    {mockProduct.careInstructions.map((instruction, idx) => (
-                      <li key={idx} className="flex gap-3 text-gray-700">
-                        <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                        {instruction}
-                      </li>
-                    ))}
+                    <li className="flex gap-3">
+                      <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span>Hand wash gently in lukewarm water</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span>Use mild, fragrance-free soap</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span>Air dry flat or hang to dry</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      <span>Avoid direct sunlight and heat sources</span>
+                    </li>
                   </ul>
                 </div>
-              </>
+              </div>
             )}
 
             {/* Reviews Tab */}
             {activeTab === 'reviews' && (
-              <div className="col-span-2">
+              <div>
                 <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-                  Customer Reviews ({mockProduct.reviewCount})
+                  Customer Reviews ({product.reviewCount || 0})
                 </h2>
                 {/* Placeholder for reviews component */}
                 <div className="grid gap-6">
-                  {[...Array(3)].map((_, idx) => (
-                    <div key={idx} className="border border-gray-200 rounded-lg p-6">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="flex">
-                          {[...Array(5)].map((_, i) => (
-                            <Star
-                              key={i}
-                              className="w-4 h-4 fill-amber-500 text-amber-500"
-                            />
-                          ))}
-                        </div>
-                        <span className="font-semibold text-gray-900">Verified Purchase</span>
+                  <div className="border border-gray-200 rounded-lg p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="flex">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className="w-4 h-4 fill-amber-500 text-amber-500"
+                          />
+                        ))}
                       </div>
-                      <p className="text-gray-700 mb-2">This bra has been a game-changer in my recovery. The comfort level is amazing, and the material feels so soft on my sensitive skin. Highly recommend!</p>
-                      <p className="text-sm text-gray-500">Reviewed by Sarah K. • 2 weeks ago</p>
+                      <span className="font-semibold text-gray-900">Verified Purchase</span>
                     </div>
-                  ))}
+                    <p className="text-gray-700 mb-2">Excellent quality and very comfortable. Highly recommend!</p>
+                    <p className="text-sm text-gray-500">Verified Buyer • 2 weeks ago</p>
+                  </div>
                 </div>
               </div>
             )}
 
             {/* FAQs Tab */}
             {activeTab === 'faqs' && (
-              <div className="col-span-2">
+              <div>
                 <h2 className="text-2xl font-semibold text-gray-900 mb-6">
                   Frequently Asked Questions
                 </h2>
                 <div className="space-y-4">
-                  {mockProduct.faqs.map((faq, idx) => (
-                    <div key={idx} className="border border-gray-200 rounded-lg overflow-hidden">
-                      <button
-                        onClick={() => setExpandedFAQ(expandedFAQ === idx ? -1 : idx)}
-                        className="w-full p-4 bg-gray-50 hover:bg-gray-100 transition flex items-center justify-between text-left"
-                      >
-                        <span className="font-semibold text-gray-900">{faq.question}</span>
-                        <ChevronDown
-                          className={`w-5 h-5 text-gray-600 transition ${
-                            expandedFAQ === idx ? 'rotate-180' : ''
-                          }`}
-                        />
-                      </button>
-                      {expandedFAQ === idx && (
-                        <div className="p-4 bg-white border-t border-gray-200">
-                          <p className="text-gray-700 mb-2">{faq.answer}</p>
-                          <span className="inline-block text-xs font-semibold text-amber-600 bg-amber-50 px-3 py-1 rounded-full">
-                            {faq.category}
-                          </span>
-                        </div>
-                      )}
-                    </div>
-                  ))}
+                  <div className="border border-gray-200 rounded-lg overflow-hidden">
+                    <button
+                      onClick={() => setExpandedFAQ(expandedFAQ === 0 ? -1 : 0)}
+                      className="w-full p-4 bg-gray-50 hover:bg-gray-100 transition flex items-center justify-between text-left"
+                    >
+                      <span className="font-semibold text-gray-900">How do I choose the right size?</span>
+                      <ChevronDown
+                        className={`w-5 h-5 text-gray-600 transition ${
+                          expandedFAQ === 0 ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                    {expandedFAQ === 0 && (
+                      <div className="p-4 bg-white border-t border-gray-200">
+                        <p className="text-gray-700">Please refer to our sizing guide. If you're between sizes, we recommend sizing up for comfort.</p>
+                      </div>
+                    )}
+                  </div>
+                  <div className="border border-gray-200 rounded-lg overflow-hidden">
+                    <button
+                      onClick={() => setExpandedFAQ(expandedFAQ === 1 ? -1 : 1)}
+                      className="w-full p-4 bg-gray-50 hover:bg-gray-100 transition flex items-center justify-between text-left"
+                    >
+                      <span className="font-semibold text-gray-900">What is your return policy?</span>
+                      <ChevronDown
+                        className={`w-5 h-5 text-gray-600 transition ${
+                          expandedFAQ === 1 ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+                    {expandedFAQ === 1 && (
+                      <div className="p-4 bg-white border-t border-gray-200">
+                        <p className="text-gray-700">We offer 30-day returns for unused items in original packaging.</p>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             )}
-          </div>
-        </div>
-
-        {/* Related Products */}
-        <div className="mt-16 pt-12 border-t border-gray-200">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-8">
-            Pairs Well With
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {mockProduct.relatedProducts.map((product) => (
-              <div key={product.id} className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition">
-                <div className="relative w-full aspect-square">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-4">
-                  <h3 className="font-semibold text-gray-900 mb-2">{product.name}</h3>
-                  <p className="text-2xl font-bold text-amber-600 mb-4">
-                    ₹{product.price.toLocaleString('en-IN')}
-                  </p>
-                  <button className="w-full bg-amber-600 hover:bg-amber-700 text-white py-2 rounded-lg font-semibold transition">
-                    View Product
-                  </button>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
 

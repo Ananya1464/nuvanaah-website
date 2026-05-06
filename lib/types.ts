@@ -1,17 +1,38 @@
 // Type definitions for Nuvanaah
 
-export interface Product {
-  id: number
-  name: string
+export interface ProductVariation {
+  id: string
+  length: string
+  price: string
+  regular_price: string
   description: string
-  price: number
-  image: string
-  category: 'mastectomy' | 'chemotherapy' | 'wigs' | 'lymphedema'
-  sizes: string[]
-  sku: string
+  images: { id: number; src: string; alt: string }[]
+  stock_status: 'instock' | 'outofstock'
+}
+
+export interface Product {
+  id: string | number
+  name: string
+  slug?: string
+  description: string
+  short_description?: string
+  price: number | string
+  regular_price?: string
+  image?: string
+  images?: { id: number; src: string; alt: string }[]
+  categories?: { id: number; name: string; slug: string }[]
+  category?: 'mastectomy' | 'chemotherapy' | 'wigs' | 'lymphedema'
+  sizes?: string[]
+  sku?: string
+  stock_status?: 'instock' | 'outofstock'
+  on_sale?: boolean
+  featured?: boolean
   inStock?: boolean
   rating?: number
   reviewCount?: number
+  // For variable products (like wigs with different lengths)
+  variations?: ProductVariation[]
+  type?: 'simple' | 'variable'
 }
 
 export interface CartItem {

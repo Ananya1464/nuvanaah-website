@@ -2,9 +2,8 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Heart, Shield, Truck, Check, Phone, Filter, X } from 'lucide-react'
+import { Heart, Shield, Truck, Phone, Filter, X } from 'lucide-react'
 import { products, getAllCategories, getProductsByCategory } from '@/lib/products-data'
-import type { Product } from '@/lib/types'
 
 // Get categories dynamically from products
 const allCategories = getAllCategories()
@@ -217,7 +216,7 @@ export default function ProductsPage() {
                         {/* Price & CTA */}
                         <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                           <div>
-                            <p className="text-xl font-bold text-gray-900">₹{parseInt(product.price).toLocaleString()}</p>
+                            <p className="text-xl font-bold text-gray-900">₹{Number(product.price).toLocaleString()}</p>
                             <p className="text-xs text-gray-500">Free shipping</p>
                           </div>
                           <span className="bg-teal-500 text-white px-4 py-2 rounded-xl text-sm font-semibold group-hover:bg-teal-600 transition-colors">

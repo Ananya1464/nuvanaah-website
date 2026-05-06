@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import {
-    Heart, Truck, Phone, Check, ShoppingBag,
+    Heart, Truck, Phone, Check,
     Plus, Minus, ShoppingCart, Zap, Star, Share2, MessageCircle,
     Package, RotateCcw, Clock, ChevronRight
 } from 'lucide-react'

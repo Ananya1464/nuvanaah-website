@@ -70,9 +70,9 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <head>
         <meta charSet="utf-8" />
-        <meta name="theme-color" content="#5B9FA3" />
+        <meta name="theme-color" content="#C9848A" />
       </head>
-      <body className="flex flex-col min-h-screen bg-cream-50 text-gray-800">
+      <body className="flex min-h-screen flex-col bg-neutral-50 text-tertiary-700">
         <CartProvider>
           <WishlistProvider>
             <Header />

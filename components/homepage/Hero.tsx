@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight, Sparkles, Heart } from 'lucide-react'
+import { ArrowRight, Heart } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 export default function Hero() {

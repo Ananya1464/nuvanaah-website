@@ -10,23 +10,34 @@
    ============================================ */
 
 :root {
-  /* PRIMARY COLOR - Teal */
-  --color-primary: #6B9B9E;
-  --color-primary-hover: #5A8A8D;
-  --color-primary-light: #E8F2F3;
+  /* PRIMARY COLOR - Rose */
+  --color-primary: #C9848A;
+  --color-primary-hover: #b96f76;
+  --color-primary-light: #fae6e8;
+
+  /* SECONDARY COLOR - Sage */
+  --color-secondary: #7B9E87;
+  --color-secondary-hover: #64846e;
+  --color-secondary-light: #eff6f1;
+
+  /* TERTIARY COLOR - Warm Brown */
+  --color-tertiary: #2C1F1A;
+  --color-tertiary-hover: #4c3a33;
+  --color-tertiary-light: #f3edea;
 
   /* NEUTRALS */
-  --color-cream: #F5F3EF;
+  --color-neutral: #FAF6F0;
+  --color-neutral-2: #f4eee5;
   --color-white: #FFFFFF;
 
   /* TEXT COLORS */
-  --color-text-primary: #1F2937;
-  --color-text-secondary: #6B7280;
-  --color-text-muted: #9CA3AF;
+  --color-text-primary: #2C1F1A;
+  --color-text-secondary: #6a5448;
+  --color-text-muted: #99846a;
 
   /* BORDERS */
-  --color-border: #E5E7EB;
-  --color-border-light: #F3F4F6;
+  --color-border: #ded0bf;
+  --color-border-light: #ece2d6;
 
   /* SEMANTIC */
   --color-success: #059669;
@@ -62,10 +73,10 @@ html {
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  background-color: var(--color-white);
+  background-color: var(--color-neutral);
   color: var(--color-text-primary);
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -86,28 +97,30 @@ h6 {
 }
 
 h1 {
-  font-size: 48px;
-  font-weight: 600;
+  font-size: 56px;
+  font-weight: 700;
 }
 
 h2 {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 600;
 }
 
 h3 {
-  font-size: 28px;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 h4 {
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 p {
   color: var(--color-text-secondary);
   margin-bottom: 1rem;
+  font-size: 16px;
+  line-height: 1.7;
 }
 
 a {
@@ -121,7 +134,7 @@ a:hover {
 }
 
 small {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 /* ============================================
@@ -154,29 +167,31 @@ small {
     @apply inline-flex items-center justify-center gap-2;
     @apply bg-transparent font-medium text-base;
     @apply px-6 py-3;
-    color: var(--color-primary);
-    border: 1.5px solid var(--color-primary);
+    color: var(--color-secondary);
+    border: 1.5px solid var(--color-secondary);
     border-radius: 12px;
     transition: all 0.2s var(--ease-smooth);
   }
 
   .btn-secondary:hover {
-    background-color: var(--color-primary);
+    background-color: var(--color-secondary);
     color: white;
   }
 
   /* Ghost Button */
   .btn-ghost {
     @apply inline-flex items-center justify-center gap-2;
-    @apply bg-transparent text-gray-600;
+    @apply bg-transparent;
     @apply px-4 py-2;
     @apply font-medium text-base;
+    color: var(--color-text-secondary);
     border-radius: 12px;
     transition: all 0.2s var(--ease-smooth);
   }
 
   .btn-ghost:hover {
-    @apply bg-gray-100 text-gray-800;
+    background-color: var(--color-tertiary-light);
+    color: var(--color-text-primary);
   }
 
   /* Icon Button */
@@ -190,7 +205,7 @@ small {
   }
 
   .btn-icon:hover {
-    @apply bg-gray-50;
+    background-color: var(--color-primary-light);
     border-color: var(--color-primary);
   }
 
@@ -216,7 +231,7 @@ small {
     @apply aspect-square;
     @apply flex items-center justify-center;
     @apply overflow-hidden relative;
-    background-color: var(--color-cream);
+    background-color: var(--color-neutral);
   }
 
   .card-product-body {
@@ -252,7 +267,7 @@ small {
   .input:focus {
     outline: none;
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(107, 155, 158, 0.1);
+    box-shadow: 0 0 0 3px rgba(201, 132, 138, 0.12);
   }
 
   .input-error {

@@ -17,143 +17,159 @@ export interface ProductImageSet {
  * Product slug to image paths mapping (19 products)
  */
 export const productImageMap: Record<string, ProductImageSet> = {
-  // POST-SURGERY ESSENTIALS
+  // POST-SURGERY ESSENTIALS (Using placeholders for now)
   'mastectomy-prosthesis-cover': {
-    hero: '/images/products/mastectomy-prosthesis/hero.jpg',
-    detail: '/images/products/mastectomy-prosthesis/detail.jpg',
-    lifestyle: '/images/products/mastectomy-prosthesis/lifestyle.jpg',
-    usage: '/images/products/mastectomy-prosthesis/usage.jpg',
+    hero: 'https://images.unsplash.com/photo-1584512814423-69f8b3e1d919?w=800&h=800&fit=crop',
+    detail: 'https://images.unsplash.com/photo-1584512814423-69f8b3e1d919?w=800&h=800&fit=crop',
+    lifestyle: 'https://images.unsplash.com/photo-1584512814423-69f8b3e1d919?w=800&h=800&fit=crop',
+    usage: 'https://images.unsplash.com/photo-1584512814423-69f8b3e1d919?w=800&h=800&fit=crop',
   },
   
   'mastectomy-bra-front-opening': {
-    hero: '/images/products/mastectomy-bra-front/hero.jpg',
-    detail: '/images/products/mastectomy-bra-front/detail.jpg',
-    lifestyle: '/images/products/mastectomy-bra-front/lifestyle.jpg',
-    usage: '/images/products/mastectomy-bra-front/usage.jpg',
+    hero: '/images/products/mastectomy-bra/hero.png',
+    detail: '/images/products/mastectomy-bra/detail.png',
+    lifestyle: '/images/products/mastectomy-bra/lifestyle.png',
+    usage: '/images/products/mastectomy-bra/usage.png',
   },
   
   'arm-rest-pillow-cover': {
-    hero: '/images/products/arm-rest-pillow/hero.jpg',
-    detail: '/images/products/arm-rest-pillow/detail.jpg',
-    lifestyle: '/images/products/arm-rest-pillow/lifestyle.jpg',
-    usage: '/images/products/arm-rest-pillow/usage.jpg',
+    hero: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&h=800&fit=crop',
+    detail: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&h=800&fit=crop',
+    lifestyle: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&h=800&fit=crop',
+    usage: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&h=800&fit=crop',
   },
   
   'special-fabric-towel': {
-    hero: '/images/products/special-fabric-towel/hero.jpg',
-    detail: '/images/products/special-fabric-towel/detail.jpg',
-    lifestyle: '/images/products/special-fabric-towel/lifestyle.jpg',
-    usage: '/images/products/special-fabric-towel/usage.jpg',
+    hero: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&h=800&fit=crop',
+    detail: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&h=800&fit=crop',
+    lifestyle: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&h=800&fit=crop',
+    usage: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&h=800&fit=crop',
   },
 
-  // CHEMOTHERAPY SUPPORT
+  // CHEMOTHERAPY SUPPORT (Using placeholders)
   'respiratory-mask': {
-    hero: '/images/products/respiratory-mask/hero.jpg',
-    detail: '/images/products/respiratory-mask/detail.jpg',
-    lifestyle: '/images/products/respiratory-mask/lifestyle.jpg',
-    usage: '/images/products/respiratory-mask/usage.jpg',
+    hero: 'https://images.unsplash.com/photo-1584634731339-252c581abfc5?w=800&h=800&fit=crop',
+    detail: 'https://images.unsplash.com/photo-1584634731339-252c581abfc5?w=800&h=800&fit=crop',
+    lifestyle: 'https://images.unsplash.com/photo-1584634731339-252c581abfc5?w=800&h=800&fit=crop',
+    usage: 'https://images.unsplash.com/photo-1584634731339-252c581abfc5?w=800&h=800&fit=crop',
   },
   
   'sling-bag-medical': {
-    hero: '/images/products/sling-bag/hero.jpg',
-    detail: '/images/products/sling-bag/detail.jpg',
-    lifestyle: '/images/products/sling-bag/lifestyle.jpg',
-    usage: '/images/products/sling-bag/usage.jpg',
+    hero: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&h=800&fit=crop',
+    detail: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&h=800&fit=crop',
+    lifestyle: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&h=800&fit=crop',
+    usage: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&h=800&fit=crop',
   },
   
   'soft-cotton-napkin': {
-    hero: '/images/products/cotton-napkin/hero.jpg',
-    detail: '/images/products/cotton-napkin/detail.jpg',
-    lifestyle: '/images/products/cotton-napkin/lifestyle.jpg',
-    usage: '/images/products/cotton-napkin/usage.jpg',
+    hero: 'https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=800&h=800&fit=crop',
+    detail: 'https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=800&h=800&fit=crop',
+    lifestyle: 'https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=800&h=800&fit=crop',
+    usage: 'https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=800&h=800&fit=crop',
   },
 
-  // MEDICAL WIGS
+  // MEDICAL WIGS - Consolidated variable product
+  'medical-wig': {
+    hero: '/images/products/medical-wig/wig5.png',
+    detail: '/images/products/medical-wig/_DSC6694.jpg',
+    lifestyle: '/images/products/medical-wig/_DSC6695.jpg',
+    color: '/images/products/medical-wig/_DSC6709.jpg',
+  },
+  
+  // MEDICAL WIGS - Individual length variations (for backward compatibility)
   'medical-wig-14-inch': {
-    hero: '/images/products/medical-wig-14/hero.jpg',
-    detail: '/images/products/medical-wig-14/detail.jpg',
-    lifestyle: '/images/products/medical-wig-14/lifestyle.jpg',
-    color: '/images/products/medical-wig-14/color.jpg',
+    hero: '/images/products/medical-wig/wig5.png',
+    detail: '/images/products/medical-wig/_DSC6694.jpg',
+    lifestyle: '/images/products/medical-wig/_DSC6695.jpg',
+    color: '/images/products/medical-wig/_DSC6709.jpg',
   },
   
   'medical-wig-18-inch': {
-    hero: '/images/products/medical-wig-18/hero.jpg',
-    detail: '/images/products/medical-wig-18/detail.jpg',
-    lifestyle: '/images/products/medical-wig-18/lifestyle.jpg',
-    color: '/images/products/medical-wig-18/color.jpg',
+    hero: '/images/products/medical-wig/wig5.png',
+    detail: '/images/products/medical-wig/_DSC6694.jpg',
+    lifestyle: '/images/products/medical-wig/_DSC6695.jpg',
+    color: '/images/products/medical-wig/_DSC6709.jpg',
   },
   
   'medical-wig-22-inch': {
-    hero: '/images/products/medical-wig-22/hero.jpg',
-    detail: '/images/products/medical-wig-22/detail.jpg',
-    lifestyle: '/images/products/medical-wig-22/lifestyle.jpg',
-    color: '/images/products/medical-wig-22/color.jpg',
+    hero: '/images/products/medical-wig/wig5.png',
+    detail: '/images/products/medical-wig/_DSC6694.jpg',
+    lifestyle: '/images/products/medical-wig/_DSC6695.jpg',
+    color: '/images/products/medical-wig/_DSC6709.jpg',
   },
 
-  // PREMIUM WIGS
+  // PREMIUM WIGS - Consolidated variable product
+  'premium-wig': {
+    hero: '/images/products/premium-wig/hero.png',
+    detail: '/images/products/premium-wig/_DSC6694.jpg',
+    lifestyle: '/images/products/premium-wig/_DSC6695.jpg',
+    color: '/images/products/premium-wig/wig3.png',
+  },
+  
+  // PREMIUM WIGS - Individual length variations (for backward compatibility)
   'premium-wig-14-inch': {
-    hero: '/images/products/premium-wig-14/hero.jpg',
-    detail: '/images/products/premium-wig-14/detail.jpg',
-    lifestyle: '/images/products/premium-wig-14/lifestyle.jpg',
-    color: '/images/products/premium-wig-14/color.jpg',
+    hero: '/images/products/premium-wig/hero.png',
+    detail: '/images/products/premium-wig/_DSC6694.jpg',
+    lifestyle: '/images/products/premium-wig/_DSC6695.jpg',
+    color: '/images/products/premium-wig/wig3.png',
   },
   
   'premium-wig-16-inch': {
-    hero: '/images/products/premium-wig-16/hero.jpg',
-    detail: '/images/products/premium-wig-16/detail.jpg',
-    lifestyle: '/images/products/premium-wig-16/lifestyle.jpg',
-    color: '/images/products/premium-wig-16/color.jpg',
+    hero: '/images/products/premium-wig/hero.png',
+    detail: '/images/products/premium-wig/_DSC6694.jpg',
+    lifestyle: '/images/products/premium-wig/_DSC6695.jpg',
+    color: '/images/products/premium-wig/wig4.png',
   },
   
   'premium-wig-18-inch': {
-    hero: '/images/products/premium-wig-18/hero.jpg',
-    detail: '/images/products/premium-wig-18/detail.jpg',
-    lifestyle: '/images/products/premium-wig-18/lifestyle.jpg',
-    color: '/images/products/premium-wig-18/color.jpg',
+    hero: '/images/products/premium-wig/hero.png',
+    detail: '/images/products/premium-wig/_DSC6694.jpg',
+    lifestyle: '/images/products/premium-wig/_DSC6695.jpg',
+    color: '/images/products/premium-wig/wig5.png',
   },
   
   'premium-wig-20-inch': {
-    hero: '/images/products/premium-wig-20/hero.jpg',
-    detail: '/images/products/premium-wig-20/detail.jpg',
-    lifestyle: '/images/products/premium-wig-20/lifestyle.jpg',
-    color: '/images/products/premium-wig-20/color.jpg',
+    hero: '/images/products/premium-wig/hero.png',
+    detail: '/images/products/premium-wig/_DSC6694.jpg',
+    lifestyle: '/images/products/premium-wig/_DSC6695.jpg',
+    color: '/images/products/premium-wig/wig3.png',
   },
   
   'premium-wig-22-inch': {
-    hero: '/images/products/premium-wig-22/hero.jpg',
-    detail: '/images/products/premium-wig-22/detail.jpg',
-    lifestyle: '/images/products/premium-wig-22/lifestyle.jpg',
-    color: '/images/products/premium-wig-22/color.jpg',
+    hero: '/images/products/premium-wig/hero.png',
+    detail: '/images/products/premium-wig/_DSC6694.jpg',
+    lifestyle: '/images/products/premium-wig/_DSC6695.jpg',
+    color: '/images/products/premium-wig/wig4.png',
   },
   
   'premium-wig-24-inch': {
-    hero: '/images/products/premium-wig-24/hero.jpg',
-    detail: '/images/products/premium-wig-24/detail.jpg',
-    lifestyle: '/images/products/premium-wig-24/lifestyle.jpg',
-    color: '/images/products/premium-wig-24/color.jpg',
+    hero: '/images/products/premium-wig/hero.png',
+    detail: '/images/products/premium-wig/_DSC6694.jpg',
+    lifestyle: '/images/products/premium-wig/_DSC6695.jpg',
+    color: '/images/products/premium-wig/wig5.png',
   },
 
-  // HEAD ACCESSORIES
+  // HEAD ACCESSORIES (Scarf with hair lace - no images yet, using fallback)
   'head-scarf-hair-lace': {
-    hero: '/images/products/scarf-hair-lace/hero.jpg',
-    detail: '/images/products/scarf-hair-lace/detail.jpg',
-    lifestyle: '/images/products/scarf-hair-lace/lifestyle.jpg',
-    usage: '/images/products/scarf-hair-lace/usage.jpg',
+    hero: 'https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=800&h=800&fit=crop',
+    detail: 'https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=800&h=800&fit=crop',
+    lifestyle: 'https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=800&h=800&fit=crop',
+    usage: 'https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=800&h=800&fit=crop',
   },
   
   'printed-head-scarf': {
-    hero: '/images/products/printed-scarf/hero.jpg',
-    detail: '/images/products/printed-scarf/detail.jpg',
-    lifestyle: '/images/products/printed-scarf/lifestyle.jpg',
-    usage: '/images/products/printed-scarf/usage.jpg',
+    hero: 'https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=800&h=800&fit=crop',
+    detail: 'https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=800&h=800&fit=crop',
+    lifestyle: 'https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=800&h=800&fit=crop',
+    usage: 'https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=800&h=800&fit=crop',
   },
 
-  // LYMPHEDEMA MANAGEMENT
+  // LYMPHEDEMA MANAGEMENT (Using placeholder)
   'lymphoedema-sleeves': {
-    hero: '/images/products/lymphoedema-sleeves/hero.jpg',
-    detail: '/images/products/lymphoedema-sleeves/detail.jpg',
-    lifestyle: '/images/products/lymphoedema-sleeves/lifestyle.jpg',
-    usage: '/images/products/lymphoedema-sleeves/usage.jpg',
+    hero: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=800&fit=crop',
+    detail: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=800&fit=crop',
+    lifestyle: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=800&fit=crop',
+    usage: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=800&fit=crop',
   },
 }
 

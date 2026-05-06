@@ -58,14 +58,20 @@ export default function ProductCard({ product }: ProductCardProps) {
       >
         {/* Image Container */}
         <div className="relative overflow-hidden rounded-lg shadow-md mb-4 h-64 bg-gradient-to-br from-cream-50 to-sage-50 border border-gray-200">
-          <Image
-            src={productImages[currentImageIndex]}
-            alt={`${product.name} - Image ${currentImageIndex + 1}`}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            onError={() => setImageError(true)}
-          />
+          {imageError ? (
+            <div className="flex h-full w-full items-center justify-center bg-neutral-100 text-tertiary-400">
+              <ShoppingCart className="h-8 w-8" />
+            </div>
+          ) : (
+            <Image
+              src={productImages[currentImageIndex]}
+              alt={`${product.name} - Image ${currentImageIndex + 1}`}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              onError={() => setImageError(true)}
+            />
+          )}
 
           {/* Image Navigation Arrows (show on hover if multiple images) */}
           {hasMultipleImages && isHovered && (
