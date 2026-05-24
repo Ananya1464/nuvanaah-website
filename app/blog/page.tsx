@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { Calendar, User, ArrowRight, Search, Clock, ShoppingBag } from 'lucide-react'
 
 interface BlogPost {
@@ -15,7 +14,6 @@ interface BlogPost {
   category: string
   readTime: number
   featured?: boolean
-  image?: string
 }
 
 const posts: BlogPost[] = [
@@ -29,7 +27,6 @@ const posts: BlogPost[] = [
     category: 'Post-Surgery Care',
     readTime: 12,
     featured: true,
-    image: '/images/blog/mastectomy-timeline.png'
   },
   {
     id: '2',
@@ -40,7 +37,6 @@ const posts: BlogPost[] = [
     date: 'December 28, 2025',
     category: 'Shopping Guide',
     readTime: 8,
-    image: '/images/blog/choosing-prosthesis.png'
   },
   {
     id: '3',
@@ -51,7 +47,6 @@ const posts: BlogPost[] = [
     date: 'December 20, 2025',
     category: 'Wellness',
     readTime: 10,
-    image: '/images/blog/managing-chemo.png'
   },
   {
     id: '4',
@@ -62,7 +57,6 @@ const posts: BlogPost[] = [
     date: 'December 10, 2025',
     category: 'Beauty',
     readTime: 7,
-    image: '/images/blog/hair-loss.png'
   },
   {
     id: '5',
@@ -73,7 +67,6 @@ const posts: BlogPost[] = [
     date: 'November 30, 2025',
     category: 'Health',
     readTime: 9,
-    image: '/images/blog/lymphedema.png'
   },
   {
     id: '6',
@@ -84,7 +77,6 @@ const posts: BlogPost[] = [
     date: 'November 15, 2025',
     category: 'Mental Health',
     readTime: 11,
-    image: '/images/blog/mental-wellness.png'
   },
 ]
 
@@ -167,20 +159,10 @@ export default function BlogPage() {
               <article className="group bg-white rounded-3xl overflow-hidden shadow-card hover:shadow-luxury transition-shadow">
                 <div className="grid lg:grid-cols-2 gap-0">
                   {/* Image */}
-                  <div className="relative h-64 lg:h-auto bg-gray-100 flex items-center justify-center overflow-hidden">
-                    {featuredPost.image ? (
-                      <Image
-                        src={featuredPost.image}
-                        alt={featuredPost.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-700"
-                        sizes="(max-width: 1024px) 100vw, 50vw"
-                      />
-                    ) : (
-                      <ShoppingBag className="w-24 h-24 text-teal-300 relative z-10" />
-                    )}
-                    <div className="absolute top-6 left-6 z-20">
-                      <span className="bg-gold-400 text-gray-900 text-sm font-bold px-4 py-1.5 rounded-full shadow-sm">
+                  <div className="relative h-64 lg:h-auto bg-gradient-to-br from-teal-100 via-cream-100 to-gold-100 flex items-center justify-center">
+                    <ShoppingBag className="w-24 h-24 text-teal-300" />
+                    <div className="absolute top-6 left-6">
+                      <span className="bg-gold-400 text-gray-900 text-sm font-bold px-4 py-1.5 rounded-full">
                         Featured
                       </span>
                     </div>
@@ -232,20 +214,10 @@ export default function BlogPage() {
               <Link key={post.id} href={`/blog/${post.slug}`}>
                 <article className="group h-full bg-white rounded-2xl overflow-hidden border border-gray-100 hover:shadow-card hover:border-teal-200 transition-all">
                   {/* Image */}
-                  <div className="relative h-48 bg-gray-100 flex items-center justify-center overflow-hidden">
-                    {post.image ? (
-                      <Image
-                        src={post.image}
-                        alt={post.title}
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-700"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                    ) : (
-                      <ShoppingBag className="w-16 h-16 text-teal-200 relative z-10 group-hover:scale-110 transition-transform duration-500" />
-                    )}
-                    <div className="absolute top-4 left-4 z-20">
-                      <span className="bg-teal-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                  <div className="relative h-48 bg-gradient-to-br from-teal-50 via-cream-50 to-white flex items-center justify-center overflow-hidden">
+                    <ShoppingBag className="w-16 h-16 text-teal-200 group-hover:scale-110 transition-transform duration-500" />
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-teal-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
                         {post.category}
                       </span>
                     </div>
