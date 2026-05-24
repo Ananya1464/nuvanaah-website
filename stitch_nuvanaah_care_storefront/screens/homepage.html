@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nuvanaah | Premium Recovery &amp; Lifestyle Essentials</title>
+<meta content="Nuvanaah offers dignified, high-quality recovery and lifestyle products designed to support your journey with grace. You are more than your diagnosis." name="description"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#d7c2c2",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#fdf1f1",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#ead3ca",
+                        "surface-container-highest": "#ece0e0",
+                        "on-background": "#201a1a",
+                        "surface-container": "#f8ebeb",
+                        "surface-tint": "#884d53",
+                        "outline": "#847374",
+                        "on-primary-container": "#ffcbce",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#fff8f7",
+                        "surface-dim": "#e3d7d7",
+                        "secondary-container": "#c5ecd1",
+                        "on-tertiary-fixed": "#251914",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#f5ded5",
+                        "on-secondary-fixed-variant": "#2c4e3a",
+                        "tertiary": "#52433c",
+                        "on-surface-variant": "#524344",
+                        "background": "#fff8f7",
+                        "surface-bright": "#fff8f7",
+                        "on-secondary-container": "#4a6c56",
+                        "primary-fixed-dim": "#feb3b9",
+                        "on-primary-fixed-variant": "#6d363d",
+                        "surface-variant": "#ece0e0",
+                        "secondary": "#446651",
+                        "primary-fixed": "#ffdadb",
+                        "secondary-fixed-dim": "#aacfb6",
+                        "on-tertiary-fixed-variant": "#53433d",
+                        "inverse-primary": "#feb3b9",
+                        "tertiary-container": "#6b5a53",
+                        "surface-container-high": "#f2e5e5",
+                        "secondary-fixed": "#c5ecd1",
+                        "inverse-on-surface": "#faeeee",
+                        "on-primary-fixed": "#370c13",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#884d53",
+                        "on-secondary-fixed": "#002111",
+                        "on-surface": "#201a1a",
+                        "inverse-surface": "#352f2f",
+                        "tertiary-fixed-dim": "#d8c2b9",
+                        "primary": "#6c363c",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "section-gap": "120px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "300" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "display-lg": ["56px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "300" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .fade-up { opacity: 0; transform: translateY(24px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .stagger-1 { transition-delay: 100ms; }
+        .stagger-2 { transition-delay: 200ms; }
+        .stagger-3 { transition-delay: 300ms; }
+        .stagger-4 { transition-delay: 400ms; }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 transition-all duration-300 bg-surface-container-lowest/80 backdrop-blur-md" id="global-nav">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md font-bold text-primary tracking-tight" href="/">Nuvanaah</a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-label-md text-label-md uppercase tracking-wider text-primary border-b-2 border-primary pb-1" href="#">Shop</a>
+<a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Recovery</a>
+<a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Rituals</a>
+<a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a>
+<a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Journal</a>
+</div>
+<div class="flex items-center space-x-4 text-primary">
+<button aria-label="Search" class="hover:scale-95 transition-transform">
+<span class="material-symbols-outlined font-light text-[24px]">search</span>
+</button>
+<button aria-label="Account" class="hover:scale-95 transition-transform">
+<span class="material-symbols-outlined font-light text-[24px]">person</span>
+</button>
+<button aria-label="Cart" class="hover:scale-95 transition-transform">
+<span class="material-symbols-outlined font-light text-[24px]">shopping_bag</span>
+</button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Section 1: Hero -->
+<section class="relative min-h-[90vh] flex items-center justify-start overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATI4n4l6h_QMF2-i_jkYGpnortHSDsMElRhXfbfzxp14wnamfGEn8XQUZvOU5QadfvLwh3Lty4yS3RRRop2FGiIeA2vsjowLn_2heLSgr4dOHbZGneD3b8jvEIYyJZiq8DTCmsaIPWxOpAVlnEySBgnXMSxy9Ab4lLAuv-zGfXJEJ0ktsY_un2vXCL1jIurOzY6Rbst4Q3TJB0ia7tQAXM4ZphvqsLhk3zCOJQr20jj4OvvBQsOdoFppcW1f0PF1o1y525emz6ymo"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background/90 via-background/50 to-transparent"></div>
+</div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-20">
+<div class="max-w-2xl fade-up">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-6">
+                        You are more than your diagnosis. Shop with dignity.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl">
+                        Curated recovery and lifestyle essentials designed to support your journey with grace, comfort, and uncompromising quality.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-primary/90 transition-all active:scale-95" href="#shop">
+                            Shop Collection
+                        </a>
+<a class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-surface-container text-primary font-label-md text-label-md uppercase tracking-wider hover:bg-surface-container-high transition-all active:scale-95 border border-outline-variant" href="#story">
+                            Our Story
+                        </a>
+</div>
+</div>
+</div>
+<div class="absolute bottom-0 w-full bg-surface-container-lowest/60 backdrop-blur-md border-t border-outline-variant/30 py-4 z-20">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center overflow-x-auto gap-8 no-scrollbar text-on-surface-variant font-label-md text-[12px] uppercase tracking-widest opacity-80">
+<div class="flex items-center gap-2 whitespace-nowrap"><span class="material-symbols-outlined text-[18px]">verified</span> Certified Products</div>
+<div class="flex items-center gap-2 whitespace-nowrap"><span class="material-symbols-outlined text-[18px]">inventory_2</span> Discreet Packaging</div>
+<div class="flex items-center gap-2 whitespace-nowrap"><span class="material-symbols-outlined text-[18px]">cycle</span> 30-Day Returns</div>
+<div class="flex items-center gap-2 whitespace-nowrap"><span class="material-symbols-outlined text-[18px]">support_agent</span> Expert Support</div>
+</div>
+</div>
+</section>
+<!-- Section 10: Footer -->
+<footer class="bg-tertiary-container text-on-tertiary-container rounded-t-lg mt-section-gap">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-md text-headline-md font-bold mb-4">Nuvanaah</div>
+<p class="font-body-md text-body-md text-on-tertiary-fixed-variant max-w-xs">
+                        The Grace of Resilience. Supporting your journey with dignity and care.
+                    </p>
+</div>
+<div>
+<h3 class="font-label-md text-label-md uppercase tracking-widest mb-6 font-bold">Shop</h3>
+<ul class="space-y-4 font-body-md text-body-md text-on-tertiary-fixed-variant">
+<li><a class="hover:text-on-tertiary transition-colors" href="#">Shop All</a></li>
+<li><a class="hover:text-on-tertiary transition-colors" href="#">Recovery Essentials</a></li>
+<li><a class="hover:text-on-tertiary transition-colors" href="#">Skincare</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-label-md text-label-md uppercase tracking-widest mb-6 font-bold">Support</h3>
+<ul class="space-y-4 font-body-md text-body-md text-on-tertiary-fixed-variant">
+<li><a class="hover:text-on-tertiary transition-colors" href="#">Returns &amp; Exchanges</a></li>
+<li><a class="hover:text-on-tertiary transition-colors" href="#">FAQ</a></li>
+<li><a class="hover:text-on-tertiary transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-label-md text-label-md uppercase tracking-widest mb-6 font-bold">Legal</h3>
+<ul class="space-y-4 font-body-md text-body-md text-on-tertiary-fixed-variant">
+<li><a class="hover:text-on-tertiary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-on-tertiary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-on-tertiary transition-colors" href="#">Accessibility</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-outline/20 py-6 text-center font-body-md text-body-md text-on-tertiary-fixed-variant px-margin-mobile">
+                © 2024 Nuvanaah. The Grace of Resilience.
+            </div>
+</footer>
+</main>
+<script>
+        // Intersection Observer for fade-up animations
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // Sticky Nav logic
+        const nav = document.getElementById('global-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                nav.classList.add('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-sm');
+            }
+        });
+    </script>
+</body></html>
