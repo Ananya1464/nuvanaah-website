@@ -4,23 +4,26 @@ import { getProductsByCategory, categoryDisplayNames } from '@/lib/products-data
 import ProductCard from '@/components/products/ProductCard'
 
 // Generate dynamic metadata for SEO
-export async function generateMetadata({ params }: { params: { category: string } }) {
-  const name = categoryDisplayNames[params.category] || params.category.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+export async function generateMetadata({ params }: { params: Promise<{ category: string }> }) {
+  const resolvedParams = await params;
+  const name = categoryDisplayNames[resolvedParams.category] || resolvedParams.category.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
   return {
     title: `${name} — Nuvanaah | Recovery Care for Indian Women`,
     description: `Shop ${name} products at Nuvanaah. Clinically informed, beautifully made for women in recovery.`
   }
 }
 
-export default function CategoryPage({ params, searchParams }: { params: { category: string }, searchParams: { filter?: string } }) {
-  const categorySlug = params.category
+export default async function CategoryPage({ params, searchParams }: { params: Promise<{ category: string }>, searchParams: Promise<{ filter?: string }> }) {
+  const resolvedParams = await params;
+  const resolvedSearchParams = await searchParams;
+  const categorySlug = resolvedParams.category
   
   // Get products and display name
   const allCategoryProducts = getProductsByCategory(categorySlug)
   const categoryName = categoryDisplayNames[categorySlug] || categorySlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
 
   // Simple filter logic
-  const currentFilter = searchParams.filter || 'all'
+  const currentFilter = resolvedSearchParams.filter || 'all'
   
   // Apply filtering (simplified mock implementation)
   const categoryProducts = allCategoryProducts.filter(product => {
