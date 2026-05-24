@@ -94,27 +94,47 @@ const testimonials = [
 export default function AboutPage() {
   return (
     <div className="bg-[#faf7f2] text-[#1c1c18]">
-      {/* Hero Header */}
-      <div className="bg-gradient-to-br from-teal-600 via-teal-700 to-teal-800 text-white py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.2, ease: 'easeOut' }}
-            className="max-w-3xl"
-          >
-            <span className="inline-block bg-white/20 text-white text-sm font-medium px-4 py-1 rounded-full mb-4 uppercase tracking-wider">
-              Our Story
-            </span>
-            <h1 className="text-4xl lg:text-5xl font-medium mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
-              Nuvanaah was born through real conversations with <span className="italic text-gold-300">women in recovery.</span>
-            </h1>
-            <p className="text-xl text-teal-100 leading-relaxed">
-              Today, Nuvanaah is more than a brand. It is a space built with empathy, dignity, and care — helping women feel comfortable, confident, and like themselves again during recovery.
-            </p>
-          </motion.div>
+      {/* ─── HERO (from Stitch Full Hero) ─── */}
+      <section className="relative w-full h-[600px] sm:h-[700px] overflow-hidden bg-[#f2e5e5]">
+        <motion.div
+          initial={{ scale: 1.05 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.5, ease: 'easeOut' }}
+          className="absolute inset-0"
+        >
+          <Image
+            src="/images/about/about-us-hero-full.png"
+            alt="Editorial photograph featuring two women sitting together in a warmly lit, comforting environment"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center opacity-90"
+          />
+        </motion.div>
+
+        <div className="absolute inset-0 bg-gradient-to-r from-[#fff8f7]/90 via-[#fff8f7]/60 to-transparent" />
+
+        <div className="relative z-10 h-full flex items-center">
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.2, ease: 'easeOut' }}
+              className="max-w-2xl"
+            >
+              <span className="inline-block mb-6 rounded-full bg-[#446651]/10 px-4 py-1.5 text-[14px] font-medium uppercase tracking-[0.05em] text-[#446651]">
+                Our Story
+              </span>
+              <h1 className="text-[2.6rem] sm:text-[3.5rem] lg:text-[4rem] font-bold leading-[1.1] tracking-[-0.02em] text-[#6c363c] mb-6">
+                Nuvanaah was born through real conversations with women in recovery.
+              </h1>
+              <p className="text-lg font-light leading-[1.6] text-[#524344] max-w-xl">
+                Today, Nuvanaah is more than a brand. It is a space built with empathy, dignity, and care — helping women feel comfortable, confident, and like themselves again during recovery.
+              </p>
+            </motion.div>
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* ─── THE BEGINNING (merged into Our Story layout) ─── */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
