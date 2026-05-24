@@ -341,32 +341,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══ SECTION 3: CATEGORY GRID ═══ */}
-      <section className="py-16 px-4 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-8">
-            <h2 className="text-[30px] font-bold text-[#1c1c18]">Explore Your Needs</h2>
-            <p className="text-[#524344]">Carefully curated collections for every stage of your healing.</p>
-          </div>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-            {categories.map((cat) => (
-              <Link
-                key={cat.title}
-                href={cat.href}
-                className="group relative flex h-72 flex-col justify-end overflow-hidden rounded-2xl p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
-                style={{ backgroundColor: cat.bg }}
-              >
-                <div className="absolute right-4 top-4 text-5xl opacity-20 transition-transform duration-300 group-hover:scale-110">
-                  {cat.icon}
-                </div>
-                <h3 className="mb-2 text-xl font-semibold" style={{ color: cat.accent }}>{cat.title}</h3>
-                <p className="text-sm leading-relaxed text-[#524344]">{cat.description}</p>
-                <ArrowRight className="mt-3 h-4 w-4 opacity-0 transition-all duration-300 group-hover:opacity-70" style={{ color: cat.accent }} />
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* ═══ SECTION 4: FEATURED CAROUSEL ═══ */}
       <section className="relative overflow-hidden bg-[#f7f3ed] py-16">
