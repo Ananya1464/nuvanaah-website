@@ -14,6 +14,12 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60,
   },
+  redirects: async () => [
+    { source: '/products/category/post-surgery-essentials', destination: '/products/category/post-surgery', permanent: true },
+    { source: '/products/category/chemotherapy-support', destination: '/products/category/chemo-essentials', permanent: true },
+    { source: '/products/category/hair-loss-solutions', destination: '/products/category/wigs-hair', permanent: true },
+    { source: '/products/category/lymphedema-management', destination: '/products/category/lymphedema', permanent: true },
+  ],
 }
 
 export default nextConfig

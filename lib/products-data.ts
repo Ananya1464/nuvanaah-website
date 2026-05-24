@@ -1,4 +1,4 @@
-﻿/**
+/**
  * NUVANAAH PRODUCT CATALOG
  * Updated: February 9, 2026
  * 12 Products Total: 10 Simple + 2 Variable (Wigs)
@@ -6,12 +6,22 @@
 
 import { Product } from './types'
 
-// Category mappings for display names
+// TODO: Replace with real DB query before production launch
+// Slugs here must match /products/category/[category] routes exactly
 export const categoryMappings: { [key: string]: string } = {
-  'post-surgery-essentials': 'Post-Surgery Essentials',
-  'chemotherapy-support': 'Chemotherapy Support',
-  'hair-loss-solutions': 'Hair Loss Solutions',
-  'lymphedema-management': 'Lymphedema Management',
+  'post-surgery': 'Post-Surgery',
+  'chemo-essentials': 'Chemo Essentials',
+  'wigs-hair': 'Wigs & Hair',
+  'lymphedema': 'Lymphedema',
+  'sensitive-skin': 'Sensitive Skin',
+}
+
+export const categoryDisplayNames: { [key: string]: string } = {
+  'post-surgery': 'Post-Surgery Care',
+  'chemo-essentials': 'Chemo Essentials',
+  'wigs-hair': 'Wigs & Hair',
+  'lymphedema': 'Lymphedema Care',
+  'sensitive-skin': 'Sensitive Skin',
 }
 
 export const products: Product[] = [
@@ -24,7 +34,7 @@ export const products: Product[] = [
     regular_price: '500',
     description: 'Compact and organized bag for carrying medications, medical supplies, and personal essentials during chemotherapy sessions. Features multiple compartments and adjustable strap.',
     short_description: 'Organized medical supply bag',
-    categories: [{ id: 2, name: 'Chemotherapy Support', slug: 'chemotherapy-support' }],
+    categories: [{ id: 2, name: 'Chemo Essentials', slug: 'chemo-essentials' }],
     images: [
       { id: 1, src: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800', alt: 'Medical Sling Bag' },
       { id: 2, src: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800', alt: 'Bag Interior' },
@@ -45,7 +55,7 @@ export const products: Product[] = [
     regular_price: '600',
     description: 'Memory foam pillow designed for post-mastectomy arm elevation and comfort. Helps reduce lymphedema risk and provides gentle support. Includes washable cover.',
     short_description: 'Supportive arm rest pillow',
-    categories: [{ id: 1, name: 'Post-Surgery Essentials', slug: 'post-surgery-essentials' }],
+    categories: [{ id: 1, name: 'Post-Surgery Care', slug: 'post-surgery' }],
     images: [
       { id: 1, src: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=800', alt: 'Arm Rest Pillow' },
       { id: 2, src: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800', alt: 'Detail View' },
@@ -65,7 +75,7 @@ export const products: Product[] = [
     regular_price: '1000',
     description: 'Medical-grade silicone breast prosthesis with breathable fabric cover. Natural shape and feel, lightweight design for all-day comfort. Available in multiple sizes.',
     short_description: 'Medical-grade silicone prosthesis',
-    categories: [{ id: 1, name: 'Post-Surgery Essentials', slug: 'post-surgery-essentials' }],
+    categories: [{ id: 1, name: 'Post-Surgery Care', slug: 'post-surgery' }],
     images: [
       { id: 1, src: '/images/products/mastectomy-prosthesis/1.png', alt: 'Mastectomy Prosthesis' },
       { id: 2, src: '/images/products/mastectomy-prosthesis/2.png', alt: 'Product Detail' },
@@ -85,7 +95,7 @@ export const products: Product[] = [
     regular_price: '800',
     description: 'Comfortable front-zip mastectomy bra with built-in prosthesis pockets. Soft fabric, adjustable straps, and easy front closure for post-surgery convenience.',
     short_description: 'Front-zip bra with pockets',
-    categories: [{ id: 1, name: 'Post-Surgery Essentials', slug: 'post-surgery-essentials' }],
+    categories: [{ id: 1, name: 'Post-Surgery Care', slug: 'post-surgery' }],
     images: [
       { id: 1, src: 'https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=800', alt: 'Mastectomy Bra' },
       { id: 2, src: 'https://images.unsplash.com/photo-1562137369-1a1a0bc66744?w=800', alt: 'Front Opening' },
@@ -106,7 +116,7 @@ export const products: Product[] = [
     regular_price: '300',
     description: 'Medical-grade 3-layer protective mask for chemotherapy patients. Soft inner layer, efficient filtration, adjustable ear loops for comfortable extended wear.',
     short_description: 'Protective 3-layer mask',
-    categories: [{ id: 2, name: 'Chemotherapy Support', slug: 'chemotherapy-support' }],
+    categories: [{ id: 2, name: 'Chemo Essentials', slug: 'chemo-essentials' }],
     images: [
       { id: 1, src: '/images/products/respiratory-mask/Firefly_Gemini Flash_5. Respiratory Maskhero.jpgWhite 614816 hIy.png', alt: 'Respiratory Mask' },
       { id: 2, src: '/images/products/respiratory-mask/Firefly_Gemini Flash_detail.jpgClose-up of mask\'s 3-l 614816 J2q.png', alt: 'Mask Layers Detail' },
@@ -127,7 +137,7 @@ export const products: Product[] = [
     regular_price: '3750',
     description: 'Elegant head scarf with natural-looking hair lace front. Pre-styled hair attached for a natural appearance. Soft, breathable fabric with secure fit.',
     short_description: 'Scarf with hair lace front',
-    categories: [{ id: 3, name: 'Hair Loss Solutions', slug: 'hair-loss-solutions' }],
+    categories: [{ id: 3, name: 'Wigs & Hair', slug: 'wigs-hair' }],
     images: [
       { id: 1, src: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800', alt: 'Head Scarf with Hair' },
       { id: 2, src: 'https://images.unsplash.com/photo-1609505848912-b7c3b8b4beda?w=800', alt: 'Hair Lace Detail' },
@@ -147,7 +157,7 @@ export const products: Product[] = [
     regular_price: '800',
     description: 'Soft cotton head scarf with elegant print designs. Comfortable for sensitive scalp, easy to tie, available in multiple patterns and colors.',
     short_description: 'Stylish printed scarf',
-    categories: [{ id: 3, name: 'Hair Loss Solutions', slug: 'hair-loss-solutions' }],
+    categories: [{ id: 3, name: 'Wigs & Hair', slug: 'wigs-hair' }],
     images: [
       { id: 1, src: '/images/products/printed-scarf/chemo-headwear.jpg', alt: 'Printed Scarf' },
       { id: 2, src: 'https://images.unsplash.com/photo-1590393876836-a3468e06f90b?w=800', alt: 'Pattern Detail' },
@@ -168,7 +178,7 @@ export const products: Product[] = [
     regular_price: '2500',
     description: 'Medical-grade compression sleeve for lymphedema management. Graduated compression, breathable fabric, comfortable for all-day wear. Helps reduce swelling.',
     short_description: 'Medical compression sleeve',
-    categories: [{ id: 4, name: 'Lymphedema Management', slug: 'lymphedema-management' }],
+    categories: [{ id: 4, name: 'Lymphedema Care', slug: 'lymphedema' }],
     images: [
       { id: 1, src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800', alt: 'Compression Sleeve' },
       { id: 2, src: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800', alt: 'Detail View' },
@@ -189,7 +199,7 @@ export const products: Product[] = [
     regular_price: '800',
     description: 'Ultra-soft bamboo towel specially designed for sensitive skin during chemotherapy. Hypoallergenic, highly absorbent, and gentle on delicate skin.',
     short_description: 'Gentle bamboo towel',
-    categories: [{ id: 2, name: 'Chemotherapy Support', slug: 'chemotherapy-support' }],
+    categories: [{ id: 5, name: 'Sensitive Skin', slug: 'sensitive-skin' }],
     images: [
       { id: 1, src: '/images/products/special-fabric-towel/bamboo-towels.png', alt: 'Bamboo Towel' },
       { id: 2, src: 'https://images.unsplash.com/photo-1582735689249-0c9f08c96d81?w=800', alt: 'Fabric Detail' },
@@ -209,7 +219,7 @@ export const products: Product[] = [
     regular_price: '300',
     description: 'Organic cotton napkins, pack of 3. Extra soft for sensitive skin, highly absorbent, reusable and eco-friendly. Perfect for chemotherapy patients.',
     short_description: 'Gentle napkin (pack of 3)',
-    categories: [{ id: 2, name: 'Chemotherapy Support', slug: 'chemotherapy-support' }],
+    categories: [{ id: 5, name: 'Sensitive Skin', slug: 'sensitive-skin' }],
     images: [
       { id: 1, src: 'https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=800', alt: 'Cotton Napkin' },
       { id: 2, src: 'https://images.unsplash.com/photo-1582735689249-0c9f08c96d81?w=800', alt: 'Fabric Texture' },
@@ -231,7 +241,7 @@ export const products: Product[] = [
     regular_price: '9899',
     description: '100% human hair wig, medical-grade quality. Available in multiple lengths. Perfect for hair loss during chemotherapy treatment. Natural look with comfortable cap construction, adjustable straps, and breathable design.',
     short_description: 'Medical-grade human hair wig',
-    categories: [{ id: 3, name: 'Hair Loss Solutions', slug: 'hair-loss-solutions' }],
+    categories: [{ id: 3, name: 'Wigs & Hair', slug: 'wigs-hair' }],
     images: [
       { id: 1, src: '/images/products/medical-wig/wig5.png', alt: 'Medical Wig' },
       { id: 2, src: '/images/products/medical-wig/_DSC6694.jpg', alt: 'Detail View' },
@@ -301,7 +311,7 @@ export const products: Product[] = [
     regular_price: '17599',
     description: 'Premium quality 100% human hair wig with higher density and superior craftsmanship. Multiple length options available. Features natural hairline, breathable cap, adjustable straps for perfect fit, and ultra-soft texture.',
     short_description: 'Premium human hair wig',
-    categories: [{ id: 3, name: 'Hair Loss Solutions', slug: 'hair-loss-solutions' }],
+    categories: [{ id: 3, name: 'Wigs & Hair', slug: 'wigs-hair' }],
     images: [
       { id: 1, src: '/images/products/premium-wig/hero.png', alt: 'Premium Wig' },
       { id: 2, src: '/images/products/premium-wig/_DSC6694.jpg', alt: 'Detail View' },

@@ -10,8 +10,8 @@ export default function Footer() {
   return (
     <footer className="bg-tertiary-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        {/* Main Footer - 3 Column Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        {/* Main Footer - 4 Column Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
 
           {/* Column 1: Brand */}
           <div>
@@ -61,15 +61,42 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
+          {/* Column 2: Shop */}
           <div>
-            <h4 className="mb-4 text-sm font-semibold text-white">Quick Links</h4>
+            <h4 className="mb-4 text-sm font-semibold text-white">Shop</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/products" className="text-sm text-neutral-200 transition-colors hover:text-secondary-300">
-                  Shop
+                <Link href="/products/category/post-surgery" className="text-sm text-neutral-200 transition-colors hover:text-secondary-300">
+                  Post-Surgery Care
                 </Link>
               </li>
+              <li>
+                <Link href="/products/category/wigs-hair" className="text-sm text-neutral-200 transition-colors hover:text-secondary-300">
+                  Wigs & Hair
+                </Link>
+              </li>
+              <li>
+                <Link href="/products/category/lymphedema" className="text-sm text-neutral-200 transition-colors hover:text-secondary-300">
+                  Lymphedema Care
+                </Link>
+              </li>
+              <li>
+                <Link href="/products/category/chemo-essentials" className="text-sm text-neutral-200 transition-colors hover:text-secondary-300">
+                  Chemo Essentials
+                </Link>
+              </li>
+              <li>
+                <Link href="/products/category/sensitive-skin" className="text-sm text-neutral-200 transition-colors hover:text-secondary-300">
+                  Sensitive Skin
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Company */}
+          <div>
+            <h4 className="mb-4 text-sm font-semibold text-white">Company</h4>
+            <ul className="space-y-2">
               <li>
                 <Link href="/about" className="text-sm text-neutral-200 transition-colors hover:text-secondary-300">
                   About Us
@@ -85,10 +112,15 @@ export default function Footer() {
                   Contact
                 </Link>
               </li>
+              <li>
+                <Link href="/consultations" className="text-sm text-neutral-200 transition-colors hover:text-secondary-300">
+                  Free Consultation
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Column 3: Legal & Support */}
+          {/* Column 4: Support */}
           <div>
             <h4 className="mb-4 text-sm font-semibold text-white">Support</h4>
             <ul className="space-y-2">

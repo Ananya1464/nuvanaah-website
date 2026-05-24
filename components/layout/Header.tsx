@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { ShoppingCart, Search, Menu, X, Heart } from 'lucide-react'
 import Logo from '@/components/ui/Logo'
@@ -9,6 +9,17 @@ import { useWishlist } from '@/lib/wishlist-context'
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [announcementDismissed, setAnnouncementDismissed] = useState(true)
+
+  useEffect(() => {
+    const dismissed = sessionStorage.getItem('announcementDismissed')
+    setAnnouncementDismissed(dismissed === 'true')
+  }, [])
+
+  const dismissAnnouncement = () => {
+    setAnnouncementDismissed(true)
+    sessionStorage.setItem('announcementDismissed', 'true')
+  }
 
   // Use real cart data
   const { items } = useCart()
@@ -20,21 +31,36 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[#2c1f1a]/[0.06] bg-[#faf7f2]/90 shadow-[0_4px_18px_rgba(44,31,26,0.04)] backdrop-blur-md">
+      {!announcementDismissed && (
+        <div className="relative flex h-8 w-full items-center justify-center bg-[#884D53] text-[12px] text-white">
+          <span>Free Shipping ₹999+ · COD Available · 30-Day Returns</span>
+          <button
+            onClick={dismissAnnouncement}
+            className="absolute right-3 flex h-5 w-5 items-center justify-center rounded-full text-white/80 transition hover:text-white"
+            aria-label="Dismiss announcement"
+          >
+            ×
+          </button>
+        </div>
+      )}
       <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-4 lg:px-8">
         <Logo href="/" />
 
         <nav className="hidden items-center gap-9 text-[15px] md:flex">
-          <Link href="/products" className="font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]">
-            Shop
+          <Link href="/products/category/post-surgery" className="font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]">
+            Post-Surgery
           </Link>
-          <Link href="/about" className="font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]">
-            About
+          <Link href="/products/category/wigs-hair" className="font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]">
+            Wigs & Hair
           </Link>
-          <Link href="/blog" className="font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]">
-            Blog
+          <Link href="/products/category/lymphedema" className="font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]">
+            Lymphedema
           </Link>
-          <Link href="/consultations" className="font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]">
-            Free Consultation
+          <Link href="/products/category/chemo-essentials" className="font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]">
+            Chemo Essentials
+          </Link>
+          <Link href="/products/category/sensitive-skin" className="font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]">
+            Sensitive Skin
           </Link>
         </nav>
 
@@ -75,17 +101,20 @@ export default function Header() {
       {menuOpen && (
         <div className="border-t border-[#2c1f1a]/[0.06] bg-[#faf7f2] px-4 py-4 md:hidden">
           <nav className="space-y-1">
-            <Link href="/products" className="block py-2 font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]" onClick={() => setMenuOpen(false)}>
-              Shop
+            <Link href="/products/category/post-surgery" className="block py-2 font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]" onClick={() => setMenuOpen(false)}>
+              Post-Surgery
             </Link>
-            <Link href="/about" className="block py-2 font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]" onClick={() => setMenuOpen(false)}>
-              About
+            <Link href="/products/category/wigs-hair" className="block py-2 font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]" onClick={() => setMenuOpen(false)}>
+              Wigs & Hair
             </Link>
-            <Link href="/blog" className="block py-2 font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]" onClick={() => setMenuOpen(false)}>
-              Blog
+            <Link href="/products/category/lymphedema" className="block py-2 font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]" onClick={() => setMenuOpen(false)}>
+              Lymphedema
             </Link>
-            <Link href="/consultations" className="block py-2 font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]" onClick={() => setMenuOpen(false)}>
-              Free Consultation
+            <Link href="/products/category/chemo-essentials" className="block py-2 font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]" onClick={() => setMenuOpen(false)}>
+              Chemo Essentials
+            </Link>
+            <Link href="/products/category/sensitive-skin" className="block py-2 font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]" onClick={() => setMenuOpen(false)}>
+              Sensitive Skin
             </Link>
           </nav>
         </div>
