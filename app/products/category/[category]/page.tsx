@@ -13,34 +13,13 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
   }
 }
 
-export default async function CategoryPage({ params, searchParams }: { params: Promise<{ category: string }>, searchParams: Promise<{ filter?: string }> }) {
+export default async function CategoryPage({ params }: { params: Promise<{ category: string }> }) {
   const resolvedParams = await params;
-  const resolvedSearchParams = await searchParams;
   const categorySlug = resolvedParams.category
   
   // Get products and display name
-  const allCategoryProducts = getProductsByCategory(categorySlug)
+  const categoryProducts = getProductsByCategory(categorySlug)
   const categoryName = categoryDisplayNames[categorySlug] || categorySlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
-
-  // Simple filter logic
-  const currentFilter = resolvedSearchParams.filter || 'all'
-  
-  // Apply filtering (simplified mock implementation)
-  const categoryProducts = allCategoryProducts.filter(product => {
-    if (currentFilter === 'all') return true;
-    // In a real app, products would have tags or sub-categories. 
-    // Here we just do a simple string match on the description for demonstration.
-    return product.description.toLowerCase().includes(currentFilter.toLowerCase()) || 
-           product.name.toLowerCase().includes(currentFilter.toLowerCase());
-  })
-
-  // Define filter pills (hardcoded for demonstration as requested)
-  const filterPills = [
-    { label: 'All Items', value: 'all' },
-    { label: 'Headwear', value: 'scarf' },
-    { label: 'Relief', value: 'pillow' },
-    { label: 'Comfort', value: 'cotton' }
-  ]
 
   return (
     <div className="min-h-screen bg-[#faf7f2]">
@@ -57,28 +36,7 @@ export default async function CategoryPage({ params, searchParams }: { params: P
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        
-        {/* Filter Pills */}
-        {allCategoryProducts.length > 0 && (
-          <div className="flex flex-wrap gap-3 mb-10">
-            {filterPills.map(pill => {
-              const isActive = currentFilter === pill.value;
-              return (
-                <Link
-                  key={pill.value}
-                  href={`/products/category/${categorySlug}?filter=${pill.value}`}
-                  className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 border ${
-                    isActive 
-                      ? 'bg-[#884d53] text-white border-[#884d53] shadow-md' 
-                      : 'bg-white text-[#2c1f1a]/80 border-[#ded0bf] hover:border-[#884d53] hover:text-[#884d53]'
-                  }`}
-                >
-                  {pill.label}
-                </Link>
-              );
-            })}
-          </div>
-        )}
+
 
         {/* Products Grid */}
         {categoryProducts.length > 0 ? (
