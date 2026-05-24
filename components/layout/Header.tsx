@@ -62,6 +62,9 @@ export default function Header() {
           <Link href="/products/category/sensitive-skin" className="font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]">
             Sensitive Skin
           </Link>
+          <Link href="/about" className="font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]">
+            Our Story
+          </Link>
         </nav>
 
         <div className="flex items-center gap-4 lg:gap-5">
@@ -115,6 +118,9 @@ export default function Header() {
             </Link>
             <Link href="/products/category/sensitive-skin" className="block py-2 font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]" onClick={() => setMenuOpen(false)}>
               Sensitive Skin
+            </Link>
+            <Link href="/about" className="block py-2 font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]" onClick={() => setMenuOpen(false)}>
+              Our Story
             </Link>
           </nav>
         </div>
