@@ -126,10 +126,10 @@ export default function AboutPage() {
                 Our Story
               </span>
               <h1 className="text-[2.6rem] sm:text-[3.5rem] lg:text-[4rem] font-bold leading-[1.1] tracking-[-0.02em] text-[#6c363c] mb-6">
-                Born in a hospital corridor.<br />Built for every woman who deserved better.
+                Nuvanaah was born through real conversations with women in recovery.
               </h1>
               <p className="text-lg font-light leading-[1.6] text-[#524344] max-w-xl">
-                Nuvanaah began not in a boardroom, but in the quiet, clinical waiting rooms where hope meets reality. We realized that post-care apparel was fundamentally broken—focused entirely on function while stripping away dignity.
+                Today, Nuvanaah is more than a brand. It is a space built with empathy, dignity, and care — helping women feel comfortable, confident, and like themselves again during recovery.
               </p>
             </motion.div>
           </div>
@@ -148,14 +148,19 @@ export default function AboutPage() {
           >
             <p className="text-[14px] font-medium uppercase tracking-[0.05em] text-[#446651]">The Beginning</p>
             <h2 className="mt-4 text-[30px] font-bold leading-[1.3] text-[#6c363c] sm:text-4xl">
-              We saw the gap that no one was filling.
+              I’m Kanchan Chopra, founder of Wig Maker Khair Studio.
             </h2>
             <p className="mt-6 text-base leading-[1.6] text-[#524344]">
-              Our founders witnessed firsthand the struggle of navigating recovery in clothing that felt alien. Zippers that pinched sensitive skin, fabrics that trapped heat during flushes, and designs that broadcasted 'patient' rather than 'person'.
+              While creating wigs for cancer patients, I found myself deeply connected to their emotional healing journey — not just their appearance. Over time, oncologists and surgeons began referring women recovering from breast surgeries to me because they saw the care and understanding I shared with patients.
+              <br /><br />
+              These women were not only looking for products. They were looking for comfort, softness, confidence, and someone who truly understood them.
             </p>
             <blockquote className="mt-8 border-l-4 border-[#884d53] pl-6 py-2 italic font-light text-lg text-[#201a1a]">
-              &ldquo;We didn't just want to create clothes you could wear after surgery. We wanted to create clothes you would *want* to wear, period. Pieces that gave back a sense of self.&rdquo;
+              &ldquo;As a woman, their journeys touched me deeply. I realized that recovery essentials available in India often felt clinical, heavy, and disconnected from the emotional and physical needs of women healing after surgery. That realization became the beginning of Nuvanaah.&rdquo;
             </blockquote>
+            <p className="mt-8 text-base leading-[1.6] text-[#524344]">
+              We started studying fabrics, comfort, skin sensitivity, and recovery needs closely. This led us to create lightweight recovery essentials using plant-based fabrics and soft plant-fiber prosthetic solutions designed to feel gentle, breathable, and comforting on sensitive skin.
+            </p>
           </motion.div>
 
           <motion.div
