@@ -59,48 +59,8 @@ const carouselSlides = [
   },
 ]
 
-const categories = [
-  {
-    title: 'Post-Surgery Care',
-    description: 'Gentle support and soft fabrics for immediate recovery.',
-    href: '/products/category/post-surgery',
-    bg: '#F9EEF0',
-    accent: '#884d53',
-    icon: '🩺',
-  },
-  {
-    title: 'Wigs & Hair',
-    description: 'Natural-look medical wigs and soft breathable headwear.',
-    href: '/products/category/wigs',
-    bg: '#EBF2ED',
-    accent: '#446651',
-    icon: '✨',
-  },
-  {
-    title: 'Lymphedema Care',
-    description: 'Compression solutions designed for daily ease and comfort.',
-    href: '/products/category/lymphedema',
-    bg: '#F2EEFF',
-    accent: '#6c5b54',
-    icon: '💪',
-  },
-  {
-    title: 'Chemo Essentials',
-    description: 'Comfort kits for managing treatment side effects.',
-    href: '/products/category/chemo-essentials',
-    bg: '#FEF4E8',
-    accent: '#884d53',
-    icon: '🌿',
-  },
-  {
-    title: 'Sensitive Skin',
-    description: 'Dermatologist-tested skincare for fragile skin.',
-    href: '/products/category/sensitive-skin',
-    bg: '#FEF0E8',
-    accent: '#884d53',
-    icon: '🧴',
-  },
-]
+
+
 
 const bestSellers = [
   {
@@ -506,27 +466,74 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══ SECTION 9: CONSULTATION CTA ═══ */}
-      <section className="bg-[#884d53] px-4 py-20 text-center text-white lg:px-8">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="mb-4 text-[36px] font-bold leading-tight md:text-[40px]">Still unsure? We&apos;re here to help.</h2>
-          <p className="mb-10 text-[17px] text-white/90">Schedule a free 15-minute consultation with our certified care experts.</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="https://wa.me/919819461612"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-full bg-[#25D366] px-8 py-4 font-semibold text-white transition-all hover:-translate-y-0.5 hover:shadow-lg active:scale-95"
-            >
-              <MessageCircle className="h-5 w-5" />
-              WhatsApp Us
-            </a>
-            <Link
-              href="/products"
-              className="rounded-full bg-white px-8 py-4 font-semibold text-[#884d53] transition-all hover:-translate-y-0.5 active:scale-95"
-            >
-              Browse Collections
-            </Link>
+      {/* ═══ SECTION 9: REFINED SUPPORT ═══ */}
+      <section className="relative overflow-hidden bg-[#2c1f1a]">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 md:grid-cols-2">
+          {/* Image Side */}
+          <div className="relative min-h-[400px] md:min-h-[560px]">
+            <Image
+              src="/images/support-consultation.png"
+              alt="Two women in a warm consultation setting"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#2c1f1a]/40 hidden md:block" />
+          </div>
+
+          {/* Content Side */}
+          <div className="flex flex-col justify-center px-8 py-16 md:px-16 md:py-24">
+            <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full bg-[#884d53]/20 px-4 py-1.5">
+              <Headset className="h-4 w-4 text-[#ffdadb]" />
+              <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#ffdadb]">Personal Care Support</span>
+            </div>
+
+            <h2 className="mb-5 text-[32px] font-bold leading-tight text-[#f0eae2] md:text-[40px]">
+              You don&apos;t have to figure this out alone.
+            </h2>
+
+            <p className="mb-4 max-w-md text-[17px] leading-7 text-[#f0eae2]/75">
+              Schedule a free 15-minute consultation with our certified care experts. 
+              From sizing to product recommendations, we&apos;re here to guide you — with warmth, privacy, and genuine understanding.
+            </p>
+
+            <p className="mb-10 text-sm italic text-[#ffdadb]/60">
+              No commitment. No pressure. Just care.
+            </p>
+
+            {/* Support Features */}
+            <div className="mb-10 grid grid-cols-2 gap-6">
+              {[
+                { label: 'Video Call', desc: 'Face-to-face guidance' },
+                { label: 'WhatsApp', desc: 'Chat at your pace' },
+                { label: 'Private & Discreet', desc: 'Your story stays yours' },
+                { label: 'Expert Advisors', desc: 'Trained care specialists' },
+              ].map((item) => (
+                <div key={item.label} className="space-y-1">
+                  <div className="text-sm font-semibold text-[#ffdadb]">{item.label}</div>
+                  <div className="text-xs text-[#f0eae2]/50">{item.desc}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="https://wa.me/919819461612"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 rounded-full bg-[#25D366] px-8 py-4 font-semibold text-white transition-all hover:-translate-y-0.5 hover:shadow-lg active:scale-95"
+              >
+                <MessageCircle className="h-5 w-5" />
+                WhatsApp Us
+              </a>
+              <Link
+                href="/products"
+                className="rounded-full border border-[#f0eae2]/30 px-8 py-4 font-semibold text-[#f0eae2] transition-all hover:border-[#f0eae2]/60 hover:bg-[#f0eae2]/5 active:scale-95"
+              >
+                Browse Collections
+              </Link>
+            </div>
           </div>
         </div>
       </section>
