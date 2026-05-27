@@ -10,7 +10,6 @@ import {
   Star,
   ShieldCheck,
   Package,
-  RotateCcw,
   Headset,
   ChevronDown,
   MessageCircle,
@@ -212,24 +211,44 @@ export default function Home() {
     return () => window.clearInterval(interval)
   }, [])
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible')
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+    document.querySelectorAll('.fade-in-up').forEach((el) => observer.observe(el))
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <main className="min-h-screen bg-[#fdf9f3] text-[#1c1c18]">
 
       {/* ═══ SECTION 1: HERO ═══ */}
-      <section className="relative h-[100vh] min-h-[600px] max-h-[900px] overflow-hidden">
-        <Image
-          src="/images/hero-homepage.png"
-          alt="Two Indian women in a warm, sunlit home setting — one gently supporting the other"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/35 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+      <section className="relative flex flex-col lg:block lg:h-[100vh] lg:min-h-[600px] lg:max-h-[900px] w-full bg-[#1c1c18]">
+        
+        {/* Image Container */}
+        <div className="relative h-[55vh] min-h-[400px] w-full lg:absolute lg:inset-0 lg:h-full">
+          <Image
+            src="/images/hero-homepage-v3.png"
+            alt="Serene, dignified young Indian woman with a soft half-smile in a beautifully designed warm home, conveying gentle rebuilding"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center lg:object-[75%_center]"
+          />
+          {/* Desktop gradient - only visible on lg screens */}
+          <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent w-2/3" />
+        </div>
 
-        <div className="relative z-10 flex h-full items-center">
-          <div className="mx-auto w-full max-w-7xl px-4 lg:px-8">
+        {/* Text Container */}
+        <div className="relative z-10 flex h-full items-center bg-[#1c1c18] px-4 py-16 sm:px-6 lg:bg-transparent lg:px-8 lg:py-0">
+          <div className="mx-auto w-full max-w-7xl">
             <div className="max-w-2xl">
               <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-[#c3e9cf] px-4 py-1.5 text-[#496a55]">
                 <ShieldCheck className="h-3.5 w-3.5" />
@@ -237,7 +256,7 @@ export default function Home() {
               </div>
 
               <h1 className="mb-5 text-[44px] font-bold leading-[1.08] tracking-[-0.02em] text-white md:text-[56px] lg:text-[64px]">
-                You are more than your diagnosis. Shop with <span className="italic text-[#feb2b9]">dignity.</span>
+                You are more than your diagnosis. Feel like <span className="italic text-[#feb2b9]">yourself</span> again.
               </h1>
 
               <p className="mb-8 max-w-xl text-[17px] leading-7 text-white/85">
@@ -253,20 +272,20 @@ export default function Home() {
                 </Link>
                 <Link
                   href="/about"
-                  className="group flex items-center gap-2 rounded-full px-6 py-4 font-semibold text-white transition-colors hover:bg-white/10"
+                  className="group flex items-center gap-2 rounded-full px-6 py-4 font-semibold text-white transition-colors hover:bg-white/10 lg:hover:bg-black/20"
                 >
                   Our Story
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
 
-              <div className="flex items-center gap-8 rounded-2xl bg-white/10 px-6 py-4 backdrop-blur-md sm:gap-10">
+              <div className="flex items-center gap-8 rounded-2xl bg-white/5 border border-white/10 px-6 py-4 backdrop-blur-md sm:gap-10 lg:bg-black/20 lg:border-none">
                 <div className="flex flex-col">
                   <span className="text-lg font-bold text-white">10,000+</span>
                   <span className="text-[10px] uppercase tracking-wider text-white/60">Women served</span>
                 </div>
-                <div className="h-8 w-px bg-white/20" />
-                <div className="flex flex-col">
+                <div className="hidden sm:block h-8 w-px bg-white/20" />
+                <div className="hidden sm:flex flex-col">
                   <span className="text-lg font-bold text-white">200+</span>
                   <span className="text-[10px] uppercase tracking-wider text-white/60">Products</span>
                 </div>
@@ -285,14 +304,14 @@ export default function Home() {
       <section className="bg-white py-14 px-4 lg:px-8">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 md:grid-cols-4">
           {[
-            { title: 'Certified Products', subtitle: 'Medical-grade materials', Icon: ShieldCheck },
-            { title: 'Discreet Packaging', subtitle: 'Your privacy is priority', Icon: Package },
-            { title: '30-Day Returns', subtitle: 'No questions asked', Icon: RotateCcw },
-            { title: 'Expert Support', subtitle: 'Trained care advisors', Icon: Headset },
+            { title: 'Thoughtfully Curated', subtitle: 'Designed for comfort, healing, and dignity', Icon: ShieldCheck },
+            { title: 'Discreet Packaging', subtitle: 'Your privacy always comes first', Icon: Package },
+            { title: 'Compassionate Guidance', subtitle: 'Support from trained care advisors', Icon: Headset },
+            { title: 'Gentle on Sensitive Bodies', subtitle: 'Soft materials chosen with care', Icon: Heart },
           ].map(({ title, subtitle, Icon }) => (
-            <div key={title} className="group flex flex-col items-center text-center">
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#c3e9cf] text-[#496a55] transition-transform group-hover:scale-110">
-                <Icon className="h-6 w-6" />
+            <div key={title} className="group flex flex-col items-center text-center fade-in-up">
+              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-surface-low text-primary-600 transition-transform group-hover:scale-110">
+                <Icon strokeWidth={1.5} className="h-6 w-6" />
               </div>
               <h3 className="mb-1 font-semibold text-[#1c1c18]">{title}</h3>
               <p className="text-sm text-[#524344]">{subtitle}</p>
@@ -360,7 +379,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 fade-in-up">
             {bestSellers.map((product) => {
               const wishlisted = isInWishlist(product.id)
               return (
@@ -387,7 +406,10 @@ export default function Home() {
                     </button>
                   </div>
 
-                  <div className="mb-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#446651]">{product.category}</div>
+                  <div className="mb-1 flex items-center gap-2">
+                    <span className="rounded-full bg-primary-fixed px-2 py-0.5 text-[10px] font-bold text-primary-700">BEST SELLER</span>
+                    <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-secondary">{product.category}</span>
+                  </div>
                   <Link href={`/products/${product.id}`} className="mb-1 text-base font-semibold text-[#1c1c18] hover:text-[#884d53] transition-colors">
                     {product.name}
                   </Link>
@@ -413,13 +435,13 @@ export default function Home() {
       {/* ═══ SECTION 6: JOURNEY TIMELINE ═══ */}
       <section className="py-20 px-4 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <h2 className="mb-12 text-center text-[30px] font-bold text-[#1c1c18]">Your Journey to Renewal</h2>
-          <div className="relative">
-            <div className="absolute left-0 top-1/2 hidden h-0.5 w-full -translate-y-1/2 border-t-2 border-dotted border-[#abcfb6] md:block" />
+          <h2 className="mb-12 text-center text-[30px] font-bold text-[#1c1c18] fade-in-up">Your Journey to Renewal</h2>
+          <div className="relative fade-in-up">
+            <div className="absolute left-0 top-1/2 hidden h-0.5 w-full -translate-y-1/2 border-t border-dashed border-border md:block" />
             <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
               {journeySteps.map(({ step, title, description }) => (
-                <div key={step} className="z-10 flex flex-col items-center bg-[#fdf9f3] p-4 text-center">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#884d53] text-lg font-bold text-white shadow-md">
+                <div key={step} className="z-10 flex flex-col items-center bg-surface p-4 text-center">
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-primary-light bg-surface text-lg font-bold text-primary-600 shadow-sm transition-transform hover:scale-110">
                     {step}
                   </div>
                   <h3 className="mb-2 text-lg font-semibold">{title}</h3>
@@ -537,6 +559,38 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                "name": "Nuvanaah",
+                "url": "https://nuvanaah.com",
+                "logo": "https://nuvanaah.com/logo.png",
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "telephone": "+91-9819461612",
+                  "contactType": "customer service"
+                }
+              },
+              {
+                "@type": "FAQPage",
+                "mainEntity": faqItems.map(item => ({
+                  "@type": "Question",
+                  "name": item.q,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": item.a
+                  }
+                }))
+              }
+            ]
+          })
+        }}
+      />
     </main>
   )
 }

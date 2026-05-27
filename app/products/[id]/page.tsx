@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { 
-  Star, ShoppingCart, Heart, Share2, Truck, RotateCcw, Shield,
+  Star, ShoppingCart, Heart, Share2, Truck, Shield,
   ChevronDown, Check
 } from 'lucide-react'
 import { getProductById, isVariableProduct } from '@/lib/products-data'
@@ -295,13 +295,7 @@ export default function ProductDetailPage() {
                   <p className="text-xs text-gray-600">Pan India delivery</p>
                 </div>
               </div>
-              <div className="flex gap-3">
-                <RotateCcw className="w-6 h-6 text-amber-600 flex-shrink-0" />
-                <div>
-                  <p className="font-semibold text-sm text-gray-800">Easy Returns</p>
-                  <p className="text-xs text-gray-600">30-day returns</p>
-                </div>
-              </div>
+
               <div className="flex gap-3">
                 <Shield className="w-6 h-6 text-amber-600 flex-shrink-0" />
                 <div>
@@ -463,7 +457,7 @@ export default function ProductDetailPage() {
                       onClick={() => setExpandedFAQ(expandedFAQ === 1 ? -1 : 1)}
                       className="w-full p-4 bg-gray-50 hover:bg-gray-100 transition flex items-center justify-between text-left"
                     >
-                      <span className="font-semibold text-gray-900">What is your return policy?</span>
+                      <span className="font-semibold text-gray-900">Are these products authentically certified?</span>
                       <ChevronDown
                         className={`w-5 h-5 text-gray-600 transition ${
                           expandedFAQ === 1 ? 'rotate-180' : ''
@@ -472,7 +466,7 @@ export default function ProductDetailPage() {
                     </button>
                     {expandedFAQ === 1 && (
                       <div className="p-4 bg-white border-t border-gray-200">
-                        <p className="text-gray-700">We offer 30-day returns for unused items in original packaging.</p>
+                        <p className="text-gray-700">Yes, our products are made with medical-grade materials and consulted with over 8 oncologists to ensure safety and clinical accuracy.</p>
                       </div>
                     )}
                   </div>

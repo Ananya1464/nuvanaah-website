@@ -15,8 +15,8 @@ const config: Config = {
           300: '#ebafba',
           400: '#e18d9a',
           500: '#d66f7f',
-          600: '#C9848A',
-          700: '#a85e68',
+          600: '#884D53',
+          700: '#6B3A3F',
         },
         secondary: {
           50: '#eff6f1',
@@ -77,11 +77,17 @@ const config: Config = {
         cream: {
           50: '#FAF6F0',
           100: '#f4eee5'
-        }
+        },
+        surface: {
+          DEFAULT: '#FDF9F3',
+          low: '#F7F3ED',
+        },
+        dark: '#2C1F1A',
       },
       fontFamily: {
         'heading': ['Inter', 'sans-serif'],
-        'body': ['Inter', 'sans-serif']
+        'body': ['Inter', 'sans-serif'],
+        'display': ['Playfair Display', 'serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-in',

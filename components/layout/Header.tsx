@@ -12,13 +12,13 @@ export default function Header() {
   const [announcementDismissed, setAnnouncementDismissed] = useState(true)
 
   useEffect(() => {
-    const dismissed = sessionStorage.getItem('announcementDismissed')
+    const dismissed = localStorage.getItem('nuv_bar_dismissed')
     setAnnouncementDismissed(dismissed === 'true')
   }, [])
 
   const dismissAnnouncement = () => {
     setAnnouncementDismissed(true)
-    sessionStorage.setItem('announcementDismissed', 'true')
+    localStorage.setItem('nuv_bar_dismissed', 'true')
   }
 
   // Use real cart data
@@ -32,39 +32,38 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-[#2c1f1a]/[0.06] bg-[#faf7f2]/90 shadow-[0_4px_18px_rgba(44,31,26,0.04)] backdrop-blur-md">
       {!announcementDismissed && (
-        <div className="relative flex h-8 w-full items-center justify-center bg-[#884D53] text-[12px] text-white">
-          <span>Free Shipping ₹999+ · COD Available · 30-Day Returns</span>
+        <div className="relative flex h-8 w-full items-center justify-center bg-primary-600 px-12 text-[12px] font-medium tracking-wide text-white">
+          <span className="hidden md:inline">Free shipping on orders above ₹999 &nbsp;·&nbsp; COD available</span>
+          <span className="inline md:hidden">Free shipping ₹999+ &nbsp;·&nbsp; COD available</span>
           <button
             onClick={dismissAnnouncement}
-            className="absolute right-3 flex h-5 w-5 items-center justify-center rounded-full text-white/80 transition hover:text-white"
+            className="absolute right-4 flex h-5 w-5 items-center justify-center text-white/70 transition hover:text-white"
             aria-label="Dismiss announcement"
           >
-            ×
+            ✕
           </button>
         </div>
       )}
       <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-4 lg:px-8">
         <Logo href="/" />
 
-        <nav className="hidden items-center gap-9 text-[15px] md:flex">
-          <Link href="/products/category/post-surgery" className="font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]">
+        <nav className="hidden md:flex gap-6">
+          <Link href="/products/category/post-surgery" className="font-medium text-text-secondary transition hover:text-primary-600">
             Post-Surgery
           </Link>
-          <Link href="/products/category/wigs-hair" className="font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]">
+          <Link href="/products/category/wigs-hair" className="font-medium text-text-secondary transition hover:text-primary-600">
             Wigs & Hair
           </Link>
-          <Link href="/products/category/lymphedema" className="font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]">
+          <Link href="/products/category/lymphedema" className="font-medium text-text-secondary transition hover:text-primary-600">
             Lymphedema
           </Link>
-          <Link href="/products/category/chemo-essentials" className="font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]">
+          <Link href="/products/category/chemo-essentials" className="font-medium text-text-secondary transition hover:text-primary-600">
             Chemo Essentials
           </Link>
-          <Link href="/products/category/sensitive-skin" className="font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]">
+          <Link href="/products/category/sensitive-skin" className="font-medium text-text-secondary transition hover:text-primary-600">
             Sensitive Skin
           </Link>
-          <Link href="/about" className="font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]">
-            Our Story
-          </Link>
+
         </nav>
 
         <div className="flex items-center gap-4 lg:gap-5">
@@ -83,12 +82,14 @@ export default function Header() {
 
           <Link
             href="/cart"
-            className="inline-flex h-11 items-center gap-2 rounded-full bg-[#C98995] px-4 text-[14px] font-medium text-[#2c1f1a] transition hover:bg-[#bd7e8b]"
+            className="inline-flex h-[40px] items-center gap-2 rounded-full border border-border px-4 text-[14px] font-medium text-text-primary transition hover:bg-surface-low"
             aria-label="Shopping cart"
           >
             <ShoppingCart className="h-4 w-4" />
             <span className="whitespace-nowrap">Cart ({cartCount})</span>
           </Link>
+
+
           
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -119,9 +120,7 @@ export default function Header() {
             <Link href="/products/category/sensitive-skin" className="block py-2 font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]" onClick={() => setMenuOpen(false)}>
               Sensitive Skin
             </Link>
-            <Link href="/about" className="block py-2 font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]" onClick={() => setMenuOpen(false)}>
-              Our Story
-            </Link>
+
           </nav>
         </div>
       )}

@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Playfair_Display } from 'next/font/google'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import WhatsAppChat from '@/components/WhatsAppChat'
 import { CartProvider } from '@/lib/cart-context'
 import { WishlistProvider } from '@/lib/wishlist-context'
 import '@/app/globals.css'
@@ -10,6 +11,13 @@ const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
+})
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-display',
+  display: 'swap',
+  style: ['normal', 'italic'],
 })
 
 export const viewport = {
@@ -67,10 +75,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <head>
         <meta charSet="utf-8" />
-        <meta name="theme-color" content="#C9848A" />
+        <meta name="theme-color" content="#884D53" />
       </head>
       <body className="flex min-h-screen flex-col bg-neutral-50 text-tertiary-700">
         <CartProvider>
@@ -78,6 +86,7 @@ export default function RootLayout({
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />
+            <WhatsAppChat />
           </WishlistProvider>
         </CartProvider>
       </body>

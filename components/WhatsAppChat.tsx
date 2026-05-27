@@ -1,25 +1,24 @@
-'use client'
 
-import { MessageCircle } from 'lucide-react'
 
 export default function WhatsAppChat() {
-  // Nuvanaah WhatsApp Business Number
-  // TODO: Replace with your actual WhatsApp Business number once you get it
-  const phoneNumber = '919876543210' // Format: 91 + 10-digit number (no + or spaces)
-  const defaultMessage = 'Hi, I need help choosing the right cancer care products from Nuvanaah...'
+  const phoneNumber = '919819461612'
 
   return (
     <a
-      href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`}
-      className="fixed bottom-6 left-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all z-50 hover:scale-110 group"
+      href={`https://wa.me/${phoneNumber}`}
+      className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[999] flex h-12 w-12 md:h-14 md:w-14 items-center justify-center overflow-hidden rounded-full bg-[#25D366] shadow-[0_4px_16px_rgba(37,211,102,0.4)] transition-all duration-200 hover:w-12 md:hover:w-40 md:hover:shadow-[0_8px_24px_rgba(37,211,102,0.5)] group"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Chat on WhatsApp"
+      aria-label="Chat with Nuvanaah on WhatsApp"
     >
-      <MessageCircle className="w-6 h-6" />
-      <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1 bg-gray-800 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+      <svg className="shrink-0" viewBox="0 0 24 24" fill="white" width="28" height="28">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.858L.057 23.776a.5.5 0 0 0 .624.633l6.012-1.577A11.946 11.946 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.946 9.946 0 0 1-5.073-1.384l-.361-.214-3.741.981.999-3.648-.235-.374A9.946 9.946 0 0 1 2 12C2 6.477 6.477 2 12 2s10 5.477 10 10-4.477 10-10 10z"/>
+      </svg>
+      <span className="hidden ml-2 max-w-0 overflow-hidden whitespace-nowrap text-[14px] font-semibold text-white transition-all duration-200 group-hover:max-w-[100px] md:inline">
         Chat with us
       </span>
     </a>
   )
 }
+

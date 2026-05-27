@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,60 +10,68 @@
    ============================================ */
 
 :root {
-  /* PRIMARY COLOR - Rose */
-  --color-primary: #C9848A;
-  --color-primary-hover: #b96f76;
-  --color-primary-light: #fae6e8;
+  /* COLORS */
+  --color-primary: #884D53;
+  --color-primary-hover: #6B3A3F;
+  --color-primary-light: #C9848A;
+  --color-primary-fixed: #FFDADB;
+  --color-secondary: #446651;
+  --color-secondary-container: #C3E9CF;
+  --color-tertiary: #6C5B54;
+  --color-tertiary-fixed: #F6DED5;
+  --color-surface: #FDF9F3;
+  --color-surface-low: #F7F3ED;
+  --color-bg: #FAF7F2;
+  --color-dark: #2C1F1A;
+  --color-text: #1C1C18;
+  --color-text-secondary: #524344;
+  --color-text-muted: #6C5B54;
+  --color-border: #D7C2C2;
+  --color-whatsapp: #25D366;
+  --color-success: #3B6D11;
+  --color-error: #A32D2D;
+  --color-warning: #B45309;
 
-  /* SECONDARY COLOR - Sage */
-  --color-secondary: #7B9E87;
-  --color-secondary-hover: #64846e;
-  --color-secondary-light: #eff6f1;
+  /* TYPOGRAPHY */
+  --font-display: 'Playfair Display', 'Lora', Georgia, serif;
+  --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* TERTIARY COLOR - Warm Brown */
-  --color-tertiary: #2C1F1A;
-  --color-tertiary-hover: #4c3a33;
-  --color-tertiary-light: #f3edea;
-
-  /* NEUTRALS */
-  --color-neutral: #FAF7F2;
-  --color-neutral-2: #f4eee5;
-  --color-white: #FFFFFF;
-
-  /* TEXT COLORS */
-  --color-text-primary: #2C1F1A;
-  --color-text-secondary: #6a5448;
-  --color-text-muted: #99846a;
-
-  /* BORDERS */
-  --color-border: #ded0bf;
-  --color-border-light: #ece2d6;
-
-  /* SEMANTIC */
-  --color-success: #059669;
-  --color-warning: #D97706;
-  --color-error: #DC2626;
-
-  /* SHADOWS */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  /* TYPE SCALE */
+  --text-display: 700 40px/1.2 var(--font-display);
+  --text-h1: 700 30px/1.3 var(--font-display);
+  --text-h2: 600 22px/1.4 var(--font-ui);
+  --text-h3: 600 18px/1.5 var(--font-ui);
+  --text-body: 400 16px/1.75 var(--font-ui);
+  --text-label: 600 12px/1 var(--font-ui);
+  --text-caption: 400 12px/1.4 var(--font-ui);
 
   /* SPACING */
-  --section-padding-desktop: 80px;
-  --section-padding-mobile: 48px;
+  --section-padding-desktop: 96px;
+  --section-padding-mobile: 56px;
+  --max-width: 1280px;
+  --grid-gap: 24px;
+  --grid-gap-mobile: 16px;
+  --card-padding: 32px;
+  --card-radius: 16px;
+  --card-radius-large: 32px;
+  --button-radius: 9999px;
+  --image-radius: 16px;
+
+  /* SHADOWS */
+  --shadow-card: 0 2px 12px rgba(0,0,0,0.06);
+  --shadow-card-hover: 0 12px 32px rgba(136,77,83,0.12);
+  --shadow-nav: 0 1px 0 var(--color-border);
 
   /* TRANSITIONS */
-  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-default: 200ms ease;
+  --transition-card: transform 200ms ease, box-shadow 200ms ease;
 }
 
 /* ============================================
    BASE STYLES
    ============================================ */
 
-* {
-  margin: 0;
-  padding: 0;
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
@@ -72,14 +80,45 @@ html {
 }
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
-  background-color: var(--color-neutral);
-  color: var(--color-text-primary);
-  font-size: 16px;
-  line-height: 1.65;
+  font: var(--text-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* SCROLL ANIMATION SYSTEM */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 400ms ease-out, transform 400ms ease-out;
+}
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Animation styles naturally handled by transition, but we can wrap them if needed. */
+}
+
+/* ACCESSIBILITY BASELINE */
+:focus-visible {
+  outline: 2px solid var(--color-primary) !important;
+  outline-offset: 2px !important;
+}
+
 
 /* ============================================
    TYPOGRAPHY - Inter Only
