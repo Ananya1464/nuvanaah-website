@@ -1,19 +1,85 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { ShoppingCart, Search, Menu, X, Heart } from 'lucide-react'
+import { ShoppingCart, Search, Menu, X, Heart, ChevronDown } from 'lucide-react'
 import Logo from '@/components/ui/Logo'
 import { useCart } from '@/lib/cart-context'
 import { useWishlist } from '@/lib/wishlist-context'
 
+// ─── SHOP MEGA-MENU DATA ─────────────────────────────────────────────────────
+const shopCategories = [
+  {
+    name: 'Recovery & Body Support',
+    slug: 'recovery-body-support',
+    description: 'For surgery, healing, and physical comfort',
+    products: [
+      { name: 'Comfort Shape™',   slug: 'comfort-shape',  subtitle: 'Plant Fiber Prosthetic' },
+      { name: 'Willow Support™',  slug: 'willow-support', subtitle: 'Front-Open Pocket Bra' },
+      { name: 'Nature Nest™',     slug: 'nature-nest',    subtitle: 'Underarm Rest Pillow' },
+      { name: 'FlowSleeve™',      slug: 'flowsleeve',     subtitle: 'Lymphedema Sleeve' },
+      { name: 'Care Ease Wrap™',  slug: 'care-ease-wrap', subtitle: 'Soft Recovery Wrap' },
+      { name: 'Nest Carry™',      slug: 'nest-carry',     subtitle: 'Recovery Companion Kit' },
+    ],
+  },
+  {
+    name: 'Hair & Confidence',
+    slug: 'hair-confidence',
+    description: 'For coverage, confidence, and feeling like yourself',
+    products: [
+      { name: 'AirBloom™',    slug: 'airbloom',    subtitle: 'Scarf with Hair System' },
+      { name: 'Willow Wrap™', slug: 'willow-wrap', subtitle: 'Soft Head Scarf' },
+      { name: 'BrowBloom™',   slug: 'browbloom',   subtitle: 'Ready-to-Wear Eyebrows' },
+      { name: 'BloomCrown™',  slug: 'bloomcrown',  subtitle: 'Real Hair Wig Collection' },
+    ],
+  },
+  {
+    name: 'Everyday Wellness',
+    slug: 'everyday-wellness',
+    description: 'For daily comfort and personal care',
+    products: [
+      { name: 'PetalWrap™',  slug: 'petalwrap',  subtitle: 'Comfort Towel' },
+      { name: 'DewLeaf™',    slug: 'dewleaf',    subtitle: 'Comfort Napkin' },
+      { name: 'BloomTips™',  slug: 'bloomtips',  subtitle: 'Press-On Nail Collection' },
+    ],
+  },
+]
+
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen]                 = useState(false)
+  const [shopOpen, setShopOpen]                 = useState(false)
+  const [mobileShopOpen, setMobileShopOpen]     = useState(false)
   const [announcementDismissed, setAnnouncementDismissed] = useState(true)
+
+  const shopRef    = useRef<HTMLDivElement>(null)
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     const dismissed = localStorage.getItem('nuv_bar_dismissed')
     setAnnouncementDismissed(dismissed === 'true')
+  }, [])
+
+  // Close mega-menu when clicking outside
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (shopRef.current && !shopRef.current.contains(e.target as Node)) {
+        setShopOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
+
+  // Close mobile menu on resize to desktop
+  useEffect(() => {
+    function onResize() {
+      if (window.innerWidth >= 768) {
+        setMenuOpen(false)
+        setMobileShopOpen(false)
+      }
+    }
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
   }, [])
 
   const dismissAnnouncement = () => {
@@ -21,51 +87,131 @@ export default function Header() {
     localStorage.setItem('nuv_bar_dismissed', 'true')
   }
 
-  // Use real cart data
+  const openShop  = () => { if (closeTimer.current) clearTimeout(closeTimer.current); setShopOpen(true) }
+  const closeShop = () => { closeTimer.current = setTimeout(() => setShopOpen(false), 180) }
+
   const { items } = useCart()
   const cartCount = items.reduce((sum, item) => sum + item.quantity, 0)
-
-  // Use real wishlist data
   const { items: wishlistItems } = useWishlist()
   const wishlistCount = wishlistItems.length
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#2c1f1a]/[0.06] bg-[#faf7f2]/90 shadow-[0_4px_18px_rgba(44,31,26,0.04)] backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-[#2c1f1a]/[0.06] bg-[#faf7f2]/95 shadow-[0_4px_18px_rgba(44,31,26,0.04)] backdrop-blur-md">
+
+      {/* ── ANNOUNCEMENT BAR ── */}
       {!announcementDismissed && (
-        <div className="relative flex h-8 w-full items-center justify-center bg-primary-600 px-12 text-[12px] font-medium tracking-wide text-white">
-          <span className="hidden md:inline">Free shipping on orders above ₹999 &nbsp;·&nbsp; COD available</span>
+        <div className="relative flex h-8 w-full items-center justify-center bg-[#884d53] px-12 text-[12px] font-medium tracking-wide text-white">
+          <span className="hidden md:inline">Free shipping on orders above ₹999 &nbsp;·&nbsp; COD available &nbsp;·&nbsp; Discreet packaging</span>
           <span className="inline md:hidden">Free shipping ₹999+ &nbsp;·&nbsp; COD available</span>
           <button
             onClick={dismissAnnouncement}
             className="absolute right-4 flex h-5 w-5 items-center justify-center text-white/70 transition hover:text-white"
             aria-label="Dismiss announcement"
-          >
-            ✕
-          </button>
+          >✕</button>
         </div>
       )}
+
+      {/* ── MAIN NAV ROW ── */}
       <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-4 lg:px-8">
+
         <Logo href="/" />
 
-        <nav className="hidden md:flex gap-6">
-          <Link href="/products/category/post-surgery" className="font-medium text-text-secondary transition hover:text-primary-600">
-            Post-Surgery
-          </Link>
-          <Link href="/products/category/wigs-hair" className="font-medium text-text-secondary transition hover:text-primary-600">
-            Wigs & Hair
-          </Link>
-          <Link href="/products/category/lymphedema" className="font-medium text-text-secondary transition hover:text-primary-600">
-            Lymphedema
-          </Link>
-          <Link href="/products/category/chemo-essentials" className="font-medium text-text-secondary transition hover:text-primary-600">
-            Chemo Essentials
-          </Link>
-          <Link href="/products/category/sensitive-skin" className="font-medium text-text-secondary transition hover:text-primary-600">
-            Sensitive Skin
-          </Link>
+        {/* DESKTOP NAV */}
+        <nav className="hidden md:flex items-center gap-7" aria-label="Main navigation">
 
+          {/* SHOP — mega-menu trigger */}
+          <div
+            ref={shopRef}
+            className="relative"
+            onMouseEnter={openShop}
+            onMouseLeave={closeShop}
+          >
+            <button
+              className="flex items-center gap-1 font-medium text-[#2c1f1a]/85 transition hover:text-[#884d53]"
+              aria-expanded={shopOpen}
+              aria-haspopup="true"
+              onClick={() => setShopOpen(!shopOpen)}
+            >
+              Shop
+              <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${shopOpen ? 'rotate-180' : ''}`} />
+            </button>
+
+            {/* MEGA-MENU DROPDOWN */}
+            {shopOpen && (
+              <div
+                className="absolute left-1/2 top-full mt-3 -translate-x-1/2 w-[720px] rounded-2xl border border-[#2c1f1a]/[0.07] bg-white shadow-[0_16px_60px_rgba(44,31,26,0.12)] animate-in fade-in slide-in-from-top-2 duration-200"
+                onMouseEnter={openShop}
+                onMouseLeave={closeShop}
+              >
+                <div className="grid grid-cols-3 gap-0 p-6">
+                  {shopCategories.map((cat, i) => (
+                    <div
+                      key={cat.slug}
+                      className={`${i < shopCategories.length - 1 ? 'border-r border-[#2c1f1a]/[0.07] pr-6 mr-0' : ''} ${i > 0 ? 'pl-6' : ''}`}
+                    >
+                      {/* Category Header */}
+                      <Link
+                        href={`/collections/${cat.slug}`}
+                        className="group mb-3 block"
+                        onClick={() => setShopOpen(false)}
+                      >
+                        <p className="font-semibold text-[#1c1c18] group-hover:text-[#884d53] transition-colors text-[13px]">
+                          {cat.name}
+                        </p>
+                        <p className="text-[11px] text-[#847374] mt-0.5">{cat.description}</p>
+                      </Link>
+
+                      {/* Product Links */}
+                      <ul className="space-y-2">
+                        {cat.products.map(p => (
+                          <li key={p.slug}>
+                            <Link
+                              href={`/products/${p.slug}`}
+                              className="group flex items-start gap-2 rounded-lg px-2 py-1.5 transition hover:bg-[#faf7f2]"
+                              onClick={() => setShopOpen(false)}
+                            >
+                              <span className="mt-[1px] h-1.5 w-1.5 rounded-full bg-[#884d53]/40 shrink-0 group-hover:bg-[#884d53] transition-colors" />
+                              <span>
+                                <span className="block text-[13px] font-medium text-[#1c1c18] group-hover:text-[#884d53] transition-colors leading-snug">{p.name}</span>
+                                <span className="block text-[11px] text-[#847374] leading-snug">{p.subtitle}</span>
+                              </span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+
+                      {/* View All link */}
+                      <Link
+                        href={`/collections/${cat.slug}`}
+                        className="mt-4 block text-[11px] font-semibold uppercase tracking-[0.12em] text-[#884d53] hover:underline"
+                        onClick={() => setShopOpen(false)}
+                      >
+                        View all →
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Bottom strip — Shop All */}
+                <div className="border-t border-[#2c1f1a]/[0.07] px-6 py-3 flex items-center justify-between rounded-b-2xl bg-[#faf7f2]/60">
+                  <span className="text-[12px] text-[#847374]">Not sure where to start? Explore by your situation.</span>
+                  <Link
+                    href="/products"
+                    className="rounded-full bg-[#884d53] px-5 py-2 text-[12px] font-semibold text-white transition hover:bg-[#6c363c]"
+                    onClick={() => setShopOpen(false)}
+                  >
+                    Shop All Products
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
+
+          <Link href="/about"        className="font-medium text-[#2c1f1a]/85 transition hover:text-[#884d53]">Our Story</Link>
+          <Link href="/contact"      className="font-medium text-[#2c1f1a]/85 transition hover:text-[#884d53]">Contact</Link>
         </nav>
 
+        {/* DESKTOP ICONS */}
         <div className="flex items-center gap-4 lg:gap-5">
           <button className="text-[#2c1f1a]/85 transition hover:text-[#884d53]" aria-label="Search products">
             <Search className="h-5 w-5" />
@@ -73,24 +219,23 @@ export default function Header() {
 
           <Link href="/wishlist" className="relative text-[#2c1f1a]/85 transition hover:text-[#884d53]" aria-label="Wishlist">
             <Heart className="h-5 w-5" />
-            {wishlistCount > 0 ? (
+            {wishlistCount > 0 && (
               <span className="absolute -right-2 -top-2 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#7B9E87] px-1 text-[10px] font-medium text-white">
                 {wishlistCount}
               </span>
-            ) : null}
+            )}
           </Link>
 
           <Link
             href="/cart"
-            className="inline-flex h-[40px] items-center gap-2 rounded-full border border-border px-4 text-[14px] font-medium text-text-primary transition hover:bg-surface-low"
+            className="inline-flex h-[40px] items-center gap-2 rounded-full border border-[#2c1f1a]/20 px-4 text-[14px] font-medium text-[#1c1c18] transition hover:bg-[#faf7f2]"
             aria-label="Shopping cart"
           >
             <ShoppingCart className="h-4 w-4" />
             <span className="whitespace-nowrap">Cart ({cartCount})</span>
           </Link>
 
-
-          
+          {/* MOBILE HAMBURGER */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="p-1 md:hidden"
@@ -102,25 +247,58 @@ export default function Header() {
         </div>
       </div>
 
+      {/* ── MOBILE MENU ── */}
       {menuOpen && (
-        <div className="border-t border-[#2c1f1a]/[0.06] bg-[#faf7f2] px-4 py-4 md:hidden">
-          <nav className="space-y-1">
-            <Link href="/products/category/post-surgery" className="block py-2 font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]" onClick={() => setMenuOpen(false)}>
-              Post-Surgery
-            </Link>
-            <Link href="/products/category/wigs-hair" className="block py-2 font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]" onClick={() => setMenuOpen(false)}>
-              Wigs & Hair
-            </Link>
-            <Link href="/products/category/lymphedema" className="block py-2 font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]" onClick={() => setMenuOpen(false)}>
-              Lymphedema
-            </Link>
-            <Link href="/products/category/chemo-essentials" className="block py-2 font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]" onClick={() => setMenuOpen(false)}>
-              Chemo Essentials
-            </Link>
-            <Link href="/products/category/sensitive-skin" className="block py-2 font-medium text-[#2c1f1a]/80 transition hover:text-[#884d53]" onClick={() => setMenuOpen(false)}>
-              Sensitive Skin
-            </Link>
+        <div className="border-t border-[#2c1f1a]/[0.06] bg-[#faf7f2] px-4 pb-6 md:hidden overflow-y-auto max-h-[calc(100vh-76px)]">
+          <nav className="space-y-1 pt-3">
 
+            {/* Shop accordion */}
+            <div>
+              <button
+                className="flex w-full items-center justify-between py-3 font-semibold text-[#1c1c18]"
+                onClick={() => setMobileShopOpen(!mobileShopOpen)}
+              >
+                <span>Shop</span>
+                <ChevronDown className={`h-5 w-5 text-[#847374] transition-transform ${mobileShopOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              {mobileShopOpen && (
+                <div className="mb-3 space-y-5 pl-3 border-l-2 border-[#884d53]/20 ml-1">
+                  {shopCategories.map(cat => (
+                    <div key={cat.slug}>
+                      <Link
+                        href={`/collections/${cat.slug}`}
+                        className="block py-1 text-[13px] font-semibold uppercase tracking-[0.12em] text-[#884d53]"
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        {cat.name}
+                      </Link>
+                      {cat.products.map(p => (
+                        <Link
+                          key={p.slug}
+                          href={`/products/${p.slug}`}
+                          className="block py-1.5 text-[14px] text-[#2c1f1a]/80 hover:text-[#884d53] transition-colors pl-2"
+                          onClick={() => setMenuOpen(false)}
+                        >
+                          {p.name}
+                        </Link>
+                      ))}
+                    </div>
+                  ))}
+
+                  <Link
+                    href="/products"
+                    className="block py-1.5 text-[14px] font-semibold text-[#884d53] pl-2"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    Shop All Products →
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            <Link href="/about"   className="block py-3 font-medium text-[#2c1f1a]/80 border-t border-[#2c1f1a]/[0.06]" onClick={() => setMenuOpen(false)}>Our Story</Link>
+            <Link href="/contact" className="block py-3 font-medium text-[#2c1f1a]/80 border-t border-[#2c1f1a]/[0.06]" onClick={() => setMenuOpen(false)}>Contact</Link>
           </nav>
         </div>
       )}

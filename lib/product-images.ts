@@ -1,4 +1,4 @@
-﻿/**
+/**
  * NUVANAAH PRODUCT IMAGE MAPPING
  * Maps product slugs to their image paths
  * Updated: February 7, 2026
@@ -180,7 +180,7 @@ export function getProductImages(productSlug: string): string[] {
   const imageSet = productImageMap[productSlug]
   
   if (!imageSet) {
-    return ['https://images.unsplash.com/photo-1584512814423-69f8b3e1d919?w=800&h=800&fit=crop']
+    return []
   }
   
   const images: string[] = [imageSet.hero]
@@ -201,7 +201,7 @@ export function getProductHeroImage(productSlug: string): string {
   const imageSet = productImageMap[productSlug]
   
   if (!imageSet) {
-    return 'https://images.unsplash.com/photo-1584512814423-69f8b3e1d919?w=800&h=800&fit=crop'
+    return ''
   }
   
   return imageSet.hero

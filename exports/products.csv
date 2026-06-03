@@ -1,0 +1,13 @@
+id,name,slug,type,price,regular_price,variation_count,categories,stock_status,featured,short_description,main_image
+1,"Sling Bag for Medical Supplies",sling-bag-medical,simple,500,500,0,chemo-essentials,instock,true,"Organized medical supply bag","https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800"
+2,"Arm Rest Pillow with Cover",arm-rest-pillow-cover,simple,600,600,0,post-surgery,instock,true,"Supportive arm rest pillow","https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=800"
+3,"Mastectomy Prosthesis with Cover",mastectomy-prosthesis-cover,simple,1000,1000,0,post-surgery,instock,true,"Medical-grade silicone prosthesis","/images/products/mastectomy-prosthesis/1.png"
+4,"Mastectomy Bra - Front Opening",mastectomy-bra-front-opening,simple,800,800,0,post-surgery,instock,true,"Front-zip bra with pockets","https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=800"
+5,"Respiratory Mask",respiratory-mask,simple,300,300,0,chemo-essentials,instock,true,"Protective 3-layer mask","/images/products/respiratory-mask/Firefly_Gemini Flash_5. Respiratory Maskhero.jpgWhite 614816 hIy.png"
+6,"Head Scarf with Hair Lace",head-scarf-hair-lace,simple,3750,3750,0,wigs-hair,instock,true,"Scarf with hair lace front","https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800"
+7,"Printed Head Scarf",printed-head-scarf,simple,800,800,0,wigs-hair,instock,false,"Stylish printed scarf","/images/products/printed-scarf/chemo-headwear.jpg"
+8,"Lymphoedema Compression Sleeves",lymphoedema-sleeves,simple,2500,2500,0,lymphedema,instock,true,"Medical compression sleeve","https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800"
+9,"Special Fabric Towel",special-fabric-towel,simple,800,800,0,sensitive-skin,instock,false,"Gentle bamboo towel","/images/products/special-fabric-towel/bamboo-towels.png"
+10,"Soft Cotton Napkin",soft-cotton-napkin,simple,300,300,0,sensitive-skin,instock,false,"Gentle napkin (pack of 3)","https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=800"
+11,"Human Hair Medical Wig",medical-wig,variable,9899,9899,3,wigs-hair,instock,true,"Medical-grade human hair wig","/images/products/medical-wig/wig5.png"
+12,"Premium Human Hair Wig",premium-wig,variable,17599,17599,6,wigs-hair,instock,true,"Premium human hair wig","/images/products/premium-wig/hero.png"

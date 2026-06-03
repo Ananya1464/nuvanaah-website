@@ -23,8 +23,11 @@ export default function ProductCard({ product }: ProductCardProps) {
   const { isInWishlist, toggleItem } = useWishlist()
   const wishlisted = isInWishlist(String(product.id))
 
-  // Get all product images - use mapped images
-  const productImages = getProductImages(product.slug || String(product.id))
+  // Get all product images — prefer images from the product object, fall back to mapping
+  const mappedImages = getProductImages(product.slug || String(product.id))
+  const productImages = product.images && product.images.length > 0
+    ? product.images.map((img: any) => typeof img === 'string' ? img : img.src)
+    : mappedImages.length > 0 ? mappedImages : ['/images/placeholder.png']
   const hasMultipleImages = productImages.length > 1
 
   // Auto-advance slideshow on hover
@@ -81,7 +84,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   }
 
   return (
-    <Link href={`/products/${product.id}`}>
+    <Link href={`/products/${product.slug || product.id}`}>
       <div
         className="group cursor-pointer"
         onMouseEnter={() => setIsHovered(true)}
@@ -115,19 +118,19 @@ export default function ProductCard({ product }: ProductCardProps) {
             <Heart className={`h-4 w-4 ${wishlisted ? 'fill-current' : ''}`} />
           </button>
 
-          {/* Image Navigation Arrows (show on hover if multiple images) */}
-          {hasMultipleImages && isHovered && (
+          {/* Image Navigation Arrows — always visible */}
+          {hasMultipleImages && (
             <>
               <button
                 onClick={goToPreviousImage}
-                className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white shadow-md z-10"
+                className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-sm p-1.5 rounded-full transition-all hover:bg-white hover:scale-110 shadow-md z-10"
                 aria-label="Previous image"
               >
                 <ChevronLeft className="w-4 h-4 text-[#1c1c18]" />
               </button>
               <button
                 onClick={goToNextImage}
-                className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white shadow-md z-10"
+                className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-sm p-1.5 rounded-full transition-all hover:bg-white hover:scale-110 shadow-md z-10"
                 aria-label="Next image"
               >
                 <ChevronRight className="w-4 h-4 text-[#1c1c18]" />
@@ -181,13 +184,22 @@ export default function ProductCard({ product }: ProductCardProps) {
         <div className="space-y-1.5">
           {/* Category */}
           <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#446651]">
-            {product.category}
+            {product.categories && product.categories.length > 0
+              ? (typeof product.categories[0] === 'string' ? product.categories[0] : product.categories[0].name)
+              : ''}
           </p>
 
           {/* Name */}
           <h3 className="font-semibold text-[#1c1c18] line-clamp-2 group-hover:text-[#884d53] transition-colors">
             {product.name}
           </h3>
+
+          {/* Short Description */}
+          {product.short_description && (
+            <p className="text-xs text-[#524344] line-clamp-2 leading-relaxed">
+              {product.short_description}
+            </p>
+          )}
 
           {/* Rating */}
           {product.rating && product.rating > 0 && (
@@ -211,7 +223,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
           {/* Price */}
           <p className="text-lg font-bold text-[#884d53]">
-            ₹{product.price.toLocaleString('en-IN')}
+            {product.priceFrom ? `From ₹${Number(product.price).toLocaleString('en-IN')}` : `₹${Number(product.price).toLocaleString('en-IN')}`}
           </p>
         </div>
       </div>

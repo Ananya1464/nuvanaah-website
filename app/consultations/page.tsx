@@ -1,335 +1,116 @@
 'use client'
 
-import { useState } from 'react'
-import { Clock } from 'lucide-react'
+import Image from 'next/image'
+import { Phone, Calendar, Heart, Shield, CheckCircle2 } from 'lucide-react'
 
 export default function ConsultationsPage() {
-  const [step, setStep] = useState<'type' | 'date' | 'details' | 'confirmation'>(
-    'type'
-  )
-
-  const [formData, setFormData] = useState({
-    type: '',
-    date: '',
-    time: '',
-    name: '',
-    email: '',
-    phone: '',
-    city: '',
-    message: '',
-  })
-
-  const consultationTypes = [
-    {
-      id: 'general',
-      title: 'General Cancer Care',
-      description: 'Comprehensive guidance on products and recovery',
-      duration: '30 mins',
-      price: 'Free',
-    },
-    {
-      id: 'product',
-      title: 'Product Selection Help',
-      description: 'Personalized help choosing the right products',
-      duration: '30 mins',
-      price: 'Free',
-    },
-    {
-      id: 'recovery',
-      title: 'Recovery Coaching',
-      description: 'One-on-one recovery and wellness guidance',
-      duration: '60 mins',
-      price: '₹1,000',
-    },
-  ]
-
-  const cities = ['Mumbai', 'Bangalore', 'Delhi', 'Hyderabad', 'Chennai', 'Pune']
-
-  const handleInputChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
-  ) => {
-    const { name, value } = e.target
-    setFormData({ ...formData, [name]: value })
-  }
-
-  const handleTypeSelect = (typeId: string) => {
-    setFormData({ ...formData, type: typeId })
-    setStep('date')
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setStep('confirmation')
-  }
-
   return (
-    <div className="min-h-screen bg-white">
-      {/* Page Header */}
-      <div className="bg-gradient-to-b from-amber-50 to-white py-12 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl sm:text-5xl font-light text-gray-800 mb-4">
-            Book Your Free <span className="font-semibold text-amber-600">Consultation</span>
+    <div className="min-h-screen bg-[#faf7f2]">
+      {/* ── HERO ── */}
+      <div className="bg-[#1c1c18] text-white pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-[#ded0bf] font-bold tracking-[0.2em] uppercase text-xs sm:text-sm mb-4">
+            Private & Confidential
+          </p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
+            Personal Care<br />Consultations
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl">
-            Connect with our cancer care specialists for personalized guidance on
-            your recovery journey.
+          <p className="text-[#ded0bf] text-lg sm:text-xl max-w-2xl mx-auto">
+            Every recovery journey is unique. Speak with our care specialists to find the right support, sizes, and products for your specific needs.
           </p>
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Step 1: Consultation Type */}
-        {step === 'type' && (
+      {/* ── WHY BOOK ── */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="relative aspect-[4/5] sm:aspect-square lg:aspect-auto lg:h-[600px] rounded-3xl overflow-hidden shadow-md">
+            {/* Fallback image if support-consultation.png doesn't exist */}
+            <Image
+              src="/images/catalog/about/1.jpeg" // Using an about/lifestyle image as fallback
+              alt="Care Specialist"
+              fill
+              className="object-cover"
+            />
+          </div>
+          
           <div>
-            <h2 className="text-2xl font-semibold text-gray-800 mb-8">
-              Choose Consultation Type
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#1c1c18] mb-6">
+              Expert Guidance,<br />Whenever You're Ready
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {consultationTypes.map((type) => (
-                <button
-                  key={type.id}
-                  onClick={() => handleTypeSelect(type.id)}
-                  className="border-2 border-gray-200 rounded-lg p-6 hover:border-amber-600 hover:shadow-lg transition text-left"
-                >
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                    {type.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-4">{type.description}</p>
-                  <div className="space-y-2 text-xs text-gray-500">
-                    <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4" />
-                      <span>{type.duration}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="font-semibold text-amber-600">
-                        {type.price}
-                      </span>
-                    </div>
+            <p className="text-[#524344] text-lg mb-8 leading-relaxed">
+              We understand that navigating post-surgery recovery or hair loss can feel overwhelming. Our consultations are completely free, zero-pressure, and designed entirely around your comfort.
+            </p>
+            
+            <div className="space-y-6">
+              {[
+                { icon: <Shield className="w-6 h-6" />, title: 'Complete Privacy', desc: '1-on-1 sessions held in a safe, confidential environment.' },
+                { icon: <Heart className="w-6 h-6" />, title: 'Empathetic Experts', desc: 'Speak with specialists trained to understand your physical and emotional needs.' },
+                { icon: <CheckCircle2 className="w-6 h-6" />, title: 'Perfect Fit Guarantee', desc: 'Get accurate sizing help for prosthetics, bras, and hair systems.' }
+              ].map((f, i) => (
+                <div key={i} className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-[#884d53]/10 flex items-center justify-center text-[#884d53] flex-shrink-0">
+                    {f.icon}
                   </div>
-                </button>
+                  <div>
+                    <h3 className="font-bold text-[#1c1c18] text-lg mb-1">{f.title}</h3>
+                    <p className="text-[#524344]">{f.desc}</p>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
-        )}
+        </div>
+      </div>
 
-        {/* Step 2: Date & Time */}
-        {step === 'date' && (
-          <div>
-            <button
-              onClick={() => setStep('type')}
-              className="text-amber-600 hover:text-amber-700 font-semibold mb-8"
-            >
-              ← Back
-            </button>
-            <h2 className="text-2xl font-semibold text-gray-800 mb-8">
-              Pick a Date & Time
-            </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Calendar (Simplified) */}
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-4">
-                  Preferred Date
-                </label>
-                <input
-                  type="date"
-                  name="date"
-                  value={formData.date}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-500"
-                  min={new Date().toISOString().split('T')[0]}
-                />
-              </div>
-
-              {/* Time Slots */}
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-4">
-                  Preferred Time
-                </label>
-                <select
-                  name="time"
-                  value={formData.time}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-500"
-                >
-                  <option value="">Select a time</option>
-                  <option value="10:00">10:00 AM</option>
-                  <option value="11:00">11:00 AM</option>
-                  <option value="14:00">2:00 PM</option>
-                  <option value="15:00">3:00 PM</option>
-                  <option value="16:00">4:00 PM</option>
-                  <option value="17:00">5:00 PM</option>
-                </select>
-              </div>
-            </div>
-
-            <button
-              onClick={() => setStep('details')}
-              disabled={!formData.date || !formData.time}
-              className="mt-8 w-full bg-amber-600 hover:bg-amber-700 disabled:bg-gray-300 text-white py-3 rounded-lg font-semibold transition"
-            >
-              Continue
-            </button>
+      {/* ── HOW IT WORKS ── */}
+      <div className="bg-white border-y border-[#ded0bf]/40 py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-3xl font-bold text-[#1c1c18] mb-4">How It Works</h2>
+            <p className="text-[#524344]">A simple, three-step process to get the answers you need.</p>
           </div>
-        )}
-
-        {/* Step 3: Personal Details */}
-        {step === 'details' && (
-          <form onSubmit={handleSubmit}>
-            <button
-              type="button"
-              onClick={() => setStep('date')}
-              className="text-amber-600 hover:text-amber-700 font-semibold mb-8"
-            >
-              ← Back
-            </button>
-            <h2 className="text-2xl font-semibold text-gray-800 mb-8">
-              Your Information
-            </h2>
-
-            <div className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Your name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-500"
-                    required
-                  />
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { step: '01', title: 'Schedule a Time', desc: 'Choose a date and time that works best for you via our booking system or WhatsApp.' },
+              { step: '02', title: 'Connect', desc: 'Join a private video call or phone call from the comfort of your home.' },
+              { step: '03', title: 'Receive Guidance', desc: 'Get personalized product recommendations, sizing help, and styling advice.' }
+            ].map((s, i) => (
+              <div key={i} className="bg-[#faf7f2] rounded-3xl p-8 border border-[#ded0bf]/40 relative">
+                <div className="text-5xl font-bold text-[#884d53]/10 absolute top-6 right-8">
+                  {s.step}
                 </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="your@email.com"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-500"
-                    required
-                  />
-                </div>
+                <h3 className="text-xl font-bold text-[#1c1c18] mb-3 relative z-10">{s.title}</h3>
+                <p className="text-[#524344] relative z-10">{s.desc}</p>
               </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Phone
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="+91 XXXXXXXXXX"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-500"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    City
-                  </label>
-                  <select
-                    name="city"
-                    value={formData.city}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-500"
-                    required
-                  >
-                    <option value="">Select your city</option>
-                    {cities.map((city) => (
-                      <option key={city} value={city}>
-                        {city}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Additional Notes (Optional)
-                </label>
-                <textarea
-                  name="message"
-                  placeholder="Tell us anything we should know..."
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-500"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-amber-600 hover:bg-amber-700 text-white py-3 rounded-lg font-semibold transition"
-              >
-                Book Consultation
-              </button>
-            </div>
-          </form>
-        )}
-
-        {/* Step 4: Confirmation */}
-        {step === 'confirmation' && (
-          <div className="text-center py-12">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <span className="text-3xl">✓</span>
-            </div>
-            <h2 className="text-3xl font-light text-gray-800 mb-4">
-              Consultation <span className="font-semibold">Booked!</span>
-            </h2>
-            <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-              Thank you! We've received your booking request. Our team will
-              contact you within 24 hours to confirm your consultation appointment.
-            </p>
-
-            <div className="bg-amber-50 border border-amber-200 rounded-lg p-8 max-w-md mx-auto mb-8">
-              <h3 className="font-semibold text-gray-800 mb-4">Appointment Details</h3>
-              <div className="space-y-3 text-left">
-                <div>
-                  <p className="text-xs text-gray-600">Date & Time</p>
-                  <p className="text-gray-800 font-medium">{formData.date} at {formData.time}</p>
-                </div>
-                <div>
-                  <p className="text-xs text-gray-600">Confirmation Email</p>
-                  <p className="text-gray-800 font-medium">{formData.email}</p>
-                </div>
-              </div>
-            </div>
-
-            <button
-              onClick={() => {
-                setStep('type')
-                setFormData({
-                  type: '',
-                  date: '',
-                  time: '',
-                  name: '',
-                  email: '',
-                  phone: '',
-                  city: '',
-                  message: '',
-                })
-              }}
-              className="inline-block bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-lg font-semibold transition"
-            >
-              Back to Home
-            </button>
+            ))}
           </div>
-        )}
+        </div>
+      </div>
+
+      {/* ── BOOKING SECTION ── */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold text-[#1c1c18] mb-6">
+          Ready to Connect?
+        </h2>
+        <p className="text-[#524344] text-lg mb-10">
+          Book your 30-minute complimentary session today.
+        </p>
+        
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <a
+            href="https://wa.me/91XXXXXXXXXX?text=I%20would%20like%20to%20book%20a%20consultation"
+            className="flex items-center justify-center gap-3 bg-[#1c1c18] text-white px-8 py-4 rounded-full font-bold transition-all hover:bg-[#333] shadow-md hover:shadow-lg"
+          >
+            <Phone className="w-5 h-5" /> Message on WhatsApp
+          </a>
+          <button
+            className="flex items-center justify-center gap-3 bg-white border-2 border-[#884d53] text-[#884d53] px-8 py-4 rounded-full font-bold transition-all hover:bg-[#884d53]/5"
+          >
+            <Calendar className="w-5 h-5" /> Book via Calendar
+          </button>
+        </div>
       </div>
     </div>
   )

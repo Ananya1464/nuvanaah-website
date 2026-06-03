@@ -13,10 +13,12 @@ export interface ProductVariation {
 export interface Product {
   id: string | number
   name: string
+  subtitle?: string
   slug?: string
   description: string
   short_description?: string
   price: number | string
+  priceFrom?: boolean           // if true, display as "From ₹X"
   regular_price?: string
   image?: string
   images?: { id: number; src: string; alt: string }[]
@@ -30,6 +32,37 @@ export interface Product {
   inStock?: boolean
   rating?: number
   reviewCount?: number
+  tags?: string[]               // for filtering — e.g. ['after-surgery', 'recovery']
+  crossSells?: string[]         // slugs of cross-sell products
+  recoveryStage?: string[]      // e.g. ['stage-1', 'stage-2']
+  shopByNeed?: string[]         // e.g. ['after-surgery', 'hair-loss']
+  variantLabel?: string         // e.g. "Colour" or "Print"
+  variantOptions?: string[]     // e.g. ['Aparajita', 'Ebony', 'Dusty Miller']
+  keyFeatures?: string[]        // bullet-list features (also used for product-content.json)
+  whatsIncluded?: string[]      // what's in the box
+  // New fields from DOCX
+  seoTitle?: string
+  metaDescription?: string
+  ogTitle?: string
+  ogDescription?: string
+  fullStory?: string
+  benefitsList?: {title: string, desc: string}[]
+  materialsText?: string
+  variantsText?: string[]
+  howToUse?: string[]
+  careText?: string[]
+  careDonts?: string[]
+  perfectFor?: {title: string, desc: string}[]
+  gentleNote?: string
+  faqs?: {q: string, a: string}[]
+  // New configuration fields for product page specs
+  isGiftPopular?: boolean
+  tagline?: string
+  comingSoon?: boolean
+  dimensions?: string
+  whatsappCTA?: boolean
+  priceOnRequest?: boolean     // if true, show "Price on request" instead of price
+  showSizeGuide?: boolean      // if true, show size guide link near variant selector
   // For variable products (like wigs with different lengths)
   variations?: ProductVariation[]
   type?: 'simple' | 'variable'

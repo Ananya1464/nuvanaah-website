@@ -63,48 +63,48 @@ const carouselSlides = [
 
 const bestSellers = [
   {
-    id: 'mastectomy-bra',
-    category: 'Breast Care',
-    name: 'Mastectomy Bra – Front Opening',
-    price: 1299,
-    priceDisplay: '₹1,299',
+    id: 'willow-support',
+    category: 'Recovery & Body Support',
+    name: 'Willow Support™',
+    price: 3000,
+    priceDisplay: '₹3,000',
     rating: 4.9,
     reviews: 312,
     image: '/images/products/mastectomy-bra/hero.png',
-    alt: 'Front-opening mastectomy bra in blush pink',
+    alt: 'Willow Support™ — front-open pocket bra',
   },
   {
-    id: 'medical-wig',
-    category: 'Wigs & Hair',
-    name: 'Human Hair Medical Wig 18"',
-    price: 5499,
-    priceDisplay: '₹5,499',
-    rating: 4.8,
+    id: 'bloomcrown',
+    category: 'Hair & Confidence',
+    name: 'BloomCrown™',
+    price: 12000,
+    priceDisplay: 'From ₹12,000',
+    rating: 4.9,
     reviews: 187,
     image: '/images/products/medical-wig/wig5.png',
-    alt: 'Medical-grade human hair wig',
+    alt: 'BloomCrown™ — real hair wig collection',
   },
   {
-    id: 'lymphedema-sleeve',
-    category: 'Lymphedema',
-    name: 'Compression Sleeve – Breathable',
-    price: 1199,
-    priceDisplay: '₹1,199',
-    rating: 4.7,
+    id: 'petalwrap',
+    category: 'Everyday Wellness',
+    name: 'PetalWrap™',
+    price: 1500,
+    priceDisplay: '₹1,500',
+    rating: 4.8,
     reviews: 243,
-    image: '/images/products/lymphedema-sleeve/hero.jpg',
-    alt: 'Lymphedema compression sleeve',
+    image: '/images/towel/1.jpeg',
+    alt: 'PetalWrap™ — bamboo comfort towel',
   },
   {
-    id: 'scarf-hair-lace',
-    category: 'Headwear',
-    name: 'Head Scarf with Hair Lace',
-    price: 799,
-    priceDisplay: '₹799',
+    id: 'browbloom',
+    category: 'Hair & Confidence',
+    name: 'BrowBloom™',
+    price: 1400,
+    priceDisplay: '₹1,400',
     rating: 4.9,
     reviews: 156,
-    image: '/images/products/printed-scarf/chemo-headwear.jpg',
-    alt: 'Soft bamboo fabric head scarf',
+    image: '/images/Headscarf/1.jpeg',
+    alt: 'BrowBloom™ — ready-to-wear eyebrows',
   },
 ]
 
@@ -300,8 +300,78 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ═══ SECTION 2: TRUST STRIP ═══ */}
-      <section className="bg-white py-14 px-4 lg:px-8">
+      {/* ═══ SECTION 2: SHOP BY NEED ═══ */}
+      <section className="bg-white py-16 px-4 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 text-center">
+            <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#884d53]">Find your way</p>
+            <h2 className="text-[28px] font-bold text-[#1c1c18] md:text-[34px]">What brings you here today?</h2>
+            <p className="mt-3 text-[#524344] max-w-lg mx-auto">Every journey is different. Start with what you are experiencing right now.</p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-4">
+            {[
+              {
+                id: 'after-surgery',
+                label: 'After Surgery',
+                sub: 'Comfort and support for your recovery journey',
+                href: '/shop-by-need/after-surgery',
+                emoji: '🌿',
+                bg: 'from-[#f2e8e0] to-[#ede0d4]',
+                accent: '#884d53',
+              },
+              {
+                id: 'hair-loss',
+                label: 'Managing Hair Loss',
+                sub: 'Feel like yourself during treatment',
+                href: '/shop-by-need/hair-loss',
+                emoji: '🌸',
+                bg: 'from-[#e8edf2] to-[#d9e4ed]',
+                accent: '#4a6fa5',
+              },
+              {
+                id: 'lymphedema',
+                label: 'Lymphedema Support',
+                sub: 'Fast relief for arm swelling and heaviness',
+                href: '/products/flowsleeve',
+                emoji: '💚',
+                bg: 'from-[#e0ede5] to-[#d4e8db]',
+                accent: '#446651',
+              },
+              {
+                id: 'daily-comfort',
+                label: 'Daily Comfort',
+                sub: 'Gentle products for sensitive skin',
+                href: '/shop-by-need/daily-comfort',
+                emoji: '✨',
+                bg: 'from-[#f0ecdf] to-[#e8e2cf]',
+                accent: '#7a6a38',
+              },
+            ].map(tile => (
+              <Link
+                key={tile.id}
+                href={tile.href}
+                className={`group relative flex flex-col justify-end overflow-hidden rounded-2xl bg-gradient-to-br ${tile.bg} p-6 min-h-[180px] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl`}
+              >
+                <span className="absolute top-5 left-5 text-3xl select-none">{tile.emoji}</span>
+                <div>
+                  <p className="font-bold text-[#1c1c18] text-[15px] leading-snug mb-1">{tile.label}</p>
+                  <p className="text-[12px] text-[#524344] leading-snug">{tile.sub}</p>
+                  <span
+                    className="mt-3 inline-block text-[11px] font-semibold uppercase tracking-[0.12em] transition-colors"
+                    style={{ color: tile.accent }}
+                  >
+                    Explore →
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ SECTION 2B: TRUST STRIP ═══ */}
+      <section className="bg-[#faf7f2] border-t border-b border-[#2c1f1a]/[0.05] py-10 px-4 lg:px-8">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 md:grid-cols-4">
           {[
             { title: 'Thoughtfully Curated', subtitle: 'Designed for comfort, healing, and dignity', Icon: ShieldCheck },
@@ -310,7 +380,7 @@ export default function Home() {
             { title: 'Gentle on Sensitive Bodies', subtitle: 'Soft materials chosen with care', Icon: Heart },
           ].map(({ title, subtitle, Icon }) => (
             <div key={title} className="group flex flex-col items-center text-center fade-in-up">
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-surface-low text-primary-600 transition-transform group-hover:scale-110">
+              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-white text-[#884d53] transition-transform group-hover:scale-110 shadow-sm">
                 <Icon strokeWidth={1.5} className="h-6 w-6" />
               </div>
               <h3 className="mb-1 font-semibold text-[#1c1c18]">{title}</h3>
