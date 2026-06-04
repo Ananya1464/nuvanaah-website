@@ -1,17 +1,22 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useParams, useRouter } from 'next/navigation'
+import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import {
   ShoppingCart, Heart,
   ChevronDown, ChevronLeft, ChevronRight, CheckCircle2, X, Maximize2
 } from 'lucide-react'
-import { getProductById, getProductBySlug, getRelatedProducts } from '@/lib/products-data'
-import type { Product } from '@/lib/types'
+import { getPublicProductBySlug, getPublicProducts, getRelatedProducts } from '@/lib/products-data'
 import { useCart } from '@/lib/cart-context'
 import { useWishlist } from '@/lib/wishlist-context'
+
+export async function generateStaticParams() {
+  return getPublicProducts().map(product => ({
+    slug: product.slug || String(product.id),
+  }))
+}
 
 // ─── HELPERS ──────────────────────────────────────────────────────────────────
 
@@ -93,32 +98,49 @@ function AccordionSection({
 
 // ─── MAIN PAGE ─────────────────────────────────────────────────────────────────
 
-export default function ProductDetailPage() {
-  const params = useParams()
-  const router = useRouter()
-  const [product, setProduct] = useState<Product | null>(null)
-  const [productImages, setProductImages] = useState<string[]>([])
+export default function ProductDetailPage({ params }: { params: { slug: string } }) {
+  const product = getPublicProductBySlug(params.slug) || getPublicProducts().find(item => String(item.id) === params.slug)
+  if (!product) notFound()
+
+  const initialImages = product.images?.map(img => img.src).filter((src): src is string => !!src) || []
+  const [productImages, setProductImages] = useState<string[]>(initialImages)
   const [selectedImage, setSelectedImage] = useState(0)
-  const [loading, setLoading] = useState(true)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const [isLightboxOpen, setIsLightboxOpen] = useState(false)
 
   const { addItem } = useCart()
   const { isInWishlist, toggleItem } = useWishlist()
 
+  const isComplimentaryGift = product.isComplimentaryGift === true || product.tags?.includes('gift') === true
+
   // Variant states
-  const [selectedSide, setSelectedSide] = useState('Left (L)')
-  const [selectedColour, setSelectedColour] = useState('')
-  const [selectedPrint, setSelectedPrint] = useState('')
+  const [selectedSide, setSelectedSide] = useState(product.variantOptions?.[0] || 'Left (L)')
+  const [selectedColour, setSelectedColour] = useState(product.variantOptions?.[0] || '')
+  const [selectedPrint, setSelectedPrint] = useState(product.variantOptions?.[0] || '')
   const [selectedSize, setSelectedSize] = useState('M')
   const [selectedVersion, setSelectedVersion] = useState('Indian')
-  const [selectedShade, setSelectedShade] = useState('Coffee Bean')
-  const [selectedStyle, setSelectedStyle] = useState('Long Balayage')
+  const [selectedShade, setSelectedShade] = useState(product.variantOptions?.[0] || 'Coffee Bean')
+  const [selectedStyle, setSelectedStyle] = useState(product.variantOptions?.[0] || 'Long Balayage')
 
   // BloomCrown measurement inputs
   const [headCircumference, setHeadCircumference] = useState('')
   const [frontToNape, setFrontToNape] = useState('')
   const [earToEar, setEarToEar] = useState('')
+
+  useEffect(() => {
+    setProductImages(initialImages)
+    setSelectedImage(0)
+    setIsAutoPlaying(true)
+
+    if (product.variantOptions && product.variantOptions.length > 0) {
+      if (product.id === 'comfort-shape') setSelectedSide(product.variantOptions[0])
+      else if (product.variantLabel === 'Colour') setSelectedColour(product.variantOptions[0])
+      else if (product.variantLabel === 'Print') setSelectedPrint(product.variantOptions[0])
+      else if (product.variantLabel === 'Shade') setSelectedShade(product.variantOptions[0])
+      else if (product.variantLabel === 'Version') setSelectedVersion('Indian')
+      else if (product.variantLabel === 'Style') setSelectedStyle(product.variantOptions[0])
+    }
+  }, [params.slug])
 
   // Content accordion states
   const [isStoryOpen, setIsStoryOpen] = useState(true)
@@ -136,31 +158,6 @@ export default function ProductDetailPage() {
   const [showAllFAQs, setShowAllFAQs] = useState(false)
   const [showAllCare, setShowAllCare] = useState(false)
   const [showAllDonts, setShowAllDonts] = useState(false)
-
-  // Load product
-  useEffect(() => {
-    if (params.slug) {
-      const productId = String(params.slug)
-      const found = getProductBySlug(productId) || getProductById(productId)
-      if (found) {
-        setProduct(found)
-        const imgs = found.images?.map(img => img.src).filter((s): s is string => !!s) || []
-        setProductImages(imgs)
-        // Init variant defaults
-        if (found.variantOptions && found.variantOptions.length > 0) {
-          if (found.id === 'comfort-shape') setSelectedSide(found.variantOptions[0])
-          else if (found.variantLabel === 'Colour') setSelectedColour(found.variantOptions[0])
-          else if (found.variantLabel === 'Print') setSelectedPrint(found.variantOptions[0])
-          else if (found.variantLabel === 'Shade') setSelectedShade(found.variantOptions[0])
-          else if (found.variantLabel === 'Version') setSelectedVersion('Indian')
-          else if (found.variantLabel === 'Style') setSelectedStyle(found.variantOptions[0])
-        }
-        setLoading(false)
-      } else {
-        router.push('/products')
-      }
-    }
-  }, [params.slug, router])
 
   // Auto-play gallery
   useEffect(() => {
@@ -413,14 +410,6 @@ export default function ProductDetailPage() {
     )
   }
 
-  if (loading || !product) {
-    return (
-      <div className="min-h-screen bg-[#faf7f2] flex items-center justify-center">
-        <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-[#884d53]" />
-      </div>
-    )
-  }
-
   const wishlisted = isInWishlist(String(product.id))
   const relatedProducts = getRelatedProducts(product)
 
@@ -429,9 +418,11 @@ export default function ProductDetailPage() {
     currentPrice = selectedVersion === 'Imported' ? 2840 : 1575
   }
 
-  const priceDisplay = product.priceOnRequest
-    ? 'Price on request'
-    : `${product.priceFrom ? 'From ' : ''}₹${Number(currentPrice).toLocaleString('en-IN')}`
+  const priceDisplay = isComplimentaryGift
+    ? 'Complimentary Gift'
+    : product.priceOnRequest
+      ? 'Price on request'
+      : `${product.priceFrom ? 'From ' : ''}₹${Number(currentPrice).toLocaleString('en-IN')}`
 
   const stockStatus = product.stock_status
 
@@ -544,12 +535,12 @@ export default function ProductDetailPage() {
 
             {/* Price + badges */}
             <div className="flex items-center gap-3 flex-wrap pb-5 border-b border-[rgba(28,28,24,0.1)]">
-              <span className={`text-2xl font-semibold ${product.priceOnRequest ? 'text-[#7a6f6a] text-lg' : 'text-[#1c1c18]'}`}>
+              <span className={`text-2xl font-semibold ${product.priceOnRequest || isComplimentaryGift ? 'text-[#7a6f6a] text-lg' : 'text-[#1c1c18]'}`}>
                 {priceDisplay}
               </span>
-              {product.isGiftPopular && (
+              {(product.isGiftPopular || isComplimentaryGift) && (
                 <span className="bg-[#884d53]/8 text-[#884d53] text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
-                  🎁 Popular Gift
+                  {isComplimentaryGift ? 'Complimentary Gift' : '🎁 Popular Gift'}
                 </span>
               )}
               {product.id === 'willow-support' && (
@@ -962,7 +953,11 @@ export default function ProductDetailPage() {
                     <h3 className="text-sm font-semibold text-[#1c1c18] mb-0.5">{p.name}</h3>
                     {p.subtitle && <p className="text-[11px] text-[#7a6f6a] mb-2">{p.subtitle}</p>}
                     <p className="text-sm font-semibold text-[#884d53]">
-                      {p.priceOnRequest ? 'Price on request' : `${p.priceFrom ? 'From ' : ''}₹${Number(p.price).toLocaleString('en-IN')}`}
+                      {p.isComplimentaryGift || p.tags?.includes('gift')
+                        ? 'Complimentary Gift'
+                        : p.priceOnRequest
+                          ? 'Price on request'
+                          : `${p.priceFrom ? 'From ' : ''}₹${Number(p.price).toLocaleString('en-IN')}`}
                     </p>
                   </div>
                 </Link>

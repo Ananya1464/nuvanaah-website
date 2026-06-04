@@ -122,7 +122,13 @@ export default function GiftsPage() {
                           </p>
                           <h3 className="font-bold text-[#1c1c18] mb-1 leading-tight">{product?.name}</h3>
                           <p className="text-xs text-[#524344] mb-3 line-clamp-2 flex-1">{product?.subtitle}</p>
-                          <p className="font-bold text-[#884d53]">₹{Number(product?.price).toLocaleString('en-IN')}</p>
+                          {(product?.isComplimentaryGift || product?.tags?.includes('gift')) ? (
+                            <span className="inline-flex self-start rounded-full bg-[#884d53]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#884d53]">
+                              Complimentary Gift
+                            </span>
+                          ) : (
+                            <p className="font-bold text-[#884d53]">₹{Number(product?.price).toLocaleString('en-IN')}</p>
+                          )}
                         </div>
                       </Link>
                     ))}

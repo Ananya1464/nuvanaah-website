@@ -57,6 +57,7 @@ export interface Product {
   faqs?: {q: string, a: string}[]
   // New configuration fields for product page specs
   isGiftPopular?: boolean
+  isComplimentaryGift?: boolean
   tagline?: string
   comingSoon?: boolean
   dimensions?: string

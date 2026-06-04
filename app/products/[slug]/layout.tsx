@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
-import { getProductBySlug, getProductById } from '@/lib/products-data'
+import { getPublicProductBySlug, getPublicProducts } from '@/lib/products-data'
+import type { Product } from '@/lib/types'
 
 type Props = {
   params: Promise<{ slug: string }>
@@ -7,7 +8,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params
-  const product = getProductBySlug(resolvedParams.slug) || getProductById(resolvedParams.slug)
+  const product = getPublicProductBySlug(resolvedParams.slug) || getPublicProducts().find(item => String(item.id) === resolvedParams.slug)
 
   if (!product) {
     return { title: 'Product Not Found | Nuvanaah' }
@@ -30,13 +31,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-function buildJsonLd(product: NonNullable<ReturnType<typeof getProductBySlug>>) {
+function buildJsonLd(product: Product) {
+  const isComplimentaryGift = product.isComplimentaryGift === true || product.tags?.includes('gift') === true
   const productSchema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: product.name,
     description: product.metaDescription || product.description,
-    image: product.images?.map(img => img.src) || [],
+    image: product.images?.map((img: { src: string }) => img.src) || [],
     brand: {
       '@type': 'Brand',
       name: 'Nuvanaah',
@@ -44,7 +46,7 @@ function buildJsonLd(product: NonNullable<ReturnType<typeof getProductBySlug>>) 
     offers: {
       '@type': 'Offer',
       priceCurrency: 'INR',
-      price: product.priceOnRequest ? undefined : Number(product.price),
+      price: product.priceOnRequest || isComplimentaryGift || Number(product.price) <= 0 ? undefined : Number(product.price),
       availability: product.stock_status === 'instock'
         ? 'https://schema.org/InStock'
         : 'https://schema.org/OutOfStock',
@@ -55,7 +57,7 @@ function buildJsonLd(product: NonNullable<ReturnType<typeof getProductBySlug>>) 
   const faqSchema = product.faqs && product.faqs.length > 0 ? {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: product.faqs.map(faq => ({
+    mainEntity: product.faqs.map((faq: { q: string; a: string }) => ({
       '@type': 'Question',
       name: faq.q,
       acceptedAnswer: {
@@ -73,7 +75,7 @@ export default async function ProductLayout({ children, params }: {
   params: Promise<{ slug: string }>
 }) {
   const resolvedParams = await params
-  const product = getProductBySlug(resolvedParams.slug) || getProductById(resolvedParams.slug)
+  const product = getPublicProductBySlug(resolvedParams.slug) || getPublicProducts().find(item => String(item.id) === resolvedParams.slug)
 
   const jsonLd = product ? buildJsonLd(product) : null
 

@@ -654,7 +654,8 @@ export const products: Product[] = [
     tagline: 'Fresh comfort with every use.',
     price: 0,
     priceFrom: false,
-    priceOnRequest: true,
+    priceOnRequest: false,
+    isComplimentaryGift: true,
     categories: [CAT_WELLNESS],
     description: 'A compact 12×24 inch recovery towel — soft, quick-drying, and designed for the small, daily moments of personal care that add up during recovery. Four colours. Clean hemmed edges.',
     fullStory: 'Dew is small. Present early. Gone quickly. Doing its quiet work before the day begins.\n\nPersonal care during recovery is a daily series of small moments. Washing your face. Drying your hands. Managing the routine around sensitive areas that need to stay clean. These are not extraordinary moments. They are ordinary ones, repeated many times each day. DewLeaf is made for those moments — not the big ones. The small, repetitive, quiet ones.\n\n"Fresh comfort with every use."',
@@ -665,7 +666,7 @@ export const products: Product[] = [
     stock_status: 'instock',
     featured: false,
     inStock: true,
-    tags: ['daily', 'towel', 'wellness', 'self-care'],
+    tags: ['daily', 'towel', 'wellness', 'self-care', 'gift'],
     shopByNeed: ['daily-comfort'],
     recoveryStage: ['stage-2', 'stage-3', 'stage-4'],
     crossSells: ['petalwrap', 'nest-carry'],
@@ -958,12 +959,33 @@ export function getProductBySlug(slug: string): Product | undefined {
   return products.find(p => p.slug === slug)
 }
 
+export function isGiftProduct(product: Product): boolean {
+  return product.isComplimentaryGift === true || product.tags?.includes('gift') === true
+}
+
+export function isPublicProduct(product: Product): boolean {
+  if ((product as Product & { published?: boolean }).published === false) return false
+
+  const price = Number(product.price)
+  if (Number.isFinite(price) && price > 0) return true
+
+  return isGiftProduct(product)
+}
+
+export function getPublicProducts(): Product[] {
+  return products.filter(isPublicProduct)
+}
+
+export function getPublicProductBySlug(slug: string): Product | undefined {
+  return getPublicProducts().find(p => p.slug === slug)
+}
+
 export function getProductsByCategory(categorySlug: string): Product[] {
-  return products.filter(p => p.categories?.some(c => c.slug === categorySlug))
+  return getPublicProducts().filter(p => p.categories?.some(c => c.slug === categorySlug))
 }
 
 export function getProductsByNeed(need: string): Product[] {
-  return products.filter(p => p.shopByNeed?.includes(need))
+  return getPublicProducts().filter(p => p.shopByNeed?.includes(need))
 }
 
 export function getAllCategories() {
@@ -981,19 +1003,21 @@ export function getAllCategories() {
 }
 
 export function getFeaturedProducts(): Product[] {
-  return products.filter(p => p.featured).slice(0, 4)
+  return getPublicProducts().filter(p => p.featured).slice(0, 4)
 }
 
 export function getRelatedProducts(product: Product): Product[] {
+  const publicProducts = getPublicProducts()
+
   if (product.crossSells && product.crossSells.length > 0) {
     const related = product.crossSells
       .map(slug => getProductBySlug(slug))
-      .filter((p): p is Product => !!p)
+      .filter((p): p is Product => !!p && isPublicProduct(p))
     return related.slice(0, 3)
   }
   const categoryId = product.categories?.[0]?.id
-  if (!categoryId) return products.slice(0, 3)
-  return products
+  if (!categoryId) return publicProducts.slice(0, 3)
+  return publicProducts
     .filter(p => p.id !== product.id && p.categories?.some(c => c.id === categoryId))
     .slice(0, 3)
 }

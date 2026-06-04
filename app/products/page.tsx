@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Heart, Shield, Truck, Phone, ArrowRight } from 'lucide-react'
-import { products } from '@/lib/products-data'
+import { getPublicProducts } from '@/lib/products-data'
 
 export default function ProductsPage() {
   const [selectedCategory, setSelectedCategory] = useState('all')
@@ -19,12 +19,12 @@ export default function ProductsPage() {
   ]
 
   // Filter products based on selected pill
-  const filteredProducts = products.filter(p => {
+  const filteredProducts = getPublicProducts().filter(p => {
     if (selectedCategory === 'all') return true
     if (selectedCategory === 'after-surgery') return p.shopByNeed?.includes('after-surgery')
     if (selectedCategory === 'hair-loss') return p.shopByNeed?.includes('hair-loss')
     if (selectedCategory === 'daily-comfort') return p.shopByNeed?.includes('daily-comfort')
-    if (selectedCategory === 'gift') return p.isGiftPopular === true || p.tags?.includes('gift')
+    if (selectedCategory === 'gift') return p.isGiftPopular === true || p.isComplimentaryGift === true || p.tags?.includes('gift')
     return true
   })
 
@@ -117,9 +117,9 @@ export default function ProductsPage() {
               >
                 {/* Visual Badges */}
                 <div className="absolute top-4 left-4 z-10 flex flex-col gap-1.5">
-                  {product.isGiftPopular && (
+                  {(product.isGiftPopular || product.isComplimentaryGift || product.tags?.includes('gift')) && (
                     <span className="bg-[#884d53] text-white text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm">
-                      Popular Gift
+                      {product.isComplimentaryGift ? 'Complimentary Gift' : 'Popular Gift'}
                     </span>
                   )}
                   {isFeatured && (
@@ -168,7 +168,13 @@ export default function ProductsPage() {
                         <p className="text-base font-bold text-[#884d53]">Price TBC</p>
                       ) : (
                         <p className="text-lg font-bold text-[#1c1c18]">
-                          {product.priceFrom && 'From '}₹{Number(product.price).toLocaleString('en-IN')}
+                          {(product.isComplimentaryGift || product.tags?.includes('gift')) ? (
+                            <span className="inline-flex rounded-full bg-[#884d53]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#884d53]">
+                              Complimentary Gift
+                            </span>
+                          ) : (
+                            <>{product.priceFrom && 'From '}₹{Number(product.price).toLocaleString('en-IN')}</>
+                          )}
                         </p>
                       )}
                       <p className="text-[10px] text-[#847374] font-medium">Free delivery over ₹999</p>

@@ -26,7 +26,7 @@ export const viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://nuvanaah.com'),
+  metadataBase: new URL('https://www.nuvanaah.com'),
   title: 'Cancer Accessories India | Mastectomy Bras, Chemo Shirts | Nuvanaah',
   description:
     'Premium cancer care accessories for patients in India. Mastectomy bras, breast prosthesis, chemo port shirts, lymphedema sleeves. Doctor endorsed. 45+ years trusted. Free shipping. COD available.',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   robots: 'index, follow',
   openGraph: {
     type: 'website',
-    url: 'https://nuvanaah.com',
+    url: 'https://www.nuvanaah.com',
     title: 'Cancer Accessories India | Mastectomy Bras, Chemo Shirts | Nuvanaah',
     description:
       'Premium cancer care accessories for patients in India. Mastectomy bras, breast prosthesis, chemo port shirts. Doctor endorsed. Free shipping. COD available.',
