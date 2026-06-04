@@ -2,11 +2,11 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Star, Plus, Heart, ChevronLeft, ChevronRight, ShoppingCart } from 'lucide-react'
+import { Star, Heart, ChevronLeft, ChevronRight, ShoppingCart } from 'lucide-react'
 import { Product } from '@/lib/types'
 import { getProductImages } from '@/lib/product-images'
 import { useState, useEffect } from 'react'
-import { useCart } from '@/lib/cart-context'
+
 import { useWishlist } from '@/lib/wishlist-context'
 
 interface ProductCardProps {
@@ -22,7 +22,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isHovered, setIsHovered] = useState(false)
 
-  const { addItem } = useCart()
+
   const { isInWishlist, toggleItem } = useWishlist()
   const wishlisted = isInWishlist(String(product.id))
 
@@ -61,10 +61,6 @@ export default function ProductCard({ product }: ProductCardProps) {
     setCurrentImageIndex((prev) => (prev - 1 + productImages.length) % productImages.length)
   }
 
-  const goToPreviousImage = (e: React.MouseEvent) => {
-    e.preventDefault()
-    setCurrentImageIndex((prev) => (prev - 1 + productImages.length) % productImages.length)
-  }
 
   const handleToggleWishlist = (e: React.MouseEvent) => {
     e.preventDefault()

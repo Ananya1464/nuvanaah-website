@@ -117,7 +117,6 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
   const [selectedColour, setSelectedColour] = useState(product.variantOptions?.[0] || '')
   const [selectedPrint, setSelectedPrint] = useState(product.variantOptions?.[0] || '')
   const [selectedSize, setSelectedSize] = useState('M')
-  const [selectedSide, setSelectedSide] = useState('')
   const [selectedVersion, setSelectedVersion] = useState('Indian')
   const [selectedShade, setSelectedShade] = useState(product.variantOptions?.[0] || 'Coffee Bean')
   const [selectedStyle, setSelectedStyle] = useState(product.variantOptions?.[0] || 'Long Balayage')
