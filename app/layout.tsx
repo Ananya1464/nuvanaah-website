@@ -29,21 +29,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.nuvanaah.com'),
   title: 'Cancer Accessories India | Mastectomy Bras, Chemo Shirts | Nuvanaah',
   description:
-    'Premium cancer care accessories for patients in India. Mastectomy bras, breast prosthesis, chemo port shirts, lymphedema sleeves. Doctor endorsed. 45+ years trusted. Free shipping. COD available.',
-  keywords: [
-    'cancer accessories India',
-    'mastectomy products India',
-    'chemotherapy accessories',
-    'oncology care products',
-    'post surgery care',
-    'mastectomy',
-    'cancer care',
-    'chemotherapy',
-    'breast prosthesis',
-    'lymphedema',
-    'post-surgery',
-    'breast cancer',
-  ],
+    'Premium cancer care accessories for patients in India. Mastectomy bras, breast prosthesis, chemo port shirts, lymphedema sleeves. Free shipping. COD available.',
   authors: [{ name: 'Nuvanaah Team' }],
   robots: 'index, follow',
   openGraph: {
@@ -51,11 +37,11 @@ export const metadata: Metadata = {
     url: 'https://www.nuvanaah.com',
     title: 'Cancer Accessories India | Mastectomy Bras, Chemo Shirts | Nuvanaah',
     description:
-      'Premium cancer care accessories for patients in India. Mastectomy bras, breast prosthesis, chemo port shirts. Doctor endorsed. Free shipping. COD available.',
+      'Premium cancer care accessories for patients in India. Mastectomy bras, breast prosthesis, chemo port shirts. Free shipping. COD available.',
     siteName: 'Nuvanaah',
     images: [
       {
-        url: 'https://nuvanaah.com/og-image.jpg',
+        url: 'https://www.nuvanaah.com/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Nuvanaah - Cancer Care Products',
@@ -65,7 +51,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Cancer Accessories India | Mastectomy Bras | Nuvanaah',
-    description: 'Premium cancer care accessories. Doctor endorsed. 45+ years trusted. Free shipping India.',
+    description: 'Premium cancer care accessories. Free shipping India.',
   },
 }
 

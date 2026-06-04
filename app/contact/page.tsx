@@ -10,87 +10,87 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-surface">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-teal-50 to-white pt-24 pb-16">
+      <section className="bg-gradient-to-br from-primary-50 to-surface pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-light text-gray-900 mb-6">
-            We're Here <span className="font-semibold text-teal-600">for You</span>
+          <h1 className="text-5xl md:text-6xl font-light text-tertiary-700 mb-6">
+            We're Here <span className="font-semibold text-primary-600">for You</span>
           </h1>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-tertiary-600 max-w-2xl mx-auto leading-relaxed">
             Questions about products? Need sizing help? Just want to talk? Our compassionate team is ready to support you.
           </p>
         </div>
       </section>
 
       {/* Contact Methods Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-surface">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
             {/* Call Us */}
-            <div className="bg-gradient-to-br from-teal-50 to-white rounded-2xl p-8 border border-teal-100 shadow-sm hover:shadow-lg transition">
-              <div className="w-16 h-16 bg-teal-600 rounded-full flex items-center justify-center mb-6">
+            <div className="bg-gradient-to-br from-primary-50 to-surface rounded-2xl p-8 border border-primary-100 shadow-sm hover:shadow-lg transition">
+              <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mb-6">
                 <Phone className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Call Us</h3>
+              <h3 className="text-2xl font-semibold text-tertiary-700 mb-4">Call Us</h3>
               <div className="space-y-3 mb-6">
-                <a href="tel:+919819461612" className="block text-lg font-semibold text-teal-600 hover:text-teal-700">
+                <a href="tel:+919819461612" className="block text-lg font-semibold text-primary-600 hover:text-primary-700">
                   +91-9819461612
                 </a>
-                <a href="tel:+919967711116" className="block text-lg font-semibold text-teal-600 hover:text-teal-700">
+                <a href="tel:+919967711116" className="block text-lg font-semibold text-primary-600 hover:text-primary-700">
                   +91-9967711116
                 </a>
-                <div className="flex items-center gap-2 text-gray-600">
+                <div className="flex items-center gap-2 text-tertiary-500">
                   <Clock className="w-4 h-4" />
                   <span className="text-sm">Mon-Sat, 10AM-6PM IST</span>
                 </div>
               </div>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-tertiary-500">
                 <strong>Best For:</strong> Immediate assistance, complex questions, urgent order issues
               </p>
             </div>
 
             {/* WhatsApp Us */}
-            <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 border border-green-100 shadow-sm hover:shadow-lg transition">
-              <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mb-6">
+            <div className="bg-gradient-to-br from-secondary-50 to-surface rounded-2xl p-8 border border-secondary-100 shadow-sm hover:shadow-lg transition">
+              <div className="w-16 h-16 bg-secondary-600 rounded-full flex items-center justify-center mb-6">
                 <MessageCircle className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">WhatsApp Us</h3>
+              <h3 className="text-2xl font-semibold text-tertiary-700 mb-4">WhatsApp Us</h3>
               <div className="space-y-3 mb-6">
                 <a
                   href="https://wa.me/919819461612"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-lg font-semibold text-green-600 hover:text-green-700"
+                  className="block text-lg font-semibold text-secondary-600 hover:text-secondary-700"
                 >
                   +91-9819461612
                 </a>
-                <div className="flex items-center gap-2 text-gray-600">
+                <div className="flex items-center gap-2 text-tertiary-500">
                   <Clock className="w-4 h-4" />
                   <span className="text-sm">Mon-Sat, 10AM-8PM IST</span>
                 </div>
               </div>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-tertiary-500">
                 <strong>Best For:</strong> Product photos, sizing questions, quick consultations, follow-up care
               </p>
             </div>
 
             {/* Email Us */}
-            <div className="bg-gradient-to-br from-amber-50 to-white rounded-2xl p-8 border border-amber-100 shadow-sm hover:shadow-lg transition">
-              <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mb-6">
+            <div className="bg-gradient-to-br from-neutral-50 to-surface rounded-2xl p-8 border border-neutral-200 shadow-sm hover:shadow-lg transition">
+              <div className="w-16 h-16 bg-neutral-600 rounded-full flex items-center justify-center mb-6">
                 <Mail className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Email Us</h3>
+              <h3 className="text-2xl font-semibold text-tertiary-700 mb-4">Email Us</h3>
               <div className="space-y-3 mb-6">
-                <a href="mailto:care@nuvanaah.com" className="block text-lg font-semibold text-amber-600 hover:text-amber-700">
+                <a href="mailto:care@nuvanaah.com" className="block text-lg font-semibold text-neutral-600 hover:text-neutral-700">
                   care@nuvanaah.com
                 </a>
-                <div className="flex items-center gap-2 text-gray-600">
+                <div className="flex items-center gap-2 text-tertiary-500">
                   <Clock className="w-4 h-4" />
                   <span className="text-sm">Response within 24 hours</span>
                 </div>
               </div>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-tertiary-500">
                 <strong>Best For:</strong> Detailed inquiries, order documentation, partnership proposals
               </p>
             </div>
@@ -99,20 +99,20 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-16 bg-gradient-to-b from-white to-cream-50">
+      <section className="py-16 bg-gradient-to-b from-surface to-cream-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-light text-gray-900 mb-4">
-              Send Us a <span className="font-semibold text-teal-600">Message</span>
+            <h2 className="text-4xl font-light text-tertiary-700 mb-4">
+              Send Us a <span className="font-semibold text-primary-600">Message</span>
             </h2>
-            <p className="text-gray-600">We typically respond within 4-6 hours during business hours</p>
+            <p className="text-tertiary-500">We typically respond within 4-6 hours during business hours</p>
           </div>
 
-          <form className="bg-white rounded-2xl shadow-lg p-8 md:p-12 border border-gray-100">
+          <form className="bg-white rounded-2xl shadow-lg p-8 md:p-12 border border-neutral-200">
             <div className="space-y-6">
               {/* Name */}
               <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="name" className="block text-sm font-semibold text-tertiary-600 mb-2">
                   Full Name *
                 </label>
                 <input
@@ -120,14 +120,14 @@ export default function ContactPage() {
                   id="name"
                   name="name"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-surface-low"
                   placeholder="Enter your full name"
                 />
               </div>
 
               {/* Email */}
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-semibold text-tertiary-600 mb-2">
                   Email Address *
                 </label>
                 <input
@@ -135,14 +135,14 @@ export default function ContactPage() {
                   id="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-surface-low"
                   placeholder="your.email@example.com"
                 />
               </div>
 
               {/* Phone */}
               <div>
-                <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="phone" className="block text-sm font-semibold text-tertiary-600 mb-2">
                   Phone Number *
                 </label>
                 <input
@@ -150,21 +150,21 @@ export default function ContactPage() {
                   id="phone"
                   name="phone"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-surface-low"
                   placeholder="+91-XXXXX-XXXXX"
                 />
               </div>
 
               {/* Subject */}
               <div>
-                <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="subject" className="block text-sm font-semibold text-tertiary-600 mb-2">
                   Subject *
                 </label>
                 <select
                   id="subject"
                   name="subject"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-surface-low"
                 >
                   <option value="">Select a subject</option>
                   <option value="general">General Inquiry</option>
@@ -180,7 +180,7 @@ export default function ContactPage() {
 
               {/* Message */}
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-semibold text-tertiary-600 mb-2">
                   Message *
                 </label>
                 <textarea
@@ -188,42 +188,42 @@ export default function ContactPage() {
                   name="message"
                   required
                   rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent resize-none"
+                  className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none bg-surface-low"
                   placeholder="How can we help you? Feel free to share details about your situation—we treat every conversation with care and confidentiality."
                 />
               </div>
 
               {/* Preferred Contact Method */}
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-3">
+                <label className="block text-sm font-semibold text-tertiary-600 mb-3">
                   Preferred Contact Method
                 </label>
                 <div className="space-y-2">
                   <label className="flex items-center">
-                    <input type="radio" name="contact_method" value="phone" className="w-4 h-4 text-teal-600 focus:ring-teal-500" />
-                    <span className="ml-3 text-gray-700">Phone Call</span>
+                    <input type="radio" name="contact_method" value="phone" className="w-4 h-4 text-primary-600 focus:ring-primary-500" />
+                    <span className="ml-3 text-tertiary-600">Phone Call</span>
                   </label>
                   <label className="flex items-center">
-                    <input type="radio" name="contact_method" value="whatsapp" className="w-4 h-4 text-teal-600 focus:ring-teal-500" />
-                    <span className="ml-3 text-gray-700">WhatsApp</span>
+                    <input type="radio" name="contact_method" value="whatsapp" className="w-4 h-4 text-primary-600 focus:ring-primary-500" />
+                    <span className="ml-3 text-tertiary-600">WhatsApp</span>
                   </label>
                   <label className="flex items-center">
-                    <input type="radio" name="contact_method" value="email" className="w-4 h-4 text-teal-600 focus:ring-teal-500" defaultChecked />
-                    <span className="ml-3 text-gray-700">Email</span>
+                    <input type="radio" name="contact_method" value="email" className="w-4 h-4 text-primary-600 focus:ring-primary-500" defaultChecked />
+                    <span className="ml-3 text-tertiary-600">Email</span>
                   </label>
                 </div>
               </div>
 
               {/* Best Time */}
               <div>
-                <label htmlFor="best_time" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="best_time" className="block text-sm font-semibold text-tertiary-600 mb-2">
                   Best Time to Reach You
                 </label>
                 <input
                   type="text"
                   id="best_time"
                   name="best_time"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-surface-low"
                   placeholder="e.g., weekday mornings, after 5PM"
                 />
               </div>
@@ -231,8 +231,8 @@ export default function ContactPage() {
               {/* Newsletter Checkbox */}
               <div>
                 <label className="flex items-start">
-                  <input type="checkbox" name="newsletter" className="w-5 h-5 text-teal-600 focus:ring-teal-500 mt-0.5" />
-                  <span className="ml-3 text-sm text-gray-700">
+                  <input type="checkbox" name="newsletter" className="w-5 h-5 text-primary-600 focus:ring-primary-500 mt-0.5" />
+                  <span className="ml-3 text-sm text-tertiary-600">
                     I'd like to receive helpful cancer care tips and product updates (optional, unsubscribe anytime)
                   </span>
                 </label>
@@ -241,14 +241,14 @@ export default function ContactPage() {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition shadow-lg hover:shadow-xl"
+                className="w-full bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-2 transition shadow-lg hover:shadow-xl"
               >
                 Send Message
                 <Send className="w-5 h-5" />
               </button>
 
               {/* Privacy Note */}
-              <p className="text-sm text-gray-500 text-center">
+              <p className="text-sm text-tertiary-400 text-center">
                 Your information is confidential and will never be shared. We typically respond within 4-6 hours during business hours.
               </p>
             </div>
@@ -257,26 +257,26 @@ export default function ContactPage() {
       </section>
 
       {/* Talk to a Care Specialist Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-surface">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 md:p-12 border border-gray-100 shadow-sm text-center">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+          <div className="bg-gradient-to-br from-neutral-50 to-white rounded-2xl p-8 md:p-12 border border-neutral-100 shadow-sm text-center">
+            <h2 className="text-2xl font-semibold text-tertiary-700 mb-4">
               Talk to a Care Specialist
             </h2>
-            <p className="text-gray-600 mb-8 max-w-xl mx-auto leading-relaxed">
+            <p className="text-tertiary-500 mb-8 max-w-xl mx-auto leading-relaxed">
               Not sure what's right for you? Our trained care team is here to listen, guide, and support you — with no pressure to buy.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">
-              <div className="flex items-center gap-3 text-gray-700">
-                <div className="w-10 h-10 bg-teal-50 rounded-full flex items-center justify-center">
-                  <Phone className="w-5 h-5 text-teal-600" />
+              <div className="flex items-center gap-3 text-tertiary-600">
+                <div className="w-10 h-10 bg-primary-50 rounded-full flex items-center justify-center">
+                  <Phone className="w-5 h-5 text-primary-600" />
                 </div>
                 <span>Phone consultation (India-wide)</span>
               </div>
-              <div className="flex items-center gap-3 text-gray-700">
-                <div className="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center">
-                  <MessageCircle className="w-5 h-5 text-green-600" />
+              <div className="flex items-center gap-3 text-tertiary-600">
+                <div className="w-10 h-10 bg-secondary-50 rounded-full flex items-center justify-center">
+                  <MessageCircle className="w-5 h-5 text-secondary-600" />
                 </div>
                 <span>WhatsApp video consultation (India-wide)</span>
               </div>
@@ -284,7 +284,7 @@ export default function ContactPage() {
 
             <Link
               href="/consultations"
-              className="inline-block bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-full font-medium transition shadow-sm hover:shadow-md"
+              className="inline-block bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-full font-medium transition shadow-sm hover:shadow-md"
             >
               Talk to a Care Specialist
             </Link>
@@ -293,24 +293,24 @@ export default function ContactPage() {
       </section>
 
       {/* Office Address & Map Section */}
-      <section className="py-16 bg-gradient-to-b from-white to-cream-50">
+      <section className="py-16 bg-gradient-to-b from-surface to-cream-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-light text-gray-900 mb-4">
-              Visit Us <span className="font-semibold text-teal-600">(By Appointment Only)</span>
+            <h2 className="text-4xl font-light text-tertiary-700 mb-4">
+              Visit Us <span className="font-semibold text-primary-600">(By Appointment Only)</span>
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Address Details */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-neutral-100">
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-6 h-6 text-teal-600" />
+                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-6 h-6 text-primary-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Address</h3>
-                  <p className="text-gray-700 leading-relaxed">
+                  <h3 className="text-xl font-semibold text-tertiary-700 mb-2">Address</h3>
+                  <p className="text-tertiary-600 leading-relaxed">
                     Nuvanaah<br />
                     [Street Address]<br />
                     [Area], Mumbai – [Pincode]<br />
@@ -320,22 +320,22 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Clock className="w-6 h-6 text-amber-600" />
+                <div className="w-12 h-12 bg-neutral-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-6 h-6 text-neutral-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Business Hours</h3>
-                  <p className="text-gray-700 leading-relaxed">
+                  <h3 className="text-xl font-semibold text-tertiary-700 mb-2">Business Hours</h3>
+                  <p className="text-tertiary-600 leading-relaxed">
                     Monday - Saturday: 10:00 AM - 6:00 PM IST<br />
                     Sunday: Closed<br />
-                    <span className="text-sm text-teal-600 font-medium">*Please schedule appointments in advance</span>
+                    <span className="text-sm text-primary-600 font-medium">*Please schedule appointments in advance</span>
                   </p>
                 </div>
               </div>
 
-              <div className="bg-cream-50 rounded-lg p-4 border border-amber-100">
-                <h4 className="font-semibold text-gray-900 mb-2">Directions:</h4>
-                <ul className="text-sm text-gray-700 space-y-1">
+              <div className="bg-cream-50 rounded-lg p-4 border border-neutral-200">
+                <h4 className="font-semibold text-tertiary-700 mb-2">Directions:</h4>
+                <ul className="text-sm text-tertiary-600 space-y-1">
                   <li><strong>Nearest Metro:</strong> [Station Name]</li>
                   <li><strong>Parking:</strong> Available on premises</li>
                   <li><strong>Landmark:</strong> [Nearby Landmark]</li>
@@ -344,12 +344,12 @@ export default function ContactPage() {
             </div>
 
             {/* Map Placeholder */}
-            <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-sm border border-gray-200">
-              <div className="w-full h-full min-h-[400px] flex items-center justify-center bg-gradient-to-br from-teal-50 to-gray-100">
+            <div className="bg-neutral-100 rounded-2xl overflow-hidden shadow-sm border border-neutral-200">
+              <div className="w-full h-full min-h-[400px] flex items-center justify-center bg-gradient-to-br from-primary-50 to-neutral-100">
                 <div className="text-center">
-                  <MapPin className="w-16 h-16 text-teal-600 mx-auto mb-4" />
-                  <p className="text-gray-600 font-medium">Google Map Embed</p>
-                  <p className="text-sm text-gray-500">Map will be displayed here</p>
+                  <MapPin className="w-16 h-16 text-primary-600 mx-auto mb-4" />
+                  <p className="text-tertiary-500 font-medium">Google Map Embed</p>
+                  <p className="text-sm text-tertiary-400">Map will be displayed here</p>
                 </div>
               </div>
             </div>
@@ -358,42 +358,42 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Quick Reference */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-surface">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-light text-gray-900 mb-4">
-              Quick Answers to <span className="font-semibold text-teal-600">Common Questions</span>
+            <h2 className="text-4xl font-light text-tertiary-700 mb-4">
+              Quick Answers to <span className="font-semibold text-primary-600">Common Questions</span>
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-cream-50 rounded-xl p-6 border border-amber-100">
-              <h3 className="font-semibold text-gray-900 mb-2">What's your return policy?</h3>
-              <p className="text-gray-700 text-sm leading-relaxed">
+            <div className="bg-cream-50 rounded-xl p-6 border border-neutral-200">
+              <h3 className="font-semibold text-tertiary-700 mb-2">What's your return policy?</h3>
+              <p className="text-tertiary-600 text-sm leading-relaxed">
                 Clothing items can be exchanged within 7 days if unworn and in original packaging. Personal care items (prosthesis, adhesives) cannot be returned due to hygiene.
               </p>
-              <Link href="/faq" className="text-teal-600 hover:text-teal-700 text-sm font-medium inline-block mt-2">
+              <Link href="/faq" className="text-primary-600 hover:text-primary-700 text-sm font-medium inline-block mt-2">
                 Full Policy →
               </Link>
             </div>
 
-            <div className="bg-cream-50 rounded-xl p-6 border border-amber-100">
-              <h3 className="font-semibold text-gray-900 mb-2">Do you ship internationally?</h3>
-              <p className="text-gray-700 text-sm leading-relaxed">
+            <div className="bg-cream-50 rounded-xl p-6 border border-neutral-200">
+              <h3 className="font-semibold text-tertiary-700 mb-2">Do you ship internationally?</h3>
+              <p className="text-tertiary-600 text-sm leading-relaxed">
                 Currently, we ship within India only. International shipping coming soon.
               </p>
             </div>
 
-            <div className="bg-cream-50 rounded-xl p-6 border border-amber-100">
-              <h3 className="font-semibold text-gray-900 mb-2">Can I visit your store to see products?</h3>
-              <p className="text-gray-700 text-sm leading-relaxed">
+            <div className="bg-cream-50 rounded-xl p-6 border border-neutral-200">
+              <h3 className="font-semibold text-tertiary-700 mb-2">Can I visit your store to see products?</h3>
+              <p className="text-tertiary-600 text-sm leading-relaxed">
                 Our Mumbai office welcomes visitors by appointment. We also have product displays at partner hospitals in major cities.
               </p>
             </div>
 
-            <div className="bg-cream-50 rounded-xl p-6 border border-amber-100">
-              <h3 className="font-semibold text-gray-900 mb-2">Do you offer bulk discounts?</h3>
-              <p className="text-gray-700 text-sm leading-relaxed">
+            <div className="bg-cream-50 rounded-xl p-6 border border-neutral-200">
+              <h3 className="font-semibold text-tertiary-700 mb-2">Do you offer bulk discounts?</h3>
+              <p className="text-tertiary-600 text-sm leading-relaxed">
                 Yes, we have special pricing for hospitals, cancer support groups, and NGOs. Email partnerships@nuvanaah.com with your requirements.
               </p>
             </div>
@@ -402,7 +402,7 @@ export default function ContactPage() {
           <div className="text-center mt-8">
             <Link
               href="/faq"
-              className="inline-block text-teal-600 hover:text-teal-700 font-semibold"
+              className="inline-block text-primary-600 hover:text-primary-700 font-semibold"
             >
               View All FAQs →
             </Link>
@@ -411,19 +411,19 @@ export default function ContactPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-teal-600 to-teal-700 py-16">
+      <section className="bg-gradient-to-r from-primary-600 to-primary-700 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-semibold text-white mb-4">
             Still Have Questions?
           </h2>
-          <p className="text-xl text-teal-100 mb-8">
+          <p className="text-xl text-primary-100 mb-8">
             Don't hesitate to reach out. No question is too small, and your comfort is our priority.
           </p>
           <a
             href="https://wa.me/919819461612"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-white text-teal-600 hover:bg-gray-100 px-8 py-4 rounded-full font-semibold transition shadow-lg hover:shadow-xl"
+            className="inline-flex items-center gap-2 bg-white text-primary-600 hover:bg-neutral-50 px-8 py-4 rounded-full font-semibold transition shadow-lg hover:shadow-xl"
           >
             <MessageCircle className="w-5 h-5" />
             Chat on WhatsApp Now

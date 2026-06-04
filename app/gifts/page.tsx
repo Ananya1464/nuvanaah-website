@@ -46,8 +46,9 @@ export default function GiftsPage() {
             src="/images/catalog/petal_leaf/4.jpeg"
             alt="Gift background"
             fill
+            sizes="100vw"
             className="object-cover"
-            priority
+            priority={true}
           />
         </div>
         <div className="relative max-w-3xl mx-auto text-center">
@@ -113,6 +114,7 @@ export default function GiftsPage() {
                             src={product?.images?.[0]?.src || '/images/placeholder.png'}
                             alt={product?.name || ''}
                             fill
+                            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                             className="object-cover group-hover:scale-105 transition-transform duration-700"
                           />
                         </div>
@@ -127,7 +129,7 @@ export default function GiftsPage() {
                               Complimentary Gift
                             </span>
                           ) : (
-                            <p className="font-bold text-[#884d53]">₹{Number(product?.price).toLocaleString('en-IN')}</p>
+                            <p className="font-bold text-[#884d53]">₹ {Number(product?.price).toLocaleString('en-IN')}</p>
                           )}
                         </div>
                       </Link>

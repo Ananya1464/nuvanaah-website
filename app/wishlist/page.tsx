@@ -68,7 +68,7 @@ export default function WishlistPage() {
                                                 <p className="text-sm text-gray-500 italic">{item.tagline}</p>
                                             </div>
                                             <p className="text-xl font-bold text-gray-900 flex-shrink-0">
-                                                ₹{item.price.toLocaleString()}
+                                                ₹ {item.price.toLocaleString()}
                                             </p>
                                         </div>
 

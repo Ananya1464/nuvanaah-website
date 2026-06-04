@@ -23,6 +23,7 @@ export interface Product {
   image?: string
   images?: { id: number; src: string; alt: string }[]
   categories?: { id: number; name: string; slug: string }[]
+  categoryNav: string
   category?: 'mastectomy' | 'chemotherapy' | 'wigs' | 'lymphedema'
   sizes?: string[]
   sku?: string
@@ -38,8 +39,10 @@ export interface Product {
   shopByNeed?: string[]         // e.g. ['after-surgery', 'hair-loss']
   variantLabel?: string         // e.g. "Colour" or "Print"
   variantOptions?: string[]     // e.g. ['Aparajita', 'Ebony', 'Dusty Miller']
+  variantLabel2?: string        // Secondary variant, e.g. "Size"
+  variantOptions2?: string[]    // e.g. ['32', '34', '36']
   keyFeatures?: string[]        // bullet-list features (also used for product-content.json)
-  whatsIncluded?: string[]      // what's in the box
+  whatsIncluded?: (string | { item: string; detail: string })[]      // what's in the box
   // New fields from DOCX
   seoTitle?: string
   metaDescription?: string
@@ -55,6 +58,8 @@ export interface Product {
   perfectFor?: {title: string, desc: string}[]
   gentleNote?: string
   faqs?: {q: string, a: string}[]
+  whenToUse?: { heading: string, body: string }[]
+  whenToUseNote?: string
   // New configuration fields for product page specs
   isGiftPopular?: boolean
   isComplimentaryGift?: boolean

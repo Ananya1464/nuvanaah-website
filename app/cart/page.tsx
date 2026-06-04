@@ -15,7 +15,7 @@ export default function CartPage() {
     setTimeout(() => setIsUpdating(null), 300)
   }
 
-  // Calculate shipping (free above ₹1500)
+  // Calculate shipping (free above ₹ 1500)
   const shipping = total >= 1500 ? 0 : 99
   const grandTotal = total + shipping
 
@@ -118,10 +118,10 @@ export default function CartPage() {
                       {/* Price */}
                       <div className="text-right">
                         <p className="text-xl font-bold text-tertiary-700">
-                          ₹{(item.price * item.quantity).toLocaleString()}
+                          ₹ {(item.price * item.quantity).toLocaleString()}
                         </p>
                         {item.quantity > 1 && (
-                          <p className="text-sm text-tertiary-400">₹{item.price.toLocaleString()} each</p>
+                          <p className="text-sm text-tertiary-400">₹ {item.price.toLocaleString()} each</p>
                         )}
                       </div>
                     </div>
@@ -140,19 +140,19 @@ export default function CartPage() {
               <div className="space-y-4 mb-6">
                 <div className="flex justify-between text-tertiary-500">
                   <span>Subtotal ({itemCount} items)</span>
-                  <span>₹{total.toLocaleString()}</span>
+                  <span>₹ {total.toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between text-tertiary-500">
                   <span>Shipping</span>
                   {shipping === 0 ? (
                     <span className="font-medium text-secondary-600">FREE</span>
                   ) : (
-                    <span>₹{shipping}</span>
+                    <span>₹ {shipping}</span>
                   )}
                 </div>
                 {total < 1500 && (
                   <div className="rounded-xl border border-primary-100 bg-primary-50 p-3 text-sm text-primary-700">
-                    Add ₹{(1500 - total).toLocaleString()} more for free shipping!
+                    Add ₹ {(1500 - total).toLocaleString()} more for free shipping!
                   </div>
                 )}
               </div>
@@ -163,7 +163,7 @@ export default function CartPage() {
               {/* Total */}
               <div className="flex justify-between items-center mb-8">
                 <span className="text-lg font-semibold text-tertiary-700">Total</span>
-                <span className="text-2xl font-bold text-tertiary-700">₹{grandTotal.toLocaleString()}</span>
+                <span className="text-2xl font-bold text-tertiary-700">₹ {grandTotal.toLocaleString()}</span>
               </div>
 
               {/* Checkout Button */}

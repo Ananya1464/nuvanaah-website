@@ -32,28 +32,28 @@ export default function Hero() {
     },
     {
       title: 'Post-Surgery Essentials',
-      description: 'Mastectomy bras & prosthetics starting ₹659',
+      description: 'Mastectomy bras & prosthetics starting ₹ 659',
       icon: '🎀',
       link: '/products/category/post-surgery-essentials',
       linkText: 'Shop Recovery Products'
     },
     {
       title: 'Chemotherapy Support',
-      description: 'Protective masks & medical bags from ₹329',
+      description: 'Protective masks & medical bags from ₹ 329',
       icon: '💊',
       link: '/products/category/chemotherapy-support',
       linkText: 'View Treatment Essentials'
     },
     {
       title: 'Medical & Premium Wigs',
-      description: 'Human hair wigs from ₹9,899 to ₹29,149',
+      description: 'Human hair wigs from ₹ 9,899 to ₹ 29,149',
       icon: '💇‍♀️',
       link: '/products/category/hair-loss-solutions',
       linkText: 'Explore Hair Solutions'
     },
     {
       title: 'Lymphedema Care',
-      description: 'Medical compression sleeves at ₹2,749',
+      description: 'Medical compression sleeves at ₹ 2,749',
       icon: '🤲',
       link: '/products/category/lymphedema-management',
       linkText: 'Shop Compression Wear'

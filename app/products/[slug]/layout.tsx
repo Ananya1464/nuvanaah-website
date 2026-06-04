@@ -23,10 +23,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: product.ogTitle || title,
       description: product.ogDescription || description,
+      url: 'https://www.nuvanaah.com',
       images: product.images?.[0]?.src ? [{ url: product.images[0].src }] : [],
     },
     alternates: {
-      canonical: `https://nuvanaah.com/products/${product.slug}`,
+      canonical: `https://www.nuvanaah.com/products/${product.slug}`,
     },
   }
 }
@@ -50,7 +51,7 @@ function buildJsonLd(product: Product) {
       availability: product.stock_status === 'instock'
         ? 'https://schema.org/InStock'
         : 'https://schema.org/OutOfStock',
-      url: `https://nuvanaah.com/products/${product.slug}`,
+      url: `https://www.nuvanaah.com/products/${product.slug}`,
     },
   }
 

@@ -186,28 +186,28 @@ export default function ChoosingProsthesisArticle() {
                                         <td className="p-4 font-semibold">Silicone</td>
                                         <td className="p-4">Most realistic</td>
                                         <td className="p-4">Natural weight</td>
-                                        <td className="p-4">₹7,000-15,000</td>
+                                        <td className="p-4">₹ 7,000-15,000</td>
                                         <td className="p-4">Daily wear, special occasions</td>
                                     </tr>
                                     <tr className="border-b border-gray-100 bg-gray-50">
                                         <td className="p-4 font-semibold">Lightweight Silicone</td>
                                         <td className="p-4">Realistic</td>
                                         <td className="p-4">30-50% lighter</td>
-                                        <td className="p-4">₹8,000-18,000</td>
+                                        <td className="p-4">₹ 8,000-18,000</td>
                                         <td className="p-4">Lymphedema, summer, exercise</td>
                                     </tr>
                                     <tr className="border-b border-gray-100">
                                         <td className="p-4 font-semibold">Foam</td>
                                         <td className="p-4">Soft, less realistic</td>
                                         <td className="p-4">Very light</td>
-                                        <td className="p-4">₹1,500-4,000</td>
+                                        <td className="p-4">₹ 1,500-4,000</td>
                                         <td className="p-4">Sleep, post-surgery, budget</td>
                                     </tr>
                                     <tr>
                                         <td className="p-4 font-semibold rounded-bl-xl">Fiberfill</td>
                                         <td className="p-4">Soft</td>
                                         <td className="p-4">Ultra-light</td>
-                                        <td className="p-4">₹800-2,000</td>
+                                        <td className="p-4">₹ 800-2,000</td>
                                         <td className="p-4 rounded-br-xl">Immediate post-surgery</td>
                                     </tr>
                                 </tbody>
@@ -232,8 +232,8 @@ export default function ChoosingProsthesisArticle() {
                                         Medical-grade silicone with natural movement. Temperature adaptive, concave back for comfort. Includes cotton cover and carrying case.
                                     </p>
                                     <div className="flex items-center gap-4 mb-4">
-                                        <span className="text-2xl font-bold text-gray-900">₹8,999</span>
-                                        <span className="text-gray-400 line-through">₹11,999</span>
+                                        <span className="text-2xl font-bold text-gray-900">₹ 8,999</span>
+                                        <span className="text-gray-400 line-through">₹ 11,999</span>
                                         <span className="bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-sm font-medium">Save 25%</span>
                                     </div>
                                     <Link href="/products/silicone-breast-form" className="inline-flex items-center gap-2 bg-teal-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-teal-700 transition">

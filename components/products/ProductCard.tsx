@@ -61,17 +61,9 @@ export default function ProductCard({ product }: ProductCardProps) {
     setCurrentImageIndex((prev) => (prev - 1 + productImages.length) % productImages.length)
   }
 
-  const handleAddToCart = (e: React.MouseEvent) => {
+  const goToPreviousImage = (e: React.MouseEvent) => {
     e.preventDefault()
-    e.stopPropagation()
-    if (!isOutOfStock) {
-      addItem({
-        id: String(product.id),
-        name: product.name,
-        price: Number(product.price),
-        image: productImages[0],
-      })
-    }
+    setCurrentImageIndex((prev) => (prev - 1 + productImages.length) % productImages.length)
   }
 
   const handleToggleWishlist = (e: React.MouseEvent) => {
@@ -87,9 +79,9 @@ export default function ProductCard({ product }: ProductCardProps) {
   }
 
   return (
-    <Link href={`/products/${product.slug || product.id}`}>
+    <Link href={`/products/${product.slug || product.id}`} className="block group">
       <div
-        className="group cursor-pointer"
+        className="cursor-pointer transition-transform duration-200 hover:-translate-y-1"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -170,17 +162,6 @@ export default function ProductCard({ product }: ProductCardProps) {
               </span>
             </div>
           )}
-
-          {/* Add to Cart Button */}
-          {!isOutOfStock && (
-            <button
-              onClick={handleAddToCart}
-              className="absolute bottom-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-[#884d53] text-white shadow-lg transition-all hover:scale-110 hover:shadow-xl opacity-0 group-hover:opacity-100 z-10"
-              aria-label={`Add ${product.name} to cart`}
-            >
-              <Plus className="w-4 h-4" />
-            </button>
-          )}
         </div>
 
         {/* Product Info */}
@@ -229,11 +210,22 @@ export default function ProductCard({ product }: ProductCardProps) {
             <span className="inline-flex rounded-full bg-[#884d53]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#884d53]">
               Complimentary Gift
             </span>
+          ) : product.id === 'dewleaf' ? (
+            <p className="text-[13px] font-medium text-[#7a6f6a]">Price on request</p>
+          ) : product.id === 'bloomcrown' ? (
+            <p className="text-lg font-bold text-[#884d53]">From ₹ 12,000</p>
           ) : (
             <p className="text-lg font-bold text-[#884d53]">
               {product.priceFrom ? `From ₹${Number(product.price).toLocaleString('en-IN')}` : `₹${Number(product.price).toLocaleString('en-IN')}`}
             </p>
           )}
+
+          {/* View Product Link (Hover State) */}
+          <div className="mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-150">
+            <span className="text-[13px] text-[#884d53] hover:underline">
+              View product &rarr;
+            </span>
+          </div>
         </div>
       </div>
     </Link>

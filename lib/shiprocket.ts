@@ -184,7 +184,7 @@ export async function calculateShippingCost(params: {
     else if (params.weight <= 5) baseCost = 100
     else baseCost = 150
 
-    // Free shipping for orders over ₹500 (handled at order level, but shipper charges apply)
+    // Free shipping for orders over ₹ 500 (handled at order level, but shipper charges apply)
     const courierCost = Math.max(0, baseCost)
 
     return {

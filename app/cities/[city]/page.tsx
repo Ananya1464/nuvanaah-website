@@ -213,7 +213,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
                     </div>
                     <div className="flex justify-between">
                       <span>Follow-up Session</span>
-                      <span className="font-semibold text-gray-800">₹500</span>
+                      <span className="font-semibold text-gray-800">₹ 500</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Product Selection Help</span>

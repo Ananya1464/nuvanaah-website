@@ -1,0 +1,42 @@
+15: // —��—��—�� HELPERS —��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��
+37: // —��—��—�� SUB-COMPONENTS —��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��
+93: // —��—��—�� MAIN PA—E —��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��
+113: const isComplimentary—ift = product.isComplimentary—ift === true || product.tags?.includes('gift') === true
+209: // —��—��—�� VARIANT SELECTOR —��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��
+282: <button type="button" className="text-[11px] text-[#884d53] font-semibold hover:underline">Size —uide —��</button>
+294: <a href="https://wa.me/919819461612" target="_blank" rel="noopener noreferrer" className="text-[#884d53] font-semibold hover:underline">Chat with us —��</a>
+308: {[['Indian', '—�1,575'], ['Imported', '—�2,840']].map(([ver, price]) => (
+315: }`}>{ver} —�� {price}</button>
+327: 'Coffee Bean': 'Warm dark brown —�� medium to deeper South Asian skin tones.',
+328: 'Bamboo Woods': 'Soft cool brown —�� lighter to medium South Asian skin tones.',
+450: const priceDisplay = isComplimentary—ift
+451: ? 'Complimentary —ift'
+454: : `${product.priceFrom ? 'From ' : ''}—�${Number(currentPrice).toLocaleString('en-IN')}`
+458: // —��—��—�� RENDER —��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��—��
+522: {/* —��—��—�� HERO —��—��—�� */}
+526: {/* —��—�� Zone 1: —allery —��—�� */}
+537: {/* TODO: Replace with updated Comfort Shape image — current asset shows old product name BloomForm */}
+540: alt={`${product.name} — view ${selectedImage + 1}`}
+603: {/* —��—�� Zone 2: Purchase Block —��—�� */}
+620: <span className={`text-2xl font-semibold ${product.priceOnRequest || isComplimentary—ift ? 'text-[#7a6f6a] text-lg' : 'text-[#1c1c18]'}`}>
+623: {(product.is—iftPopular || isComplimentary—ift) && (
+625: {isComplimentary—ift ? 'Complimentary —ift' : 'Popular —ift'}
+647: Register Your Interest →—��
+668: Already know your style? Add to Bag —��
+705: Not sure of your size? Chat with us on WhatsApp —��
+723: {/* —��—��—�� CONTENT ACCORDIONS —��—��—�� */}
+727: {/* Zone 3 —�� Story & Details */}
+784: {/* Zone 4 —�� Key Benefits */}
+803: <span className="text-[#884d53] font-semibold text-base flex-shrink-0">{expandedBenefit === i ? '—��' : '+'}</span>
+819: {/* Zone 5 —�� What's Included */}
+851: {/* Zone 6 —�� Features & Materials */}
+879: {isMaterialsExpanded ? 'Show less' : 'See full construction details —��'}
+898: {/* Zone 7 —�� Care & Instructions */}
+910: <span className="text-[#446651] font-bold leading-none mt-0.5 text-base">—��</span>
+978: {/* Zone 8 —�� FAQs */}
+1022: {/* Zone 9 —�� —entle Note */}
+1038: {/* Zone 10 —�� Complete Your Care */}
+1066: {p.isComplimentary—ift || p.tags?.includes('gift')
+1067: ? 'Complimentary —ift'
+1080: {/* Mobile Sticky Add to Bag — only visible on mobile (lg:hidden) */}
+1143: alt={`${product.name} —�� full view`}

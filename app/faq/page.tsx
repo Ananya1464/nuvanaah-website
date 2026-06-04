@@ -88,7 +88,7 @@ const faqData: Record<string, Array<{ q: string; a: string }>> = {
   'Shipping & Returns': [
     {
       q: 'What are the shipping charges?',
-      a: 'Shipping is free on orders over ₹500. For orders below ₹500, shipping costs ₹100. Express 24-hour delivery is available for ₹300 extra.',
+      a: 'Shipping is free on orders over ₹ 500. For orders below ₹ 500, shipping costs ₹ 100. Express 24-hour delivery is available for ₹ 300 extra.',
     },
     {
       q: 'How long does delivery take?',
@@ -118,7 +118,7 @@ const faqData: Record<string, Array<{ q: string; a: string }>> = {
   Consultations: [
     {
       q: 'Are consultations free?',
-      a: 'Yes! Initial consultations with our specialists are completely free. Follow-up sessions are ₹500 per session. Product-specific consultations are always free.',
+      a: 'Yes! Initial consultations with our specialists are completely free. Follow-up sessions are ₹ 500 per session. Product-specific consultations are always free.',
     },
     {
       q: 'How do I book a consultation?',
@@ -156,7 +156,7 @@ const faqData: Record<string, Array<{ q: string; a: string }>> = {
     },
     {
       q: 'Do you offer installment plans?',
-      a: 'For orders over ₹5,000, we offer 0% EMI options via participating credit cards. Check the payment page for available options.',
+      a: 'For orders over ₹ 5,000, we offer 0% EMI options via participating credit cards. Check the payment page for available options.',
     },
     {
       q: 'How can I track my order?',
@@ -164,7 +164,7 @@ const faqData: Record<string, Array<{ q: string; a: string }>> = {
     },
     {
       q: 'What if my order is delayed?',
-      a: 'Contact our support team immediately. If delayed beyond promised date, we\'ll offer a full refund or ₹200 account credit as apology.',
+      a: 'Contact our support team immediately. If delayed beyond promised date, we\'ll offer a full refund or ₹ 200 account credit as apology.',
     },
   ],
   Account: [

@@ -51,12 +51,12 @@ export default function HairLossSolutionsArticle() {
                     <div className="grid md:grid-cols-2 gap-6">
                         <div className="bg-white border border-gray-200 rounded-xl p-6">
                             <h4 className="font-semibold text-gray-900 mb-2">Human Hair Wigs</h4>
-                            <p className="text-gray-600 text-sm mb-2">Most natural look and feel. Can be styled with heat. More expensive (₹15,000-50,000+).</p>
+                            <p className="text-gray-600 text-sm mb-2">Most natural look and feel. Can be styled with heat. More expensive (₹ 15,000-50,000+).</p>
                             <p className="text-green-600 font-medium text-sm">Best for: Special occasions, long-term use</p>
                         </div>
                         <div className="bg-white border border-gray-200 rounded-xl p-6">
                             <h4 className="font-semibold text-gray-900 mb-2">Synthetic Wigs</h4>
-                            <p className="text-gray-600 text-sm mb-2">Affordable (₹2,000-10,000). Pre-styled, low maintenance. Can't use heat tools.</p>
+                            <p className="text-gray-600 text-sm mb-2">Affordable (₹ 2,000-10,000). Pre-styled, low maintenance. Can't use heat tools.</p>
                             <p className="text-green-600 font-medium text-sm">Best for: Daily wear, budget-friendly</p>
                         </div>
                     </div>
@@ -72,7 +72,7 @@ export default function HairLossSolutionsArticle() {
                             <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-teal-600 mt-0.5" /><span>Air dry completely before wearing</span></li>
                         </ul>
                         <div className="mt-4 pt-4 border-t border-teal-200">
-                            <Link href="/products/wig-grip-band" className="text-teal-600 font-semibold">Shop Wig Grip Band (₹599) →</Link>
+                            <Link href="/products/wig-grip-band" className="text-teal-600 font-semibold">Shop Wig Grip Band (₹ 599) →</Link>
                         </div>
                     </div>
                 </section>

@@ -41,7 +41,7 @@ export default function CartItemComponent({
         </Link>
         <p className="text-sm text-gray-600">Size: {item.size}</p>
         <p className="text-sm font-semibold text-gray-800 mt-1">
-          ₹{item.price.toLocaleString('en-IN')}
+          ₹ {item.price.toLocaleString('en-IN')}
         </p>
       </div>
 
@@ -65,7 +65,7 @@ export default function CartItemComponent({
       {/* Subtotal */}
       <div className="w-24 text-right">
         <p className="font-semibold text-gray-800">
-          ₹{(item.price * item.quantity).toLocaleString('en-IN')}
+          ₹ {(item.price * item.quantity).toLocaleString('en-IN')}
         </p>
       </div>
 

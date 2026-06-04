@@ -39,11 +39,12 @@ export const products: Product[] = [
     slug: 'comfort-shape',
     name: 'Comfort Shape™',
     subtitle: 'Plant-Fiber Breast Form',
-    tagline: 'Straight where it meets the body. Curved where it creates shape.',
+    tagline: 'Thoughtfully Shaped. Naturally Comfortable.',
     price: 2500,
     priceFrom: false,
     categories: [CAT_RECOVERY],
-    description: 'A plant-fiber breast form weighing 10–20 grams — lighter than any silicone alternative. Flat where it meets the body. Curved where it creates shape.',
+    categoryNav: 'Recovery & Body Support',
+    description: 'A lightweight plant-fiber breast form thoughtfully designed to support comfort, balance and confidence after breast surgery. Made with plant-fiber filling and a breathable plant-fiber outer fabric, Comfort Shape feels soft against the body while helping reduce heat build-up during daily wear.',
     fullStory: 'Comfort Shape is built on a simple insight: shape does not require weight. Most breast forms achieve their silhouette through density — heavy materials that hold their form by mass alone. Comfort Shape achieves the same result through geometry. The flat inner surface sits stable against the chest wall. The curved outer face creates a soft, rounded silhouette beneath clothing. Between them: plant fiber, air, and 10–20 grams.\n\nThe result is a form that disappears during wear. No pull on the bra. No heat building against the skin. No awareness of it by mid-afternoon. You put it on, and you stop thinking about it. That is not a small thing. That is what comfort actually means.',
     images: [
       { id: 1, src: '/images/catalog/bloomform/1.jpeg', alt: 'Comfort Shape™ — view 1' },
@@ -59,8 +60,21 @@ export const products: Product[] = [
     shopByNeed: ['after-surgery'],
     recoveryStage: ['stage-2', 'stage-4'],
     crossSells: ['willow-support', 'nature-nest'],
-    variantLabel: 'Side',
-    variantOptions: ['Left (L)', 'Right (R)'],
+    whatsIncluded: [
+      { item: "1 pair of Comfort Shape breast forms", detail: "Left and Right included in every order" },
+      { item: "2 removable washable covers", detail: "Included with every order" }
+    ],
+    whenToUse: [
+      {
+        heading: "After Lumpectomy",
+        body: "If only a lump has been removed and the natural breast shape remains largely intact, a suitable bra may be all that is required. Comfort Shape may be considered if additional balance or shape is desired."
+      },
+      {
+        heading: "After Mastectomy",
+        body: "If the breast has been removed through mastectomy, Comfort Shape may be used to help restore balance and create a natural appearance under clothing."
+      }
+    ],
+    whenToUseNote: "Comfort Shape should only be used after the surgical area has healed completely. Please consult your care team if you are unsure.",
     benefitsList: [
       { title: 'You stop noticing you are wearing it', desc: 'At 10–20 grams, there is no pull, no shift, no heat. Women describe it the same way: they forget it is there.' },
       { title: 'Natural shape without the weight', desc: 'Geometry, not density, creates the silhouette. The flat inner and curved outer work together. The appearance is natural. The weight is a fraction of silicone alternatives.' },
@@ -69,14 +83,17 @@ export const products: Product[] = [
       { title: 'Designed to work with Willow Support', desc: 'Sized and shaped to fit the discreet corner pocket of the Willow Support bra. Purchased together, they work as a system.' },
     ],
     keyFeatures: [
-      'Weighs 10–20 grams',
-      'Flat chest wall side / curved outer side',
       'Plant-fiber filling — breathable and cool',
-      'Removable, washable fabric cover (2 covers included)',
-      'Left (L) and Right (R) versions',
-      'Fits Willow Support bra pocket',
+      'Plant-fiber outer fabric — soft against skin',
+      'Lightweight — approximately 10 to 20 grams',
+      'Left and Right specific design',
+      'Natural contoured shape',
+      'Includes 2 removable washable covers',
+      'Easy pocket system — open, insert, close',
+      'Available in sizes 32 to 44',
+      'Everyday wear friendly',
     ],
-    materialsText: 'Plant-fiber filling inside a soft, breathable fabric cover — two layers that work together to keep the form cool, clean, and comfortable throughout the day.\n\nThe filling is lightweight and breathable, allowing air to circulate and preventing the heat buildup common with silicone or gel alternatives. The cover is soft against the skin, removable for washing, and maintains its softness through repeated use. Two covers are included so one is always ready while the other dries.',
+    materialsText: 'Plant-fiber filling inside a soft, breathable plant-fiber outer fabric. Two layers that work together to keep the form cool, clean, and comfortable throughout the day. The cover is removable and washable — two covers are included so one is always ready while the other dries. Do not wash the form itself — only the covers.',
     careText: [
       'Hand wash cover in cool water',
       'Air dry flat',
@@ -87,11 +104,7 @@ export const products: Product[] = [
       'Do not tumble dry',
       'Do not iron',
     ],
-    whatsIncluded: [
-      'Comfort Shape breast form (Left or Right, as selected)',
-      '2 × removable fabric covers',
-      'Care guide',
-    ],
+
     gentleNote: 'There is no rule about when you should start wearing a breast form — or whether you should wear one at all. Some women wear one every day. Others occasionally. Others choose not to. All of these are valid, and none require justification.\n\nComfort Shape is here if and when you want it. Whenever you are ready. At whatever pace feels right.',
     seoTitle: 'Comfort Shape Plant-Fiber Breast Form – Lightweight & Soft',
     metaDescription: 'Lightweight 10–20 gm plant-fiber breast form. Breathable, cool, and shaped for a natural silhouette. Available in Left and Right.',
@@ -104,6 +117,7 @@ export const products: Product[] = [
       { q: 'How do I wash it?', a: 'Remove the fabric cover and hand wash it in cool water. Air dry flat. The form itself does not need washing — only the cover does. Two covers are included so one is always ready.' },
       { q: 'Can I wear it swimming?', a: 'The cover is not designed for swimming. For water activities, we recommend removing the form.' },
     ],
+
     isGiftPopular: false,
     comingSoon: false,
     dimensions: '',
@@ -116,12 +130,13 @@ export const products: Product[] = [
     id: 'willow-support',
     slug: 'willow-support',
     name: 'Willow Support™',
-    subtitle: 'Post-Surgery Comfort Bra  |  Set of 2',
+    subtitle: 'Post-Surgery Comfort Bra',
     tagline: '',
-    price: 3000,
+    price: 1500,
     priceFrom: false,
     categories: [CAT_RECOVERY],
-    description: 'A post-surgery bra made from ultra-soft plant-fiber fabric, designed to make getting dressed feel ordinary again. Front-hook closure. Discreet prosthetic pocket. Set of two so one is always ready.',
+    categoryNav: 'Recovery & Body Support',
+    description: 'A post-surgery bra made from ultra-soft plant-fiber fabric, designed to make getting dressed feel ordinary again. Front-hook closure. Discreet prosthetic pocket.',
     fullStory: 'After breast surgery, the things that used to be automatic require thought. Getting dressed is one of them. Willow Support was designed so that at least the bra is not an obstacle. The front-hook closure means you do not need help putting it on. The soft inner comfort panel means the hooks never touch the skin. The adjustable straps fit a body that is still changing week by week.\n\nThe discreet corner side pocket — approximately three inches wide, invisible from outside — exists for women using a prosthetic. It is not visible. It is not complicated to use. It is simply there, when needed.',
     images: [
       { id: 1, src: '/images/catalog/WillowSupport/1.jpeg', alt: 'Willow Support™ — view 1' },
@@ -144,7 +159,6 @@ export const products: Product[] = [
       { title: 'Comfortable from morning through evening', desc: 'Plant-fiber fabric stays soft and breathable all day. Synthetic fabrics stiffen and stick after a few hours. This does not.' },
       { title: 'Gentle on skin that is still healing', desc: 'Every seam, every panel, every closure position was placed to minimise contact with healing skin. The soft center panel ensures the hooks never touch the chest directly.' },
       { title: 'Prosthetic pocket that actually works', desc: 'The corner side opening is clean, discreet, and wide enough to insert a prosthetic without removing the bra. Designed around the Comfort Shape but compatible with alternatives.' },
-      { title: 'Always one ready to wear', desc: 'Set of two. One washes while one is worn. No waiting. No planning around drying time.' },
     ],
     keyFeatures: [
       'Front-hook closure',
@@ -152,7 +166,6 @@ export const products: Product[] = [
       'Discreet ~3-inch corner side prosthetic opening',
       'Adjustable straps',
       'Plant-fiber fabric — breathable all day',
-      'Set of two',
     ],
     materialsText: 'Ultra-soft plant-fiber fabric throughout — breathable, temperature-regulating, and gentle against healing skin. Softer than cotton. Stays that way through repeated washing.\n\nThe front hook closure is constructed with a soft backing panel so the hardware never makes direct skin contact. Straps are fully adjustable with standard sliding hardware that does not abrade sensitive shoulder areas.',
     careText: [
@@ -166,14 +179,14 @@ export const products: Product[] = [
       'Do not iron the closure directly',
     ],
     whatsIncluded: [
-      '2 × Willow Support bras (in selected colour)',
+      '1 × Willow Support bra (in selected colour)',
       'Care guide',
     ],
     gentleNote: 'Recovery changes the relationship you have with your body. The things that were automatic — getting dressed, choosing what to wear — suddenly require thought and care. That is not a failure. That is what recovery looks like.\n\nWillow Support was designed so that at least one of those things does not require extra thought. Put it on. Wear it. Take it off. The goal is for it to become something you stop noticing, because it is doing its job quietly and well.\n\nBe gentle with yourself. You are doing something hard.',
-    seoTitle: 'Willow Support Post-Surgery Comfort Bra – Set of 2',
-    metaDescription: 'Soft plant-fiber post-surgery bra with front-hook closure and discreet prosthetic pocket. Set of 2 in three colours.',
+    seoTitle: 'Willow Support Post-Surgery Comfort Bra',
+    metaDescription: 'Soft plant-fiber post-surgery bra with front-hook closure and discreet prosthetic pocket in three colours.',
     ogTitle: 'Willow Support™ — Post-Surgery Comfort Bra | Nuvanaah',
-    ogDescription: 'A post-surgery bra made from ultra-soft plant-fiber fabric. Front-hook closure. Discreet prosthetic pocket. Set of two so one is always ready.',
+    ogDescription: 'A post-surgery bra made from ultra-soft plant-fiber fabric. Front-hook closure. Discreet prosthetic pocket.',
     faqs: [
       { q: 'How do I choose my size?', a: 'Measure your underbust circumference in centimetres. S: 68–78cm, M: 78–88cm, L: 88–98cm, XL: 98–108cm. If between sizes, size up. The adjustable straps allow further customisation.' },
       { q: 'Is the prosthetic pocket compatible with other brands?', a: 'The pocket is designed around the Comfort Shape breast form but is compatible with most lightweight prosthetics up to approximately 3 inches wide. Heavier silicone forms may not stay positioned securely.' },
@@ -198,6 +211,7 @@ export const products: Product[] = [
     price: 1500,
     priceFrom: false,
     categories: [CAT_RECOVERY],
+    categoryNav: 'Recovery & Body Support',
     description: 'A soft underarm pillow shaped specifically for the arm and side of the body during rest. Plant-fiber filled, cool against skin, with a removable washable cover in three printed designs.',
     fullStory: 'A nest is one of nature\'s most intentional structures. Not built for beauty — though it often has it. Built for one purpose: to hold something that needs protecting, with exactly the right amount of support.\n\nAfter breast surgery, the arm on the affected side needs a specific position during rest — not too close to the body, not too far, supported but not pressed. A rolled towel is too firm. A standard pillow is too large and soft. Neither is shaped for the job. Nature Nest is shaped for the job.',
     images: [
@@ -274,6 +288,7 @@ export const products: Product[] = [
     price: 5000,
     priceFrom: false,
     categories: [CAT_HAIR],
+    categoryNav: 'Hair & Confidence',
     description: 'Real human hair integrated into a breathable scarf design. Natural-looking coverage from every angle — front, sides, and back. Lightweight enough to wear from morning to evening without thinking about it.',
     fullStory: 'Air: breathability — the quality most head coverings do not offer. The plant-fiber scalp fabric in AirBloom promotes airflow, keeping the scalp light and comfortable rather than warm and restricted.\n\nBloom: to come into your own. Hair is part of how many women express who they are. When hair loss takes that away, even temporarily, it takes something of the sense of self with it. AirBloom, with its real human hair, is designed to give something of that back.\n\n"AirBloom. The comfort of a scarf. The beauty of natural hair."',
     images: [
@@ -353,6 +368,7 @@ export const products: Product[] = [
     price: 1500,
     priceFrom: false,
     categories: [CAT_HAIR],
+    categoryNav: 'Hair & Confidence',
     description: 'A bamboo plant-fiber head scarf — softer and more breathable than cotton, gentle directly against a bare scalp. Three printed designs. Lightweight enough to carry everywhere.',
     fullStory: 'Willow is the tree that yields rather than breaks — bending with what comes, returning when it passes. A Willow Wrap does the same. It is for the days when you choose the Wildflower Garden print because it makes you feel something. And for the days when you reach for Aparajita Petals because it goes with everything and you have more important things to think about.\n\nBamboo plant fiber is softer than cotton, naturally breathable, and lighter at the same weight. These are not incidental qualities. Against a bare scalp — sensitive, exposed — they are the qualities that determine whether something can be worn every day or only occasionally.',
     images: [
@@ -429,6 +445,7 @@ export const products: Product[] = [
     price: 1575,
     priceFrom: false,
     categories: [CAT_RECOVERY],
+    categoryNav: 'Recovery & Body Support',
     description: 'A lymphedema compression sleeve with an adjustable shoulder holding belt that keeps it in place throughout the day — without constant readjustment. Soft, breathable, and designed for the full working day.',
     fullStory: 'Most compression sleeves rely on the sleeve\'s own elasticity to stay on the arm. This works at rest. It does not work during a normal day. The sleeve slides. You readjust. It slides again.\n\nFlowSleeve\'s adjustable shoulder holding belt attaches at the top of the sleeve and passes over the shoulder. The sleeve stays where it belongs — during movement, during work, during all the activities that make up a day. That is not a secondary feature. It is the reason FlowSleeve exists.',
     images: [
@@ -442,14 +459,14 @@ export const products: Product[] = [
     recoveryStage: ['stage-2', 'stage-3', 'stage-4'],
     crossSells: ['nature-nest', 'nest-carry'],
     variantLabel: 'Version',
-    variantOptions: ['Indian (₹1,575)', 'Imported (₹2,840)'],
+    variantOptions: ['Indian (₹ 1,575)', 'Imported (₹ 2,840)'],
     benefitsList: [
       { title: 'A sleeve that stays where it should', desc: 'The shoulder holding belt is the feature most appreciated by daily wearers. No sliding. No constant readjustment. The sleeve is there, doing its work, without demanding your attention.' },
       { title: 'Consistent gentle compression', desc: 'Calibrated for everyday comfort and extended wear. Not for acute clinical intervention — for the full working day, every day.' },
       { title: 'Soft against skin that may be sensitive', desc: 'The fabric presses against the arm for eight or more hours. It needs to be genuinely gentle, not just functional. It is.' },
       { title: 'Breathable construction', desc: 'Air circulates. Heat does not build. Particularly meaningful in India\'s warm climate for a garment worn all day.' },
       { title: 'Freedom of movement', desc: 'Moves with the arm through the full range of daily activity — reaching, lifting, carrying, typing. Wearing it does not change what you can do.' },
-      { title: 'Two options to choose from', desc: 'Indian (₹1,575) and Imported (₹2,840). Both include the holding belt. Choose based on your needs and preference.' },
+      { title: 'Two options to choose from', desc: 'Indian (₹ 1,575) and Imported (₹ 2,840). Both include the holding belt. Choose based on your needs and preference.' },
     ],
     keyFeatures: [
       'Adjustable shoulder holding belt — prevents slipping',
@@ -504,6 +521,7 @@ export const products: Product[] = [
     price: 1500,
     priceFrom: false,
     categories: [CAT_RECOVERY],
+    categoryNav: 'Recovery & Body Support',
     description: 'One bag. Everything in it. A recovery kit with a sling bag, smiley therapy ball, two collection jars, a recovery diary, and a pen — designed to reduce the cognitive load of daily recovery management.',
     fullStory: 'Recovery generates an endless list of things to manage, track, carry, and remember — at the moment when the energy to do so is at its lowest. Nest Carry cannot make recovery simpler than it is. But it can mean that the practical things have a place.\n\nThe bag keeps everything together. The diary keeps everything written down. The therapy ball is there for gentle daily movement. The jars are there because sometimes recovery is just that practical, and having the right container matters.',
     images: [
@@ -581,6 +599,7 @@ export const products: Product[] = [
     price: 1500,
     priceFrom: false,
     categories: [CAT_WELLNESS],
+    categoryNav: 'Everyday Wellness',
     description: 'A full-size bamboo comfort towel in a herringbone weave with tassel-finished ends. 58+ inches × 27–28 inches. Softer and more absorbent than standard cotton. Available in four named colours.',
     fullStory: 'A petal is the part of the flower that is both beautiful and fleeting — present precisely when it is needed, soft to the touch, designed only for that moment of contact.\n\nRecovery changes the texture of daily life. The things that were automatic — showering, drying off — require more care and attention. PetalWrap cannot make recovery faster. What it can do is make the few minutes after a shower feel soft, comfortable, and a little more like ordinary self-care.\n\nA towel that feels good against your skin. A colour you chose because you liked it. A tassel-finished end that is simply beautiful for no other reason.',
     images: [
@@ -657,6 +676,7 @@ export const products: Product[] = [
     priceOnRequest: false,
     isComplimentaryGift: true,
     categories: [CAT_WELLNESS],
+    categoryNav: 'Everyday Wellness',
     description: 'A compact 12×24 inch recovery towel — soft, quick-drying, and designed for the small, daily moments of personal care that add up during recovery. Four colours. Clean hemmed edges.',
     fullStory: 'Dew is small. Present early. Gone quickly. Doing its quiet work before the day begins.\n\nPersonal care during recovery is a daily series of small moments. Washing your face. Drying your hands. Managing the routine around sensitive areas that need to stay clean. These are not extraordinary moments. They are ordinary ones, repeated many times each day. DewLeaf is made for those moments — not the big ones. The small, repetitive, quiet ones.\n\n"Fresh comfort with every use."',
     images: [
@@ -728,6 +748,7 @@ export const products: Product[] = [
     price: 1400,
     priceFrom: false,
     categories: [CAT_WELLNESS],
+    categoryNav: 'Everyday Wellness',
     description: 'Ready-to-wear eyebrows in two shades designed for Indian skin tones. Natural shape, lightweight, and reusable. Confidence that begins at the mirror, before the day does.',
     fullStory: 'Eyebrow loss changes the face in ways that are immediately visible and deeply felt. The brows frame the eyes and carry expression. When they are absent, the face can look and feel different in ways that are difficult to explain to others but that are apparent to the woman experiencing it.\n\nBrowBloom is shaped and coloured to look like real brows — not drawn-on, not obvious. The design avoids the stark quality of pencilled replacements. It settles into a natural position and reads as your own from a conversational distance.\n\nCoffee Bean: warm dark brown, calibrated for medium to deeper South Asian skin tones.\nBamboo Woods: soft cool brown, calibrated for lighter to medium South Asian skin tones.',
     images: [
@@ -802,6 +823,7 @@ export const products: Product[] = [
     price: 1200,
     priceFrom: false,
     categories: [CAT_WELLNESS],
+    categoryNav: 'Everyday Wellness',
     description: 'A complete press-on nail kit — 24 nails, adhesive, file, cuticle stick, prep wipe, and reusable storage pouch. Natural-looking finish at home, in under ten minutes, no salon required.',
     fullStory: 'Treatment does many things to the body. The nails are one of the smaller ones — thinning, brittleness, discolouration, sensitivity. But they are noticed. Every time you look at your hands, which is many times a day.\n\nBloomTips is not here to solve the effects of treatment. It is here to address one small part of them. To give you a way to look at your hands and see something chosen and deliberate.\n\n"Little details. Beautiful confidence."',
     images: [
@@ -880,7 +902,8 @@ export const products: Product[] = [
     price: 12000,
     priceFrom: true,
     categories: [CAT_HAIR],
-    description: 'A premium comfort wig collection designed for natural appearance, lightweight fit, and confident daily wear. Starting from ₹12,000. A consultation is recommended before purchase — we will help you find the right fit.',
+    categoryNav: 'Hair & Confidence',
+    description: 'A premium comfort wig collection designed for natural appearance, lightweight fit, and confident daily wear. Starting from ₹ 12,000. A consultation is recommended before purchase — we will help you find the right fit.',
     fullStory: 'Hair loss during treatment is one of the most visible and widely discussed changes it brings. It is also one of the most personal.\n\nThe decision about whether to wear a wig, which one, when, and in which contexts is deeply individual. Some women wear one every day from the first days of hair loss. Others prefer scarves. Others choose different options in different situations.\n\nBloomCrown exists for the days when you want the fullest, most natural-looking option available. Not a requirement. Not the right choice for every day. But for the days when it is your choice — when you want to look in the mirror and feel like yourself from the top of your head down — BloomCrown is designed to make that possible.\n\n"Designed to help you feel like yourself, every day."',
     images: [
       { id: 1, src: '/images/catalog/BloomCrown/1.jpeg', alt: 'BloomCrown™ — view 1' },
@@ -901,7 +924,7 @@ export const products: Product[] = [
       { title: 'Lightweight comfort for extended wear', desc: 'Heavier wigs become fatiguing. BloomCrown is constructed for all-day wear — lightweight enough that you stop noticing it is there.' },
       { title: 'A wig that begins with a conversation', desc: 'We recommend a consultation before purchase. The right wig for you depends on your face shape, skin tone, lifestyle, and preferences. We will help you find it.' },
       { title: 'Breathable construction', desc: 'The cap is constructed for airflow. The scalp stays cooler than in a standard synthetic wig. Extended daily wear is possible and comfortable.' },
-      { title: 'Premium quality at a considered price', desc: 'Starting from ₹12,000 for a natural-appearance comfort wig. A consultation ensures you choose the right style for your needs before committing.' },
+      { title: 'Premium quality at a considered price', desc: 'Starting from ₹ 12,000 for a natural-appearance comfort wig. A consultation ensures you choose the right style for your needs before committing.' },
     ],
     keyFeatures: [
       'Natural-looking premium construction',
@@ -909,7 +932,7 @@ export const products: Product[] = [
       'Breathable cap design',
       'Adjustable fit',
       'Consultation recommended before purchase',
-      'From ₹12,000',
+      'From ₹ 12,000',
     ],
     materialsText: 'Premium wig construction designed for natural appearance, lightweight fit, and extended daily wear.\n\nThe cap is adjustable and breathable. The hair is finished to move and behave as naturally as possible. A free consultation is recommended to ensure the right style, fit, and care approach for your specific situation.',
     careText: [
@@ -932,12 +955,12 @@ export const products: Product[] = [
     seoTitle: 'BloomCrown Comfort Wig Collection – Natural Look',
     metaDescription: 'Premium comfort wig collection with natural look, lightweight fit, and confident everyday wear. Free WhatsApp consultation recommended before purchase.',
     ogTitle: 'BloomCrown™ — Comfort Wig Collection | Nuvanaah',
-    ogDescription: 'A premium comfort wig collection designed for natural appearance, lightweight fit, and confident daily wear. From ₹12,000. Free consultation recommended.',
+    ogDescription: 'A premium comfort wig collection designed for natural appearance, lightweight fit, and confident daily wear. From ₹ 12,000. Free consultation recommended.',
     faqs: [
       { q: 'Why is a consultation recommended?', a: 'The right wig depends on your face shape, skin tone, lifestyle, and the style you are looking for. A short WhatsApp or in-person conversation helps us ensure you choose something you will actually love wearing — and avoid a costly misfit.' },
       { q: 'What happens in a consultation?', a: 'We talk through your face shape, your lifestyle (daily activity level, climate you are in, how long you expect to wear it each day), your colour preferences, and what kind of style would feel most natural for you. It is a conversation, not a sales process.' },
       { q: 'Can I order without a consultation?', a: 'Yes. The "Already know your size and style?" option on this page allows you to add directly to bag if you are confident in your choice. A consultation is recommended but not required.' },
-      { q: 'What does "From ₹12,000" mean?', a: 'Different styles within the BloomCrown collection are priced from ₹12,000 upward depending on the style and construction. A consultation helps identify which option is right for you and its exact price.' },
+      { q: 'What does "From ₹ 12,000" mean?', a: 'Different styles within the BloomCrown collection are priced from ₹ 12,000 upward depending on the style and construction. A consultation helps identify which option is right for you and its exact price.' },
       { q: 'How long does it take to receive after ordering?', a: 'Standard delivery applies for in-stock styles. Custom or made-to-order styles require additional lead time — your consultant will confirm this during your conversation.' },
     ],
     isGiftPopular: false,

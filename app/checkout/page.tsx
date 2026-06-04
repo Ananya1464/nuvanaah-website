@@ -459,7 +459,7 @@ export default function CheckoutPage() {
                           <p className="font-medium text-gray-900">{item.name}</p>
                           <p className="text-sm text-gray-500">Qty: {item.quantity}</p>
                         </div>
-                        <p className="font-semibold text-gray-900">₹{(item.price * item.quantity).toLocaleString()}</p>
+                        <p className="font-semibold text-gray-900">₹ {(item.price * item.quantity).toLocaleString()}</p>
                       </div>
                     ))}
                   </div>
@@ -552,7 +552,7 @@ export default function CheckoutPage() {
                 {items.map((item) => (
                   <div key={item.id} className="flex justify-between text-sm">
                     <span className="text-gray-600 truncate flex-1 mr-2">{item.name} × {item.quantity}</span>
-                    <span className="text-gray-900 font-medium">₹{(item.price * item.quantity).toLocaleString()}</span>
+                    <span className="text-gray-900 font-medium">₹ {(item.price * item.quantity).toLocaleString()}</span>
                   </div>
                 ))}
               </div>
@@ -563,7 +563,7 @@ export default function CheckoutPage() {
               <div className="space-y-3 text-sm">
                 <div className="flex justify-between">
                   <span className="text-gray-600">Subtotal</span>
-                  <span className="text-gray-900">₹{total.toLocaleString()}</span>
+                  <span className="text-gray-900">₹ {total.toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Shipping</span>
@@ -577,7 +577,7 @@ export default function CheckoutPage() {
 
               <div className="flex justify-between">
                 <span className="font-semibold text-gray-900">Total</span>
-                <span className="text-xl font-bold text-gray-900">₹{grandTotal.toLocaleString()}</span>
+                <span className="text-xl font-bold text-gray-900">₹ {grandTotal.toLocaleString()}</span>
               </div>
 
               {/* Trust Badges */}

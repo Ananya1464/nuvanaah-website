@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Instagram, MessageCircle, Mail, Phone, Facebook, Youtube, ArrowRight } from 'lucide-react'
+import { Instagram, MessageCircle, Mail, Phone, Facebook, Youtube } from 'lucide-react'
 import Logo from '@/components/ui/Logo'
 import Link from 'next/link'
 
@@ -10,15 +10,21 @@ export default function Footer() {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!email) return
     setStatus('loading')
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      })
       setStatus('success')
       setEmail('')
-    }, 1000)
+    } catch {
+      setStatus('error')
+    }
   }
 
   return (
@@ -54,16 +60,17 @@ export default function Footer() {
 
             {/* Social Icons */}
             <div className="flex gap-3 pt-2">
+              {/* TODO: Replace with confirmed Nuvanaah Facebook/YouTube profile URL before launch */}
               <a href="https://instagram.com/nuvanaah" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-primary-600" aria-label="Instagram">
                 <Instagram className="h-5 w-5" />
               </a>
               <a href="https://wa.me/919819461612" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-[#25D366]" aria-label="WhatsApp">
                 <MessageCircle className="h-5 w-5" />
               </a>
-              <a href="https://www.facebook.com/nuvanaah" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-[#1877F2]" aria-label="Facebook">
+              <a href="#" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-[#1877F2]" aria-label="Facebook">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="https://www.youtube.com/@nuvanaah" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-[#FF0000]" aria-label="YouTube">
+              <a href="#" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-[#FF0000]" aria-label="YouTube">
                 <Youtube className="h-5 w-5" />
               </a>
             </div>
@@ -99,26 +106,29 @@ export default function Footer() {
             <p className="mb-4 text-sm leading-relaxed text-white/70">
               Join our community for recovery tips, inspiring stories, and exclusive access to new products.
             </p>
-            <form onSubmit={handleSubscribe} className="relative">
+            <form onSubmit={handleSubscribe} className="relative mt-4 flex">
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                className="w-full rounded-full border border-white/20 bg-white/5 py-3 pl-5 pr-12 text-sm text-white placeholder:text-white/40 focus:border-primary-fixed focus:outline-none focus:ring-1 focus:ring-primary-fixed"
+                placeholder="Your email address"
+                style={{ border: '1px solid rgba(28,28,24,0.15)' }}
+                className="w-full rounded-l-[4px] rounded-r-none bg-[#faf7f2] px-4 py-[12px] text-sm text-[#1c1c18] placeholder:text-[#7a6f6a] focus:outline-none"
               />
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="absolute right-2 top-2 flex h-8 w-8 items-center justify-center rounded-full bg-white text-dark transition-all hover:bg-primary-fixed"
-                aria-label="Subscribe"
+                className="flex items-center justify-center rounded-l-none rounded-r-[4px] bg-[#884d53] px-6 text-white transition-all hover:bg-[#884d53]/90"
               >
-                <ArrowRight className="h-4 w-4" />
+                Join
               </button>
             </form>
+            <p className="mt-2 text-[13px] text-[#7a6f6a]">
+              No spam. Unsubscribe any time.
+            </p>
             {status === 'success' && (
-              <p className="mt-3 text-sm text-primary-fixed fade-in-up visible">Thank you for subscribing!</p>
+              <p className="mt-3 text-[13px] text-[#446651] fade-in-up visible">Thank you — we'll be in touch.</p>
             )}
           </div>
 
@@ -127,7 +137,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
           <p className="text-center text-sm text-white/50">
-            © {currentYear} Nuvanaah · Made with care in India 🇮🇳
+            © {currentYear} Nuvanaah · Made with care in India
           </p>
           <div className="flex gap-6 text-sm text-white/50">
             <Link href="/legal/privacy" className="transition-colors hover:text-white">Privacy Policy</Link>

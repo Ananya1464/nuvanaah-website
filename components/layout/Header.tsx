@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { ShoppingCart, Search, Menu, X, Heart, ChevronDown } from 'lucide-react'
 import Logo from '@/components/ui/Logo'
 import { useCart } from '@/lib/cart-context'
-import { useWishlist } from '@/lib/wishlist-context'
+import SearchOverlay from '@/components/search/SearchOverlay'
 
 // ─── SHOP MEGA-MENU DATA ─────────────────────────────────────────────────────
 const shopCategories = [
@@ -50,6 +50,7 @@ export default function Header() {
   const [shopOpen, setShopOpen]                 = useState(false)
   const [mobileShopOpen, setMobileShopOpen]     = useState(false)
   const [announcementDismissed, setAnnouncementDismissed] = useState(true)
+  const [isSearchOpen, setIsSearchOpen]         = useState(false)
 
   const shopRef    = useRef<HTMLDivElement>(null)
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
@@ -92,8 +93,6 @@ export default function Header() {
 
   const { items } = useCart()
   const cartCount = items.reduce((sum, item) => sum + item.quantity, 0)
-  const { items: wishlistItems } = useWishlist()
-  const wishlistCount = wishlistItems.length
 
   return (
     <header className="sticky top-0 z-50 border-b border-[#2c1f1a]/[0.06] bg-[#faf7f2]/95 shadow-[0_4px_18px_rgba(44,31,26,0.04)] backdrop-blur-md">
@@ -101,8 +100,8 @@ export default function Header() {
       {/* ── ANNOUNCEMENT BAR ── */}
       {!announcementDismissed && (
         <div className="relative flex h-8 w-full items-center justify-center bg-[#884d53] px-12 text-[12px] font-medium tracking-wide text-white">
-          <span className="hidden md:inline">Free shipping on orders above ₹999 &nbsp;·&nbsp; COD available &nbsp;·&nbsp; Discreet packaging</span>
-          <span className="inline md:hidden">Free shipping ₹999+ &nbsp;·&nbsp; COD available</span>
+          <span className="hidden md:inline">Free shipping on orders above ₹ 999 &nbsp;·&nbsp; COD available &nbsp;·&nbsp; Discreet packaging</span>
+          <span className="inline md:hidden">Free shipping ₹ 999+ &nbsp;·&nbsp; COD available</span>
           <button
             onClick={dismissAnnouncement}
             className="absolute right-4 flex h-5 w-5 items-center justify-center text-white/70 transition hover:text-white"
@@ -121,8 +120,6 @@ export default function Header() {
 
           {/* SHOP — mega-menu trigger */}
           <div
-            ref={shopRef}
-            className="relative"
             onMouseEnter={openShop}
             onMouseLeave={closeShop}
           >
@@ -139,69 +136,45 @@ export default function Header() {
             {/* MEGA-MENU DROPDOWN */}
             {shopOpen && (
               <div
-                className="absolute left-1/2 top-full mt-3 -translate-x-1/2 w-[720px] rounded-2xl border border-[#2c1f1a]/[0.07] bg-white shadow-[0_16px_60px_rgba(44,31,26,0.12)] animate-in fade-in slide-in-from-top-2 duration-200"
+                className="fixed left-0 top-[76px] w-[100vw] border-y border-[#1c1c18]/[0.08] bg-[#faf7f2] py-[32px] animate-in fade-in slide-in-from-top-2 duration-200 shadow-sm"
                 onMouseEnter={openShop}
                 onMouseLeave={closeShop}
               >
-                <div className="grid grid-cols-3 gap-0 p-6">
-                  {shopCategories.map((cat, i) => (
-                    <div
-                      key={cat.slug}
-                      className={`${i < shopCategories.length - 1 ? 'border-r border-[#2c1f1a]/[0.07] pr-6 mr-0' : ''} ${i > 0 ? 'pl-6' : ''}`}
-                    >
-                      {/* Category Header */}
-                      <Link
-                        href={`/collections/${cat.slug}`}
-                        className="group mb-3 block"
-                        onClick={() => setShopOpen(false)}
+                <div className="max-w-7xl mx-auto px-4 lg:px-8">
+                  <div className="grid grid-cols-3 gap-0">
+                    {shopCategories.map((cat, i) => (
+                      <div
+                        key={cat.slug}
+                        className={`${i < shopCategories.length - 1 ? 'border-r border-[#1c1c18]/[0.08] pr-12 mr-0' : ''} ${i > 0 ? 'pl-12' : ''}`}
                       >
-                        <p className="font-semibold text-[#1c1c18] group-hover:text-[#884d53] transition-colors text-[13px]">
-                          {cat.name}
-                        </p>
-                        <p className="text-[11px] text-[#847374] mt-0.5">{cat.description}</p>
-                      </Link>
+                        {/* Category Header */}
+                        <Link
+                          href={`/collections/${cat.slug}`}
+                          className="group mb-[12px] block"
+                          onClick={() => setShopOpen(false)}
+                        >
+                          <h3 className="text-[11px] uppercase tracking-widest text-[#7a6f6a] group-hover:text-[#884d53] transition-colors">
+                            {cat.name}
+                          </h3>
+                        </Link>
 
-                      {/* Product Links */}
-                      <ul className="space-y-2">
-                        {cat.products.map(p => (
-                          <li key={p.slug}>
-                            <Link
-                              href={`/products/${p.slug}`}
-                              className="group flex items-start gap-2 rounded-lg px-2 py-1.5 transition hover:bg-[#faf7f2]"
-                              onClick={() => setShopOpen(false)}
-                            >
-                              <span className="mt-[1px] h-1.5 w-1.5 rounded-full bg-[#884d53]/40 shrink-0 group-hover:bg-[#884d53] transition-colors" />
-                              <span>
-                                <span className="block text-[13px] font-medium text-[#1c1c18] group-hover:text-[#884d53] transition-colors leading-snug">{p.name}</span>
-                                <span className="block text-[11px] text-[#847374] leading-snug">{p.subtitle}</span>
-                              </span>
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-
-                      {/* View All link */}
-                      <Link
-                        href={`/collections/${cat.slug}`}
-                        className="mt-4 block text-[11px] font-semibold uppercase tracking-[0.12em] text-[#884d53] hover:underline"
-                        onClick={() => setShopOpen(false)}
-                      >
-                        View all →
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Bottom strip — Shop All */}
-                <div className="border-t border-[#2c1f1a]/[0.07] px-6 py-3 flex items-center justify-between rounded-b-2xl bg-[#faf7f2]/60">
-                  <span className="text-[12px] text-[#847374]">Not sure where to start? Explore by your situation.</span>
-                  <Link
-                    href="/products"
-                    className="rounded-full bg-[#884d53] px-5 py-2 text-[12px] font-semibold text-white transition hover:bg-[#6c363c]"
-                    onClick={() => setShopOpen(false)}
-                  >
-                    Shop All Products
-                  </Link>
+                        {/* Product Links */}
+                        <ul className="flex flex-col">
+                          {cat.products.map(p => (
+                            <li key={p.slug}>
+                              <Link
+                                href={`/products/${p.slug}`}
+                                className="block text-[14px] text-[#1c1c18] leading-[2] hover:text-[#884d53] transition-colors"
+                                onClick={() => setShopOpen(false)}
+                              >
+                                {p.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             )}
@@ -213,18 +186,18 @@ export default function Header() {
 
         {/* DESKTOP ICONS */}
         <div className="flex items-center gap-4 lg:gap-5">
-          <button className="text-[#2c1f1a]/85 transition hover:text-[#884d53]" aria-label="Search products">
+          <button onClick={() => setIsSearchOpen(true)} className="text-[#2c1f1a]/85 transition hover:text-[#884d53]" aria-label="Search products">
             <Search className="h-5 w-5" />
           </button>
 
-          <Link href="/wishlist" className="relative text-[#2c1f1a]/85 transition hover:text-[#884d53]" aria-label="Wishlist">
-            <Heart className="h-5 w-5" />
-            {wishlistCount > 0 && (
-              <span className="absolute -right-2 -top-2 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#7B9E87] px-1 text-[10px] font-medium text-white">
-                {wishlistCount}
-              </span>
-            )}
+          <Link
+            href="/wishlist"
+            className="text-[#1c1c18] transition hover:text-[#884d53]"
+            aria-label="Wishlist"
+          >
+            <Heart size={20} strokeWidth={1.5} />
           </Link>
+
 
           <Link
             href="/cart"
@@ -302,6 +275,8 @@ export default function Header() {
           </nav>
         </div>
       )}
+
+      <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </header>
   )
 }

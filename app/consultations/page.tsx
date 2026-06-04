@@ -30,6 +30,8 @@ export default function ConsultationsPage() {
               src="/images/catalog/about/1.jpeg" // Using an about/lifestyle image as fallback
               alt="Care Specialist"
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority={true}
               className="object-cover"
             />
           </div>

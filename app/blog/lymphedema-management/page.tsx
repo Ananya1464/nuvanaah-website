@@ -87,7 +87,7 @@ export default function LymphedemaArticle() {
                             <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-teal-600 mt-0.5" /><span><strong>Daily use</strong> – if you have existing lymphedema</span></li>
                         </ul>
                         <div className="mt-4 pt-4 border-t border-teal-200">
-                            <Link href="/products/lymphedema-sleeve" className="text-teal-600 font-semibold">Shop Lymphedema Compression Sleeve (₹1,799) →</Link>
+                            <Link href="/products/lymphedema-sleeve" className="text-teal-600 font-semibold">Shop Lymphedema Compression Sleeve (₹ 1,799) →</Link>
                         </div>
                     </div>
                 </section>

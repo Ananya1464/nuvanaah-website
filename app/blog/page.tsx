@@ -57,7 +57,8 @@ export default function BlogPage() {
           className="absolute inset-0 w-full h-full object-cover" 
           src="/images/blog/young-woman-blog.png" 
           fill
-          priority
+          sizes="100vw"
+          priority={true}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent flex flex-col justify-end px-4 md:px-8 pb-16 max-w-7xl mx-auto w-full">
           <div className="max-w-2xl text-center mx-auto space-y-4">
@@ -117,6 +118,7 @@ export default function BlogPage() {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" 
                       src={post.image}
                       fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
                     />
                   </div>
                   <div className="p-8 space-y-4">

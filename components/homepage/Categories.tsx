@@ -13,7 +13,7 @@ const categories = [
     href: '/products/category/post-surgery-essentials',
     image: getCategoryImage('post-surgery-essentials'),
     category: 'post-surgery-essentials',
-    priceRange: '₹659 - ₹1,099',
+    priceRange: '₹ 659 - ₹ 1,099',
     productCount: 4,
   },
   {
@@ -23,7 +23,7 @@ const categories = [
     href: '/products/category/chemotherapy-support',
     image: getCategoryImage('chemotherapy-support'),
     category: 'chemotherapy-support',
-    priceRange: '₹329 - ₹549',
+    priceRange: '₹ 329 - ₹ 549',
     productCount: 3,
   },
   {
@@ -33,7 +33,7 @@ const categories = [
     href: '/products/category/hair-loss-solutions',
     image: getCategoryImage('hair-loss-solutions'),
     category: 'hair-loss-solutions',
-    priceRange: '₹879 - ₹29,149',
+    priceRange: '₹ 879 - ₹ 29,149',
     productCount: 11,
   },
   {
@@ -43,7 +43,7 @@ const categories = [
     href: '/products/category/lymphedema-management',
     image: getCategoryImage('lymphedema-management'),
     category: 'lymphedema-management',
-    priceRange: '₹2,749',
+    priceRange: '₹ 2,749',
     productCount: 1,
   },
 ]

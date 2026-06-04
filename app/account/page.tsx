@@ -111,7 +111,7 @@ export default function AccountPage() {
                         <div>
                           <p className="text-xs text-gray-600 font-semibold">Total</p>
                           <p className="text-gray-800 font-bold">
-                            ₹{order.total.toLocaleString('en-IN')}
+                            ₹ {order.total.toLocaleString('en-IN')}
                           </p>
                         </div>
                       </div>

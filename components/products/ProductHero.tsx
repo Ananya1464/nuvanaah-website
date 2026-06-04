@@ -132,7 +132,7 @@ export function ProductHero({
               {product.price === 'TBD' ? (
                 <span className="text-2xl font-bold text-primary-700">₹ — Contact us</span>
               ) : (
-                <span className="text-2xl font-bold text-primary-700">₹{product.price}</span>
+                <span className="text-2xl font-bold text-primary-700">₹ {product.price}</span>
               )}
             </div>
 

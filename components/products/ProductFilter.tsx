@@ -87,10 +87,10 @@ export default function ProductFilter({
         {expandedFilters.includes('price') && (
           <div className="mt-4 space-y-3">
             {[
-              { label: 'Under ₹500', min: 0, max: 500 },
-              { label: '₹500 - ₹1000', min: 500, max: 1000 },
-              { label: '₹1000 - ₹2000', min: 1000, max: 2000 },
-              { label: 'Over ₹2000', min: 2000, max: Infinity },
+              { label: 'Under ₹ 500', min: 0, max: 500 },
+              { label: '₹ 500 - ₹ 1000', min: 500, max: 1000 },
+              { label: '₹ 1000 - ₹ 2000', min: 1000, max: 2000 },
+              { label: 'Over ₹ 2000', min: 2000, max: Infinity },
             ].map((range) => (
               <label
                 key={range.label}
