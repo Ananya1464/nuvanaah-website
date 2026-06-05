@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
+import { motion, AnimatePresence } from 'framer-motion'
 import { ShoppingCart, Search, Menu, X, Heart, ChevronDown } from 'lucide-react'
 import Logo from '@/components/ui/Logo'
 import { useCart } from '@/lib/cart-context'
@@ -134,9 +135,14 @@ export default function Header() {
             </button>
 
             {/* MEGA-MENU DROPDOWN */}
+            <AnimatePresence>
             {shopOpen && (
-              <div
-                className="fixed left-0 top-[76px] w-[100vw] border-y border-[#1c1c18]/[0.08] bg-[#faf7f2] py-[32px] animate-in fade-in slide-in-from-top-2 duration-200 shadow-sm"
+              <motion.div
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="fixed left-0 top-[76px] w-[100vw] border-y border-[#1c1c18]/[0.08] bg-[#faf7f2] py-[32px] shadow-sm"
                 onMouseEnter={openShop}
                 onMouseLeave={closeShop}
               >
@@ -176,8 +182,9 @@ export default function Header() {
                     ))}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             )}
+            </AnimatePresence>
           </div>
 
           <Link href="/about"        className="font-medium text-[#2c1f1a]/85 transition hover:text-[#884d53]">Our Story</Link>
@@ -221,8 +228,16 @@ export default function Header() {
       </div>
 
       {/* ── MOBILE MENU ── */}
+      <AnimatePresence>
       {menuOpen && (
-        <div className="border-t border-[#2c1f1a]/[0.06] bg-[#faf7f2] px-4 pb-6 md:hidden overflow-y-auto max-h-[calc(100vh-76px)]">
+        <motion.div
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: 'auto', opacity: 1 }}
+          exit={{ height: 0, opacity: 0 }}
+          transition={{ duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="border-t border-[#2c1f1a]/[0.06] bg-[#faf7f2] overflow-hidden md:hidden"
+        >
+        <div className="px-4 pb-6 overflow-y-auto max-h-[calc(100vh-76px)]">
           <nav className="space-y-1 pt-3">
 
             {/* Shop accordion */}
@@ -274,7 +289,9 @@ export default function Header() {
             <Link href="/contact" className="block py-3 font-medium text-[#2c1f1a]/80 border-t border-[#2c1f1a]/[0.06]" onClick={() => setMenuOpen(false)}>Contact</Link>
           </nav>
         </div>
+        </motion.div>
       )}
+      </AnimatePresence>
 
       <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </header>

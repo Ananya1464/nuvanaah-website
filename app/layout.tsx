@@ -32,6 +32,10 @@ export const metadata: Metadata = {
     'Premium cancer care accessories for patients in India. Mastectomy bras, breast prosthesis, chemo port shirts, lymphedema sleeves. Free shipping. COD available.',
   authors: [{ name: 'Nuvanaah Team' }],
   robots: 'index, follow',
+  icons: {
+    icon: '/logo.jpeg',
+    apple: '/logo.jpeg',
+  },
   openGraph: {
     type: 'website',
     url: 'https://www.nuvanaah.com',

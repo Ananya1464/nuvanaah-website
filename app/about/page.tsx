@@ -304,11 +304,11 @@ export default function AboutPage() {
           </div>
           <div className="flex items-center justify-center lg:justify-end">
             <Image
-              src="/images/logo.svg"
+              src="/logo.jpeg"
               alt="The Nuvanaah brand identity wordmark"
               width={240}
-              height={80}
-              className="opacity-80"
+              height={240}
+              className="opacity-80 rounded-md"
             />
           </div>
         </div>

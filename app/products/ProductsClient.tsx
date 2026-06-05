@@ -4,8 +4,11 @@ import { useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Heart, Shield, Truck, Phone, ArrowRight } from 'lucide-react'
 import { getPublicProducts } from '@/lib/products-data'
+import PageTransition from '@/components/animations/PageTransition'
+import FadeInWhenVisible from '@/components/animations/FadeInWhenVisible'
 
 export default function ProductsClient() {
   const [selectedCategory, setSelectedCategory] = useState('all')
@@ -65,13 +68,14 @@ export default function ProductsClient() {
   })
 
   return (
-    <div className="min-h-screen bg-[#faf7f2] pb-20 font-sans">
+    <PageTransition className="min-h-screen bg-[#faf7f2] pb-20 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-[8px] mb-[24px] text-[12px] text-[#7a6f6a] font-normal w-full">
         <Link href="/" className="text-[#7a6f6a] hover:text-[#884d53] transition-colors">Home</Link>
         <span className="px-[8px] text-[#1c1c18]/25">/</span>
         <span className="text-[#1c1c18] font-medium">All Products</span>
       </div>
       {/* Hero Section */}
+      <FadeInWhenVisible>
       <div className="bg-gradient-to-b from-[#2c1f1a]/5 via-[#faf7f2]/20 to-[#faf7f2] pt-12 pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
@@ -106,6 +110,7 @@ export default function ProductsClient() {
           </div>
         </div>
       </div>
+      </FadeInWhenVisible>
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -154,7 +159,8 @@ export default function ProductsClient() {
         </div>
 
         {/* Dynamic Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <AnimatePresence mode="popLayout">
           {filteredProducts.map((product) => {
             const isFeatured = product.id === 'willow-support' || product.id === 'bloomcrown'
             const mainImage = product.images?.[0]?.src || '/images/placeholder.png'
@@ -172,8 +178,15 @@ export default function ProductsClient() {
             }
 
             return (
-              <Link
+              <motion.div
                 key={product.id}
+                layout
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
+              >
+              <Link
                 href={`/products/${product.slug || product.id}`}
                 className={`group bg-white rounded-3xl border border-[#ded0bf]/40 overflow-hidden hover:shadow-md transition-all duration-300 flex flex-col relative ${
                   isFeatured ? 'sm:col-span-2 md:flex-row md:items-stretch' : ''
@@ -256,9 +269,11 @@ export default function ProductsClient() {
                   </div>
                 </div>
               </Link>
+              </motion.div>
             )
           })}
-        </div>
+          </AnimatePresence>
+        </motion.div>
       </div>
 
       {/* Redesigned Need Help Section - Clean, quiet white card with dual CTA */}
@@ -290,6 +305,6 @@ export default function ProductsClient() {
           </div>
         </div>
       </div>
-    </div>
+    </PageTransition>
   )
 }
