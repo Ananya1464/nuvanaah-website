@@ -72,7 +72,7 @@ export const products: Product[] = [
     crossSells: ['willow-support', 'nature-nest'],
     whatsIncluded: [
       { item: "1 × Comfort Shape breast form", detail: "In your selected side — Left or Right" },
-      { item: "1 removable washable cover", detail: "Included with every order" },
+      { item: "2 removable washable covers", detail: "Included with every order" },
     ],
     whenToUse: [
       {
@@ -99,11 +99,11 @@ export const products: Product[] = [
       'Lightweight — approximately 10 to 20 grams',
       'Left and Right specific shape — not interchangeable',
       'Natural contoured shape',
-      'Includes removable washable cover',
+      'Includes 2 removable washable covers',
       'Easy pocket system — open, insert, close',
       'Everyday wear friendly',
     ],
-    materialsText: 'Plant-fiber filling inside a soft, breathable plant-fiber outer fabric. Two layers that work together to keep the form cool, clean, and comfortable throughout the day. The cover is removable and hand-washable — one cover is included per form. Do not wash the form itself — only the cover.',
+    materialsText: 'Plant-fiber filling inside a soft, breathable plant-fiber outer fabric. Two layers that work together to keep the form cool, clean, and comfortable throughout the day. The cover is removable and hand-washable — two covers are included per form. Do not wash the form itself — only the cover.',
     careText: [
       'Hand wash cover in cool water',
       'Air dry flat',

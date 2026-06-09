@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { MessageCircle, Mail, Phone } from 'lucide-react'
+import { MessageCircle, Mail, Phone, Facebook } from 'lucide-react'
 import Logo from '@/components/ui/Logo'
 import Link from 'next/link'
 
@@ -66,6 +66,9 @@ export default function Footer() {
                   <circle cx="12" cy="12" r="4"/>
                   <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
                 </svg>
+              </a>
+              <a href="https://www.facebook.com/share/17h6t4nRvN/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-[#1877F2]" aria-label="Facebook">
+                <Facebook className="h-5 w-5" />
               </a>
               <a href="https://wa.me/919819461612" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-[#25D366]" aria-label="WhatsApp">
                 <MessageCircle className="h-5 w-5" />
