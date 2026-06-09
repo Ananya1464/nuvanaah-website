@@ -141,7 +141,7 @@ export const products: Product[] = [
     name: 'Willow Support™',
     subtitle: 'Post-Surgery Comfort Bra',
     tagline: '',
-    price: 1500,
+    price: 3000,
     priceFrom: false,
     categories: [CAT_RECOVERY, CAT_MASTECTOMY, CAT_LUMPECTOMY],
     categoryNav: 'Recovery & Body Support',
@@ -533,8 +533,8 @@ export const products: Product[] = [
     priceFrom: false,
     categories: [CAT_RECOVERY, CAT_MASTECTOMY],
     categoryNav: 'Recovery & Body Support',
-    description: 'One bag. Everything in it. A recovery kit with a sling bag, smiley therapy ball, two collection jars, a recovery diary, and a pen — designed to reduce the cognitive load of daily recovery management.',
-    fullStory: 'Recovery generates an endless list of things to manage, track, carry, and remember — at the moment when the energy to do so is at its lowest. Nest Carry cannot make recovery simpler than it is. But it can mean that the practical things have a place.\n\nThe bag keeps everything together. The diary keeps everything written down. The therapy ball is there for gentle daily movement. The jars are there because sometimes recovery is just that practical, and having the right container matters.',
+    description: 'A Recovery Support Kit created to help women keep important recovery essentials organized, accessible, and close at hand during everyday life. Provides greater convenience, reduced stress, and the confidence of having what you need within easy reach.',
+    fullStory: 'Recovery often comes with many small practical needs. NestCarry helps keep important items organized and within reach, allowing you to focus more on your wellbeing and less on managing supplies.\n\nNestCarry was created to help women keep important recovery essentials organized, accessible, and close at hand during everyday life. The emotional benefit is not the bag itself — it is greater convenience, greater organization, reduced stress, and the confidence of having important items within easy reach as you move through recovery.',
     images: [
       { id: 1, src: '/images/catalog/NestCarry/1.PNG', alt: 'Nest Carry™ — view 1' },
       { id: 2, src: '/images/catalog/NestCarry/2.PNG', alt: 'Nest Carry™ — view 2' },
@@ -550,10 +550,10 @@ export const products: Product[] = [
     variantLabel: '',
     variantOptions: [],
     benefitsList: [
-      { title: 'Reducing the cognitive load of recovery', desc: 'The bag keeps everything together. The diary keeps everything written down. Nothing is carried only in memory or scattered across multiple locations.' },
+      { title: 'Confidence and reduced stress', desc: 'Enjoy greater convenience and organization with a Recovery Support Kit that keeps important items within easy reach, reducing the cognitive load of recovery.' },
       { title: 'Gentle daily movement support', desc: 'The smiley therapy ball supports hand and arm mobility after surgery. Soft enough for sensitive hands. Use it anywhere — watching television, in waiting rooms, during rest.' },
       { title: 'One place for appointments and observations', desc: 'Appointment dates, medication details, questions for the healthcare team, personal notes. The recovery diary is the single location for all of it.' },
-      { title: 'Practical, portable containment', desc: 'The 50 mL and 100 mL collection jars provide a convenient and portable option for fluid collection, storage, measurement, or transport as part of a personal recovery routine. Two sizes. 100 mL jar has measurement markings.' },
+      { title: 'Convenient and practical organization', desc: 'The included 100 mL collection jar provides a convenient and portable container that can be used when temporary fluid collection, storage, measurement, or transport is required as part of a personal recovery routine. The 50 mL jar is also included.' },
       { title: 'A thoughtful gift at an accessible price', desc: 'Complete, considered, and practically useful. One of the most appreciated gifts for a woman in recovery.' },
     ],
     keyFeatures: [
@@ -566,10 +566,10 @@ export const products: Product[] = [
     ],
     materialsText: 'Sling bag in durable soft fabric. Therapy ball in soft, squeezable material. Jars in clean, food-safe plastic. Diary with smooth-finish pages.\n\nAll components are chosen for practical daily use during recovery — durable enough to last the recovery period, considered enough to feel like something chosen rather than something clinical.',
     careText: [
-      'Recovery sling bag — hand wash or gentle machine wash with mild detergent; air dry',
-      'Collection jars — wash thoroughly after use; dry completely before storage',
-      'Therapy ball — wipe clean with mild soap and water',
-      'Recovery diary — store in a dry place',
+      'Recovery Support Sling Bag: Hand wash or gentle machine wash; Mild detergent; Air dry',
+      'Collection Jar: Wash thoroughly after use; Dry completely before storage',
+      'Therapy Ball: Wipe clean with mild soap and water',
+      'Recovery Diary: Store in a dry place',
     ],
     careDonts: [],
     whatsIncluded: [

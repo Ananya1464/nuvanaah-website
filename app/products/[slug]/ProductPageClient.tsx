@@ -122,6 +122,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
   const [selectedShade, setSelectedShade] = useState(product.variantOptions?.[0] || 'Coffee Bean')
   const [selectedStyle, setSelectedStyle] = useState(product.variantOptions?.[0] || 'Long Balayage')
   const [selectedSide, setSelectedSide] = useState<'Left' | 'Right' | ''>('')
+  const [selectedSurgeryType, setSelectedSurgeryType] = useState<'Lumpectomy' | 'Mastectomy' | ''>('')
 
   // BloomCrown measurement inputs
   const [headCircumference, setHeadCircumference] = useState('')
@@ -299,35 +300,61 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
       )
     }
 
-    // Comfort Shape: Left / Right side selector
+    // Comfort Shape: Left / Right side selector and Surgery Type
     if (product.id === 'comfort-shape') {
       return (
-        <div className="space-y-2">
-          <p className="text-[11px] font-semibold uppercase tracking-widest text-[#7a6f6a]">Choose Your Side</p>
-          <div role="radiogroup" aria-label="Side" className="flex gap-3">
-            {(['Left', 'Right'] as const).map(side => (
-              <button
-                key={side}
-                type="button"
-                role="radio"
-                aria-checked={selectedSide === side}
-                onClick={() => setSelectedSide(side)}
-                className={`px-8 py-2.5 rounded-full border text-xs font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-[#884d53] focus:ring-offset-1 ${
-                  selectedSide === side
-                    ? 'bg-[#884d53]/5 border-[#884d53] text-[#884d53]'
-                    : 'bg-white border-[rgba(28,28,24,0.2)] text-[#1c1c18] hover:border-[#884d53]/50'
-                }`}
-              >
-                {side}
-              </button>
-            ))}
+        <div className="space-y-5">
+          <div className="space-y-2">
+            <p className="text-[11px] font-semibold uppercase tracking-widest text-[#7a6f6a]">Choose Your Side</p>
+            <div role="radiogroup" aria-label="Side" className="flex gap-3">
+              {(['Left', 'Right'] as const).map(side => (
+                <button
+                  key={side}
+                  type="button"
+                  role="radio"
+                  aria-checked={selectedSide === side}
+                  onClick={() => setSelectedSide(side)}
+                  className={`px-8 py-2.5 rounded-full border text-xs font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-[#884d53] focus:ring-offset-1 ${
+                    selectedSide === side
+                      ? 'bg-[#884d53]/5 border-[#884d53] text-[#884d53]'
+                      : 'bg-white border-[rgba(28,28,24,0.2)] text-[#1c1c18] hover:border-[#884d53]/50'
+                  }`}
+                >
+                  {side}
+                </button>
+              ))}
+            </div>
+            <p className="text-[11px] text-[#7a6f6a] leading-relaxed">
+              Each form is shaped specifically for its side — Left and Right are not interchangeable.
+            </p>
           </div>
-          <p className="text-[11px] text-[#7a6f6a] leading-relaxed">
-            Each form is shaped specifically for its side — Left and Right are not interchangeable.
-          </p>
-          {!selectedSide && (
-            <p className="text-[11px] text-[#884d53] font-semibold">Please select Left or Right before adding to cart.</p>
-          )}
+          <div className="space-y-2">
+            <p className="text-[11px] font-semibold uppercase tracking-widest text-[#7a6f6a]">Surgery Type</p>
+            <div role="radiogroup" aria-label="Surgery Type" className="flex gap-3">
+              {(['Lumpectomy', 'Mastectomy'] as const).map(type => (
+                <button
+                  key={type}
+                  type="button"
+                  role="radio"
+                  aria-checked={selectedSurgeryType === type}
+                  onClick={() => setSelectedSurgeryType(type)}
+                  className={`px-6 py-2.5 rounded-full border text-xs font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-[#884d53] focus:ring-offset-1 ${
+                    selectedSurgeryType === type
+                      ? 'bg-[#884d53]/5 border-[#884d53] text-[#884d53]'
+                      : 'bg-white border-[rgba(28,28,24,0.2)] text-[#1c1c18] hover:border-[#884d53]/50'
+                  }`}
+                >
+                  {type}
+                </button>
+              ))}
+            </div>
+            <p className="text-[11px] text-[#7a6f6a] leading-relaxed">
+              Helps us curate the specific shape according to the recovery support you need.
+            </p>
+            {(!selectedSide || !selectedSurgeryType) && (
+              <p className="text-[11px] text-[#884d53] font-semibold pt-1">Please select Left or Right, and your surgery type before adding to cart.</p>
+            )}
+          </div>
         </div>
       )
     }
@@ -459,10 +486,25 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
   }
 
   const handleAddToCart = () => {
-    addItem({ id: String(product.id), name: product.name, price: Number(currentPrice), image: productImages[0] })
+    let itemName = product.name;
+    let itemId = String(product.id);
+    
+    if (product.id === 'comfort-shape') {
+      if (!selectedSide || !selectedSurgeryType) return;
+      itemName = `${product.name} (${selectedSide}, ${selectedSurgeryType})`;
+      itemId = `${product.id}-${selectedSide.toLowerCase()}-${selectedSurgeryType.toLowerCase()}`;
+    } else if (product.variantLabel === 'Colour' && selectedColour) {
+      itemName = `${product.name} (${selectedColour})`;
+      itemId = `${product.id}-${selectedColour.replace(/\s+/g, '-').toLowerCase()}`;
+    } else if (product.variantLabel === 'Print' && selectedPrint) {
+      itemName = `${product.name} (${selectedPrint})`;
+      itemId = `${product.id}-${selectedPrint.replace(/\s+/g, '-').toLowerCase()}`;
+    }
+
+    addItem({ id: itemId, name: itemName, price: Number(currentPrice), image: productImages[0] })
     trackAddToCart({
-      id: String(product.id),
-      name: product.name,
+      id: itemId,
+      name: itemName,
       category: product.categories?.[0]?.name ?? 'Wellness',
       price: Number(currentPrice),
       quantity: 1,
