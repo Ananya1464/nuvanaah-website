@@ -121,6 +121,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
   const [selectedVersion, setSelectedVersion] = useState('Indian')
   const [selectedShade, setSelectedShade] = useState(product.variantOptions?.[0] || 'Coffee Bean')
   const [selectedStyle, setSelectedStyle] = useState(product.variantOptions?.[0] || 'Long Balayage')
+  const [selectedSide, setSelectedSide] = useState<'Left' | 'Right' | ''>('')
 
   // BloomCrown measurement inputs
   const [headCircumference, setHeadCircumference] = useState('')
@@ -294,6 +295,39 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
             </div>
             <p className="text-[11px] text-[#7a6f6a] leading-relaxed">Both versions include the shoulder holding belt and provide the same gentle compression.</p>
           </div>
+        </div>
+      )
+    }
+
+    // Comfort Shape: Left / Right side selector
+    if (product.id === 'comfort-shape') {
+      return (
+        <div className="space-y-2">
+          <p className="text-[11px] font-semibold uppercase tracking-widest text-[#7a6f6a]">Choose Your Side</p>
+          <div role="radiogroup" aria-label="Side" className="flex gap-3">
+            {(['Left', 'Right'] as const).map(side => (
+              <button
+                key={side}
+                type="button"
+                role="radio"
+                aria-checked={selectedSide === side}
+                onClick={() => setSelectedSide(side)}
+                className={`px-8 py-2.5 rounded-full border text-xs font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-[#884d53] focus:ring-offset-1 ${
+                  selectedSide === side
+                    ? 'bg-[#884d53]/5 border-[#884d53] text-[#884d53]'
+                    : 'bg-white border-[rgba(28,28,24,0.2)] text-[#1c1c18] hover:border-[#884d53]/50'
+                }`}
+              >
+                {side}
+              </button>
+            ))}
+          </div>
+          <p className="text-[11px] text-[#7a6f6a] leading-relaxed">
+            Each form is shaped specifically for its side — Left and Right are not interchangeable.
+          </p>
+          {!selectedSide && (
+            <p className="text-[11px] text-[#884d53] font-semibold">Please select Left or Right before adding to cart.</p>
+          )}
         </div>
       )
     }
@@ -877,8 +911,8 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
                     .filter(c => !c.toLowerCase().startsWith('do not'))
                     .slice(0, showAllCare ? undefined : 4)
                     .map((c, i) => (
-                      <li key={i} className="flex items-start gap-2 text-[#1c1c18]">
-                        <span className="text-[#446651] font-bold leading-none mt-0.5 text-base">✓</span>
+                      <li key={i} className="flex items-start gap-2.5 text-[#1c1c18]">
+                        <span className="text-[#446651] font-black leading-none mt-0.5 text-lg flex-shrink-0">✓</span>
                         <span className="text-xs leading-relaxed">{c}</span>
                       </li>
                     ))}
@@ -929,8 +963,8 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
                   <p className="text-[10px] font-bold uppercase tracking-widest text-[#884d53] mb-3">What Not to Do</p>
                   <ul className="space-y-2">
                     {product.careDonts.slice(0, showAllDonts ? undefined : 4).map((d, i) => (
-                      <li key={i} className="flex items-start gap-2 text-[#1c1c18]">
-                        <X className="w-3.5 h-3.5 text-[#884d53] flex-shrink-0 mt-0.5" />
+                      <li key={i} className="flex items-start gap-2.5 text-[#1c1c18]">
+                        <X className="w-5 h-5 text-[#884d53] flex-shrink-0 mt-0 stroke-[2.5]" />
                         <span className="text-xs leading-relaxed">{d}</span>
                       </li>
                     ))}

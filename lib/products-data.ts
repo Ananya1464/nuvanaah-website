@@ -11,24 +11,32 @@ export const categoryMappings: { [key: string]: string } = {
   'recovery-body-support': 'Recovery & Body Support',
   'hair-confidence':       'Hair & Confidence',
   'everyday-wellness':     'Everyday Wellness',
+  'mastectomy-care':       'Mastectomy Care',
+  'lumpectomy-care':       'Lumpectomy Care',
 }
 
 export const categoryDisplayNames: { [key: string]: string } = {
   'recovery-body-support': 'Recovery & Body Support',
   'hair-confidence':       'Hair & Confidence',
   'everyday-wellness':     'Everyday Wellness',
+  'mastectomy-care':       'Mastectomy Care',
+  'lumpectomy-care':       'Lumpectomy Care',
 }
 
 export const categoryDescriptions: { [key: string]: string } = {
   'recovery-body-support': 'Products designed to support physical comfort during and after surgery — from prosthetics and bras to pillows and recovery kits.',
   'hair-confidence':       'Products for head coverage, facial appearance, and the confidence that comes from feeling like yourself during treatment-related hair loss.',
   'everyday-wellness':     'Products for daily care, personal hygiene, and the small beauty details that contribute to feeling like yourself during recovery and beyond.',
+  'mastectomy-care':       'Products for women who have had a mastectomy — breast forms, pocket bras, post-surgery support, drain management, and lymphedema care.',
+  'lumpectomy-care':       'Products for women who have had a lumpectomy — soft recovery bras, light breast forms for symmetry, underarm pillows, and compression for lymphedema management.',
 }
 
 // ─── CATEGORY OBJECTS ───────────────────────────────────────────────────────
-const CAT_RECOVERY = { id: 1, name: 'Recovery & Body Support', slug: 'recovery-body-support' }
-const CAT_HAIR     = { id: 2, name: 'Hair & Confidence',       slug: 'hair-confidence' }
-const CAT_WELLNESS = { id: 3, name: 'Everyday Wellness',       slug: 'everyday-wellness' }
+const CAT_RECOVERY   = { id: 1, name: 'Recovery & Body Support', slug: 'recovery-body-support' }
+const CAT_HAIR       = { id: 2, name: 'Hair & Confidence',       slug: 'hair-confidence' }
+const CAT_WELLNESS   = { id: 3, name: 'Everyday Wellness',       slug: 'everyday-wellness' }
+const CAT_MASTECTOMY = { id: 4, name: 'Mastectomy Care',         slug: 'mastectomy-care' }
+const CAT_LUMPECTOMY = { id: 5, name: 'Lumpectomy Care',         slug: 'lumpectomy-care' }
 
 // ─── PRODUCT CATALOG ────────────────────────────────────────────────────────
 export const products: Product[] = [
@@ -42,9 +50,9 @@ export const products: Product[] = [
     tagline: 'Thoughtfully Shaped. Naturally Comfortable.',
     price: 2500,
     priceFrom: false,
-    categories: [CAT_RECOVERY],
+    categories: [CAT_RECOVERY, CAT_MASTECTOMY, CAT_LUMPECTOMY],
     categoryNav: 'Recovery & Body Support',
-    description: 'A lightweight plant-fiber breast form thoughtfully designed to support comfort, balance and confidence after breast surgery. Made with plant-fiber filling and a breathable plant-fiber outer fabric, Comfort Shape feels soft against the body while helping reduce heat build-up during daily wear.',
+    description: 'A lightweight plant-fiber breast form thoughtfully designed to support comfort, balance and confidence after breast surgery. Sold individually — choose Left or Right. Made with plant-fiber filling and a breathable plant-fiber outer fabric, Comfort Shape feels soft against the body while helping reduce heat build-up during daily wear.',
     fullStory: 'Comfort Shape is built on a simple insight: shape does not require weight. Most breast forms achieve their silhouette through density — heavy materials that hold their form by mass alone. Comfort Shape achieves the same result through geometry. The flat inner surface sits stable against the chest wall. The curved outer face creates a soft, rounded silhouette beneath clothing. Between them: plant fiber, air, and 10–20 grams.\n\nThe result is a form that disappears during wear. No pull on the bra. No heat building against the skin. No awareness of it by mid-afternoon. You put it on, and you stop thinking about it. That is not a small thing. That is what comfort actually means.',
     images: [
       { id: 1, src: '/images/catalog/bloomform/1.jpeg', alt: 'Comfort Shape™ — view 1' },
@@ -59,10 +67,12 @@ export const products: Product[] = [
     tags: ['after-surgery', 'prosthetic', 'recovery', 'body-support'],
     shopByNeed: ['after-surgery'],
     recoveryStage: ['stage-2', 'stage-4'],
+    variantLabel: 'Side',
+    variantOptions: ['Left', 'Right'],
     crossSells: ['willow-support', 'nature-nest'],
     whatsIncluded: [
-      { item: "1 pair of Comfort Shape breast forms", detail: "Left and Right included in every order" },
-      { item: "2 removable washable covers", detail: "Included with every order" }
+      { item: "1 × Comfort Shape breast form", detail: "In your selected side — Left or Right" },
+      { item: "1 removable washable cover", detail: "Included with every order" },
     ],
     whenToUse: [
       {
@@ -83,17 +93,17 @@ export const products: Product[] = [
       { title: 'Designed to work with Willow Support', desc: 'Sized and shaped to fit the discreet corner pocket of the Willow Support bra. Purchased together, they work as a system.' },
     ],
     keyFeatures: [
+      'Sold individually — choose Left or Right',
       'Plant-fiber filling — breathable and cool',
       'Plant-fiber outer fabric — soft against skin',
       'Lightweight — approximately 10 to 20 grams',
-      'Left and Right specific design',
+      'Left and Right specific shape — not interchangeable',
       'Natural contoured shape',
-      'Includes 2 removable washable covers',
+      'Includes removable washable cover',
       'Easy pocket system — open, insert, close',
-      'Available in sizes 32 to 44',
       'Everyday wear friendly',
     ],
-    materialsText: 'Plant-fiber filling inside a soft, breathable plant-fiber outer fabric. Two layers that work together to keep the form cool, clean, and comfortable throughout the day. The cover is removable and washable — two covers are included so one is always ready while the other dries. Do not wash the form itself — only the covers.',
+    materialsText: 'Plant-fiber filling inside a soft, breathable plant-fiber outer fabric. Two layers that work together to keep the form cool, clean, and comfortable throughout the day. The cover is removable and hand-washable — one cover is included per form. Do not wash the form itself — only the cover.',
     careText: [
       'Hand wash cover in cool water',
       'Air dry flat',
@@ -111,11 +121,10 @@ export const products: Product[] = [
     ogTitle: 'Comfort Shape™ — Plant-Fiber Breast Form | Nuvanaah',
     ogDescription: 'A plant-fiber breast form weighing 10–20 grams. Flat where it meets the body. Curved where it creates shape. Lighter, cooler, and more comfortable than silicone alternatives.',
     faqs: [
-      { q: 'What is the difference between Left and Right?', a: 'Each version is shaped to the specific anatomy of that side of the body. The chest contours on the left and right differ subtly in curve, angle, and position. Using the correct side-specific form gives a more natural fit and more balanced appearance.' },
+      { q: 'Do I need to buy Left and Right separately?', a: 'Yes — Comfort Shape is sold as a single form, Left or Right. Each is shaped to the specific anatomy of that side. The chest contours differ subtly in curve, angle, and position, so the correct side-specific form is always important for a natural fit.' },
       { q: 'How does plant fiber compare to silicone?', a: 'Comfort Shape weighs 10–20 grams versus several hundred grams for silicone forms. Plant fiber is breathable and cool where silicone traps heat. The appearance result is similar; the wearing experience is significantly different.' },
       { q: 'Will it work with my current bra?', a: 'Comfort Shape is designed to fit inside the prosthetic pocket of a pocket bra — specifically the Willow Support bra. It may also work in other pocket bras depending on pocket size.' },
-      { q: 'How do I wash it?', a: 'Remove the fabric cover and hand wash it in cool water. Air dry flat. The form itself does not need washing — only the cover does. Two covers are included so one is always ready.' },
-      { q: 'Can I wear it swimming?', a: 'The cover is not designed for swimming. For water activities, we recommend removing the form.' },
+      { q: 'How do I wash the cover?', a: 'Remove the fabric cover and hand wash it in cool water with a mild detergent. Air dry flat. Do not machine wash. The form itself does not require washing — only the cover does.' },
     ],
 
     isGiftPopular: false,
@@ -134,9 +143,9 @@ export const products: Product[] = [
     tagline: '',
     price: 1500,
     priceFrom: false,
-    categories: [CAT_RECOVERY],
+    categories: [CAT_RECOVERY, CAT_MASTECTOMY, CAT_LUMPECTOMY],
     categoryNav: 'Recovery & Body Support',
-    description: 'A post-surgery bra made from ultra-soft plant-fiber fabric, designed to make getting dressed feel ordinary again. Front-hook closure. Discreet prosthetic pocket.',
+    description: 'A post-surgery mastectomy bra made from ultra-soft plant-fiber fabric, designed to make getting dressed feel ordinary again. Front-hook closure. Discreet prosthetic pocket. Suitable after lumpectomy and mastectomy.',
     fullStory: 'After breast surgery, the things that used to be automatic require thought. Getting dressed is one of them. Willow Support was designed so that at least the bra is not an obstacle. The front-hook closure means you do not need help putting it on. The soft inner comfort panel means the hooks never touch the skin. The adjustable straps fit a body that is still changing week by week.\n\nThe discreet corner side pocket — approximately three inches wide, invisible from outside — exists for women using a prosthetic. It is not visible. It is not complicated to use. It is simply there, when needed.',
     images: [
       { id: 1, src: '/images/catalog/WillowSupport/1.jpeg', alt: 'Willow Support™ — view 1' },
@@ -169,11 +178,12 @@ export const products: Product[] = [
     ],
     materialsText: 'Ultra-soft plant-fiber fabric throughout — breathable, temperature-regulating, and gentle against healing skin. Softer than cotton. Stays that way through repeated washing.\n\nThe front hook closure is constructed with a soft backing panel so the hardware never makes direct skin contact. Straps are fully adjustable with standard sliding hardware that does not abrade sensitive shoulder areas.',
     careText: [
-      'Machine wash gentle at 30°C',
+      'Hand wash in cool water with mild detergent',
       'Lay flat or hang to dry',
       'Wash regularly for hygiene',
     ],
     careDonts: [
+      'Do not machine wash',
       'Do not tumble dry',
       'Do not bleach',
       'Do not iron the closure directly',
@@ -191,7 +201,7 @@ export const products: Product[] = [
       { q: 'How do I choose my size?', a: 'Measure your underbust circumference in centimetres. S: 68–78cm, M: 78–88cm, L: 88–98cm, XL: 98–108cm. If between sizes, size up. The adjustable straps allow further customisation.' },
       { q: 'Is the prosthetic pocket compatible with other brands?', a: 'The pocket is designed around the Comfort Shape breast form but is compatible with most lightweight prosthetics up to approximately 3 inches wide. Heavier silicone forms may not stay positioned securely.' },
       { q: 'Can I wear it immediately after surgery?', a: 'Please follow your surgical team\'s guidance on when to begin wearing a bra after surgery. Many women begin wearing Willow Support as soon as their team approves a soft bra.' },
-      { q: 'How long does the fabric stay soft?', a: 'Plant-fiber fabric maintains its softness through repeated gentle washing. Machine wash at 30°C and lay flat or hang to dry — do not tumble dry, which would reduce softness over time.' },
+      { q: 'How long does the fabric stay soft?', a: 'Plant-fiber fabric maintains its softness through repeated gentle washing. Hand wash in cool water and lay flat or hang to dry — do not machine wash or tumble dry, which would reduce softness over time.' },
       { q: 'Is the prosthetic pocket visible from outside?', a: 'No. The pocket opening is at the corner side seam and is not visible through clothing. There is no external pocket panel or additional fabric on the outside of the bra.' },
     ],
     isGiftPopular: false,
@@ -210,9 +220,9 @@ export const products: Product[] = [
     tagline: '',
     price: 1500,
     priceFrom: false,
-    categories: [CAT_RECOVERY],
+    categories: [CAT_RECOVERY, CAT_MASTECTOMY, CAT_LUMPECTOMY],
     categoryNav: 'Recovery & Body Support',
-    description: 'A soft underarm pillow shaped specifically for the arm and side of the body during rest. Plant-fiber filled, cool against skin, with a removable washable cover in three printed designs.',
+    description: 'A soft underarm pillow shaped specifically for the arm and side of the body during rest after breast surgery. Plant-fiber filled, cool against skin, with a removable washable cover in three printed designs.',
     fullStory: 'A nest is one of nature\'s most intentional structures. Not built for beauty — though it often has it. Built for one purpose: to hold something that needs protecting, with exactly the right amount of support.\n\nAfter breast surgery, the arm on the affected side needs a specific position during rest — not too close to the body, not too far, supported but not pressed. A rolled towel is too firm. A standard pillow is too large and soft. Neither is shaped for the job. Nature Nest is shaped for the job.',
     images: [
       { id: 1, src: '/images/catalog/NatureNest/1.jpeg', alt: 'Nature Nest™ — view 1' },
@@ -245,12 +255,13 @@ export const products: Product[] = [
     ],
     materialsText: 'Lightweight plant-fiber filling inside a soft cotton-blend printed cover. The two-layer construction keeps filling clean even when the cover is washed.\n\nThe cover attaches securely around the form and is removed easily for washing. The plant-fiber filling does not require washing and maintains its shape and loft through regular use.',
     careText: [
-      'Machine wash cover at 30°C gentle cycle',
+      'Hand wash cover in cool water with mild detergent',
       'Lay flat or hang to dry',
       'Store in a breathable location',
     ],
     careDonts: [
-      'Do not wash pillow filling',
+      'Do not machine wash the cover',
+      'Do not wash the pillow filling',
       'Do not tumble dry',
       'Do not bleach or iron the cover',
       'Do not compress under heavy items',
@@ -268,7 +279,7 @@ export const products: Product[] = [
     faqs: [
       { q: 'Which side does the pillow go under?', a: 'Place Nature Nest under the arm on your affected side. The pillow lifts the arm slightly away from the body, reducing pressure on the underarm area during rest.' },
       { q: 'Can I use it in bed?', a: 'Yes. Nature Nest is useful during rest in any position — in bed, on a sofa, or in a chair. The lightweight construction means you can carry it between rooms easily.' },
-      { q: 'How do I wash the cover?', a: 'Remove the cover by unwrapping or unzipping it from the form. Machine wash at 30°C on a gentle cycle. Lay flat or hang to dry. Do not tumble dry. The form itself does not need washing.' },
+      { q: 'How do I wash the cover?', a: 'Remove the cover by unwrapping or unzipping it from the form. Hand wash in cool water with a mild detergent. Lay flat or hang to dry. Do not machine wash or tumble dry. The filling itself does not need washing.' },
       { q: 'Is it useful after the immediate recovery period?', a: 'Many women continue using Nature Nest well beyond their initial recovery. It is also useful during lymphedema management, during radiotherapy, and as a general arm support during rest.' },
     ],
     isGiftPopular: true,
@@ -405,13 +416,13 @@ export const products: Product[] = [
     careText: [
       'Hand wash in cool water with mild detergent',
       'Lay flat or hang to dry',
-      'Machine wash on gentle in a mesh bag is also suitable',
+      'Dry away from direct sunlight to preserve print',
     ],
     careDonts: [
+      'Do not machine wash',
       'Do not tumble dry',
       'Do not iron on high heat directly on print',
       'Do not bleach',
-      'Dry away from direct sunlight to preserve print',
     ],
     whatsIncluded: [
       'Willow Wrap head scarf (in selected print)',
@@ -444,7 +455,7 @@ export const products: Product[] = [
     tagline: '',
     price: 1575,
     priceFrom: false,
-    categories: [CAT_RECOVERY],
+    categories: [CAT_RECOVERY, CAT_MASTECTOMY, CAT_LUMPECTOMY],
     categoryNav: 'Recovery & Body Support',
     description: 'A lymphedema compression sleeve with an adjustable shoulder holding belt that keeps it in place throughout the day — without constant readjustment. Soft, breathable, and designed for the full working day.',
     fullStory: 'Most compression sleeves rely on the sleeve\'s own elasticity to stay on the arm. This works at rest. It does not work during a normal day. The sleeve slides. You readjust. It slides again.\n\nFlowSleeve\'s adjustable shoulder holding belt attaches at the top of the sleeve and passes over the shoulder. The sleeve stays where it belongs — during movement, during work, during all the activities that make up a day. That is not a secondary feature. It is the reason FlowSleeve exists.',
@@ -483,6 +494,7 @@ export const products: Product[] = [
       'Follow compression garment care guidelines',
     ],
     careDonts: [
+      'Do not machine wash',
       'Do not tumble dry',
       'Do not bleach',
       'Do not iron',
@@ -520,7 +532,7 @@ export const products: Product[] = [
     tagline: '',
     price: 1500,
     priceFrom: false,
-    categories: [CAT_RECOVERY],
+    categories: [CAT_RECOVERY, CAT_MASTECTOMY],
     categoryNav: 'Recovery & Body Support',
     description: 'One bag. Everything in it. A recovery kit with a sling bag, smiley therapy ball, two collection jars, a recovery diary, and a pen — designed to reduce the cognitive load of daily recovery management.',
     fullStory: 'Recovery generates an endless list of things to manage, track, carry, and remember — at the moment when the energy to do so is at its lowest. Nest Carry cannot make recovery simpler than it is. But it can mean that the practical things have a place.\n\nThe bag keeps everything together. The diary keeps everything written down. The therapy ball is there for gentle daily movement. The jars are there because sometimes recovery is just that practical, and having the right container matters.',
@@ -634,11 +646,13 @@ export const products: Product[] = [
     ],
     materialsText: 'Bamboo plant-fiber fabric in a woven herringbone structure — softer than cotton, naturally absorbent, and more breathable. Tassels are hand-knotted in matching thread.\n\nThe herringbone weave increases surface area relative to a flat weave, which improves moisture absorption without adding bulk. Bamboo fiber naturally inhibits odour-causing bacteria, meaning the towel stays fresher between washes.',
     careText: [
-      'Machine wash at 30°C gentle',
-      'Tumble dry low or hang to dry',
+      'Hand wash in cool water with mild detergent',
+      'Hang to dry or lay flat',
       'Wash before first use',
     ],
     careDonts: [
+      'Do not machine wash',
+      'Do not tumble dry',
       'Do not bleach',
       'Do not iron tassels',
       'Do not wash with rough fabrics that may catch the weave',
@@ -709,11 +723,12 @@ export const products: Product[] = [
     ],
     materialsText: 'Bamboo plant-fiber fabric with clean hemmed edges — soft, quick-drying, and gentle through daily use.\n\nThe same bamboo fiber quality as PetalWrap, in a compact format designed for face and hand care. Naturally soft, naturally absorbent, and faster drying than cotton equivalents.',
     careText: [
-      'Machine wash at 30°C',
+      'Hand wash in cool water with mild detergent',
       'Hang to dry',
       'Wash before first use',
     ],
     careDonts: [
+      'Do not machine wash',
       'Do not bleach',
       'Do not iron on high heat',
       'Dry away from direct sunlight',
