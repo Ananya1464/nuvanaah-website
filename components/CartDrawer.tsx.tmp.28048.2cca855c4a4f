@@ -20,7 +20,7 @@ export default function CartDrawer() {
     return () => { if (timerRef.current) clearTimeout(timerRef.current) }
   }, [lastAdded]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  const shipping = 0
+  const shipping = total >= 1500 ? 0 : 99
 
   return (
     <AnimatePresence>
@@ -108,7 +108,11 @@ export default function CartDrawer() {
                   : <span>₹ {shipping}</span>
                 }
               </div>
-
+              {total < 1500 && (
+                <p className="text-xs text-[#884d53] font-medium">
+                  Add ₹ {(1500 - total).toLocaleString('en-IN')} more for free shipping
+                </p>
+              )}
             </div>
 
             {/* Trust chips */}

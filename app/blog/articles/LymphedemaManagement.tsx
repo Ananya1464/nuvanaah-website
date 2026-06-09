@@ -16,7 +16,7 @@ export default function LymphedemaManagement() {
 <span className="inline-block px-3 py-1 bg-secondary/10 text-secondary font-label-md rounded-full mb-4">Post-Op Care</span>
 <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-[#884D53] mb-4">Understanding and Managing Lymphedema</h1>
 <div className="flex items-center gap-4 text-on-surface-variant font-caption text-caption">
-<span className="font-medium">By Dr. Meera Iyer</span>
+<span className="font-medium">By Nuvanaah</span>
 <span className="w-1 h-1 bg-secondary rounded-full"></span>
 <span>October 24, 2024</span>
 <span className="w-1 h-1 bg-secondary rounded-full"></span>

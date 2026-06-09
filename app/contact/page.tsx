@@ -272,13 +272,13 @@ export default function ContactPage() {
                 <div className="w-10 h-10 bg-primary-50 rounded-full flex items-center justify-center">
                   <Phone className="w-5 h-5 text-primary-600" />
                 </div>
-                <span>Phone consultation (India-wide)</span>
+                <span>Phone consultation (Worldwide)</span>
               </div>
               <div className="flex items-center gap-3 text-tertiary-600">
                 <div className="w-10 h-10 bg-secondary-50 rounded-full flex items-center justify-center">
                   <MessageCircle className="w-5 h-5 text-secondary-600" />
                 </div>
-                <span>WhatsApp video consultation (India-wide)</span>
+                <span>WhatsApp video consultation (Worldwide)</span>
               </div>
             </div>
 

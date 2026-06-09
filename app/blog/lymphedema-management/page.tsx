@@ -24,7 +24,7 @@ export default function LymphedemaArticle() {
                     <h1 className="text-4xl md:text-5xl font-medium mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
                         Living Well with <span className="italic text-gold-300">Lymphedema</span>
                     </h1>
-                    <p className="text-xl text-teal-100">By Dr. Vikram Das, Lymphedema Specialist</p>
+                    <p className="text-xl text-teal-100">By Nuvanaah</p>
                 </div>
             </div>
 

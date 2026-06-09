@@ -407,7 +407,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                                     <Truck className="w-5 h-5 text-green-600" />
                                 </div>
                                 <div>
-                                    <p className="font-semibold text-gray-900 text-sm">Free Shipping</p>
+                                    <p className="font-semibold text-gray-900 text-sm">Free Shipping in India</p>
                                     <p className="text-xs text-gray-500">Pan India</p>
                                 </div>
                             </div>

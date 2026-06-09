@@ -16,7 +16,7 @@ export default function ManagingChemoSideEffects() {
                     Managing Chemotherapy Side Effects on Your Skin
                 </h1>
 <div className="flex items-center gap-4 text-surface-variant">
-<span className="font-label-md text-label-md">By Dr. Meera Iyer</span>
+<span className="font-label-md text-label-md">By Nuvanaah</span>
 <span className="w-1 h-1 bg-surface-variant rounded-full"></span>
 <span className="font-caption text-caption">November 12, 2024</span>
 </div>

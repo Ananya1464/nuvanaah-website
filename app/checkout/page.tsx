@@ -593,7 +593,7 @@ export default function CheckoutPage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <Truck className="w-4 h-4 text-teal-500" />
-                  <span>Free Shipping</span>
+                  <span>Free Shipping in India</span>
                 </div>
               </div>
 

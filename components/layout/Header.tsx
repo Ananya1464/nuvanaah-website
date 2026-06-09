@@ -101,8 +101,8 @@ export default function Header() {
       {/* ── ANNOUNCEMENT BAR ── */}
       {!announcementDismissed && (
         <div className="relative flex h-8 w-full items-center justify-center bg-[#884d53] px-12 text-[12px] font-medium tracking-wide text-white">
-          <span className="hidden md:inline">Free shipping on orders above ₹ 999 &nbsp;·&nbsp; COD available &nbsp;·&nbsp; Discreet packaging</span>
-          <span className="inline md:hidden">Free shipping ₹ 999+ &nbsp;·&nbsp; COD available</span>
+          <span className="hidden md:inline">Free shipping in India &nbsp;·&nbsp; COD available &nbsp;·&nbsp; Discreet packaging</span>
+          <span className="inline md:hidden">Free shipping in India &nbsp;·&nbsp; COD available</span>
           <button
             onClick={dismissAnnouncement}
             className="absolute right-4 flex h-5 w-5 items-center justify-center text-white/70 transition hover:text-white"

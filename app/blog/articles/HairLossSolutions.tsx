@@ -12,7 +12,7 @@ export default function HairLossSolutions() {
 </div>
 <h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6">Navigating Hair Loss: Wigs &amp; Gentle Headwear</h1>
 <div className="flex items-center justify-center space-x-4 text-on-surface-variant font-caption text-caption">
-<span>By Dr. Anjali Mehta</span>
+<span>By Nuvanaah</span>
 <span className="w-1 h-1 rounded-full bg-outline-variant"></span>
 <span>October 12, 2023</span>
 <span className="w-1 h-1 rounded-full bg-outline-variant"></span>

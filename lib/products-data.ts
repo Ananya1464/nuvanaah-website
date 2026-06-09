@@ -142,6 +142,7 @@ export const products: Product[] = [
     subtitle: 'Post-Surgery Comfort Bra',
     tagline: '',
     price: 3000,
+    priceNote: '(for a pair)',
     priceFrom: false,
     categories: [CAT_RECOVERY, CAT_MASTECTOMY, CAT_LUMPECTOMY],
     categoryNav: 'Recovery & Body Support',

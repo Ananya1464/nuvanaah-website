@@ -24,7 +24,7 @@ export default function MentalWellnessArticle() {
                     <h1 className="text-4xl md:text-5xl font-medium mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
                         Mental Health During Cancer: <span className="italic text-gold-300">You're Not Alone</span>
                     </h1>
-                    <p className="text-xl text-teal-100">By Dr. Anjali Nair, Clinical Psychologist, Oncology</p>
+                    <p className="text-xl text-teal-100">By Nuvanaah</p>
                 </div>
             </div>
 

@@ -5,7 +5,7 @@ import { Truck, Shield, HeartHandshake, Wallet } from 'lucide-react'
 const features = [
   {
     icon: Truck,
-    title: 'Free Shipping',
+    title: 'Free Shipping in India',
     description: 'Free delivery across India on all orders.',
   },
   {

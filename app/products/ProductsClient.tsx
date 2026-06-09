@@ -101,7 +101,7 @@ export default function ProductsClient() {
             </span>
             <span className="h-3 w-px bg-[#ded0bf] hidden sm:block"></span>
             <span className="flex items-center gap-1.5 font-semibold">
-              <Truck className="w-4 h-4 text-[#884d53]" /> Free Shipping
+              <Truck className="w-4 h-4 text-[#884d53]" /> Free Shipping in India
             </span>
             <span className="h-3 w-px bg-[#ded0bf] hidden sm:block"></span>
             <span className="flex items-center gap-1.5 font-semibold">

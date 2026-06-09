@@ -77,7 +77,7 @@ export default async function CollectionPage(
               {collectionProducts.length} {collectionProducts.length === 1 ? 'product' : 'products'}
             </span>
             <span className="rounded-full bg-white/10 px-4 py-1.5 text-[13px] font-medium text-white/80">
-              Free shipping ₹ 999+
+              Free shipping in India
             </span>
           </div>
         </div>

@@ -18,7 +18,7 @@ export default function MastectomyRecoveryTimeline() {
                     Mastectomy Recovery: A Complete Timeline
                 </h1>
 <p className="font-body-lg text-body-lg text-primary/80 font-medium tracking-wide uppercase text-sm">
-                    By Dr. Ananya Sharma <span className="mx-2 opacity-50">|</span> October 12, 2024
+                    By Nuvanaah <span className="mx-2 opacity-50">|</span> October 12, 2024
                 </p>
 </div>
 </header>

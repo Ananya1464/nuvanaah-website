@@ -68,6 +68,7 @@ export interface Product {
   dimensions?: string
   whatsappCTA?: boolean
   priceOnRequest?: boolean     // if true, show "Price on request" instead of price
+  priceNote?: string           // e.g. "(for a pair)"
   showSizeGuide?: boolean      // if true, show size guide link near variant selector
   // For variable products (like wigs with different lengths)
   variations?: ProductVariation[]

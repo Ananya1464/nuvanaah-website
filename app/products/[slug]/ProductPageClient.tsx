@@ -670,6 +670,11 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
               <span className={`text-2xl font-semibold ${product.priceOnRequest || isComplimentaryGift ? 'text-[#7a6f6a] text-lg' : 'text-[#1c1c18]'}`}>
                 {priceDisplay}
               </span>
+              {product.priceNote && (
+                <span className="text-sm font-medium text-[#7a6f6a] self-end pb-[3px] -ml-2">
+                  {product.priceNote}
+                </span>
+              )}
               {(product.isGiftPopular || isComplimentaryGift) && (
                 <span className="bg-[#884d53]/8 text-[#884d53] text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
                   {isComplimentaryGift ? 'Complimentary Gift' : 'Popular Gift'}
@@ -751,7 +756,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
 
             {/* Trust chips */}
             <div className="flex flex-wrap gap-2 pt-1 border-t border-[rgba(28,28,24,0.08)] mt-2">
-              {['Free shipping ₹ 999+', 'COD available', 'Discreet packaging'].map(chip => (
+              {['Free shipping in India', 'COD available', 'Discreet packaging'].map(chip => (
                 <span key={chip} className="bg-[rgba(28,28,24,0.04)] text-[#7a6f6a] text-[11px] font-medium px-3 py-1.5 rounded-full">
                   {chip}
                 </span>

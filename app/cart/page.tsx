@@ -17,8 +17,7 @@ export default function CartPage() {
     setTimeout(() => setIsUpdating(null), 300)
   }
 
-  // Calculate shipping (free above ₹ 1500)
-  const shipping = total >= 1500 ? 0 : 99
+  const shipping = 0
   const grandTotal = total + shipping
 
   if (items.length === 0) {
@@ -164,11 +163,7 @@ export default function CartPage() {
                     <span>₹ {shipping}</span>
                   )}
                 </div>
-                {total < 1500 && (
-                  <div className="rounded-xl border border-primary-100 bg-primary-50 p-3 text-sm text-primary-700">
-                    Add ₹ {(1500 - total).toLocaleString()} more for free shipping!
-                  </div>
-                )}
+
               </div>
 
               {/* Divider */}
@@ -207,7 +202,7 @@ export default function CartPage() {
                   </div>
                   <div className="flex items-center gap-2">
                     <Truck className="h-4 w-4 text-secondary-500" />
-                    <span>Free Shipping</span>
+                    <span>Free Shipping in India</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CreditCard className="h-4 w-4 text-secondary-500" />

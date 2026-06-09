@@ -24,7 +24,7 @@ export default function ChemoSideEffectsArticle() {
                     <h1 className="text-4xl md:text-5xl font-medium mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
                         Managing <span className="italic text-gold-300">Chemotherapy</span> Side Effects
                     </h1>
-                    <p className="text-xl text-teal-100">By Dr. Meera Patel, MD Oncology + 50 cancer survivors</p>
+                    <p className="text-xl text-teal-100">By Nuvanaah</p>
                 </div>
             </div>
 
