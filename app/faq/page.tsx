@@ -1,17 +1,14 @@
 'use client'
 
 import { useState } from 'react'
-import { ChevronDown, ChevronUp, Phone, MessageCircle, Mail, Heart, ShoppingBag, HelpCircle, Users } from 'lucide-react'
+import { ChevronDown, ChevronUp, Phone, MessageCircle, Mail, Heart, ShoppingBag, Package, Scissors } from 'lucide-react'
 import Link from 'next/link'
-
-// SEO Note: For metadata, create a separate layout.tsx in app/faq/ directory
-// or use next/head for dynamic meta tags
 
 const situationCards = [
   {
     icon: Heart,
     title: "I'm preparing for surgery",
-    description: "Learn about post-surgery products and what to expect",
+    description: "Learn about recovery products and what to expect",
     category: 'Products',
   },
   {
@@ -21,15 +18,15 @@ const situationCards = [
     category: 'Products',
   },
   {
-    icon: HelpCircle,
-    title: "I have questions about my order",
-    description: "Track orders, returns, exchanges, and delivery",
+    icon: Package,
+    title: "I have a question about delivery",
+    description: "Shipping, delivery timelines, and international orders",
     category: 'Shipping & Returns',
   },
   {
-    icon: Users,
-    title: "I'd like personal guidance",
-    description: "Talk to our care team about your specific needs",
+    icon: Scissors,
+    title: "I'm interested in a wig consultation",
+    description: "Wig guidance available in Vashi and Thane",
     category: 'Consultations',
   },
 ]
@@ -40,157 +37,109 @@ const faqData: Record<string, Array<{ q: string; a: string }>> = {
   General: [
     {
       q: 'What is Nuvanaah?',
-      a: 'Nuvanaah is a premium e-commerce platform dedicated to cancer care products. We provide mastectomy bras, chemotherapy accessories, wigs, lymphedema solutions, and more—all chosen with empathy and care.',
+      a: 'Nuvanaah is a thoughtfully curated platform offering products designed to support women through recovery and treatment. Every item is chosen with care and intention — not as a medical supply, but as a considered companion for daily life.',
     },
     {
       q: 'Who is Nuvanaah for?',
-      a: 'Nuvanaah is designed for cancer patients, survivors, and those undergoing cancer treatment. We also serve hospitals, healthcare providers, and wellness professionals.',
-    },
-    {
-      q: 'Is Nuvanaah affiliated with any hospitals?',
-      a: 'Yes! We partner with 50+ leading hospitals across India including Tata Memorial, Apollo Hospital, HCG Cancer Center, and AIIMS. Our hospital partnership program offers bulk pricing and specialized support.',
+      a: 'Nuvanaah is designed for women navigating recovery after breast surgery, hair loss during treatment, or the everyday practical needs that come with feeling like themselves again.',
     },
     {
       q: 'How is Nuvanaah different from other e-commerce sites?',
-      a: 'We specialize exclusively in cancer care products with expert curation, empathetic messaging, and dedicated support. Our mission is to provide dignified, premium products chosen with care.',
+      a: 'We specialise exclusively in products for women in recovery. Every item is chosen with care and intention. Our tone, our products, and our support all reflect one purpose: helping you feel like yourself again.',
     },
     {
       q: 'Do you have physical stores?',
-      a: 'Currently, we operate online. However, we offer free consultations with local specialists in major cities (Delhi, Mumbai, Bangalore, Chennai, Pune, Kolkata).',
+      a: 'We currently operate online. In-person wig consultations are available in Vashi and Thane. Reach out to us on WhatsApp to arrange.',
     },
   ],
   Products: [
     {
-      q: 'How can I find the right size for a mastectomy bra?',
-      a: 'We provide detailed size guides on each product page. You can also book a free consultation with our specialists to get personalized recommendations. We offer easy exchanges if the size doesn\'t fit perfectly.',
+      q: 'How can I find the right size for a bra or breast form?',
+      a: 'Each product page includes a detailed size guide. You are also welcome to reach out to us on WhatsApp — we are happy to help you find the right fit.',
     },
     {
       q: 'What materials are used in your wigs?',
-      a: 'Our wigs are made from premium synthetic or human hair. Each product page details the material, care instructions, and styling tips. We recommend trying our virtual try-on tool.',
-    },
-    {
-      q: 'Are the products suitable for sensitive skin?',
-      a: 'Yes! We carefully select products made from hypoallergenic, soft materials. Always check the product description for material details. Contact our team if you have specific skin concerns.',
+      a: 'Each product page details the material, construction, and care instructions. Reach out to us for guidance specific to your needs.',
     },
     {
       q: 'Can I see the products before buying?',
-      a: 'We offer detailed product images, videos, and testimonials from real users. Many products also come with a 7-day "try at home" guarantee—if you\'re not satisfied, return for a full refund.',
-    },
-    {
-      q: 'Do you offer customization?',
-      a: 'Yes! We offer custom sizing for bras and white-label packaging for hospitals. Contact our team for bulk orders or special requests.',
-    },
-    {
-      q: 'How often do you restock products?',
-      a: 'Most products are in stock year-round. For out-of-stock items, we offer pre-order with priority shipping. You\'ll be notified when items are back in stock.',
+      a: 'We provide detailed product images and descriptions on each page. For wigs, a consultation in Vashi or Thane is available if you would like to see options in person before deciding.',
     },
   ],
   'Shipping & Returns': [
     {
-      q: 'What are the shipping charges?',
-      a: 'Shipping is free on orders over ₹ 500. For orders below ₹ 500, shipping costs ₹ 100. Express 24-hour delivery is available for ₹ 300 extra.',
+      q: 'Do you offer free shipping?',
+      a: 'Yes. We offer free shipping across India.',
     },
     {
       q: 'How long does delivery take?',
-      a: 'Standard delivery: 3-5 business days. Express delivery: 24 hours (available in major cities). Orders are dispatched within 24 hours of purchase.',
+      a: 'Standard delivery typically takes up to 7 business days depending on location.',
+    },
+    {
+      q: 'Do you offer urgent delivery?',
+      a: 'For urgent delivery requests, please contact us directly before placing your order. We will do our best to assist based on availability and location.',
     },
     {
       q: 'Do you ship internationally?',
-      a: 'Currently, we ship only within India. International shipping will be available soon. Sign up for our newsletter to be notified.',
-    },
-    {
-      q: 'How discreet is the packaging?',
-      a: 'All products ship in plain, unmarked packaging with no visible branding. We understand privacy is important and take extra care to protect your confidentiality.',
-    },
-    {
-      q: 'What is your return policy?',
-      a: 'We offer 30-day easy returns. If you\'re not completely satisfied, return the product in unused condition with original packaging for a full refund. No questions asked.',
-    },
-    {
-      q: 'How do I return a product?',
-      a: 'Visit your account page and click "Return" on the order. Print the return label, pack the product, and drop it at any nearby pickup point. Refund will be credited within 5 business days.',
-    },
-    {
-      q: 'Can I exchange a product?',
-      a: 'Yes! You can exchange for a different size, color, or product. Use the "Exchange" option on your order page and arrange pickup. Shipping is free.',
+      a: 'Yes. International shipping is available. Additional shipping charges apply based on destination and package requirements. Please contact us before placing an international order.',
     },
   ],
   Consultations: [
     {
-      q: 'Are consultations free?',
-      a: 'Yes! Initial consultations with our specialists are completely free. Follow-up sessions are ₹ 500 per session. Product-specific consultations are always free.',
+      q: 'What consultations do you offer?',
+      a: 'We offer wig consultation and fitting guidance for customers located in Vashi and Thane, India. We can help you understand available wig options, sizing, and styles.',
     },
     {
-      q: 'How do I book a consultation?',
-      a: 'Visit /consultations and select your preferred type (call, video, or message), date, and time. You can also browse our city pages to find local specialists.',
+      q: 'How do I book a wig consultation?',
+      a: 'Reach out to us on WhatsApp or call us to arrange a time. Consultations are available for customers in Vashi and Thane.',
     },
     {
-      q: 'Who are your consultants?',
-      a: 'Our consultants include certified nurses, patient care specialists, and wellness coaches trained in cancer care support. All are experienced in helping patients navigate their journey.',
+      q: 'Can you help me choose the right wig?',
+      a: 'Yes. During a consultation we will help you explore available wig options, discuss sizing, and find a style that feels right for you.',
     },
     {
-      q: 'Can I get personalized product recommendations?',
-      a: 'Absolutely! Book a consultation to discuss your specific needs. Our specialists will recommend products based on your situation, preferences, and budget.',
-    },
-    {
-      q: 'What if I have questions after my consultation?',
-      a: 'You can email or call our team anytime. We also offer follow-up support via WhatsApp for quick questions.',
-    },
-    {
-      q: 'Do consultations provide medical advice?',
-      a: 'Our consultants provide product guidance and wellness support, not medical advice. For medical concerns, please consult your healthcare provider. We work alongside your medical team.',
+      q: 'Are you available for general questions outside of consultations?',
+      a: 'Absolutely. Our team is available 24×7 to assist with any product-related questions. Reach out to us on WhatsApp or by phone anytime.',
     },
   ],
   'Payments & Orders': [
     {
       q: 'What payment methods do you accept?',
-      a: 'We accept all major credit/debit cards, UPI, net banking, digital wallets, and cash on delivery. Razorpay powers our secure payment gateway.',
+      a: 'We accept all major credit and debit cards, UPI, net banking, and digital wallets. Our payment gateway is secure and encrypted.',
     },
     {
       q: 'Is my payment information safe?',
-      a: 'Yes! We use 256-bit SSL encryption and PCI DSS compliance. Your payment information is never stored on our servers.',
-    },
-    {
-      q: 'Can I use multiple payment methods?',
-      a: 'Currently, you select one payment method per order. If you need to split payment, contact our support team.',
-    },
-    {
-      q: 'Do you offer installment plans?',
-      a: 'For orders over ₹ 5,000, we offer 0% EMI options via participating credit cards. Check the payment page for available options.',
+      a: 'Yes. We use industry-standard SSL encryption. Your payment information is never stored on our servers.',
     },
     {
       q: 'How can I track my order?',
-      a: 'You\'ll receive a tracking link via email and SMS immediately after your order is dispatched. Track your package in real-time via your account page.',
+      a: 'You will receive a tracking link via email and SMS after your order is dispatched. You can also reach out to us for an update at any time.',
     },
     {
       q: 'What if my order is delayed?',
-      a: 'Contact our support team immediately. If delayed beyond promised date, we\'ll offer a full refund or ₹ 200 account credit as apology.',
+      a: 'Please contact our team directly. We will look into it and keep you updated.',
     },
   ],
   Account: [
     {
       q: 'How do I create an account?',
-      a: 'Click "Sign Up" and enter your email, password, and name. You can also sign up with Google or Apple for faster registration.',
+      a: 'Click Sign Up and enter your email, password, and name. You can also sign up with Google for faster registration.',
     },
     {
       q: 'Do I need an account to purchase?',
-      a: 'You can check out as a guest, but creating an account helps you track orders, save addresses, manage returns, and access exclusive offers.',
+      a: 'You can check out as a guest, but creating an account helps you track orders, save addresses, and access your order history.',
     },
     {
       q: 'How do I reset my password?',
-      a: 'Click "Forgot Password" on the login page. Enter your email, and we\'ll send a reset link within minutes.',
+      a: 'Click Forgot Password on the login page, enter your email, and we will send a reset link.',
     },
     {
       q: 'Can I have multiple addresses?',
-      a: 'Yes! Save multiple delivery addresses in your account. Choose your preferred address during checkout.',
-    },
-    {
-      q: 'How can I update my profile?',
-      a: 'Go to Account Settings and update your name, email, phone, and password anytime.',
+      a: 'Yes. Save multiple delivery addresses in your account and choose your preferred one during checkout.',
     },
     {
       q: 'How is my data protected?',
-      a: 'We comply with India\'s data protection laws and use industry-standard security. Your data is never shared with third parties without your consent.',
+      a: "We comply with India's data protection requirements and use industry-standard security. Your information is never shared with third parties without your consent.",
     },
   ],
 }
@@ -199,18 +148,13 @@ export default function FAQPage() {
   const [selectedCategory, setSelectedCategory] = useState('All')
   const [expandedIndices, setExpandedIndices] = useState<Set<number>>(new Set())
 
-  // Get FAQs based on category
   const getFilteredFaqs = () => {
     let faqs: Array<{ q: string; a: string }> = []
-
     if (selectedCategory === 'All') {
-      Object.values(faqData).forEach((cat) => {
-        faqs = faqs.concat(cat)
-      })
+      Object.values(faqData).forEach((cat) => { faqs = faqs.concat(cat) })
     } else {
       faqs = faqData[selectedCategory] || []
     }
-
     return faqs
   }
 
@@ -218,51 +162,47 @@ export default function FAQPage() {
 
   const toggleExpand = (index: number) => {
     const newSet = new Set(expandedIndices)
-    if (newSet.has(index)) {
-      newSet.delete(index)
-    } else {
-      newSet.add(index)
-    }
+    if (newSet.has(index)) { newSet.delete(index) } else { newSet.add(index) }
     setExpandedIndices(newSet)
   }
 
   const handleSituationClick = (category: string) => {
     setSelectedCategory(category)
     setExpandedIndices(new Set())
-    // Scroll to FAQ section
     document.getElementById('faq-list')?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-b from-gray-50 to-white px-4 py-16 md:py-20 pt-24">
+    <div className="min-h-screen bg-[#faf7f2]">
+
+      {/* Hero */}
+      <div className="bg-[#1c1c18] text-white pt-24 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-light text-gray-900 mb-4">
-            How can we <span className="font-semibold text-teal-600">help you today</span>?
+          <h1 className="text-3xl md:text-4xl font-light text-white mb-4 leading-snug">
+            Questions, guidance, and support —<br className="hidden sm:block" /> whenever you need it.
           </h1>
-          <p className="text-lg text-gray-600">
-            You don't need to know the right questions. Browse by situation, or scroll down to explore all topics.
+          <p className="text-[#ded0bf] text-lg">
+            Find answers about products, sizing, delivery, consultations, and everyday care.
           </p>
         </div>
       </div>
 
       {/* Situation Cards */}
-      <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="max-w-4xl mx-auto px-4 py-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {situationCards.map((card, idx) => (
             <button
               key={idx}
               onClick={() => handleSituationClick(card.category)}
-              className="bg-white border border-gray-200 rounded-xl p-6 text-left hover:border-teal-300 hover:shadow-md transition-all group"
+              className="bg-white border border-[#ded0bf] rounded-2xl p-6 text-left hover:border-[#884d53]/50 hover:shadow-sm transition-all group"
             >
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-teal-50 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-teal-100 transition-colors">
-                  <card.icon className="w-5 h-5 text-teal-600" />
+                <div className="w-10 h-10 bg-[#884d53]/8 rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-[#884d53]/12 transition-colors">
+                  <card.icon className="w-5 h-5 text-[#884d53]" />
                 </div>
                 <div>
-                  <h3 className="font-medium text-gray-900 mb-1">{card.title}</h3>
-                  <p className="text-sm text-gray-500 line-clamp-1">{card.description}</p>
+                  <h3 className="font-medium text-[#1c1c18] mb-1">{card.title}</h3>
+                  <p className="text-sm text-[#7a6f6a] line-clamp-1">{card.description}</p>
                 </div>
               </div>
             </button>
@@ -271,20 +211,18 @@ export default function FAQPage() {
       </div>
 
       {/* Category Filter */}
-      <div id="faq-list" className="max-w-4xl mx-auto px-4 py-8 scroll-mt-24">
-        <p className="text-sm text-gray-400 mb-3">Or browse by topic</p>
+      <div id="faq-list" className="max-w-4xl mx-auto px-4 pb-6 scroll-mt-24">
+        <p className="text-sm text-[#7a6f6a] mb-3">Browse by topic</p>
         <div className="flex flex-wrap gap-2">
           {faqCategories.map((category) => (
             <button
               key={category}
-              onClick={() => {
-                setSelectedCategory(category)
-                setExpandedIndices(new Set())
-              }}
-              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${selectedCategory === category
-                ? 'bg-teal-100 text-teal-700 border border-teal-200'
-                : 'bg-gray-50 text-gray-500 border border-gray-100 hover:bg-gray-100 hover:text-gray-600'
-                }`}
+              onClick={() => { setSelectedCategory(category); setExpandedIndices(new Set()) }}
+              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
+                selectedCategory === category
+                  ? 'bg-[#884d53]/10 text-[#884d53] border border-[#884d53]/25'
+                  : 'bg-white text-[#524344] border border-[#ded0bf] hover:border-[#884d53]/30 hover:text-[#884d53]'
+              }`}
             >
               {category}
             </button>
@@ -295,22 +233,21 @@ export default function FAQPage() {
       {/* FAQ Accordion */}
       <div className="max-w-4xl mx-auto px-4 pb-16">
         {filteredFaqs.length > 0 ? (
-          <div className="space-y-3">
+          <div className="space-y-2">
             {filteredFaqs.map((faq, idx) => (
-              <div key={idx} className="border border-gray-200 rounded-lg overflow-hidden">
+              <div key={idx} className="bg-white border border-[#ded0bf] rounded-xl overflow-hidden">
                 <button
                   onClick={() => toggleExpand(idx)}
-                  className="w-full flex items-center justify-between p-5 hover:bg-gray-50 transition-colors"
+                  className="w-full flex items-center justify-between p-5 hover:bg-[#faf7f2] transition-colors"
                 >
-                  <span className="text-base font-medium text-gray-900 text-left">{faq.q}</span>
-                  {expandedIndices.has(idx) ? (
-                    <ChevronUp className="w-5 h-5 text-teal-600 flex-shrink-0 ml-4" />
-                  ) : (
-                    <ChevronDown className="w-5 h-5 text-gray-400 flex-shrink-0 ml-4" />
-                  )}
+                  <span className="text-base font-medium text-[#1c1c18] text-left">{faq.q}</span>
+                  {expandedIndices.has(idx)
+                    ? <ChevronUp className="w-5 h-5 text-[#884d53] flex-shrink-0 ml-4" />
+                    : <ChevronDown className="w-5 h-5 text-[#7a6f6a] flex-shrink-0 ml-4" />
+                  }
                 </button>
                 {expandedIndices.has(idx) && (
-                  <div className="border-t border-gray-100 bg-gray-50 p-5 text-gray-600 leading-relaxed">
+                  <div className="border-t border-[#ded0bf]/60 bg-[#faf7f2] px-5 py-4 text-[#524344] leading-relaxed text-sm">
                     {faq.a}
                   </div>
                 )}
@@ -319,44 +256,41 @@ export default function FAQPage() {
           </div>
         ) : (
           <div className="text-center py-12">
-            <p className="text-gray-600">
-              No questions found in this category.
-            </p>
+            <p className="text-[#7a6f6a]">No questions found in this category.</p>
           </div>
         )}
       </div>
 
-      {/* Still Need Help - Support Panel */}
-      <div className="bg-gray-50 px-4 py-16">
+      {/* Still Need Help */}
+      <div className="bg-white border-t border-[#ded0bf]/40 px-4 py-16">
         <div className="max-w-3xl mx-auto">
-          <div className="bg-white rounded-2xl p-8 md:p-10 border border-gray-100 shadow-sm text-center">
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">
+          <div className="bg-[#faf7f2] rounded-2xl p-8 md:p-10 border border-[#ded0bf] text-center">
+            <h2 className="text-xl font-semibold text-[#1c1c18] mb-3">
               Still need help?
             </h2>
-            <p className="text-gray-600 mb-8 max-w-lg mx-auto">
-              If you can't find your answer here, reach out to us. We're here to listen and support you.
+            <p className="text-[#524344] mb-8 max-w-lg mx-auto">
+              If you can't find your answer here, reach out to us. We're available 24×7 for any product-related questions.
             </p>
-
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="https://wa.me/919819461612"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-green-50 text-green-700 rounded-full font-medium hover:bg-green-100 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#1c1c18] text-white rounded-full font-medium hover:bg-[#333] transition-colors"
               >
                 <MessageCircle className="w-5 h-5" />
                 WhatsApp
               </a>
               <a
                 href="tel:+919819461612"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-teal-50 text-teal-700 rounded-full font-medium hover:bg-teal-100 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white border border-[#ded0bf] text-[#524344] rounded-full font-medium hover:border-[#884d53]/40 transition-colors"
               >
                 <Phone className="w-5 h-5" />
                 Call Us
               </a>
               <a
-                href="mailto:care@nuvanaah.com"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-amber-50 text-amber-700 rounded-full font-medium hover:bg-amber-100 transition-colors"
+                href="mailto:hello@nuvanaah.com"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white border border-[#ded0bf] text-[#524344] rounded-full font-medium hover:border-[#884d53]/40 transition-colors"
               >
                 <Mail className="w-5 h-5" />
                 Email
@@ -366,21 +300,22 @@ export default function FAQPage() {
         </div>
       </div>
 
-      {/* Talk to a Specialist CTA */}
+      {/* Wig Consultation CTA */}
       <div className="max-w-3xl mx-auto px-4 py-16">
         <div className="text-center">
-          <h2 className="text-xl font-semibold text-gray-900 mb-3">Need personalized guidance?</h2>
-          <p className="text-gray-600 mb-6">
-            Our care specialists can help you find what's right for your situation.
+          <h2 className="text-xl font-semibold text-[#1c1c18] mb-3">Looking for wig guidance?</h2>
+          <p className="text-[#524344] mb-6">
+            We offer wig consultation and fitting support for customers in Vashi and Thane.
           </p>
           <Link
             href="/consultations"
-            className="inline-block bg-teal-600 hover:bg-teal-700 text-white font-medium py-3 px-8 rounded-full transition-colors"
+            className="inline-block bg-[#884d53] hover:bg-[#884d53]/90 text-white font-medium py-3 px-8 rounded-full transition-colors"
           >
-            Talk to a Care Specialist
+            Book a Wig Consultation
           </Link>
         </div>
       </div>
+
     </div>
   )
 }

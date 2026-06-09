@@ -77,11 +77,9 @@ export default function Footer() {
           <div>
             <h4 className="mb-6 font-display text-lg font-semibold tracking-wide text-white">Shop</h4>
             <ul className="space-y-4">
-              <li><Link href="/products/category/post-surgery" className="text-sm text-white/70 transition-colors hover:text-white">Post-Surgery Care</Link></li>
-              <li><Link href="/products/category/wigs-hair" className="text-sm text-white/70 transition-colors hover:text-white">Headwear & Hair Solutions</Link></li>
-              <li><Link href="/products/category/lymphedema" className="text-sm text-white/70 transition-colors hover:text-white">Lymphedema Care</Link></li>
-              <li><Link href="/products/category/chemo-essentials" className="text-sm text-white/70 transition-colors hover:text-white">Chemo Essentials</Link></li>
-              <li><Link href="/products/category/sensitive-skin" className="text-sm text-white/70 transition-colors hover:text-white">Sensitive Skin</Link></li>
+              <li><Link href="/products/category/recovery-body-support" className="text-sm text-white/70 transition-colors hover:text-white">Recovery & Body Support</Link></li>
+              <li><Link href="/products/category/hair-confidence" className="text-sm text-white/70 transition-colors hover:text-white">Hair & Confidence</Link></li>
+              <li><Link href="/products/category/everyday-wellness" className="text-sm text-white/70 transition-colors hover:text-white">Everyday Wellness</Link></li>
             </ul>
           </div>
 

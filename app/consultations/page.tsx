@@ -1,54 +1,66 @@
 'use client'
 
 import Image from 'next/image'
-import { Phone, Calendar, Heart, Shield, CheckCircle2 } from 'lucide-react'
+import { Phone, MessageCircle, MapPin, Clock } from 'lucide-react'
 
 export default function ConsultationsPage() {
   return (
     <div className="min-h-screen bg-[#faf7f2]">
+
       {/* ── HERO ── */}
       <div className="bg-[#1c1c18] text-white pt-24 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-[#ded0bf] font-bold tracking-[0.2em] uppercase text-xs sm:text-sm mb-4">
-            Private & Confidential
+            Wig Consultation Support
           </p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            Personal Care<br />Consultations
+            Find the Right Wig<br />for You
           </h1>
           <p className="text-[#ded0bf] text-lg sm:text-xl max-w-2xl mx-auto">
-            Every recovery journey is unique. Speak with our care specialists to find the right support, sizes, and products for your specific needs.
+            We can help you understand available wig options, sizing, and styles — so you can choose with confidence.
           </p>
         </div>
       </div>
 
-      {/* ── WHY BOOK ── */}
+      {/* ── ABOUT THE CONSULTATION ── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative aspect-[4/5] sm:aspect-square lg:aspect-auto lg:h-[600px] rounded-3xl overflow-hidden shadow-md">
-            {/* Fallback image if support-consultation.png doesn't exist */}
             <Image
               src="/images/support-consultation.png"
-              alt="Nuvanaah care specialist consultation"
+              alt="Nuvanaah wig consultation"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               priority={true}
               className="object-cover"
             />
           </div>
-          
+
           <div>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#1c1c18] mb-6">
-              Expert Guidance,<br />Whenever You're Ready
+              Guidance You Can<br />Count On
             </h2>
             <p className="text-[#524344] text-lg mb-8 leading-relaxed">
-              We understand that navigating post-surgery recovery or hair loss can feel overwhelming. Our consultations are completely free, zero-pressure, and designed entirely around your comfort.
+              Choosing a wig is a personal decision. Our team is here to walk you through what is available, help you understand sizing, and find a style that feels like you.
             </p>
-            
+
             <div className="space-y-6">
               {[
-                { icon: <Shield className="w-6 h-6" />, title: 'Complete Privacy', desc: '1-on-1 sessions held in a safe, confidential environment.' },
-                { icon: <Heart className="w-6 h-6" />, title: 'Empathetic Experts', desc: 'Speak with specialists trained to understand your physical and emotional needs.' },
-                { icon: <CheckCircle2 className="w-6 h-6" />, title: 'Perfect Fit Guarantee', desc: 'Get accurate sizing help for prosthetics, bras, and hair systems.' }
+                {
+                  icon: <MapPin className="w-6 h-6" />,
+                  title: 'Available in Vashi & Thane',
+                  desc: 'In-person wig consultations are available for customers located in Vashi and Thane, India.',
+                },
+                {
+                  icon: <MessageCircle className="w-6 h-6" />,
+                  title: 'We help you find the right fit',
+                  desc: 'We will help you explore wig options, understand sizing, and choose a style that works for your lifestyle.',
+                },
+                {
+                  icon: <Clock className="w-6 h-6" />,
+                  title: 'Available 24×7 for questions',
+                  desc: 'Our team is available 24×7 to assist with product-related questions — consultations or otherwise.',
+                },
               ].map((f, i) => (
                 <div key={i} className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-[#884d53]/10 flex items-center justify-center text-[#884d53] flex-shrink-0">
@@ -70,14 +82,14 @@ export default function ConsultationsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl font-bold text-[#1c1c18] mb-4">How It Works</h2>
-            <p className="text-[#524344]">A simple, three-step process to get the answers you need.</p>
+            <p className="text-[#524344]">Simple and straightforward.</p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { step: '01', title: 'Schedule a Time', desc: 'Choose a date and time that works best for you via our booking system or WhatsApp.' },
-              { step: '02', title: 'Connect', desc: 'Join a private video call or phone call from the comfort of your home.' },
-              { step: '03', title: 'Receive Guidance', desc: 'Get personalized product recommendations, sizing help, and styling advice.' }
+              { step: '01', title: 'Reach Out', desc: 'Message or call us to let us know you are interested in a wig consultation. We will confirm availability in Vashi or Thane.' },
+              { step: '02', title: 'We Talk Through Options', desc: 'We will walk you through available wig styles, sizing, and what to expect — at a pace that works for you.' },
+              { step: '03', title: 'Choose with Confidence', desc: 'Leave with a clear sense of what is right for you, without pressure.' },
             ].map((s, i) => (
               <div key={i} className="bg-[#faf7f2] rounded-3xl p-8 border border-[#ded0bf]/40 relative">
                 <div className="text-5xl font-bold text-[#884d53]/10 absolute top-6 right-8">
@@ -91,29 +103,34 @@ export default function ConsultationsPage() {
         </div>
       </div>
 
-      {/* ── BOOKING SECTION ── */}
+      {/* ── CONTACT ── */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold text-[#1c1c18] mb-6">
-          Ready to Connect?
+        <h2 className="text-3xl sm:text-4xl font-bold text-[#1c1c18] mb-4">
+          Get in Touch
         </h2>
-        <p className="text-[#524344] text-lg mb-10">
-          Book your 30-minute complimentary session today.
+        <p className="text-[#524344] text-lg mb-4">
+          We are available 24×7. Reach out whenever it suits you.
         </p>
-        
+        <p className="text-[#7a6f6a] text-sm mb-10">
+          In-person consultations available in Vashi and Thane, India only.
+        </p>
+
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a
-            href="https://wa.me/919819461612?text=I%20would%20like%20to%20book%20a%20consultation"
+            href="https://wa.me/919819461612?text=I%20would%20like%20to%20book%20a%20wig%20consultation"
             className="flex items-center justify-center gap-3 bg-[#1c1c18] text-white px-8 py-4 rounded-full font-bold transition-all hover:bg-[#333] shadow-md hover:shadow-lg"
           >
-            <Phone className="w-5 h-5" /> Message on WhatsApp
+            <MessageCircle className="w-5 h-5" /> Message on WhatsApp
           </a>
-          <button
-            className="flex items-center justify-center gap-3 bg-white border-2 border-[#884d53] text-[#884d53] px-8 py-4 rounded-full font-bold transition-all hover:bg-[#884d53]/5"
+          <a
+            href="tel:+919819461612"
+            className="flex items-center justify-center gap-3 bg-white border border-[#ded0bf] text-[#524344] px-8 py-4 rounded-full font-bold transition-all hover:border-[#884d53]/40"
           >
-            <Calendar className="w-5 h-5" /> Book via Calendar
-          </button>
+            <Phone className="w-5 h-5" /> Call Us
+          </a>
         </div>
       </div>
+
     </div>
   )
 }
