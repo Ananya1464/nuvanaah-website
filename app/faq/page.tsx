@@ -210,6 +210,44 @@ export default function FAQPage() {
         </div>
       </div>
 
+      {/* Wig Sizing Guide */}
+      <div id="sizing-guide" className="max-w-4xl mx-auto px-4 py-10 scroll-mt-24">
+        <div className="bg-white border border-[#ded0bf] rounded-2xl p-8">
+          <h2 className="text-xl font-semibold text-[#1c1c18] mb-2">Wig Cap Sizing Guide</h2>
+          <p className="text-sm text-[#7a6f6a] mb-8">
+            Three measurements are all you need. Use a soft tape measure and take each measurement against your head, not over hair.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {[
+              {
+                label: 'Head Circumference',
+                example: 'e.g. 21.5"',
+                how: 'Wrap the tape measure around the fullest part of your head — starting at the centre of your forehead, going around above the ears, and meeting back at the start.',
+              },
+              {
+                label: 'Front to Nape',
+                example: 'e.g. 14.0"',
+                how: 'Place the tape at the centre of your hairline (forehead) and run it straight back over the top of your head to the nape of your neck.',
+              },
+              {
+                label: 'Ear to Ear',
+                example: 'e.g. 12.5"',
+                how: 'Run the tape from one ear, across the top of your head, to the other ear. Keep it flat against the scalp.',
+              },
+            ].map(({ label, example, how }) => (
+              <div key={label} className="bg-[#faf7f2] rounded-xl p-5 border border-[#ded0bf]/60">
+                <p className="text-xs font-bold uppercase tracking-wider text-[#884d53] mb-1">{label}</p>
+                <p className="text-xs text-[#7a6f6a] mb-3">{example}</p>
+                <p className="text-sm text-[#524344] leading-relaxed">{how}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-xs text-[#7a6f6a]">
+            Not sure about your measurements? Reach out to us on WhatsApp — we are happy to help.
+          </p>
+        </div>
+      </div>
+
       {/* Category Filter */}
       <div id="faq-list" className="max-w-4xl mx-auto px-4 pb-6 scroll-mt-24">
         <p className="text-sm text-[#7a6f6a] mb-3">Browse by topic</p>
