@@ -8,7 +8,7 @@ import { X, ShoppingBag, ArrowRight, Check } from 'lucide-react'
 import { useCart } from '@/lib/cart-context'
 
 export default function CartDrawer() {
-  const { lastAdded, clearLastAdded, items, itemCount, total } = useCart()
+  const { lastAdded, clearLastAdded, itemCount, total } = useCart()
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const isOpen = lastAdded !== null
 
