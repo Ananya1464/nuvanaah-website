@@ -27,8 +27,8 @@ export default function ConsultationsPage() {
           <div className="relative aspect-[4/5] sm:aspect-square lg:aspect-auto lg:h-[600px] rounded-3xl overflow-hidden shadow-md">
             {/* Fallback image if support-consultation.png doesn't exist */}
             <Image
-              src="/images/catalog/about/1.jpeg" // Using an about/lifestyle image as fallback
-              alt="Care Specialist"
+              src="/images/support-consultation.png"
+              alt="Nuvanaah care specialist consultation"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               priority={true}
@@ -102,7 +102,7 @@ export default function ConsultationsPage() {
         
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a
-            href="https://wa.me/91XXXXXXXXXX?text=I%20would%20like%20to%20book%20a%20consultation"
+            href="https://wa.me/919819461612?text=I%20would%20like%20to%20book%20a%20consultation"
             className="flex items-center justify-center gap-3 bg-[#1c1c18] text-white px-8 py-4 rounded-full font-bold transition-all hover:bg-[#333] shadow-md hover:shadow-lg"
           >
             <Phone className="w-5 h-5" /> Message on WhatsApp

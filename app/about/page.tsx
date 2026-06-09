@@ -75,6 +75,43 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ── ZONE 2B: THE FOUNDER ── */}
+      <section className="bg-[#faf7f2] py-20 px-6 lg:px-12">
+        <div className="mx-auto max-w-5xl lg:grid lg:grid-cols-2 lg:items-center lg:gap-20">
+          <div className="relative mb-12 lg:mb-0 aspect-[3/4] w-full max-w-sm mx-auto lg:max-w-none lg:mx-0 overflow-hidden rounded-2xl">
+            <Image
+              src="/images/founder_img.jpeg"
+              alt="Founder of Nuvanaah"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover object-top"
+            />
+          </div>
+          <div className="lg:pl-4">
+            <span className="mb-6 block text-[10px] font-semibold uppercase tracking-widest text-[#884d53]">
+              The founder
+            </span>
+            <h2 className="mb-1 text-[22px] font-medium leading-snug text-[#1c1c18]">
+              Kanchan Chopra
+            </h2>
+            <p className="mb-6 font-display text-[15px] italic text-[#7a6f6a]">
+              Founder, Nuvanaah
+            </p>
+            <div className="space-y-5 text-[14px] leading-[1.9] text-[#1c1c18]">
+              <p>
+                Nuvanaah was founded out of a deeply personal understanding of what cancer recovery actually asks of a person — not in the clinical sense, but in the quiet, ordinary moments that no treatment plan prepares you for.
+              </p>
+              <p>
+                The gaps we saw were not in medicine. They were in the everyday: the bra that no longer fit, the sleeve that would not stay, the mirror moment that came without warning. Products designed for those gaps did not exist in India. So we built them.
+              </p>
+              <p>
+                Every product in the Nuvanaah range is something we would put in the hands of someone we love. That is the only standard we work to.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── ZONE 3: WHAT WE BELIEVE ── */}
       <section className="bg-[#faf7f2] py-16 px-6 lg:px-12">
         <div className="mx-auto max-w-6xl">

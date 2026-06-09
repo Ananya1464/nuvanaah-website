@@ -11,6 +11,7 @@ import type { Product } from '@/lib/types'
 import { getRelatedProducts } from '@/lib/products-data'
 import { useCart } from '@/lib/cart-context'
 import { useWishlist } from '@/lib/wishlist-context'
+import { trackViewItem, trackAddToCart } from '@/lib/analytics'
 
 // --- HELPERS ---
 
@@ -138,6 +139,13 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
       else if (product.variantLabel === 'Version') setSelectedVersion('Indian')
       else if (product.variantLabel === 'Style') setSelectedStyle(product.variantOptions[0])
     }
+
+    trackViewItem({
+      id: String(product.id),
+      name: product.name,
+      category: product.categories?.[0]?.name ?? 'Wellness',
+      price: Number(product.price),
+    })
   }, [product])
 
   // Content accordion states
@@ -248,7 +256,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
           <div className="space-y-2">
             <div className="flex items-center justify-between">
               <p className="text-[11px] font-semibold uppercase tracking-widest text-[#7a6f6a]">Size</p>
-              <button type="button" className="text-[11px] text-[#884d53] font-semibold hover:underline">Size Guide ₹</button>
+              <button type="button" className="text-[11px] text-[#884d53] font-semibold hover:underline">Size Guide →</button>
             </div>
             <div role="radiogroup" aria-label="Size" className="flex flex-wrap gap-2">
             {['32', '34', '36', '38', '40', '42', '44'].map(sz => (
@@ -260,7 +268,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
               ))}
             </div>
             <p className="text-[11px] text-[#7a6f6a]">Not sure of your size?{' '}
-              <a href="https://wa.me/919819461612" target="_blank" rel="noopener noreferrer" className="text-[#884d53] font-semibold hover:underline">Chat with us ₹ </a>
+              <a href="https://wa.me/919819461612" target="_blank" rel="noopener noreferrer" className="text-[#884d53] font-semibold hover:underline">Chat with us →</a>
             </p>
           </div>
         </div>
@@ -281,7 +289,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
                     selectedVersion === ver
                       ? 'bg-[#884d53]/5 border-[#884d53] text-[#884d53]'
                       : 'bg-white border-[rgba(28,28,24,0.2)] text-[#1c1c18] hover:border-[#884d53]/50'
-                  }`}>{ver} ₹ {price}</button>
+                  }`}>{ver} · {price}</button>
               ))}
             </div>
             <p className="text-[11px] text-[#7a6f6a] leading-relaxed">Both versions include the shoulder holding belt and provide the same gentle compression.</p>
@@ -293,8 +301,8 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
     // BrowBloom: Shade with description
     if (product.id === 'browbloom') {
       const shadeDescriptions: Record<string, string> = {
-        'Coffee Bean': 'Warm dark brown ₹ medium to deeper South Asian skin tones.',
-        'Bamboo Woods': 'Soft cool brown ₹ lighter to medium South Asian skin tones.',
+        'Coffee Bean': 'Warm dark brown — suits medium to deeper South Asian skin tones.',
+        'Bamboo Woods': 'Soft cool brown — suits lighter to medium South Asian skin tones.',
       }
       return (
         <div className="space-y-2">
@@ -414,6 +422,17 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
   let currentPrice = product.price
   if (product.id === 'flowsleeve') {
     currentPrice = selectedVersion === 'Imported' ? 2840 : 1575
+  }
+
+  const handleAddToCart = () => {
+    addItem({ id: String(product.id), name: product.name, price: Number(currentPrice), image: productImages[0] })
+    trackAddToCart({
+      id: String(product.id),
+      name: product.name,
+      category: product.categories?.[0]?.name ?? 'Wellness',
+      price: Number(currentPrice),
+      quantity: 1,
+    })
   }
 
   const priceDisplay = isComplimentaryGift
@@ -594,7 +613,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
                   rel="noopener noreferrer"
                   className="w-full bg-[#884d53] hover:bg-[#6e3d42] text-white py-3.5 rounded-full font-semibold flex items-center justify-center gap-2 transition-all text-sm shadow-sm"
                 >
-                  Register Your Interest →₹ 
+                  Register Your Interest →
                 </a>
                 <p className="text-center text-[11px] text-[#7a6f6a]">We will notify you when DewLeaf is available to order.</p>
               </div>
@@ -612,10 +631,10 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
                 </Link>
                 <button
                   type="button"
-                  onClick={() => addItem({ id: String(product.id), name: product.name, price: Number(currentPrice), image: productImages[0] })}
+                  onClick={handleAddToCart}
                   className="w-full text-center text-xs font-semibold text-[#884d53] hover:underline py-2"
                 >
-                  Already know your style? Add to Bag ₹ 
+                  Already know your style? Add to Bag →
                 </button>
               </div>
             ) : (
@@ -624,11 +643,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
                   <button
                     type="button"
                     aria-label={`Add ${product.name} to bag`}
-                    onClick={() => {
-                      if (stockStatus === 'instock') {
-                        addItem({ id: String(product.id), name: product.name, price: Number(currentPrice), image: productImages[0] })
-                      }
-                    }}
+                    onClick={() => { if (stockStatus === 'instock') handleAddToCart() }}
                     className="flex-1 bg-[#884d53] hover:bg-[#6e3d42] text-white py-3.5 rounded-full font-semibold flex items-center justify-center gap-2 transition-all text-sm shadow-sm"
                   >
                     <ShoppingCart className="w-4 h-4" />
@@ -652,7 +667,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
                     rel="noopener noreferrer"
                     className="text-xs text-[#884d53] font-semibold hover:underline flex justify-center"
                   >
-                    Not sure of your size? Chat with us on WhatsApp ₹ 
+                    Not sure of your size? Chat with us on WhatsApp →
                   </a>
                 )}
               </div>
@@ -832,7 +847,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
                           onClick={() => setIsMaterialsExpanded(v => !v)}
                           className="text-[#884d53] font-semibold text-xs mt-2 hover:underline flex items-center gap-1"
                         >
-                          {isMaterialsExpanded ? 'Show less' : 'See full construction details ₹ '}
+                          {isMaterialsExpanded ? 'Show less' : 'See full construction details →'}
                         </button>
                         <div className={`grid transition-all duration-300 ${isMaterialsExpanded ? 'opacity-100 mt-2' : 'opacity-0'}`} style={{ gridTemplateRows: isMaterialsExpanded ? '1fr' : '0fr' }}>
                           <div className="overflow-hidden min-h-0">
@@ -863,7 +878,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
                     .slice(0, showAllCare ? undefined : 4)
                     .map((c, i) => (
                       <li key={i} className="flex items-start gap-2 text-[#1c1c18]">
-                        <span className="text-[#446651] font-bold leading-none mt-0.5 text-base">₹ </span>
+                        <span className="text-[#446651] font-bold leading-none mt-0.5 text-base">✓</span>
                         <span className="text-xs leading-relaxed">{c}</span>
                       </li>
                     ))}
@@ -1063,11 +1078,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
             <button
               type="button"
               aria-label={`Add ${product.name} to bag`}
-              onClick={() => {
-                if (stockStatus === 'instock') {
-                  addItem({ id: String(product.id), name: product.name, price: Number(currentPrice), image: productImages[0] })
-                }
-              }}
+              onClick={() => { if (stockStatus === 'instock') handleAddToCart() }}
               className="bg-[#1c1c18] text-white px-6 py-2.5 rounded-full font-semibold text-sm whitespace-nowrap hover:bg-[#333] transition-all shrink-0"
             >
               Add to Bag
@@ -1097,7 +1108,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
           <div className="relative w-[90vw] h-[80vh] flex items-center justify-center" onClick={e => e.stopPropagation()}>
             <Image
               src={productImages[selectedImage]}
-              alt={`${product.name} ₹ full view`}
+              alt={`${product.name} — full view`}
               fill
               className="object-contain"
               priority

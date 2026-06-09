@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Instagram, MessageCircle, Mail, Phone, Facebook, Youtube } from 'lucide-react'
+import { MessageCircle, Mail, Phone } from 'lucide-react'
 import Logo from '@/components/ui/Logo'
 import Link from 'next/link'
 
@@ -60,18 +60,15 @@ export default function Footer() {
 
             {/* Social Icons */}
             <div className="flex gap-3 pt-2">
-              {/* TODO: Replace with confirmed Nuvanaah Facebook/YouTube profile URL before launch */}
               <a href="https://instagram.com/nuvanaah" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-primary-600" aria-label="Instagram">
-                <Instagram className="h-5 w-5" />
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+                </svg>
               </a>
               <a href="https://wa.me/919819461612" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-[#25D366]" aria-label="WhatsApp">
                 <MessageCircle className="h-5 w-5" />
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-[#1877F2]" aria-label="Facebook">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-[#FF0000]" aria-label="YouTube">
-                <Youtube className="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -106,7 +103,7 @@ export default function Footer() {
             <p className="mb-4 text-sm leading-relaxed text-white/70">
               Join our community for recovery tips, inspiring stories, and exclusive access to new products.
             </p>
-            <form onSubmit={handleSubscribe} className="relative mt-4 flex">
+            <form onSubmit={handleSubscribe} className="mt-4 flex flex-col gap-2 sm:flex-row sm:gap-0">
               <input
                 type="email"
                 required
@@ -114,12 +111,12 @@ export default function Footer() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email address"
                 style={{ border: '1px solid rgba(28,28,24,0.15)' }}
-                className="w-full rounded-l-[4px] rounded-r-none bg-[#faf7f2] px-4 py-[12px] text-sm text-[#1c1c18] placeholder:text-[#7a6f6a] focus:outline-none"
+                className="w-full rounded-[4px] sm:rounded-r-none bg-[#faf7f2] px-4 py-[12px] text-sm text-[#1c1c18] placeholder:text-[#7a6f6a] focus:outline-none"
               />
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="flex items-center justify-center rounded-l-none rounded-r-[4px] bg-[#884d53] px-6 text-white transition-all hover:bg-[#884d53]/90"
+                className="w-full sm:w-auto flex items-center justify-center rounded-[4px] sm:rounded-l-none sm:rounded-r-[4px] bg-[#884d53] px-6 py-[12px] text-white transition-all hover:bg-[#884d53]/90 font-medium text-sm"
               >
                 Join
               </button>

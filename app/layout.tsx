@@ -3,6 +3,8 @@ import { Inter, Playfair_Display } from 'next/font/google'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import WhatsAppChat from '@/components/WhatsAppChat'
+import CartDrawer from '@/components/CartDrawer'
+import Analytics from '@/components/Analytics'
 import { CartProvider } from '@/lib/cart-context'
 import { WishlistProvider } from '@/lib/wishlist-context'
 import '@/app/globals.css'
@@ -45,7 +47,7 @@ export const metadata: Metadata = {
     siteName: 'Nuvanaah',
     images: [
       {
-        url: 'https://www.nuvanaah.com/og-image.jpg',
+        url: 'https://www.nuvanaah.com/images/about/hero-embrace.png',
         width: 1200,
         height: 630,
         alt: 'Nuvanaah - Cancer Care Products',
@@ -76,7 +78,9 @@ export default function RootLayout({
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />
+            <CartDrawer />
             <WhatsAppChat />
+            <Analytics />
           </WishlistProvider>
         </CartProvider>
       </body>

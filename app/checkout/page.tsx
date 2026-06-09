@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import { trackPurchase } from '@/lib/analytics'
 import {
   Check, ChevronLeft, ShoppingBag, MapPin, CreditCard,
   ClipboardCheck, Truck, Shield, ArrowRight,
@@ -100,7 +101,9 @@ export default function CheckoutPage() {
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 2000))
 
-    // Clear cart and redirect to confirmation
+    const orderId = `NUV${Date.now().toString().slice(-8)}`
+    trackPurchase(orderId, grandTotal, items)
+
     clearCart()
     router.push('/checkout/confirmation')
   }
@@ -152,7 +155,7 @@ export default function CheckoutPage() {
                 <button
                   onClick={() => currentStep > step.id && setCurrentStep(step.id)}
                   disabled={currentStep < step.id}
-                  className={`flex items-center justify-center w-12 h-12 rounded-full transition-all ${currentStep === step.id
+                  className={`flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full transition-all ${currentStep === step.id
                     ? 'bg-teal-500 text-white shadow-button'
                     : currentStep > step.id
                       ? 'bg-teal-100 text-teal-600 cursor-pointer hover:bg-teal-200'
@@ -160,26 +163,28 @@ export default function CheckoutPage() {
                     }`}
                 >
                   {currentStep > step.id ? (
-                    <Check className="w-5 h-5" />
+                    <Check className="w-4 h-4 sm:w-5 sm:h-5" />
                   ) : (
-                    <step.icon className="w-5 h-5" />
+                    <step.icon className="w-4 h-4 sm:w-5 sm:h-5" />
                   )}
                 </button>
 
-                {/* Step Label */}
-                <span className={`ml-3 font-medium ${currentStep >= step.id ? 'text-gray-900' : 'text-gray-400'
-                  }`}>
+                {/* Step Label — hidden on mobile */}
+                <span className={`hidden sm:inline ml-3 font-medium ${currentStep >= step.id ? 'text-gray-900' : 'text-gray-400'}`}>
                   {step.name}
                 </span>
 
                 {/* Connector Line */}
                 {index < steps.length - 1 && (
-                  <div className={`w-16 lg:w-24 h-1 mx-4 rounded-full ${currentStep > step.id ? 'bg-teal-500' : 'bg-gray-200'
-                    }`} />
+                  <div className={`w-10 sm:w-16 lg:w-24 h-1 mx-2 sm:mx-4 rounded-full ${currentStep > step.id ? 'bg-teal-500' : 'bg-gray-200'}`} />
                 )}
               </div>
             ))}
           </div>
+          {/* Mobile step label — shows current step name only */}
+          <p className="sm:hidden text-center mt-3 text-sm font-medium text-gray-600">
+            Step {currentStep} of {steps.length} — {steps[currentStep - 1].name}
+          </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">

@@ -83,35 +83,45 @@ export default async function ProductPageServer({ params }: Props) {
     ]
   }
 
+  const availability = product.comingSoon
+    ? "https://schema.org/PreOrder"
+    : "https://schema.org/InStock"
+
   const offers: any = {
     "@type": "Offer",
-    "availability": "https://schema.org/PreOrder",
+    "availability": availability,
     "priceCurrency": "INR",
-    "url": productUrl
+    "url": productUrl,
+    "seller": { "@type": "Organization", "name": "Nuvanaah" }
   }
 
   if (product.id === 'dewleaf' || product.comingSoon) {
-    // Omit price for DewLeaf
     delete offers.priceCurrency
   } else if (product.id === 'bloomcrown' || product.priceFrom) {
-    // Use AggregateOffer/lowPrice for BloomCrown
     offers["@type"] = "AggregateOffer"
     offers["lowPrice"] = product.price
+    offers["priceCurrency"] = "INR"
   } else {
     offers["price"] = product.price
   }
 
-  const productSchema = {
+  const productSchema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": product.name,
     "description": product.metaDescription || product.description?.substring(0, 160),
-    "image": product.images?.map((img: any) => img.src) || [],
+    "image": product.images?.map((img: any) => img.src).filter(Boolean) || [],
+    "url": productUrl,
+    "sku": product.slug || String(product.id),
     "brand": {
       "@type": "Brand",
       "name": "Nuvanaah"
     },
     "offers": offers
+  }
+
+  if (product.categories?.[0]?.name) {
+    productSchema["category"] = product.categories[0].name
   }
 
   return (

@@ -2,8 +2,10 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Trash2, Plus, Minus, ShoppingBag, ArrowRight, Shield, Truck, CreditCard, Phone } from 'lucide-react'
 import { useCart } from '@/lib/cart-context'
+import { trackBeginCheckout } from '@/lib/analytics'
 
 export default function CartPage() {
   const { items, itemCount, total, removeItem, updateQuantity, clearCart } = useCart()
@@ -66,13 +68,25 @@ export default function CartPage() {
             {items.map((item) => (
               <div
                 key={item.id}
-                className={`rounded-[28px] border border-neutral-200 bg-white p-6 shadow-[0_16px_40px_rgba(44,31,26,0.06)] transition-all ${isUpdating === item.id ? 'opacity-70' : ''
+                className={`rounded-[28px] border border-neutral-200 bg-white p-4 sm:p-6 shadow-[0_16px_40px_rgba(44,31,26,0.06)] transition-all ${isUpdating === item.id ? 'opacity-70' : ''
                   }`}
               >
-                <div className="flex gap-6">
+                <div className="flex gap-4 sm:gap-6">
                   {/* Product Image */}
-                  <div className="flex h-28 w-28 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-secondary-50 to-neutral-100">
-                    <ShoppingBag className="h-10 w-10 text-secondary-400" />
+                  <div className="relative h-20 w-20 sm:h-28 sm:w-28 flex-shrink-0 overflow-hidden rounded-2xl bg-[#faf7f2] border border-neutral-100">
+                    {item.image ? (
+                      <Image
+                        src={item.image}
+                        alt={item.name}
+                        fill
+                        sizes="(max-width: 640px) 80px, 112px"
+                        className="object-contain p-2"
+                      />
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center">
+                        <ShoppingBag className="h-8 w-8 text-secondary-300" />
+                      </div>
+                    )}
                   </div>
 
                   {/* Product Info */}
@@ -167,7 +181,11 @@ export default function CartPage() {
               </div>
 
               {/* Checkout Button */}
-              <Link href="/checkout" className="btn-primary mb-4 w-full justify-center py-5 text-lg">
+              <Link
+                href="/checkout"
+                className="btn-primary mb-4 w-full justify-center py-5 text-lg"
+                onClick={() => trackBeginCheckout(grandTotal, items)}
+              >
                 Proceed to Checkout
                 <ArrowRight className="w-5 h-5" />
               </Link>

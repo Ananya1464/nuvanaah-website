@@ -206,13 +206,27 @@ export default function Header() {
           </Link>
 
 
+          {/* Desktop cart — pill with label */}
           <Link
             href="/cart"
-            className="inline-flex h-[40px] items-center gap-2 rounded-full border border-[#2c1f1a]/20 px-4 text-[14px] font-medium text-[#1c1c18] transition hover:bg-[#faf7f2]"
+            className="hidden md:inline-flex h-[40px] items-center gap-2 rounded-full border border-[#2c1f1a]/20 px-4 text-[14px] font-medium text-[#1c1c18] transition hover:bg-[#faf7f2]"
             aria-label="Shopping cart"
           >
             <ShoppingCart className="h-4 w-4" />
             <span className="whitespace-nowrap">Cart ({cartCount})</span>
+          </Link>
+          {/* Mobile cart — icon with badge */}
+          <Link
+            href="/cart"
+            className="relative md:hidden text-[#1c1c18] transition hover:text-[#884d53]"
+            aria-label={`Shopping cart, ${cartCount} items`}
+          >
+            <ShoppingCart className="h-5 w-5" />
+            {cartCount > 0 && (
+              <span className="absolute -top-1.5 -right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-[#884d53] text-[10px] font-bold text-white leading-none">
+                {cartCount}
+              </span>
+            )}
           </Link>
 
           {/* MOBILE HAMBURGER */}
@@ -265,7 +279,7 @@ export default function Header() {
                         <Link
                           key={p.slug}
                           href={`/products/${p.slug}`}
-                          className="block py-1.5 text-[14px] text-[#2c1f1a]/80 hover:text-[#884d53] transition-colors pl-2"
+                          className="block py-2.5 text-[14px] text-[#2c1f1a]/80 hover:text-[#884d53] transition-colors pl-2"
                           onClick={() => setMenuOpen(false)}
                         >
                           {p.name}

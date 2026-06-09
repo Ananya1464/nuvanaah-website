@@ -15,10 +15,12 @@ interface CartContextType {
     items: CartItem[]
     itemCount: number
     total: number
+    lastAdded: CartItem | null
     addItem: (item: Omit<CartItem, 'quantity'>) => void
     removeItem: (id: string) => void
     updateQuantity: (id: string, quantity: number) => void
     clearCart: () => void
+    clearLastAdded: () => void
 }
 
 // Create context
@@ -28,6 +30,7 @@ const CartContext = createContext<CartContextType | undefined>(undefined)
 export function CartProvider({ children }: { children: ReactNode }) {
     const [items, setItems] = useState<CartItem[]>([])
     const [isLoaded, setIsLoaded] = useState(false)
+    const [lastAdded, setLastAdded] = useState<CartItem | null>(null)
 
     // Load cart from localStorage on mount
     useEffect(() => {
@@ -60,15 +63,20 @@ export function CartProvider({ children }: { children: ReactNode }) {
         setItems(currentItems => {
             const existingItem = currentItems.find(item => item.id === newItem.id)
             if (existingItem) {
+                setLastAdded({ ...existingItem, quantity: existingItem.quantity + 1 })
                 return currentItems.map(item =>
                     item.id === newItem.id
                         ? { ...item, quantity: item.quantity + 1 }
                         : item
                 )
             }
-            return [...currentItems, { ...newItem, quantity: 1 }]
+            const added = { ...newItem, quantity: 1 }
+            setLastAdded(added)
+            return [...currentItems, added]
         })
     }
+
+    const clearLastAdded = () => setLastAdded(null)
 
     // Remove item from cart
     const removeItem = (id: string) => {
@@ -99,10 +107,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
                 items,
                 itemCount,
                 total,
+                lastAdded,
                 addItem,
                 removeItem,
                 updateQuantity,
                 clearCart,
+                clearLastAdded,
             }}
         >
             {children}
