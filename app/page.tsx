@@ -6,7 +6,20 @@ export const metadata: Metadata = {
   description: "Premium recovery and wellness products for women navigating breast cancer treatment and post-surgical recovery. Designed with warmth, dignity, and care.",
   alternates: {
     canonical: 'https://www.nuvanaah.com'
-  }
+  },
+  openGraph: {
+    type: 'website',
+    url: 'https://www.nuvanaah.com',
+    title: "Nuvanaah — Care That Supports You Through Treatment",
+    description: "Premium recovery and wellness products for women navigating breast cancer treatment and post-surgical recovery. Designed with warmth, dignity, and care.",
+    siteName: 'Nuvanaah',
+    images: [{ url: 'https://www.nuvanaah.com/images/about/hero-embrace.png', width: 1200, height: 630, alt: 'Nuvanaah — Cancer Recovery Products' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Nuvanaah — Care That Supports You Through Treatment",
+    description: "Premium recovery and wellness products for women navigating breast cancer treatment.",
+  },
 }
 
 const faqItems = [
