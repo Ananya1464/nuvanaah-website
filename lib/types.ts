@@ -34,6 +34,7 @@ export interface Product {
   rating?: number
   reviewCount?: number
   tags?: string[]               // for filtering — e.g. ['after-surgery', 'recovery']
+  technicalNames?: string[]     // clinical/technical search terms — e.g. ['breast prosthesis', 'mastectomy bra']
   crossSells?: string[]         // slugs of cross-sell products
   recoveryStage?: string[]      // e.g. ['stage-1', 'stage-2']
   shopByNeed?: string[]         // e.g. ['after-surgery', 'hair-loss']

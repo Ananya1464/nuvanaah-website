@@ -663,6 +663,11 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
               {product.tagline && product.id !== 'dewleaf' && (
                 <p className="text-xs italic text-[#7a6f6a]">{product.tagline}</p>
               )}
+              {product.technicalNames && product.technicalNames.length > 0 && (
+                <p className="text-[11px] text-[#7a6f6a]/70">
+                  Also known as: <span className="font-medium">{product.technicalNames.join(' · ')}</span>
+                </p>
+              )}
             </div>
 
             {/* Price + badges */}
