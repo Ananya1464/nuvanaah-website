@@ -122,7 +122,6 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
   const [selectedShade, setSelectedShade] = useState(product.variantOptions?.[0] || 'Coffee Bean')
   const [selectedStyle, setSelectedStyle] = useState(product.variantOptions?.[0] || 'Long Balayage')
   const [selectedSide, setSelectedSide] = useState<'Left' | 'Right' | ''>('')
-  const [selectedSurgeryType, setSelectedSurgeryType] = useState<'Lumpectomy' | 'Mastectomy' | ''>('')
 
   // BloomCrown measurement inputs
   const [headCircumference, setHeadCircumference] = useState('')
