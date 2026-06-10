@@ -178,7 +178,6 @@ export default function ProductsClient() {
             } else if (product.id === 'vine-support') {
               cleanSubtitle = 'Soft Recovery Support Form · Bamboo'
             }
-            const technicalPreview = product.technicalNames?.slice(0, 2).join(' | ') || ''
 
             return (
               <motion.div
