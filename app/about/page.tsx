@@ -23,8 +23,8 @@ export default function AboutPage() {
       <section className="flex flex-col lg:grid lg:grid-cols-2 lg:h-screen lg:min-h-[600px] w-full">
         <div className="relative h-[70vh] min-h-[400px] w-full lg:h-full">
           <Image
-            src="/images/carousel/recovery-flatlay.png"
-            alt="Flat-lay of warm, soft recovery products on natural linen, conveying gentle support"
+            src="/images/about/about_hero.png"
+            alt="Flat-lay of warm, soft recovery wear on natural linen, conveying gentle support"
             fill
             priority={true}
             sizes="(max-width: 768px) 100vw, 100vw"
@@ -170,8 +170,8 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-2 lg:items-center lg:gap-16">
           <div className="relative aspect-[3/4] w-full max-w-md mx-auto lg:max-w-none lg:mx-0 mb-12 lg:mb-0">
             <Image
-              src="/images/about/fabric-macro.png"
-              alt="Close-up of the woven texture of fabric in natural light, showing craft and care"
+              src="/images/about/how_we_build.png"
+              alt="A designer's workspace showing soft plant-based fabrics and thoughtful design process"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
