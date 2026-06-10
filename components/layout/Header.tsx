@@ -15,12 +15,12 @@ const shopCategories = [
     slug: 'recovery-body-support',
     description: 'For surgery, healing, and physical comfort',
     products: [
-      { name: 'Comfort Shape™',   slug: 'comfort-shape',  subtitle: 'Plant Fiber Prosthetic' },
-      { name: 'Willow Support™',  slug: 'willow-support', subtitle: 'Front-Open Pocket Bra' },
-      { name: 'Nature Nest™',     slug: 'nature-nest',    subtitle: 'Underarm Rest Pillow' },
-      { name: 'FlowSleeve™',      slug: 'flowsleeve',     subtitle: 'Lymphedema Sleeve' },
-      { name: 'Care Ease Wrap™',  slug: 'care-ease-wrap', subtitle: 'Soft Recovery Wrap' },
-      { name: 'Nest Carry™',      slug: 'nest-carry',     subtitle: 'Recovery Companion Kit' },
+      { name: 'Comfort Shape™',  slug: 'comfort-shape',  technical: 'Breast Form' },
+      { name: 'Willow Support™', slug: 'willow-support', technical: 'Mastectomy Bra' },
+      { name: 'Vine Support™',   slug: 'vine-support',   technical: 'Lumpectomy Breast Form' },
+      { name: 'Nature Nest™',    slug: 'nature-nest',    technical: 'Underarm Pillow' },
+      { name: 'FlowSleeve™',     slug: 'flowsleeve',     technical: 'Lymphedema Sleeve' },
+      { name: 'Nest Carry™',     slug: 'nest-carry',     technical: 'Recovery Kit' },
     ],
   },
   {
@@ -28,10 +28,10 @@ const shopCategories = [
     slug: 'hair-confidence',
     description: 'For coverage, confidence, and feeling like yourself',
     products: [
-      { name: 'AirBloom™',    slug: 'airbloom',    subtitle: 'Scarf with Hair System' },
-      { name: 'Willow Wrap™', slug: 'willow-wrap', subtitle: 'Soft Head Scarf' },
-      { name: 'BrowBloom™',   slug: 'browbloom',   subtitle: 'Ready-to-Wear Eyebrows' },
-      { name: 'BloomCrown™',  slug: 'bloomcrown',  subtitle: 'Real Hair Wig Collection' },
+      { name: 'AirBloom™',    slug: 'airbloom',    technical: 'Chemo Headscarf' },
+      { name: 'Willow Wrap™', slug: 'willow-wrap', technical: 'Alopecia Head Wrap' },
+      { name: 'BrowBloom™',   slug: 'browbloom',   technical: 'Eyebrow Prosthesis' },
+      { name: 'BloomCrown™',  slug: 'bloomcrown',  technical: 'Cranial Prosthesis' },
     ],
   },
   {
@@ -39,9 +39,9 @@ const shopCategories = [
     slug: 'everyday-wellness',
     description: 'For daily comfort and personal care',
     products: [
-      { name: 'PetalWrap™',  slug: 'petalwrap',  subtitle: 'Comfort Towel' },
-      { name: 'DewLeaf™',    slug: 'dewleaf',    subtitle: 'Comfort Napkin' },
-      { name: 'BloomTips™',  slug: 'bloomtips',  subtitle: 'Press-On Nail Collection' },
+      { name: 'PetalWrap™',  slug: 'petalwrap',  technical: 'Bamboo Bath Towel' },
+      { name: 'DewLeaf™',    slug: 'dewleaf',    technical: 'Recovery Face Towel' },
+      { name: 'BloomTips™',  slug: 'bloomtips',  technical: 'Press-On Nails' },
     ],
   },
 ]
@@ -174,6 +174,8 @@ export default function Header() {
                                 onClick={() => setShopOpen(false)}
                               >
                                 {p.name}
+                                <span className="text-[#ded0bf] mx-1">|</span>
+                                <span className="text-[12px] text-[#7a6f6a]">{p.technical}</span>
                               </Link>
                             </li>
                           ))}
@@ -283,6 +285,8 @@ export default function Header() {
                           onClick={() => setMenuOpen(false)}
                         >
                           {p.name}
+                          <span className="text-[#ded0bf] mx-1">|</span>
+                          <span className="text-[12px] text-[#7a6f6a]">{p.technical}</span>
                         </Link>
                       ))}
                     </div>

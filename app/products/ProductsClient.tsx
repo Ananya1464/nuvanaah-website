@@ -233,15 +233,18 @@ export default function ProductsClient() {
                     <span className="text-[10px] text-[#446651] font-bold uppercase tracking-widest">
                       {product.categories?.[0]?.name || 'Care Product'}
                     </span>
-                    <h3 className="text-xl font-bold text-[#1c1c18] group-hover:text-[#884d53] transition-colors">
+                    <h3 className="text-xl font-bold text-[#1c1c18] group-hover:text-[#884d53] transition-colors leading-snug">
                       {product.name}
+                      {product.technicalNames?.[0] && (
+                        <>
+                          <span className="text-[#ded0bf] mx-1.5 font-normal">|</span>
+                          <span className="text-base font-medium text-[#7a6f6a]">{product.technicalNames[0]}</span>
+                        </>
+                      )}
                     </h3>
                     <p className="text-xs text-[#847374] font-medium">
                       {cleanSubtitle}
                     </p>
-                    {technicalPreview && (
-                      <p className="text-[10px] text-[#7a6f6a]/60 mt-0.5">{technicalPreview}</p>
-                    )}
                   </div>
 
                   {/* Bottom Row: Price & CTA */}
