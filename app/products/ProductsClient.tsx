@@ -178,7 +178,6 @@ export default function ProductsClient() {
             } else if (product.id === 'vine-support') {
               cleanSubtitle = 'Soft Recovery Support Form · Bamboo'
             }
-            const technicalPreview = product.technicalNames?.slice(0, 2).join(' | ') || ''
 
             return (
               <motion.div
@@ -235,12 +234,6 @@ export default function ProductsClient() {
                     </span>
                     <h3 className="text-xl font-bold text-[#1c1c18] group-hover:text-[#884d53] transition-colors leading-snug">
                       {product.name}
-                      {technicalPreview && (
-                        <>
-                          <span className="text-[#ded0bf] mx-1.5 font-normal">|</span>
-                          <span className="text-base font-medium text-[#7a6f6a]">{technicalPreview}</span>
-                        </>
-                      )}
                     </h3>
                     <p className="text-xs text-[#847374] font-medium">
                       {cleanSubtitle}

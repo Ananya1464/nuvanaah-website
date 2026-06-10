@@ -45,7 +45,7 @@ export const products: Product[] = [
   {
     id: 'bloomform',
     slug: 'bloomform',
-    name: 'BloomForm™',
+    name: 'BloomForm™ Breast Form',
     subtitle: 'Plant-Fiber Breast Form',
     tagline: 'Thoughtfully Shaped. Naturally Comfortable.',
     price: 2500,
@@ -139,7 +139,7 @@ export const products: Product[] = [
   {
     id: 'willow-support',
     slug: 'willow-support',
-    name: 'Willow Support™',
+    name: 'Willow Support™ Mastectomy Bra',
     subtitle: 'Post-Surgery Comfort Bra',
     tagline: '',
     price: 3000,
@@ -218,7 +218,7 @@ export const products: Product[] = [
   {
     id: 'nature-nest',
     slug: 'nature-nest',
-    name: 'Nature Nest™',
+    name: 'Nature Nest™ Underarm Pillow',
     subtitle: 'Underarm Rest Pillow',
     tagline: '',
     price: 1500,
@@ -297,7 +297,7 @@ export const products: Product[] = [
   {
     id: 'airbloom',
     slug: 'airbloom',
-    name: 'AirBloom™',
+    name: 'AirBloom™ Chemo Headscarf',
     subtitle: 'Hair Scarf System',
     tagline: 'The comfort of a scarf. The beauty of natural hair.',
     price: 5000,
@@ -377,7 +377,7 @@ export const products: Product[] = [
   {
     id: 'willow-wrap',
     slug: 'willow-wrap',
-    name: 'Willow Wrap™',
+    name: 'Willow Wrap™ Chemo Headscarf',
     subtitle: 'Soft Head Scarf Collection',
     tagline: '',
     price: 1500,
@@ -455,7 +455,7 @@ export const products: Product[] = [
   {
     id: 'flowsleeve',
     slug: 'flowsleeve',
-    name: 'FlowSleeve™',
+    name: 'FlowSleeve™ Lymphedema Sleeve',
     subtitle: 'Compression Sleeve with Holding Belt',
     tagline: '',
     price: 1575,
@@ -533,7 +533,7 @@ export const products: Product[] = [
   {
     id: 'nest-carry',
     slug: 'nest-carry',
-    name: 'Nest Carry™',
+    name: 'Nest Carry™ Post-Surgery Kit',
     subtitle: 'Recovery Support Kit',
     tagline: '',
     price: 1500,
@@ -610,7 +610,7 @@ export const products: Product[] = [
   {
     id: 'petalwrap',
     slug: 'petalwrap',
-    name: 'PetalWrap™',
+    name: 'PetalWrap™ Bamboo Bath Towel',
     subtitle: 'Bamboo Comfort Towel',
     tagline: '',
     price: 1500,
@@ -688,7 +688,7 @@ export const products: Product[] = [
   {
     id: 'dewleaf',
     slug: 'dewleaf',
-    name: 'DewLeaf™',
+    name: 'DewLeaf™ Bamboo Face Towel',
     subtitle: 'Recovery Towel',
     tagline: 'Fresh comfort with every use.',
     price: 0,
@@ -764,7 +764,7 @@ export const products: Product[] = [
   {
     id: 'browbloom',
     slug: 'browbloom',
-    name: 'BrowBloom™',
+    name: 'BrowBloom™ Eyebrow Prosthesis',
     subtitle: 'Ready-to-Wear Eyebrows',
     tagline: '',
     price: 1400,
@@ -845,7 +845,7 @@ export const products: Product[] = [
   {
     id: 'bloomtips',
     slug: 'bloomtips',
-    name: 'BloomTips™',
+    name: 'BloomTips™ Press-On Nails',
     subtitle: 'Comfort Nail Collection',
     tagline: 'Little details. Beautiful confidence.',
     price: 1200,
@@ -925,7 +925,7 @@ export const products: Product[] = [
   {
     id: 'bloomcrown',
     slug: 'bloomcrown',
-    name: 'BloomCrown™',
+    name: 'BloomCrown™ Cranial Prosthesis',
     subtitle: 'Comfort Wig Collection',
     tagline: 'Designed to help you feel like yourself, every day.',
     price: 12000,
@@ -1001,7 +1001,7 @@ export const products: Product[] = [
   {
     id: 'vine-support',
     slug: 'vine-support',
-    name: 'Vine Support™',
+    name: 'Vine Support™ Lumpectomy Breast Form',
     subtitle: 'Soft Recovery Support Form',
     tagline: 'Gentle balance, every day.',
     price: 2200,
