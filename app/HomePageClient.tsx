@@ -551,6 +551,104 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
         </div>
       </section>
 
+      {/* ═══ SECTION 6C: COLOUR PALETTE STORY ═══ */}
+      <section className="bg-white py-16 px-4 lg:px-8 border-t border-[#ded0bf]/30">
+        <div className="mx-auto max-w-7xl">
+          <FadeInWhenVisible>
+            <div className="text-center mb-10">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#884d53] mb-4">Our Colour Palette</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#1c1c18] mb-4 leading-snug">
+                Every colour has a story.
+              </h2>
+              <p className="text-[#524344] text-base max-w-2xl mx-auto leading-relaxed">
+                Nuvanaah colours are not chosen from a standard chart. Each one is named after something from the natural world — a flower, a tree, a harvest — and chosen because it carries something worth carrying into recovery.
+              </p>
+            </div>
+          </FadeInWhenVisible>
+
+          <FadeInWhenVisible delay={0.1}>
+            <div className="relative rounded-3xl overflow-hidden border border-[#ded0bf]/40 shadow-sm">
+              <Image
+                src="/images/color-palette.jpeg"
+                alt="Nuvanaah colour palette — 10 nature-inspired colours named after plants and flowers"
+                width={1200}
+                height={500}
+                className="w-full object-contain"
+              />
+            </div>
+          </FadeInWhenVisible>
+
+          <FadeInWhenVisible delay={0.2}>
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 mt-8 text-center">
+              {[
+                { name: 'Coffee Bean',   desc: 'Roasted coffee beans' },
+                { name: 'Aparajita',     desc: 'Butterfly Pea Flower' },
+                { name: 'Dusty Miller',  desc: 'Silvery Dusty Miller leaves' },
+                { name: 'Ebony',         desc: 'Dark Ebony tree' },
+                { name: 'Jade Vine',     desc: 'Rare Jade Vine flower' },
+                { name: 'Magnolia',      desc: 'Soft Magnolia blooms' },
+                { name: 'Camellia',      desc: 'Camellia flowers' },
+                { name: 'Bamboo Wood',   desc: 'Natural bamboo warmth' },
+                { name: 'Amber Grain',   desc: 'Golden harvest grains' },
+                { name: 'Cotton Cloud',  desc: 'Natural cotton blossoms' },
+              ].map(({ name, desc }) => (
+                <div key={name} className="bg-[#faf7f2] rounded-xl px-4 py-4 border border-[#ded0bf]/40">
+                  <p className="text-xs font-bold text-[#1c1c18] mb-1">{name}</p>
+                  <p className="text-[11px] text-[#7a6f6a] leading-snug">{desc}</p>
+                </div>
+              ))}
+            </div>
+          </FadeInWhenVisible>
+        </div>
+      </section>
+
+      {/* ═══ SECTION 6D: ELEMENTS STORY ═══ */}
+      <section className="bg-[#faf7f2] py-16 px-4 lg:px-8 border-t border-[#ded0bf]/30">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <FadeInWhenVisible>
+              <div className="relative rounded-3xl overflow-hidden border border-[#ded0bf]/40 shadow-sm">
+                <Image
+                  src="/images/color-palette-elements.jpeg"
+                  alt="Nuvanaah colour philosophy — inspired by Earth, Water, Fire, Air, and Space"
+                  width={700}
+                  height={560}
+                  className="w-full object-cover"
+                />
+              </div>
+            </FadeInWhenVisible>
+            <FadeInWhenVisible delay={0.1}>
+              <div className="space-y-6">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#884d53]">Where the Colours Come From</p>
+                <h2 className="text-2xl sm:text-3xl font-bold text-[#1c1c18] leading-snug">
+                  Rooted in the five elements.
+                </h2>
+                <p className="text-[#524344] text-base leading-relaxed">
+                  The Nuvanaah colour palette draws from the five elements — Earth, Water, Fire, Air, and Space. Each element brings its own quality to the palette: the groundedness of soil and bamboo, the calm of water and dew, the warmth of amber and flame, the lightness of cotton and air, and the quiet depth of night.
+                </p>
+                <p className="text-[#524344] text-base leading-relaxed">
+                  These are not decorative choices. The colours around you during recovery matter. Warmth over clinical white. Depth over neutral grey. Something chosen, not assigned.
+                </p>
+                <div className="grid grid-cols-5 gap-3 pt-2">
+                  {[
+                    { element: 'Earth',  quality: 'Grounded' },
+                    { element: 'Water',  quality: 'Calm' },
+                    { element: 'Fire',   quality: 'Warm' },
+                    { element: 'Air',    quality: 'Light' },
+                    { element: 'Space',  quality: 'Depth' },
+                  ].map(({ element, quality }) => (
+                    <div key={element} className="text-center">
+                      <p className="text-xs font-bold text-[#1c1c18]">{element}</p>
+                      <p className="text-[10px] text-[#7a6f6a]">{quality}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeInWhenVisible>
+          </div>
+        </div>
+      </section>
+
       {/* ═══ SECTION 7: TESTIMONIALS ═══ */}
       <section className="bg-[#e6e2dc] py-20 px-4 lg:px-8">
         <div className="mx-auto max-w-7xl">
