@@ -20,7 +20,7 @@ const steps = [
     icon: ShoppingBag,
     number: '03',
     title: 'Comfortable Shopping',
-    description: 'Order with confidence. Discreet packaging, easy returns, secure checkout',
+    description: 'Order with confidence. Free shipping, secure checkout, and 24×7 support.',
   },
   {
     icon: Heart,

@@ -256,10 +256,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
             {selectedColour && <p className="text-[11px] text-[#7a6f6a] font-medium">{selectedColour}</p>}
           </div>
           <div className="space-y-2">
-            <div className="flex items-center justify-between">
-              <p className="text-[11px] font-semibold uppercase tracking-widest text-[#7a6f6a]">Size</p>
-              <button type="button" className="text-[11px] text-[#884d53] font-semibold hover:underline">Size Guide →</button>
-            </div>
+            <p className="text-[11px] font-semibold uppercase tracking-widest text-[#7a6f6a]">Size</p>
             <div role="radiogroup" aria-label="Size" className="flex flex-wrap gap-2">
             {['32', '34', '36', '38', '40', '42', '44'].map(sz => (
                 <button key={sz} type="button" role="radio" aria-checked={selectedSize === sz}
@@ -269,9 +266,23 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
                   }`}>{sz}</button>
               ))}
             </div>
-            <p className="text-[11px] text-[#7a6f6a]">Not sure of your size?{' '}
-              <a href="https://wa.me/919819461612" target="_blank" rel="noopener noreferrer" className="text-[#884d53] font-semibold hover:underline">Chat with us →</a>
-            </p>
+          </div>
+          {/* Size Guide */}
+          <div className="bg-[#faf7f2] rounded-xl p-4 border border-[#ded0bf]/60">
+            <p className="text-[11px] font-bold text-[#884d53] uppercase tracking-wider mb-3">Find Your Size</p>
+            <div className="space-y-1 mb-3">
+              <p className="text-[11px] font-semibold text-[#1c1c18]">Underbust (Band Size)</p>
+              <p className="text-[10px] text-[#7a6f6a] leading-relaxed">Measure around your ribcage directly under the bust. Keep the tape snug but not tight. Your measurement in inches is your size.</p>
+            </div>
+            <div className="grid grid-cols-2 gap-1 text-[10px]">
+              {[['32"','Size 32'],['34"','Size 34'],['36"','Size 36'],['38"','Size 38'],['40"','Size 40'],['42"','Size 42'],['44"','Size 44']].map(([meas, size]) => (
+                <div key={size} className="flex justify-between bg-white rounded-lg px-2.5 py-1 border border-[#ded0bf]/40">
+                  <span className="text-[#524344]">{meas}</span>
+                  <span className="font-semibold text-[#1c1c18]">{size}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-[10px] text-[#7a6f6a] mt-2">Not sure? <a href="https://wa.me/919819461612" target="_blank" rel="noopener noreferrer" className="text-[#884d53] font-semibold hover:underline">Chat with us →</a></p>
           </div>
         </div>
       )
@@ -300,8 +311,8 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
       )
     }
 
-    // Comfort Shape: Left / Right side selector and Surgery Type
-    if (product.id === 'comfort-shape') {
+    // BloomForm: Left / Right side selector + size guide
+    if (product.id === 'bloomform') {
       return (
         <div className="space-y-5">
           <div className="space-y-2">
@@ -325,35 +336,47 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
               ))}
             </div>
             <p className="text-[11px] text-[#7a6f6a] leading-relaxed">
-              Each form is shaped specifically for its side — Left and Right are not interchangeable.
+              Left and Right are sold separately. Each form is shaped specifically for its side and they are not interchangeable.
             </p>
-          </div>
-          <div className="space-y-2">
-            <p className="text-[11px] font-semibold uppercase tracking-widest text-[#7a6f6a]">Surgery Type</p>
-            <div role="radiogroup" aria-label="Surgery Type" className="flex gap-3">
-              {(['Lumpectomy', 'Mastectomy'] as const).map(type => (
-                <button
-                  key={type}
-                  type="button"
-                  role="radio"
-                  aria-checked={selectedSurgeryType === type}
-                  onClick={() => setSelectedSurgeryType(type)}
-                  className={`px-6 py-2.5 rounded-full border text-xs font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-[#884d53] focus:ring-offset-1 ${
-                    selectedSurgeryType === type
-                      ? 'bg-[#884d53]/5 border-[#884d53] text-[#884d53]'
-                      : 'bg-white border-[rgba(28,28,24,0.2)] text-[#1c1c18] hover:border-[#884d53]/50'
-                  }`}
-                >
-                  {type}
-                </button>
-              ))}
-            </div>
-            <p className="text-[11px] text-[#7a6f6a] leading-relaxed">
-              Helps us curate the specific shape according to the recovery support you need.
-            </p>
-            {(!selectedSide || !selectedSurgeryType) && (
-              <p className="text-[11px] text-[#884d53] font-semibold pt-1">Please select Left or Right, and your surgery type before adding to cart.</p>
+            {!selectedSide && (
+              <p className="text-[11px] text-[#884d53] font-semibold pt-1">Please select Left or Right before adding to cart.</p>
             )}
+          </div>
+
+          {/* Find Your Size */}
+          <div className="bg-[#faf7f2] rounded-xl p-4 border border-[#ded0bf]/60">
+            <p className="text-[11px] font-bold text-[#884d53] uppercase tracking-wider mb-3">Find Your Size — Just 2 Measurements</p>
+            <div className="space-y-2 mb-4">
+              <div>
+                <p className="text-[11px] font-semibold text-[#1c1c18]">① Underbust (Band Size)</p>
+                <p className="text-[10px] text-[#7a6f6a] leading-relaxed">Measure around your ribcage directly under the bust. Keep the tape snug but not tight.</p>
+              </div>
+              <div>
+                <p className="text-[11px] font-semibold text-[#1c1c18]">② Full Chest (Bust Size)</p>
+                <p className="text-[10px] text-[#7a6f6a] leading-relaxed">Measure around the fullest part of your chest. Wear a non-padded bra while measuring.</p>
+              </div>
+            </div>
+            <div className="overflow-hidden rounded-lg border border-[#ded0bf]/60">
+              <table className="w-full text-[10px]">
+                <thead>
+                  <tr className="bg-[#884d53]/8">
+                    <th className="py-1.5 px-2 text-left font-bold text-[#7a6f6a] uppercase tracking-wider">Band</th>
+                    <th className="py-1.5 px-2 text-left font-bold text-[#7a6f6a] uppercase tracking-wider">Chest</th>
+                    <th className="py-1.5 px-2 text-left font-bold text-[#884d53] uppercase tracking-wider">Your Size</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[['32"','36"','32/36'],['34"','38"','34/38'],['36"','40"','36/40'],['38"','42"','38/42'],['40"','44"','40/44'],['42"','46"','42/46'],['44"','48"','44/48']].map(([band, chest, size], i) => (
+                    <tr key={size} className={i % 2 === 0 ? 'bg-white' : 'bg-[#faf7f2]'}>
+                      <td className="py-1.5 px-2 text-[#524344]">{band}</td>
+                      <td className="py-1.5 px-2 text-[#524344]">{chest}</td>
+                      <td className="py-1.5 px-2 font-semibold text-[#1c1c18]">{size}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-[10px] text-[#7a6f6a] mt-2 italic">If you are between sizes, choose the larger size for comfort.</p>
           </div>
         </div>
       )
@@ -489,10 +512,10 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
     let itemName = product.name;
     let itemId = String(product.id);
     
-    if (product.id === 'comfort-shape') {
-      if (!selectedSide || !selectedSurgeryType) return;
-      itemName = `${product.name} (${selectedSide}, ${selectedSurgeryType})`;
-      itemId = `${product.id}-${selectedSide.toLowerCase()}-${selectedSurgeryType.toLowerCase()}`;
+    if (product.id === 'bloomform') {
+      if (!selectedSide) return;
+      itemName = `${product.name} (${selectedSide})`;
+      itemId = `${product.id}-${selectedSide.toLowerCase()}`;
     } else if (product.variantLabel === 'Colour' && selectedColour) {
       itemName = `${product.name} (${selectedColour})`;
       itemId = `${product.id}-${selectedColour.replace(/\s+/g, '-').toLowerCase()}`;
@@ -583,7 +606,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
             >
               {productImages.length > 0 ? (
                 <>
-                  {/* TODO: Replace with updated Comfort Shape image ₹ current asset shows old product name BloomForm */}
+                  {/* Product image */}
                   <Image
                     src={productImages[selectedImage]}
                     alt={`${product.name} — View ${selectedImage + 1}`}
@@ -643,9 +666,9 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
                 ))}
               </div>
             )}
-            {product.id === 'comfort-shape' && (
+            {product.id === 'bloomform' && (
               <p className="text-[12px] text-[#7a6f6a] text-center mt-2 italic">
-                Left and Right forms shown. Both are included in every order.
+                Left and Right forms shown for reference. Your order includes one form — as selected.
               </p>
             )}
           </div>
@@ -767,7 +790,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
 
             {/* Trust chips */}
             <div className="flex flex-wrap gap-2 pt-1 border-t border-[rgba(28,28,24,0.08)] mt-2">
-              {['Free shipping in India', 'COD available', 'Discreet packaging'].map(chip => (
+              {['Free shipping in India', 'COD available', '24×7 support'].map(chip => (
                 <span key={chip} className="bg-[rgba(28,28,24,0.04)] text-[#7a6f6a] text-[11px] font-medium px-3 py-1.5 rounded-full">
                   {chip}
                 </span>
@@ -818,10 +841,10 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
             </div>
           </AccordionSection>
 
-          {/* New Zone: When to Use Comfort Shape */}
+          {/* When to Use section */}
           {product.whenToUse && product.whenToUse.length > 0 && (
             <div className="py-8 border-b border-[rgba(28,28,24,0.1)]">
-              <h2 className="text-lg sm:text-xl font-semibold text-[#1c1c18] mb-6 tracking-tight">When to Use Comfort Shape</h2>
+              <h2 className="text-lg sm:text-xl font-semibold text-[#1c1c18] mb-6 tracking-tight">When to Use {product.name}</h2>
               <div className="flex flex-col sm:flex-row gap-4">
                 {product.whenToUse.map((card, i) => (
                   <div key={i} className="bg-[#f5f0e8] rounded-xl p-5 flex-1">
@@ -837,7 +860,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
               )}
             </div>
           )}
-          {product.id === 'comfort-shape' && (
+          {product.id === 'bloomform' && (
             <p className="text-[12px] text-[#7a6f6a] text-center mt-2 italic">
               Both sides shown for reference. Your order includes one form — Left or Right as selected.
             </p>

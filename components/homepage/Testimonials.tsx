@@ -33,7 +33,7 @@ export default function Testimonials() {
       location: 'Chennai, Tamil Nadu',
       image: '👩‍🦱',
       rating: 5,
-      text: 'I ordered the drainage bag holder and it arrived with such elegant, discreet packaging. The product itself is exactly what I needed for my recovery. The team even called to check how I was doing - such personal care!',
+      text: 'The product itself is exactly what I needed for my recovery. The team even called to check how I was doing — such personal care and genuine attention to detail throughout the whole experience.',
       product: 'Drainage Bag Holder',
       highlight: 'such personal care',
     },

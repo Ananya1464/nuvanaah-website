@@ -127,7 +127,7 @@ const testimonials = [
     city: 'Delhi',
   },
   {
-    quote: "Their discreet packaging meant so much to me. The care they put into even the smallest details is truly heartwarming.",
+    quote: "The care they put into every detail is truly heartwarming. I felt genuinely supported through every step of my recovery.",
     name: 'Priya M.',
     city: 'Bangalore',
   },
@@ -345,7 +345,7 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
         <StaggerChildren className="mx-auto grid max-w-7xl grid-cols-2 gap-8 md:grid-cols-4" staggerDelay={0.1}>
           {[
             { title: 'Thoughtfully Curated', subtitle: 'Designed for comfort, healing, and dignity', Icon: ShieldCheck },
-            { title: 'Discreet Packaging', subtitle: 'Your privacy always comes first', Icon: Package },
+            { title: 'Free Shipping Across India', subtitle: 'On all orders, no minimum required', Icon: Package },
             { title: 'Compassionate Guidance', subtitle: 'Support from trained care advisors', Icon: Headset },
             { title: 'Gentle on Sensitive Bodies', subtitle: 'Soft materials chosen with care', Icon: Heart },
           ].map(({ title, subtitle, Icon }) => (

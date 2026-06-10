@@ -115,8 +115,7 @@ export default function TermsPage() {
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. Shipping & Delivery</h2>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
               <li><strong>Free Shipping:</strong> Available on all orders across India</li>
-              <li><strong>Discreet Packaging:</strong> All orders shipped in unmarked packaging</li>
-              <li><strong>Delivery Time:</strong> 3-7 business days (may vary by location)</li>
+              <li><strong>Delivery Time:</strong> Standard delivery up to 7 days (may vary by location)</li>
               <li><strong>Tracking:</strong> Tracking information provided via email/SMS</li>
               <li><strong>Delivery Delays:</strong> We are not liable for delays caused by courier services or force majeure</li>
             </ul>

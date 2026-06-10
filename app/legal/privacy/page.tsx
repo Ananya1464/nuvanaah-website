@@ -115,9 +115,9 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. Discreet Packaging</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. Your Privacy</h2>
             <p className="text-gray-700">
-              All shipments are sent in unmarked, plain packaging with no indication of contents. Your shipping label will show "Nuvanaah" or "K-Hair India" as the sender, with no product details visible.
+              Your personal information and order details are never shared with third parties without your consent. All data is handled in accordance with applicable data protection requirements.
             </p>
           </section>
 

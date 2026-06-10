@@ -160,7 +160,7 @@ export async function sendShippingUpdateEmail(
         </a>
         
         <p style="color: #666; font-size: 14px; margin-top: 20px;">
-          <strong>Discreet Packaging:</strong> Your package is shipped in plain packaging with no visible branding.
+          <strong>Free Shipping:</strong> Your order has been shipped free of charge across India.
         </p>
       </div>
     </div>

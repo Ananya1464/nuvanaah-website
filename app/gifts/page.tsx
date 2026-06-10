@@ -18,7 +18,7 @@ const giftBundles = [
     description: 'The definitive physical support kit. Designed with oncologists to provide essential comfort immediately after surgery.',
     icon: <Star className="w-6 h-6 text-[#884d53]" />,
     image: '/images/catalog/WillowSupport/1.jpeg', // Using Willow Support main image
-    products: ['comfort-shape', 'willow-support', 'nature-nest']
+    products: ['bloomform', 'willow-support', 'nature-nest']
   },
   {
     title: 'Confidence Collection',

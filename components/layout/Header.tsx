@@ -15,7 +15,7 @@ const shopCategories = [
     slug: 'recovery-body-support',
     description: 'For surgery, healing, and physical comfort',
     products: [
-      { name: 'Comfort Shape™',  slug: 'comfort-shape',  technical: 'Breast Form' },
+      { name: 'BloomForm™',       slug: 'bloomform',       technical: 'Breast Form' },
       { name: 'Willow Support™', slug: 'willow-support', technical: 'Mastectomy Bra' },
       { name: 'Vine Support™',   slug: 'vine-support',   technical: 'Lumpectomy Breast Form' },
       { name: 'Nature Nest™',    slug: 'nature-nest',    technical: 'Underarm Pillow' },
@@ -101,7 +101,7 @@ export default function Header() {
       {/* ── ANNOUNCEMENT BAR ── */}
       {!announcementDismissed && (
         <div className="relative flex h-8 w-full items-center justify-center bg-[#884d53] px-12 text-[12px] font-medium tracking-wide text-white">
-          <span className="hidden md:inline">Free shipping in India &nbsp;·&nbsp; COD available &nbsp;·&nbsp; Discreet packaging</span>
+          <span className="hidden md:inline">Free shipping across India &nbsp;·&nbsp; COD available &nbsp;·&nbsp; 24×7 support</span>
           <span className="inline md:hidden">Free shipping in India &nbsp;·&nbsp; COD available</span>
           <button
             onClick={dismissAnnouncement}

@@ -171,7 +171,7 @@ export default function ProductsClient() {
               cleanSubtitle = 'Post-Surgery Comfort Bra · Set of 2'
             } else if (product.id === 'flowsleeve') {
               cleanSubtitle = 'Compression Sleeve · Shoulder Belt'
-            } else if (product.id === 'comfort-shape') {
+            } else if (product.id === 'bloomform') {
               cleanSubtitle = 'Breast Form · Plant Fiber'
             } else if (product.id === 'bloomtips') {
               cleanSubtitle = 'Press-on Nails · 24pc'

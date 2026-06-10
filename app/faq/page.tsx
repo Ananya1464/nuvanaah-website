@@ -87,7 +87,7 @@ const faqData: Record<string, Array<{ q: string; a: string }>> = {
   Consultations: [
     {
       q: 'What consultations do you offer?',
-      a: 'We offer wig consultation and fitting guidance for customers located in Vashi and Thane, India. We can help you understand available wig options, sizing, and styles.',
+      a: 'Nuvanaah offers wig consultations only. Consultations are available for customers in Vashi and Thane, India.',
     },
     {
       q: 'How do I book a wig consultation?',

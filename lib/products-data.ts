@@ -41,25 +41,25 @@ const CAT_LUMPECTOMY = { id: 5, name: 'Lumpectomy Care',         slug: 'lumpecto
 // ─── PRODUCT CATALOG ────────────────────────────────────────────────────────
 export const products: Product[] = [
 
-  // ── P01 COMFORT SHAPE™ ───────────────────────────────────────────────────
+  // ── P01 BLOOMFORM™ ───────────────────────────────────────────────────────
   {
-    id: 'comfort-shape',
-    slug: 'comfort-shape',
-    name: 'Comfort Shape™',
+    id: 'bloomform',
+    slug: 'bloomform',
+    name: 'BloomForm™',
     subtitle: 'Plant-Fiber Breast Form',
     tagline: 'Thoughtfully Shaped. Naturally Comfortable.',
     price: 2500,
     priceFrom: false,
     categories: [CAT_RECOVERY, CAT_MASTECTOMY, CAT_LUMPECTOMY],
     categoryNav: 'Recovery & Body Support',
-    description: 'A lightweight plant-fiber breast form thoughtfully designed to support comfort, balance and confidence after breast surgery. Sold individually — choose Left or Right. Made with plant-fiber filling and a breathable plant-fiber outer fabric, Comfort Shape feels soft against the body while helping reduce heat build-up during daily wear.',
-    fullStory: 'Comfort Shape is built on a simple insight: shape does not require weight. Most breast forms achieve their silhouette through density — heavy materials that hold their form by mass alone. Comfort Shape achieves the same result through geometry. The flat inner surface sits stable against the chest wall. The curved outer face creates a soft, rounded silhouette beneath clothing. Between them: plant fiber, air, and 10–20 grams.\n\nThe result is a form that disappears during wear. No pull on the bra. No heat building against the skin. No awareness of it by mid-afternoon. You put it on, and you stop thinking about it. That is not a small thing. That is what comfort actually means.',
+    description: 'A lightweight plant-fiber breast form thoughtfully designed to support comfort, balance and confidence after breast surgery. Sold individually — choose Left or Right. Made with plant-fiber filling and a breathable plant-fiber outer fabric, BloomForm feels soft against the body while helping reduce heat build-up during daily wear.',
+    fullStory: 'BloomForm is built on a simple insight: shape does not require weight. Most breast forms achieve their silhouette through density — heavy materials that hold their form by mass alone. BloomForm achieves the same result through geometry. The flat inner surface sits stable against the chest wall. The curved outer face creates a soft, rounded silhouette beneath clothing. Between them: plant fiber, air, and 10–20 grams.\n\nThe result is a form that disappears during wear. No pull on the bra. No heat building against the skin. No awareness of it by mid-afternoon. You put it on, and you stop thinking about it. That is not a small thing. That is what comfort actually means.',
     images: [
-      { id: 1, src: '/images/catalog/bloomform/1.jpeg', alt: 'Comfort Shape™ — view 1' },
-      { id: 2, src: '/images/catalog/bloomform/2.jpeg', alt: 'Comfort Shape™ — view 2' },
-      { id: 3, src: '/images/catalog/bloomform/3.jpeg', alt: 'Comfort Shape™ — view 3' },
-      { id: 4, src: '/images/catalog/bloomform/4.jpeg', alt: 'Comfort Shape™ — view 4' },
-      { id: 5, src: '/images/catalog/bloomform/5.jpeg', alt: 'Comfort Shape™ — view 5' },
+      { id: 1, src: '/images/catalog/bloomform/1.jpeg', alt: 'BloomForm™ — view 1' },
+      { id: 2, src: '/images/catalog/bloomform/2.jpeg', alt: 'BloomForm™ — view 2' },
+      { id: 3, src: '/images/catalog/bloomform/3.jpeg', alt: 'BloomForm™ — view 3' },
+      { id: 4, src: '/images/catalog/bloomform/4.jpeg', alt: 'BloomForm™ — view 4' },
+      { id: 5, src: '/images/catalog/bloomform/5.jpeg', alt: 'BloomForm™ — view 5' },
     ],
     stock_status: 'instock',
     featured: true,
@@ -67,24 +67,24 @@ export const products: Product[] = [
     tags: ['after-surgery', 'prosthetic', 'recovery', 'body-support'],
     shopByNeed: ['after-surgery'],
     recoveryStage: ['stage-2', 'stage-4'],
-    variantLabel: 'Side',
+    variantLabel: 'Choose Your Side',
     variantOptions: ['Left', 'Right'],
     crossSells: ['willow-support', 'nature-nest'],
     whatsIncluded: [
-      { item: "1 × Comfort Shape breast form", detail: "In your selected side — Left or Right" },
+      { item: "1 × BloomForm breast form", detail: "In your selected side — Left or Right" },
       { item: "2 removable washable covers", detail: "Included with every order" },
     ],
     whenToUse: [
       {
         heading: "After Lumpectomy",
-        body: "If only a lump has been removed and the natural breast shape remains largely intact, a suitable bra may be all that is required. Comfort Shape may be considered if additional balance or shape is desired."
+        body: "If only a lump has been removed and the natural breast shape remains largely intact, a suitable bra may be all that is required. BloomForm may be considered if additional balance or shape is desired."
       },
       {
         heading: "After Mastectomy",
-        body: "If the breast has been removed through mastectomy, Comfort Shape may be used to help restore balance and create a natural appearance under clothing."
+        body: "If the breast has been removed through mastectomy, BloomForm may be used to help restore balance and create a natural appearance under clothing."
       }
     ],
-    whenToUseNote: "Comfort Shape should only be used after the surgical area has healed completely. Please consult your care team if you are unsure.",
+    whenToUseNote: "BloomForm should only be used after the surgical area has healed completely. Please consult your care team if you are unsure.",
     benefitsList: [
       { title: 'You stop noticing you are wearing it', desc: 'At 10–20 grams, there is no pull, no shift, no heat. Women describe it the same way: they forget it is there.' },
       { title: 'Natural shape without the weight', desc: 'Geometry, not density, creates the silhouette. The flat inner and curved outer work together. The appearance is natural. The weight is a fraction of silicone alternatives.' },
@@ -115,16 +115,16 @@ export const products: Product[] = [
       'Do not iron',
     ],
 
-    gentleNote: 'There is no rule about when you should start wearing a breast form — or whether you should wear one at all. Some women wear one every day. Others occasionally. Others choose not to. All of these are valid, and none require justification.\n\nComfort Shape is here if and when you want it. Whenever you are ready. At whatever pace feels right.',
+    gentleNote: 'There is no rule about when you should start wearing a breast form — or whether you should wear one at all. Some women wear one every day. Others occasionally. Others choose not to. All of these are valid, and none require justification.\n\nBloomForm is here if and when you want it. Whenever you are ready. At whatever pace feels right.',
     technicalNames: ['breast form', 'breast prosthesis', 'external breast prosthetic', 'mastectomy prosthetic'],
-    seoTitle: 'Comfort Shape™ — Breast Form | Breast Prosthesis After Surgery',
+    seoTitle: 'BloomForm™ — Breast Form | Breast Prosthesis After Surgery',
     metaDescription: 'Lightweight 10–20g plant-fiber breast form (breast prosthesis). Breathable and cool. Natural silhouette after mastectomy or lumpectomy. Left or Right.',
-    ogTitle: 'Comfort Shape™ — Plant-Fiber Breast Form | Nuvanaah',
+    ogTitle: 'BloomForm™ — Plant-Fiber Breast Form | Nuvanaah',
     ogDescription: 'A plant-fiber breast form weighing 10–20 grams. Flat where it meets the body. Curved where it creates shape. Lighter, cooler, and more comfortable than silicone alternatives.',
     faqs: [
-      { q: 'Do I need to buy Left and Right separately?', a: 'Yes — Comfort Shape is sold as a single form, Left or Right. Each is shaped to the specific anatomy of that side. The chest contours differ subtly in curve, angle, and position, so the correct side-specific form is always important for a natural fit.' },
-      { q: 'How does plant fiber compare to silicone?', a: 'Comfort Shape weighs 10–20 grams versus several hundred grams for silicone forms. Plant fiber is breathable and cool where silicone traps heat. The appearance result is similar; the wearing experience is significantly different.' },
-      { q: 'Will it work with my current bra?', a: 'Comfort Shape is designed to fit inside the prosthetic pocket of a pocket bra — specifically the Willow Support bra. It may also work in other pocket bras depending on pocket size.' },
+      { q: 'Do I need to buy Left and Right separately?', a: 'Yes — BloomForm is sold as a single form, Left or Right. Each is shaped to the specific anatomy of that side. The chest contours differ subtly in curve, angle, and position, so the correct side-specific form is always important for a natural fit.' },
+      { q: 'How does plant fiber compare to silicone?', a: 'BloomForm weighs 10–20 grams versus several hundred grams for silicone forms. Plant fiber is breathable and cool where silicone traps heat. The appearance result is similar; the wearing experience is significantly different.' },
+      { q: 'Will it work with my current bra?', a: 'BloomForm is designed to fit inside the prosthetic pocket of a pocket bra — specifically the Willow Support bra. It may also work in other pocket bras depending on pocket size.' },
       { q: 'How do I wash the cover?', a: 'Remove the fabric cover and hand wash it in cool water with a mild detergent. Air dry flat. Do not machine wash. The form itself does not require washing — only the cover does.' },
     ],
 
@@ -132,7 +132,7 @@ export const products: Product[] = [
     comingSoon: false,
     dimensions: '',
     whatsappCTA: false,
-    showSizeGuide: false,
+    showSizeGuide: true,
   },
 
   // ── P02 WILLOW SUPPORT™ ──────────────────────────────────────────────────
@@ -162,14 +162,14 @@ export const products: Product[] = [
     tags: ['after-surgery', 'bra', 'drain-management', 'recovery'],
     shopByNeed: ['after-surgery'],
     recoveryStage: ['stage-1', 'stage-2', 'stage-3', 'stage-4'],
-    crossSells: ['comfort-shape', 'nature-nest'],
+    crossSells: ['bloomform', 'nature-nest'],
     variantLabel: 'Colour',
     variantOptions: ['Aparajita', 'Ebony', 'Dusty Miller'],
     benefitsList: [
       { title: 'Dressing independently, every morning', desc: 'The front-hook closure gives that independence back. No help needed. No reaching behind. You stand in front of the mirror and dress yourself.' },
       { title: 'Comfortable from morning through evening', desc: 'Plant-fiber fabric stays soft and breathable all day. Synthetic fabrics stiffen and stick after a few hours. This does not.' },
       { title: 'Gentle on skin that is still healing', desc: 'Every seam, every panel, every closure position was placed to minimise contact with healing skin. The soft center panel ensures the hooks never touch the chest directly.' },
-      { title: 'Prosthetic pocket that actually works', desc: 'The corner side opening is clean, discreet, and wide enough to insert a prosthetic without removing the bra. Designed around the Comfort Shape but compatible with alternatives.' },
+      { title: 'Prosthetic pocket that actually works', desc: 'The corner side opening is clean, discreet, and wide enough to insert a prosthetic without removing the bra. Designed around the BloomForm but compatible with alternatives.' },
     ],
     keyFeatures: [
       'Front-hook closure',
@@ -201,8 +201,8 @@ export const products: Product[] = [
     ogTitle: 'Willow Support™ — Post-Surgery Comfort Bra | Nuvanaah',
     ogDescription: 'A post-surgery bra made from ultra-soft plant-fiber fabric. Front-hook closure. Discreet prosthetic pocket.',
     faqs: [
-      { q: 'How do I choose my size?', a: 'Measure your underbust circumference in centimetres. S: 68–78cm, M: 78–88cm, L: 88–98cm, XL: 98–108cm. If between sizes, size up. The adjustable straps allow further customisation.' },
-      { q: 'Is the prosthetic pocket compatible with other brands?', a: 'The pocket is designed around the Comfort Shape breast form but is compatible with most lightweight prosthetics up to approximately 3 inches wide. Heavier silicone forms may not stay positioned securely.' },
+      { q: 'How do I choose my size?', a: 'Measure your underbust circumference (directly under the bust, snug but not tight). Your band size in inches is your Willow Support size: 32" band → size 32, 34" band → size 34, and so on up to size 44. If you are between sizes, size up. The adjustable straps allow further fine-tuning.' },
+      { q: 'Is the prosthetic pocket compatible with other brands?', a: 'The pocket is designed around the BloomForm breast form but is compatible with most lightweight prosthetics up to approximately 3 inches wide. Heavier silicone forms may not stay positioned securely.' },
       { q: 'Can I wear it immediately after surgery?', a: 'Please follow your surgical team\'s guidance on when to begin wearing a bra after surgery. Many women begin wearing Willow Support as soon as their team approves a soft bra.' },
       { q: 'How long does the fabric stay soft?', a: 'Plant-fiber fabric maintains its softness through repeated gentle washing. Hand wash in cool water and lay flat or hang to dry — do not machine wash or tumble dry, which would reduce softness over time.' },
       { q: 'Is the prosthetic pocket visible from outside?', a: 'No. The pocket opening is at the corner side seam and is not visible through clothing. There is no external pocket panel or additional fabric on the outside of the bra.' },
@@ -361,7 +361,7 @@ export const products: Product[] = [
     ogDescription: 'Real human hair integrated into a breathable scarf design. Natural-looking coverage from every angle. Lightweight enough to wear from morning to evening.',
     faqs: [
       { q: 'Is the hair real or synthetic?', a: 'AirBloom uses real human hair. This gives a natural movement and appearance that synthetic alternatives cannot replicate.' },
-      { q: 'How do I style the hair?', a: 'The included care and styling guide covers all styling options. Use low-heat tools only. High heat will damage human hair just as it damages your own.' },
+      { q: 'How do I style the hair?', a: 'Use low-heat tools only if styling is required. High heat will damage human hair just as it damages your own.' },
       { q: 'Can I wear it every day?', a: 'Yes. AirBloom is designed for daily wear. The breathable scalp fabric makes extended daily wear possible and comfortable.' },
       { q: 'How do I wash it?', a: 'Hand wash the fabric section in cool water. The hair should be cared for as directed in the included guide — typically a gentle shampoo and conditioner, with air drying.' },
       { q: 'Do I need help putting it on?', a: 'No. AirBloom is designed for independent application — on in the morning as part of your routine, without specialist tools or assistance.' },
@@ -792,6 +792,7 @@ export const products: Product[] = [
       { title: 'Two shades designed for Indian skin tones', desc: 'Coffee Bean and Bamboo Woods were chosen for the warm and medium complexions common across South Asian skin. Not an afterthought. The starting point.' },
       { title: 'Lightweight and gentle', desc: 'The skin above the eye may be sensitive during treatment. BrowBloom is lightweight at contact, gentle to remove, and does not require harsh adhesives.' },
       { title: 'Reusable with proper care', desc: 'Each pair is designed for multiple uses. Apply, wear, remove correctly — the brows last. Economical and practical.' },
+      { title: 'Designed to blend naturally with a wide range of skin tones', desc: 'Coffee Bean and Bamboo Woods were selected to complement the full range of South Asian complexions — not as an afterthought, but as the foundation of the shade selection.' },
       { title: 'Simple, independent application', desc: 'No specialist tools, no assistance. A few minutes as part of an ordinary morning routine.' },
     ],
     keyFeatures: [
@@ -801,13 +802,13 @@ export const products: Product[] = [
       'Attaches with skin-safe adhesive tape — included',
       'Lightweight and gentle against skin',
       'Reusable',
-      'Includes additional spare tapes',
+      'Includes 4 additional adhesive tapes',
       'Includes application and care guide',
     ],
-    materialsText: 'Lightweight, skin-safe construction designed for gentle daily wear and easy removal.\n\nEach brow attaches using a dedicated skin-safe adhesive tape included in the kit. The tape is formulated for sensitive skin — it holds securely through the day but lifts cleanly without leaving residue. Removal is by gentle soaking with warm water before lifting from the edges, not pulling — designed to protect skin that may already be reactive during treatment.',
+    materialsText: 'Lightweight, skin-safe construction designed for gentle daily wear and easy removal.\n\nEach brow attaches using a dedicated skin-safe adhesive tape included in the kit. The tape is formulated for sensitive skin — it holds securely through the day but lifts cleanly without leaving residue. Removal is by gently applying coconut oil or a gentle cleansing oil to the edges before lifting — not pulling — designed to protect skin that may already be reactive during treatment.',
     careText: [
       'Apply only to clean, dry skin',
-      'Remove gently after wear — soak the edge with warm water before lifting',
+      'For easy removal, use coconut oil or a gentle cleansing oil.',
       'Store eyebrows flat when not in use',
       'Keep away from direct heat and moisture when stored',
       'Lift gently from edges — avoid pulling or stretching the brow shape',
@@ -818,7 +819,7 @@ export const products: Product[] = [
     whatsIncluded: [
       '1 pair BrowBloom ready-to-wear eyebrows (in selected shade)',
       'Skin-safe adhesive tapes',
-      'Additional spare tapes',
+      '4 Additional Adhesive Tapes',
       'Application and care guide',
     ],
     gentleNote: 'Eyebrow loss is one of the most quietly significant changes that treatment can bring. It is a loss that is difficult to explain to people who have not experienced it, but that is felt immediately and continuously.\n\nBrowBloom is not a solution to that loss. It is a way of meeting it practically and gently. Of making the morning routine a little shorter, a little easier, a little more like the one you remember.\n\nYou do not have to use it every day. But it is here, when you want it.',
@@ -830,7 +831,7 @@ export const products: Product[] = [
     faqs: [
       { q: 'Which shade should I choose?', a: 'Coffee Bean is a warm dark brown — well-suited to medium to deeper South Asian skin tones. Bamboo Woods is a soft cool brown — well-suited to lighter to medium South Asian skin tones. If you are between the two, Coffee Bean is the more versatile choice for most Indian complexions.' },
       { q: 'How long does each pair last?', a: 'With correct application and removal, each pair is designed for multiple uses. The included care guide covers how to remove, clean, and store the brows for maximum reuse.' },
-      { q: 'How do I remove them?', a: 'Soak the brow edge gently with warm water or a soft damp cloth before lifting from the edges. Do not pull or peel directly — soaking first protects the brow shape and the skin.' },
+      { q: 'How do I remove them?', a: 'For easy removal, use coconut oil or a gentle cleansing oil. Gently apply along the edge and lift from the edges — do not pull or peel directly. This protects the brow shape and the skin.' },
       { q: 'Will they look natural?', a: 'BrowBloom is shaped to follow the natural brow bone and positioned at a natural height. The shade is designed to blend with Indian skin tones rather than sit on top of them. From a conversational distance, they read as your own.' },
     ],
     isGiftPopular: false,
@@ -1019,7 +1020,7 @@ export const products: Product[] = [
     tags: ['after-surgery', 'recovery', 'lumpectomy', 'lymphedema', 'body-support'],
     shopByNeed: ['after-surgery'],
     recoveryStage: ['stage-2', 'stage-3', 'stage-4'],
-    crossSells: ['willow-support', 'comfort-shape'],
+    crossSells: ['willow-support', 'bloomform'],
     variantLabel: '',
     variantOptions: [],
     benefitsList: [
