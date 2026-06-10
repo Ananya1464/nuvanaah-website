@@ -533,6 +533,24 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
       </section>
 
 
+      {/* ═══ SECTION 6B: NAMING PHILOSOPHY ═══ */}
+      <section className="bg-[#faf7f2] py-16 px-4 lg:px-8 border-t border-[#ded0bf]/30">
+        <div className="mx-auto max-w-3xl text-center">
+          <FadeInWhenVisible>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#884d53] mb-4">The Names Behind the Products</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1c1c18] mb-6 leading-snug">
+              Named after nature. Designed for you.
+            </h2>
+            <p className="text-[#524344] text-base sm:text-lg leading-relaxed mb-4">
+              Every Nuvanaah product is named after something from the natural world — a willow that bends without breaking, a petal that is soft by design, a vine that finds its way through. The names are not decorative. They are a reminder of what recovery looks like: gradual, adaptive, and always moving toward something.
+            </p>
+            <p className="text-[#7a6f6a] text-sm leading-relaxed">
+              Each product also carries the clinical name it is known by — so whether you search for a breast prosthesis, a mastectomy bra, a cranial prosthesis, or a lymphedema sleeve, you will always find what you are looking for.
+            </p>
+          </FadeInWhenVisible>
+        </div>
+      </section>
+
       {/* ═══ SECTION 7: TESTIMONIALS ═══ */}
       <section className="bg-[#e6e2dc] py-20 px-4 lg:px-8">
         <div className="mx-auto max-w-7xl">

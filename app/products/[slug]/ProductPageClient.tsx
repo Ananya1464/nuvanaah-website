@@ -664,8 +664,14 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
                 <p className="text-xs italic text-[#7a6f6a]">{product.tagline}</p>
               )}
               {product.technicalNames && product.technicalNames.length > 0 && (
-                <p className="text-[11px] text-[#7a6f6a]/70">
-                  Also known as: <span className="font-medium">{product.technicalNames.join(' · ')}</span>
+                <p className="text-[11px] text-[#7a6f6a]">
+                  Also known as:{' '}
+                  {product.technicalNames.map((name, i) => (
+                    <span key={name}>
+                      {i > 0 && <span className="mx-1 text-[#ded0bf]">|</span>}
+                      <span className="font-medium">{name}</span>
+                    </span>
+                  ))}
                 </p>
               )}
             </div>

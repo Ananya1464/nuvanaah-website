@@ -175,7 +175,10 @@ export default function ProductsClient() {
               cleanSubtitle = 'Breast Form · Plant Fiber'
             } else if (product.id === 'bloomtips') {
               cleanSubtitle = 'Press-on Nails · 24pc'
+            } else if (product.id === 'vine-support') {
+              cleanSubtitle = 'Soft Recovery Support Form · Bamboo'
             }
+            const technicalPreview = product.technicalNames?.slice(0, 2).join(' | ') || ''
 
             return (
               <motion.div
@@ -236,6 +239,9 @@ export default function ProductsClient() {
                     <p className="text-xs text-[#847374] font-medium">
                       {cleanSubtitle}
                     </p>
+                    {technicalPreview && (
+                      <p className="text-[10px] text-[#7a6f6a]/60 mt-0.5">{technicalPreview}</p>
+                    )}
                   </div>
 
                   {/* Bottom Row: Price & CTA */}
