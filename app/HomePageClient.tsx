@@ -13,7 +13,6 @@ import {
   Package,
   Headset,
   ChevronDown,
-  MessageCircle,
 } from 'lucide-react'
 import { useCart } from '@/lib/cart-context'
 import { useWishlist } from '@/lib/wishlist-context'
@@ -50,61 +49,53 @@ const carouselSlides = [
     image: '/images/carousel/compression-sleeve.png',
     alt: 'Lymphedema compression sleeve close-up',
   },
-  {
-    title: "You don't have to figure this out alone.",
-    description:
-      'Book a private consultation with our care experts. From sizing to product recommendations, we\'re here to guide you through every choice.',
-    button: 'Book Free Consult',
-    href: '/consultations',
-    image: '/images/about/support-consultation.png',
-    alt: 'Supportive consultation between two women',
-  },
+
 ]
 
 const bestSellers = [
   {
     id: 'willow-support',
     category: 'Recovery & Body Support',
-    name: 'Willow Support™',
+    name: 'Willow Support',
     price: 1500,
     priceDisplay: '₹ 1,500',
     rating: 4.9,
     reviews: 312,
     image: '/images/catalog/WillowSupport/1.jpeg',
-    alt: 'Willow Support™ — front-open pocket bra',
+    alt: 'Willow Support — front-open pocket bra',
   },
   {
     id: 'bloomcrown',
     category: 'Hair & Confidence',
-    name: 'BloomCrown™',
+    name: 'BloomCrown',
     price: 12000,
     priceDisplay: 'From ₹ 12,000',
     rating: 4.9,
     reviews: 187,
     image: '/images/catalog/BloomCrown/1.jpeg',
-    alt: 'BloomCrown™ — real hair wig collection',
+    alt: 'BloomCrown — real hair wig collection',
   },
   {
     id: 'petalwrap',
     category: 'Everyday Wellness',
-    name: 'PetalWrap™',
+    name: 'PetalWrap',
     price: 1500,
     priceDisplay: '₹ 1,500',
     rating: 4.8,
     reviews: 243,
     image: '/images/catalog/petal leaf/1.PNG',
-    alt: 'PetalWrap™ — bamboo comfort towel',
+    alt: 'PetalWrap — bamboo comfort towel',
   },
   {
     id: 'browbloom',
     category: 'Hair & Confidence',
-    name: 'BrowBloom™',
+    name: 'BrowBloom',
     price: 1400,
     priceDisplay: '₹ 1,400',
     rating: 4.9,
     reviews: 156,
     image: '/images/catalog/Brow Bloom/1.jpeg',
-    alt: 'BrowBloom™ — ready-to-wear eyebrows',
+    alt: 'BrowBloom — ready-to-wear eyebrows',
   },
 ]
 
@@ -686,78 +677,7 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
         </div>
       </section>
 
-      {/* ═══ SECTION 9: REFINED SUPPORT ═══ */}
-      <section className="relative overflow-hidden bg-[#2c1f1a]">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 md:grid-cols-2">
-          {/* Image Side */}
-          <div className="relative min-h-[400px] md:min-h-[560px]">
-            <Image
-              src="/images/support-consultation.png"
-              alt="Two women in a warm consultation setting"
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#2c1f1a]/40 hidden md:block" />
-          </div>
 
-          {/* Content Side */}
-          <FadeInWhenVisible direction="right" className="flex flex-col justify-center px-8 py-16 md:px-16 md:py-24">
-            <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full bg-[#884d53]/20 px-4 py-1.5">
-              <Headset className="h-4 w-4 text-[#ffdadb]" />
-              <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#ffdadb]">Personal Care Support</span>
-            </div>
-
-            <h2 className="mb-5 text-[32px] font-bold leading-tight text-[#f0eae2] md:text-[40px]">
-              You don&apos;t have to figure this out alone.
-            </h2>
-
-            <p className="mb-4 max-w-md text-[17px] leading-7 text-[#f0eae2]/75">
-              Schedule a free 15-minute consultation with our certified care experts. 
-              From sizing to product recommendations, we&apos;re here to guide you — with warmth, privacy, and genuine understanding.
-            </p>
-
-            <p className="mb-10 text-sm italic text-[#ffdadb]/60">
-              No commitment. No pressure. Just care.
-            </p>
-
-            {/* Support Features */}
-            <div className="mb-10 grid grid-cols-2 gap-6">
-              {[
-                { label: 'Video Call', desc: 'Face-to-face guidance' },
-                { label: 'WhatsApp', desc: 'Chat at your pace' },
-                { label: 'Private & Discreet', desc: 'Your story stays yours' },
-                { label: 'Expert Advisors', desc: 'Trained care specialists' },
-              ].map((item) => (
-                <div key={item.label} className="space-y-1">
-                  <div className="text-sm font-semibold text-[#ffdadb]">{item.label}</div>
-                  <div className="text-xs text-[#f0eae2]/50">{item.desc}</div>
-                </div>
-              ))}
-            </div>
-
-            {/* CTAs */}
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="https://wa.me/919076041779"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 rounded-full bg-[#25D366] px-8 py-4 font-semibold text-white transition-all hover:-translate-y-0.5 hover:shadow-lg active:scale-95"
-              >
-                <MessageCircle className="h-5 w-5" />
-                WhatsApp Us
-              </a>
-              <Link
-                href="/products"
-                className="rounded-full border border-[#f0eae2]/30 px-8 py-4 font-semibold text-[#f0eae2] transition-all hover:border-[#f0eae2]/60 hover:bg-[#f0eae2]/5 active:scale-95"
-              >
-                Browse Collections
-              </Link>
-            </div>
-          </FadeInWhenVisible>
-        </div>
-      </section>
     </main>
   )
 }

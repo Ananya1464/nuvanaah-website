@@ -67,7 +67,7 @@ export default function ContactPage() {
                 </a>
                 <div className="flex items-center gap-2 text-tertiary-500">
                   <Clock className="w-4 h-4" />
-                  <span className="text-sm">Mon-Sat, 10AM-8PM IST</span>
+                  <span className="text-sm">24/7 Online Support</span>
                 </div>
               </div>
               <p className="text-sm text-tertiary-500">
@@ -264,7 +264,7 @@ export default function ContactPage() {
               Talk to a Care Specialist
             </h2>
             <p className="text-tertiary-500 mb-8 max-w-xl mx-auto leading-relaxed">
-              Not sure what's right for you? Our trained care team is here to listen, guide, and support you — with no pressure to buy.
+              Have concerns about our products? Our care team is here to answer questions and address any worries you have about product design, fit, or materials.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-8">

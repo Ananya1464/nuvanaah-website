@@ -15,12 +15,12 @@ const shopCategories = [
     slug: 'recovery-body-support',
     description: 'For surgery, healing, and physical comfort',
     products: [
-      { name: 'BloomForm™',       slug: 'bloomform',       technical: 'Breast Form' },
-      { name: 'Willow Support™', slug: 'willow-support', technical: 'Mastectomy Bra' },
-      { name: 'Vine Support™',   slug: 'vine-support',   technical: 'Lumpectomy Breast Form' },
-      { name: 'Nature Nest™',    slug: 'nature-nest',    technical: 'Underarm Pillow' },
-      { name: 'FlowSleeve™',     slug: 'flowsleeve',     technical: 'Lymphedema Sleeve' },
-      { name: 'Nest Carry™',     slug: 'nest-carry',     technical: 'Recovery Kit' },
+      { name: 'BloomForm',       slug: 'bloomform',       technical: 'Breast Form' },
+      { name: 'Willow Support', slug: 'willow-support', technical: 'cancer care mastectomy pocket bra' },
+      { name: 'Vine Support',   slug: 'vine-support',   technical: 'cancer care lumpectomy bra' },
+      { name: 'Nature Nest',    slug: 'nature-nest',    technical: 'Underarm Pillow' },
+      { name: 'FlowSleeve',     slug: 'flowsleeve',     technical: 'Lymphedema Sleeve' },
+      { name: 'Nest Carry',     slug: 'nest-carry',     technical: 'Recovery Kit' },
     ],
   },
   {
@@ -28,10 +28,10 @@ const shopCategories = [
     slug: 'hair-confidence',
     description: 'For coverage, confidence, and feeling like yourself',
     products: [
-      { name: 'AirBloom™',    slug: 'airbloom',    technical: 'Chemo Headscarf' },
-      { name: 'Willow Wrap™', slug: 'willow-wrap', technical: 'Alopecia Head Wrap' },
-      { name: 'BrowBloom™',   slug: 'browbloom',   technical: 'Eyebrow Prosthesis' },
-      { name: 'BloomCrown™',  slug: 'bloomcrown',  technical: 'Cranial Prosthesis' },
+      { name: 'AirBloom',    slug: 'airbloom',    technical: 'Chemo Headscarf' },
+      { name: 'Willow Wrap', slug: 'willow-wrap', technical: 'headscarf' },
+      { name: 'BrowBloom',   slug: 'browbloom',   technical: 'Eyebrow Prosthesis' },
+      { name: 'BloomCrown',  slug: 'bloomcrown',  technical: 'hair wig' },
     ],
   },
   {
@@ -39,9 +39,9 @@ const shopCategories = [
     slug: 'everyday-wellness',
     description: 'For daily comfort and personal care',
     products: [
-      { name: 'PetalWrap™',  slug: 'petalwrap',  technical: 'Bamboo Bath Towel' },
-      { name: 'DewLeaf™',    slug: 'dewleaf',    technical: 'Recovery Face Towel' },
-      { name: 'BloomTips™',  slug: 'bloomtips',  technical: 'Press-On Nails' },
+      { name: 'PetalWrap',  slug: 'petalwrap',  technical: 'Bamboo Bath Towel' },
+      { name: 'DewLeaf',    slug: 'dewleaf',    technical: 'small towel' },
+      { name: 'BloomTips',  slug: 'bloomtips',  technical: 'Press-On Nails' },
     ],
   },
 ]

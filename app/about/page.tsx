@@ -220,7 +220,7 @@ export default function AboutPage() {
               <div className="relative mb-4 aspect-square bg-[#faf7f2] border border-[#1c1c18]/10">
                 <Image
                   src="/images/catalog/WillowSupport/1.jpeg"
-                  alt="Willow Support™ — Folded front-open pocket bra on linen surface"
+                  alt="Willow Support — Folded front-open pocket bra on linen surface"
                   fill
                   sizes="(max-width: 768px) 50vw, 33vw"
                   className="object-contain p-4"
@@ -229,7 +229,7 @@ export default function AboutPage() {
               <span className="mb-1 text-[10px] font-semibold uppercase tracking-widest text-[#7a6f6a]">
                 Recovery & Body Support
               </span>
-              <h3 className="mb-1 text-[14px] font-medium text-[#1c1c18]">Willow Support™</h3>
+              <h3 className="mb-1 text-[14px] font-medium text-[#1c1c18]">Willow Support</h3>
               <p className="mb-2 text-[12px] text-[#7a6f6a]">Front-Open Pocket Bra</p>
               <p className="mb-3 text-[14px] text-[#1c1c18]">₹ 3,000</p>
               <Link href="/products/willow-support" className="mt-auto text-[13px] text-[#1c1c18] hover:text-[#884d53] transition-colors">
@@ -241,7 +241,7 @@ export default function AboutPage() {
               <div className="relative mb-4 aspect-square bg-[#faf7f2] border border-[#1c1c18]/10">
                 <Image
                   src="/images/catalog/AirBloom/1.jpeg"
-                  alt="AirBloom™ — Scarf system laid gently on a warm surface"
+                  alt="AirBloom — Scarf system laid gently on a warm surface"
                   fill
                   sizes="(max-width: 768px) 50vw, 33vw"
                   className="object-contain p-4"
@@ -250,7 +250,7 @@ export default function AboutPage() {
               <span className="mb-1 text-[10px] font-semibold uppercase tracking-widest text-[#7a6f6a]">
                 Hair & Confidence
               </span>
-              <h3 className="mb-1 text-[14px] font-medium text-[#1c1c18]">AirBloom™</h3>
+              <h3 className="mb-1 text-[14px] font-medium text-[#1c1c18]">AirBloom</h3>
               <p className="mb-2 text-[12px] text-[#7a6f6a]">Scarf with Hair System</p>
               <p className="mb-3 text-[14px] text-[#1c1c18]">₹ 3,500</p>
               <Link href="/products/airbloom" className="mt-auto text-[13px] text-[#1c1c18] hover:text-[#884d53] transition-colors">
@@ -262,7 +262,7 @@ export default function AboutPage() {
               <div className="relative mb-4 aspect-square bg-[#faf7f2] border border-[#1c1c18]/10">
                 <Image
                   src="/images/catalog/FlowSleeve/1.jpeg"
-                  alt="FlowSleeve™ — Lymphedema sleeve worn on arm resting on a table"
+                  alt="FlowSleeve — Lymphedema sleeve worn on arm resting on a table"
                   fill
                   sizes="(max-width: 768px) 50vw, 33vw"
                   className="object-contain p-4"
@@ -271,7 +271,7 @@ export default function AboutPage() {
               <span className="mb-1 text-[10px] font-semibold uppercase tracking-widest text-[#7a6f6a]">
                 Lymphedema Care
               </span>
-              <h3 className="mb-1 text-[14px] font-medium text-[#1c1c18]">FlowSleeve™</h3>
+              <h3 className="mb-1 text-[14px] font-medium text-[#1c1c18]">FlowSleeve</h3>
               <p className="mb-2 text-[12px] text-[#7a6f6a]">Lymphedema Sleeve</p>
               <p className="mb-3 text-[14px] text-[#1c1c18]">₹ 1,200</p>
               <Link href="/products/flowsleeve" className="mt-auto text-[13px] text-[#1c1c18] hover:text-[#884d53] transition-colors">
@@ -283,7 +283,7 @@ export default function AboutPage() {
               <div className="relative mb-4 aspect-square bg-[#faf7f2] border border-[#1c1c18]/10">
                 <Image
                   src="/images/catalog/NatureNest/1.jpeg"
-                  alt="Nature Nest™ — Underarm rest pillow in Willow Print on a soft bed"
+                  alt="Nature Nest — Underarm rest pillow in Willow Print on a soft bed"
                   fill
                   sizes="(max-width: 768px) 50vw, 33vw"
                   className="object-contain p-4"
@@ -292,7 +292,7 @@ export default function AboutPage() {
               <span className="mb-1 text-[10px] font-semibold uppercase tracking-widest text-[#7a6f6a]">
                 Rest & Comfort
               </span>
-              <h3 className="mb-1 text-[14px] font-medium text-[#1c1c18]">Nature Nest™</h3>
+              <h3 className="mb-1 text-[14px] font-medium text-[#1c1c18]">Nature Nest</h3>
               <p className="mb-2 text-[12px] text-[#7a6f6a]">Underarm Rest Pillow</p>
               <p className="mb-3 text-[14px] text-[#1c1c18]">₹ 1,800</p>
               <Link href="/products/nature-nest" className="mt-auto text-[13px] text-[#1c1c18] hover:text-[#884d53] transition-colors">

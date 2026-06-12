@@ -1002,6 +1002,7 @@ export const products: Product[] = [
     id: 'vine-support',
     slug: 'vine-support',
     name: 'Vine Support Lumpectomy Breast Form',
+    technical: 'cancer care lumpectomy bra',
     subtitle: 'Soft Recovery Support Form',
     tagline: 'Gentle balance, every day.',
     price: 2200,

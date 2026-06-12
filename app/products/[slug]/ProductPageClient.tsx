@@ -735,13 +735,13 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
               <button disabled className="w-full bg-[rgba(28,28,24,0.3)] text-white py-3.5 rounded-full font-semibold text-sm cursor-not-allowed">
                 Coming Soon
               </button>
-            ) : (product.id === 'bloomcrown' || product.id === 'airbloom') ? (
+            ) : (product.id === 'bloomcrown') ? (
               <div className="space-y-2 pt-1">
                 <Link
                   href="/consultations"
                   className="w-full bg-[#884d53] hover:bg-[#6e3d42] text-white py-3.5 rounded-full font-semibold flex items-center justify-center gap-2 transition-all text-sm shadow-sm text-center"
                 >
-                  Book Wig & Scarf Consultation
+                  Book Consultation
                 </Link>
                 <button
                   type="button"
