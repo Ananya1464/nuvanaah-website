@@ -43,11 +43,11 @@ export default function Footer() {
             {/* Contact Info */}
             <div className="space-y-3">
               <a
-                href="tel:+919819461612"
+                href="tel:+919076041779"
                 className="flex items-center gap-3 text-sm text-white/80 transition-colors hover:text-primary-fixed"
               >
                 <Phone className="h-4 w-4" />
-                +91-9819461612
+                +91-9076041779
               </a>
               <a
                 href="mailto:hello@nuvanaah.com"
@@ -70,7 +70,7 @@ export default function Footer() {
               <a href="https://www.facebook.com/share/17h6t4nRvN/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-[#1877F2]" aria-label="Facebook">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="https://wa.me/919819461612" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-[#25D366]" aria-label="WhatsApp">
+              <a href="https://wa.me/919076041779" target="_blank" rel="noopener noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-[#25D366]" aria-label="WhatsApp">
                 <MessageCircle className="h-5 w-5" />
               </a>
             </div>
@@ -94,7 +94,7 @@ export default function Footer() {
               <li><Link href="/blog" className="text-sm text-white/70 transition-colors hover:text-white">Journal</Link></li>
               <li><Link href="/faq" className="text-sm text-white/70 transition-colors hover:text-white">FAQs</Link></li>
               <li><Link href="/contact" className="text-sm text-white/70 transition-colors hover:text-white">Contact Us</Link></li>
-              <li><Link href="/consultations" className="text-sm text-white/70 transition-colors hover:text-white">Free Consultation</Link></li>
+              <li><Link href="/consultations" className="text-sm text-white/70 transition-colors hover:text-white">Wig & Scarf Consultation</Link></li>
             </ul>
           </div>
 

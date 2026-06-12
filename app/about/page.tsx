@@ -43,7 +43,7 @@ export default function AboutPage() {
               We are here to help you feel like yourself again.
             </p>
             <p className="mb-8 text-[14px] leading-[1.9] text-[#1c1c18]">
-              Nuvanaah was built for women navigating breast cancer treatment and recovery — for the practical needs, the quiet discomforts, and the moments when feeling like yourself matters most. Every product in our range exists because a specific, real need exists. And because the existing options were not good enough.
+              Nuvanaah was built for women navigating cancer treatment and recovery — for the practical needs, the quiet discomforts, and the moments when feeling like yourself matters most. Every product in our range exists because a specific, real need exists. And because the existing options were not good enough.
             </p>
             <Link
               href="/products"
@@ -66,7 +66,7 @@ export default function AboutPage() {
           </blockquote>
           <div className="mx-auto max-w-[580px] space-y-6 text-[14px] leading-[1.8] text-[#1c1c18]">
             <p>
-              There are things that happen during breast cancer treatment that are not part of the treatment itself. The arm that needs a specific position to rest comfortably. The bra that no longer fits or fastens correctly. The face in the mirror that looks different in ways that are hard to describe. The days when getting dressed requires more intention than it used to. These are not medical problems. They are personal ones. And they deserve products designed specifically for them — not adapted from general-purpose alternatives, not clinical and functional, but considered, beautiful, and genuinely useful.
+              There are things that happen during cancer treatment that are not part of the treatment itself. The arm that needs a specific position to rest comfortably. The bra that no longer fits or fastens correctly. The face in the mirror that looks different in ways that are hard to describe. The days when getting dressed requires more intention than it used to. These are not medical problems. They are personal ones. And they deserve products designed specifically for them — not adapted from general-purpose alternatives, not clinical and functional, but considered, beautiful, and genuinely useful.
             </p>
             <p>
               Nuvanaah was founded on that belief. Every product in our range exists because a specific, real need exists — and because the existing options were not good enough. Not soft enough, not lightweight enough, not beautiful enough. Not designed with enough understanding of what recovery actually asks of a person on an ordinary day.
@@ -376,7 +376,7 @@ export default function AboutPage() {
             For questions about products, sizing, and which products might be right for where you are in your journey — we are available on WhatsApp and email. Recovery is not something to navigate alone.
           </p>
           <a
-            href="https://wa.me/919819461612"
+            href="https://wa.me/919076041779"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Chat with Nuvanaah on WhatsApp"

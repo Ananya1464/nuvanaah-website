@@ -599,8 +599,8 @@ export default function CheckoutPage() {
 
               {/* Help */}
               <div className="mt-4 text-center">
-                <a href="tel:+919819461612" className="text-sm text-teal-600 hover:text-teal-700">
-                  Need help? Call +91-9819461612
+                <a href="tel:+919076041779" className="text-sm text-teal-600 hover:text-teal-700">
+                  Need help? Call +91-9076041779
                 </a>
               </div>
             </div>

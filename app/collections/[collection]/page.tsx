@@ -119,7 +119,7 @@ export default async function CollectionPage(
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/919819461612"
+                href="https://wa.me/919076041779"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white px-8 py-4 rounded-full font-semibold transition-all hover:-translate-y-0.5 hover:shadow-lg"
@@ -130,7 +130,7 @@ export default async function CollectionPage(
                 href="/consultations"
                 className="inline-flex items-center justify-center gap-2 bg-[#884d53] hover:bg-[#6c363c] text-white px-8 py-4 rounded-full font-semibold transition-all hover:-translate-y-0.5 hover:shadow-md"
               >
-                Book a Free Consultation
+                Wig & Scarf Consultation
               </Link>
             </div>
           </div>

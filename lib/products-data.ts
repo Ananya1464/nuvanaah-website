@@ -41,11 +41,11 @@ const CAT_LUMPECTOMY = { id: 5, name: 'Lumpectomy Care',         slug: 'lumpecto
 // ─── PRODUCT CATALOG ────────────────────────────────────────────────────────
 export const products: Product[] = [
 
-  // ── P01 BLOOMFORM™ ───────────────────────────────────────────────────────
+  // ── P01 BLOOMFORM ───────────────────────────────────────────────────────
   {
     id: 'bloomform',
     slug: 'bloomform',
-    name: 'BloomForm™ Breast Form',
+    name: 'BloomForm Breast Form',
     subtitle: 'Plant-Fiber Breast Form',
     tagline: 'Thoughtfully Shaped. Naturally Comfortable.',
     price: 2500,
@@ -55,11 +55,11 @@ export const products: Product[] = [
     description: 'A lightweight plant-fiber breast form thoughtfully designed to support comfort, balance and confidence after breast surgery. Sold individually — choose Left or Right. Made with plant-fiber filling and a breathable plant-fiber outer fabric, BloomForm feels soft against the body while helping reduce heat build-up during daily wear.',
     fullStory: 'BloomForm is built on a simple insight: shape does not require weight. Most breast forms achieve their silhouette through density — heavy materials that hold their form by mass alone. BloomForm achieves the same result through geometry. The flat inner surface sits stable against the chest wall. The curved outer face creates a soft, rounded silhouette beneath clothing. Between them: plant fiber, air, and 10–20 grams.\n\nThe result is a form that disappears during wear. No pull on the bra. No heat building against the skin. No awareness of it by mid-afternoon. You put it on, and you stop thinking about it. That is not a small thing. That is what comfort actually means.',
     images: [
-      { id: 1, src: '/images/catalog/bloomform/1.jpeg', alt: 'BloomForm™ — view 1' },
-      { id: 2, src: '/images/catalog/bloomform/2.jpeg', alt: 'BloomForm™ — view 2' },
-      { id: 3, src: '/images/catalog/bloomform/3.jpeg', alt: 'BloomForm™ — view 3' },
-      { id: 4, src: '/images/catalog/bloomform/4.jpeg', alt: 'BloomForm™ — view 4' },
-      { id: 5, src: '/images/catalog/bloomform/5.jpeg', alt: 'BloomForm™ — view 5' },
+      { id: 1, src: '/images/catalog/bloomform/1.jpeg', alt: 'BloomForm — view 1' },
+      { id: 2, src: '/images/catalog/bloomform/2.jpeg', alt: 'BloomForm — view 2' },
+      { id: 3, src: '/images/catalog/bloomform/3.jpeg', alt: 'BloomForm — view 3' },
+      { id: 4, src: '/images/catalog/bloomform/4.jpeg', alt: 'BloomForm — view 4' },
+      { id: 5, src: '/images/catalog/bloomform/5.jpeg', alt: 'BloomForm — view 5' },
     ],
     stock_status: 'instock',
     featured: true,
@@ -117,9 +117,9 @@ export const products: Product[] = [
 
     gentleNote: 'There is no rule about when you should start wearing a breast form — or whether you should wear one at all. Some women wear one every day. Others occasionally. Others choose not to. All of these are valid, and none require justification.\n\nBloomForm is here if and when you want it. Whenever you are ready. At whatever pace feels right.',
     technicalNames: ['breast form', 'breast prosthesis', 'external breast prosthetic', 'mastectomy prosthetic'],
-    seoTitle: 'BloomForm™ — Breast Form | Breast Prosthesis After Surgery',
+    seoTitle: 'BloomForm — Breast Form | Breast Prosthesis After Surgery',
     metaDescription: 'Lightweight 10–20g plant-fiber breast form (breast prosthesis). Breathable and cool. Natural silhouette after mastectomy or lumpectomy. Left or Right.',
-    ogTitle: 'BloomForm™ — Plant-Fiber Breast Form | Nuvanaah',
+    ogTitle: 'BloomForm — Plant-Fiber Breast Form | Nuvanaah',
     ogDescription: 'A plant-fiber breast form weighing 10–20 grams. Flat where it meets the body. Curved where it creates shape. Lighter, cooler, and more comfortable than silicone alternatives.',
     faqs: [
       { q: 'Do I need to buy Left and Right separately?', a: 'Yes — BloomForm is sold as a single form, Left or Right. Each is shaped to the specific anatomy of that side. The chest contours differ subtly in curve, angle, and position, so the correct side-specific form is always important for a natural fit.' },
@@ -135,11 +135,11 @@ export const products: Product[] = [
     showSizeGuide: true,
   },
 
-  // ── P02 WILLOW SUPPORT™ ──────────────────────────────────────────────────
+  // ── P02 WILLOW SUPPORT ──────────────────────────────────────────────────
   {
     id: 'willow-support',
     slug: 'willow-support',
-    name: 'Willow Support™ Mastectomy Bra',
+    name: 'Willow Support Mastectomy Bra',
     subtitle: 'Post-Surgery Comfort Bra',
     tagline: '',
     price: 3000,
@@ -150,11 +150,11 @@ export const products: Product[] = [
     description: 'A post-surgery mastectomy bra made from ultra-soft plant-fiber fabric, designed to make getting dressed feel ordinary again. Front-hook closure. Discreet prosthetic pocket.',
     fullStory: 'After breast surgery, the things that used to be automatic require thought. Getting dressed is one of them. Willow Support was designed so that at least the bra is not an obstacle. The front-hook closure means you do not need help putting it on. The soft inner comfort panel means the hooks never touch the skin. The adjustable straps fit a body that is still changing week by week.\n\nThe discreet corner side pocket — approximately three inches wide, invisible from outside — exists for women using a prosthetic. It is not visible. It is not complicated to use. It is simply there, when needed.',
     images: [
-      { id: 1, src: '/images/catalog/WillowSupport/1.jpeg', alt: 'Willow Support™ — view 1' },
-      { id: 2, src: '/images/catalog/WillowSupport/2.jpeg', alt: 'Willow Support™ — view 2' },
-      { id: 3, src: '/images/catalog/WillowSupport/3.jpeg', alt: 'Willow Support™ — view 3' },
-      { id: 4, src: '/images/catalog/WillowSupport/4.jpeg', alt: 'Willow Support™ — view 4' },
-      { id: 5, src: '/images/catalog/WillowSupport/5.jpeg', alt: 'Willow Support™ — view 5' },
+      { id: 1, src: '/images/catalog/WillowSupport/1.jpeg', alt: 'Willow Support — view 1' },
+      { id: 2, src: '/images/catalog/WillowSupport/2.jpeg', alt: 'Willow Support — view 2' },
+      { id: 3, src: '/images/catalog/WillowSupport/3.jpeg', alt: 'Willow Support — view 3' },
+      { id: 4, src: '/images/catalog/WillowSupport/4.jpeg', alt: 'Willow Support — view 4' },
+      { id: 5, src: '/images/catalog/WillowSupport/5.jpeg', alt: 'Willow Support — view 5' },
     ],
     stock_status: 'instock',
     featured: true,
@@ -195,10 +195,10 @@ export const products: Product[] = [
       'Care guide',
     ],
     gentleNote: 'Recovery changes the relationship you have with your body. The things that were automatic — getting dressed, choosing what to wear — suddenly require thought and care. That is not a failure. That is what recovery looks like.\n\nWillow Support was designed so that at least one of those things does not require extra thought. Put it on. Wear it. Take it off. The goal is for it to become something you stop noticing, because it is doing its job quietly and well.\n\nBe gentle with yourself. You are doing something hard.',
-    technicalNames: ['mastectomy bra', 'pocket bra', 'post-surgery bra', 'post-mastectomy bra', 'prosthetic pocket bra'],
-    seoTitle: 'Willow Support™ — Mastectomy Bra | Post-Surgery Pocket Bra',
+    technicalNames: ['cancer care mastectomy pocket bra', 'mastectomy bra', 'pocket bra', 'post-surgery bra', 'post-mastectomy bra', 'prosthetic pocket bra'],
+    seoTitle: 'Willow Support — Mastectomy Bra | Post-Surgery Pocket Bra',
     metaDescription: 'Soft plant-fiber mastectomy bra (pocket bra) with front-hook closure and discreet prosthetic pocket. Three colours. Post-surgery comfort.',
-    ogTitle: 'Willow Support™ — Post-Surgery Comfort Bra | Nuvanaah',
+    ogTitle: 'Willow Support — Post-Surgery Comfort Bra | Nuvanaah',
     ogDescription: 'A post-surgery bra made from ultra-soft plant-fiber fabric. Front-hook closure. Discreet prosthetic pocket.',
     faqs: [
       { q: 'How do I choose my size?', a: 'Measure your underbust circumference (directly under the bust, snug but not tight). Your band size in inches is your Willow Support size: 32" band → size 32, 34" band → size 34, and so on up to size 44. If you are between sizes, size up. The adjustable straps allow further fine-tuning.' },
@@ -214,11 +214,11 @@ export const products: Product[] = [
     showSizeGuide: true,
   },
 
-  // ── P03 NATURE NEST™ ─────────────────────────────────────────────────────
+  // ── P03 NATURE NEST ─────────────────────────────────────────────────────
   {
     id: 'nature-nest',
     slug: 'nature-nest',
-    name: 'Nature Nest™ Underarm Pillow',
+    name: 'Nature Nest Underarm Pillow',
     subtitle: 'Underarm Rest Pillow',
     tagline: '',
     price: 1500,
@@ -228,9 +228,9 @@ export const products: Product[] = [
     description: 'A soft underarm pillow shaped specifically for the arm and side of the body during rest after breast surgery. Plant-fiber filled, cool against skin, with a removable washable cover in three printed designs.',
     fullStory: 'A nest is one of nature\'s most intentional structures. Not built for beauty — though it often has it. Built for one purpose: to hold something that needs protecting, with exactly the right amount of support.\n\nAfter breast surgery, the arm on the affected side needs a specific position during rest — not too close to the body, not too far, supported but not pressed. A rolled towel is too firm. A standard pillow is too large and soft. Neither is shaped for the job. Nature Nest is shaped for the job.',
     images: [
-      { id: 1, src: '/images/catalog/NatureNest/1.jpeg', alt: 'Nature Nest™ — view 1' },
-      { id: 2, src: '/images/catalog/NatureNest/2.jpeg', alt: 'Nature Nest™ — view 2' },
-      { id: 3, src: '/images/catalog/NatureNest/3.PNG', alt: 'Nature Nest™ — view 3' },
+      { id: 1, src: '/images/catalog/NatureNest/1.jpeg', alt: 'Nature Nest — view 1' },
+      { id: 2, src: '/images/catalog/NatureNest/2.jpeg', alt: 'Nature Nest — view 2' },
+      { id: 3, src: '/images/catalog/NatureNest/3.PNG', alt: 'Nature Nest — view 3' },
     ],
     stock_status: 'instock',
     featured: true,
@@ -276,9 +276,9 @@ export const products: Product[] = [
     ],
     gentleNote: 'Recovery takes time. More time, often, than people expect. Finding comfort during this period — physical comfort, the small, daily kind — matters more than it might seem.\n\nSmall comforts are not small things during recovery. They are part of what makes it possible to rest well, which is part of what makes healing possible.\n\nRest when you can. Let Nature Nest be one less thing to manage.',
     technicalNames: ['underarm pillow', 'axilla pillow', 'post-surgery arm pillow', 'lymphedema rest pillow', 'breast surgery pillow'],
-    seoTitle: 'Nature Nest™ — Underarm Pillow | Post-Surgery Arm Rest Pillow',
+    seoTitle: 'Nature Nest — Underarm Pillow | Post-Surgery Arm Rest Pillow',
     metaDescription: 'Soft underarm (axilla) rest pillow for post-surgery and lymphedema recovery. Plant-fiber filled, removable washable cover, three printed designs.',
-    ogTitle: 'Nature Nest™ — Underarm Rest Pillow | Nuvanaah',
+    ogTitle: 'Nature Nest — Underarm Rest Pillow | Nuvanaah',
     ogDescription: 'A soft underarm pillow shaped for post-surgery rest. Plant-fiber filled, cool against skin, with a removable washable cover in three printed designs.',
     faqs: [
       { q: 'Which side does the pillow go under?', a: 'Place Nature Nest under the arm on your affected side. The pillow lifts the arm slightly away from the body, reducing pressure on the underarm area during rest.' },
@@ -293,11 +293,11 @@ export const products: Product[] = [
     showSizeGuide: false,
   },
 
-  // ── P04 AIRBLOOM™ ────────────────────────────────────────────────────────
+  // ── P04 AIRBLOOM ────────────────────────────────────────────────────────
   {
     id: 'airbloom',
     slug: 'airbloom',
-    name: 'AirBloom™ Chemo Headscarf',
+    name: 'AirBloom Chemo Headscarf',
     subtitle: 'Hair Scarf System',
     tagline: 'The comfort of a scarf. The beauty of natural hair.',
     price: 5000,
@@ -307,10 +307,10 @@ export const products: Product[] = [
     description: 'Real human hair integrated into a breathable scarf design. Natural-looking coverage from every angle — front, sides, and back. Lightweight enough to wear from morning to evening without thinking about it.',
     fullStory: 'Air: breathability — the quality most head coverings do not offer. The plant-fiber scalp fabric in AirBloom promotes airflow, keeping the scalp light and comfortable rather than warm and restricted.\n\nBloom: to come into your own. Hair is part of how many women express who they are. When hair loss takes that away, even temporarily, it takes something of the sense of self with it. AirBloom, with its real human hair, is designed to give something of that back.\n\n"AirBloom. The comfort of a scarf. The beauty of natural hair."',
     images: [
-      { id: 1, src: '/images/catalog/AirBloom/1.jpeg', alt: 'AirBloom™ — view 1' },
-      { id: 2, src: '/images/catalog/AirBloom/2.jpeg', alt: 'AirBloom™ — view 2' },
-      { id: 3, src: '/images/catalog/AirBloom/3.jpeg', alt: 'AirBloom™ — view 3' },
-      { id: 4, src: '/images/catalog/AirBloom/4.jpeg', alt: 'AirBloom™ — view 4' },
+      { id: 1, src: '/images/catalog/AirBloom/1.jpeg', alt: 'AirBloom — view 1' },
+      { id: 2, src: '/images/catalog/AirBloom/2.jpeg', alt: 'AirBloom — view 2' },
+      { id: 3, src: '/images/catalog/AirBloom/3.jpeg', alt: 'AirBloom — view 3' },
+      { id: 4, src: '/images/catalog/AirBloom/4.jpeg', alt: 'AirBloom — view 4' },
     ],
     stock_status: 'instock',
     featured: true,
@@ -354,10 +354,10 @@ export const products: Product[] = [
       'Storage dust bag',
     ],
     gentleNote: 'Hair loss changes things. The way you look in the mirror changes. The way you feel walking into a room changes. This is not vanity. Hair is part of identity. Its absence deserves to be acknowledged, not minimised.\n\nAirBloom is not a solution to hair loss. It is a way of living with it more comfortably, on your own terms.\n\nYou are more than your hair. And you are allowed to care about it anyway.',
-    technicalNames: ['chemo headscarf', 'cancer hair scarf', 'alopecia head covering', 'hair loss scarf with hair', 'chemo head covering'],
-    seoTitle: 'AirBloom™ — Chemo Headscarf with Real Hair | Hair Loss Head Covering',
+    technicalNames: ['headscarf with real hair', 'chemo headscarf with real hair', 'alopecia head covering with real hair', 'hair loss scarf with real hair'],
+    seoTitle: 'AirBloom — Chemo Headscarf with Real Hair | Hair Loss Head Covering',
     metaDescription: 'Chemo headscarf combining real human hair with breathable plant-fiber scalp fabric. Natural coverage for alopecia and treatment-related hair loss.',
-    ogTitle: 'AirBloom™ — Hair Scarf System | Nuvanaah',
+    ogTitle: 'AirBloom — Hair Scarf System | Nuvanaah',
     ogDescription: 'Real human hair integrated into a breathable scarf design. Natural-looking coverage from every angle. Lightweight enough to wear from morning to evening.',
     faqs: [
       { q: 'Is the hair real or synthetic?', a: 'AirBloom uses real human hair. This gives a natural movement and appearance that synthetic alternatives cannot replicate.' },
@@ -373,11 +373,11 @@ export const products: Product[] = [
     showSizeGuide: false,
   },
 
-  // ── P05 WILLOW WRAP™ ─────────────────────────────────────────────────────
+  // ── P05 WILLOW WRAP ─────────────────────────────────────────────────────
   {
     id: 'willow-wrap',
     slug: 'willow-wrap',
-    name: 'Willow Wrap™ Chemo Headscarf',
+    name: 'Willow Wrap Chemo Headscarf',
     subtitle: 'Soft Head Scarf Collection',
     tagline: '',
     price: 1500,
@@ -387,10 +387,10 @@ export const products: Product[] = [
     description: 'A bamboo plant-fiber head scarf — softer and more breathable than cotton, gentle directly against a bare scalp. Three printed designs. Lightweight enough to carry everywhere.',
     fullStory: 'Willow is the tree that yields rather than breaks — bending with what comes, returning when it passes. A Willow Wrap does the same. It is for the days when you choose the Wildflower Garden print because it makes you feel something. And for the days when you reach for Aparajita Petals because it goes with everything and you have more important things to think about.\n\nBamboo plant fiber is softer than cotton, naturally breathable, and lighter at the same weight. These are not incidental qualities. Against a bare scalp — sensitive, exposed — they are the qualities that determine whether something can be worn every day or only occasionally.',
     images: [
-      { id: 1, src: '/images/catalog/Willow Wrap/1.PNG', alt: 'Willow Wrap™ — view 1' },
-      { id: 2, src: '/images/catalog/Willow Wrap/2.PNG', alt: 'Willow Wrap™ — view 2' },
-      { id: 3, src: '/images/catalog/Willow Wrap/3.PNG', alt: 'Willow Wrap™ — view 3' },
-      { id: 4, src: '/images/catalog/Willow Wrap/4.PNG', alt: 'Willow Wrap™ — view 4' },
+      { id: 1, src: '/images/catalog/Willow Wrap/1.PNG', alt: 'Willow Wrap — view 1' },
+      { id: 2, src: '/images/catalog/Willow Wrap/2.PNG', alt: 'Willow Wrap — view 2' },
+      { id: 3, src: '/images/catalog/Willow Wrap/3.PNG', alt: 'Willow Wrap — view 3' },
+      { id: 4, src: '/images/catalog/Willow Wrap/4.PNG', alt: 'Willow Wrap — view 4' },
     ],
     stock_status: 'instock',
     featured: true,
@@ -433,10 +433,10 @@ export const products: Product[] = [
       'Care and styling guide',
     ],
     gentleNote: 'There are days when getting dressed is a meaningful act of intention. And days when it simply needs to be done quickly, comfortably, and without fuss.\n\nYou do not have to feel beautiful every day. You do not have to perform wellness or recovery for anyone. But if a soft scarf in a print you love makes a single day a little more comfortable, a little more like yours — then it has done exactly what it was made to do.\n\nAll of those days are valid.',
-    technicalNames: ['chemo headscarf', 'alopecia head wrap', 'cancer head scarf', 'hair loss head covering', 'bamboo head wrap'],
-    seoTitle: 'Willow Wrap™ — Chemo Headscarf | Alopecia Head Wrap | Bamboo',
+    technicalNames: ['headscarf', 'chemo headscarf', 'alopecia head wrap', 'cancer head scarf', 'hair loss head covering'],
+    seoTitle: 'Willow Wrap — Chemo Headscarf | Alopecia Head Wrap | Bamboo',
     metaDescription: 'Soft bamboo plant-fiber chemo headscarf and alopecia head wrap. Gentle against bare scalp. Three printed designs. Lightweight and breathable.',
-    ogTitle: 'Willow Wrap™ — Soft Head Scarf | Nuvanaah',
+    ogTitle: 'Willow Wrap — Soft Head Scarf | Nuvanaah',
     ogDescription: 'A bamboo plant-fiber head scarf — softer and more breathable than cotton, gentle directly against a bare scalp. Three printed designs.',
     faqs: [
       { q: 'Is it soft enough for a bare scalp?', a: 'Yes. Bamboo plant fiber has a naturally smooth surface that is softer than cotton at the point of contact. It does not have the roughness or friction that coarser fabrics can cause against sensitive scalp skin.' },
@@ -451,11 +451,11 @@ export const products: Product[] = [
     showSizeGuide: false,
   },
 
-  // ── P06 FLOWSLEEVE™ ──────────────────────────────────────────────────────
+  // ── P06 FLOWSLEEVE ──────────────────────────────────────────────────────
   {
     id: 'flowsleeve',
     slug: 'flowsleeve',
-    name: 'FlowSleeve™ Lymphedema Sleeve',
+    name: 'FlowSleeve Lymphedema Sleeve',
     subtitle: 'Compression Sleeve with Holding Belt',
     tagline: '',
     price: 1575,
@@ -465,7 +465,7 @@ export const products: Product[] = [
     description: 'A lymphedema compression sleeve with an adjustable shoulder holding belt that keeps it in place throughout the day — without constant readjustment. Soft, breathable, and designed for the full working day.',
     fullStory: 'Most compression sleeves rely on the sleeve\'s own elasticity to stay on the arm. This works at rest. It does not work during a normal day. The sleeve slides. You readjust. It slides again.\n\nFlowSleeve\'s adjustable shoulder holding belt attaches at the top of the sleeve and passes over the shoulder. The sleeve stays where it belongs — during movement, during work, during all the activities that make up a day. That is not a secondary feature. It is the reason FlowSleeve exists.',
     images: [
-      { id: 1, src: '/images/catalog/FlowSleeve/1.jpeg', alt: 'FlowSleeve™ — view 1' },
+      { id: 1, src: '/images/catalog/FlowSleeve/1.jpeg', alt: 'FlowSleeve — view 1' },
     ],
     stock_status: 'instock',
     featured: true,
@@ -511,9 +511,9 @@ export const products: Product[] = [
     ],
     gentleNote: 'Managing lymphedema is not something anyone chooses. It is a consequence of treatment for something else — one of the harder aspects of recovery to accept.\n\nFlowSleeve is designed to do one thing well: to stay where it belongs, feel gentle against your skin, and support your arm through your day without demanding your constant attention. To be part of your routine without dominating it.\n\nBecause healing deserves comfort. Because support should feel gentle.',
     technicalNames: ['lymphedema sleeve', 'compression arm sleeve', 'lymphedema compression garment', 'arm compression sleeve', 'post-mastectomy compression sleeve'],
-    seoTitle: 'FlowSleeve™ — Lymphedema Compression Sleeve | Arm Compression Garment',
+    seoTitle: 'FlowSleeve — Lymphedema Compression Sleeve | Arm Compression Garment',
     metaDescription: 'Lymphedema compression arm sleeve with adjustable shoulder holding belt. Stays in place all day. Soft, breathable fabric for daily wear.',
-    ogTitle: 'FlowSleeve™ — Compression Sleeve with Holding Belt | Nuvanaah',
+    ogTitle: 'FlowSleeve — Compression Sleeve with Holding Belt | Nuvanaah',
     ogDescription: 'A lymphedema compression sleeve with an adjustable shoulder holding belt that keeps it in place throughout the day. Soft, breathable, and designed for extended daily wear.',
     faqs: [
       { q: 'What is the difference between Indian and Imported?', a: 'Both versions include the shoulder holding belt and provide the same gentle compression level. The Imported version uses a different fabric construction which some wearers prefer for texture. Both are suitable for everyday wear.' },
@@ -529,11 +529,11 @@ export const products: Product[] = [
     showSizeGuide: false,
   },
 
-  // ── P07 NEST CARRY™ ──────────────────────────────────────────────────────
+  // ── P07 NEST CARRY ──────────────────────────────────────────────────────
   {
     id: 'nest-carry',
     slug: 'nest-carry',
-    name: 'Nest Carry™ Post-Surgery Kit',
+    name: 'Nest Carry Post-Surgery Kit',
     subtitle: 'Recovery Support Kit',
     tagline: '',
     price: 1500,
@@ -543,9 +543,9 @@ export const products: Product[] = [
     description: 'A Recovery Support Kit created to help women keep important recovery essentials organized, accessible, and close at hand during everyday life. Provides greater convenience, reduced stress, and the confidence of having what you need within easy reach.',
     fullStory: 'Recovery often comes with many small practical needs. NestCarry helps keep important items organized and within reach, allowing you to focus more on your wellbeing and less on managing supplies.\n\nNestCarry was created to help women keep important recovery essentials organized, accessible, and close at hand during everyday life. The emotional benefit is not the bag itself — it is greater convenience, greater organization, reduced stress, and the confidence of having important items within easy reach as you move through recovery.',
     images: [
-      { id: 1, src: '/images/catalog/NestCarry/1.PNG', alt: 'Nest Carry™ — view 1' },
-      { id: 2, src: '/images/catalog/NestCarry/2.PNG', alt: 'Nest Carry™ — view 2' },
-      { id: 3, src: '/images/catalog/NestCarry/3.PNG', alt: 'Nest Carry™ — view 3' },
+      { id: 1, src: '/images/catalog/NestCarry/1.PNG', alt: 'Nest Carry — view 1' },
+      { id: 2, src: '/images/catalog/NestCarry/2.PNG', alt: 'Nest Carry — view 2' },
+      { id: 3, src: '/images/catalog/NestCarry/3.PNG', alt: 'Nest Carry — view 3' },
     ],
     stock_status: 'instock',
     featured: true,
@@ -589,9 +589,9 @@ export const products: Product[] = [
     ],
     gentleNote: 'Recovery has a way of generating an endless list of things to manage at the moment when the energy to manage them is lowest.\n\nThe therapy ball is in there for the days when gentle movement is the most useful thing you can do. The diary is in there for the days when writing something down is the only way to keep hold of it.\n\nYou are managing something hard. Let Nest Carry manage a small part of it for you.',
     technicalNames: ['post-surgery kit', 'recovery bag', 'drain management bag', 'mastectomy recovery kit', 'post-operative care kit'],
-    seoTitle: 'Nest Carry™ — Recovery Kit | Post-Surgery Bag | Complete Support Kit',
+    seoTitle: 'Nest Carry — Recovery Kit | Post-Surgery Bag | Complete Support Kit',
     metaDescription: 'Post-surgery recovery kit with sling bag, therapy ball, collection jars, recovery diary, and pen. All essentials in one organised bag.',
-    ogTitle: 'Nest Carry™ — Recovery Support Kit | Nuvanaah',
+    ogTitle: 'Nest Carry — Recovery Support Kit | Nuvanaah',
     ogDescription: 'One bag. Everything in it. A recovery kit with a sling bag, therapy ball, collection jars, recovery diary, and pen.',
     faqs: [
       { q: 'Is this suitable as a gift?', a: 'Yes. Nest Carry is one of our most appreciated gifts for women in recovery. It is practical, considered, and complete — everything arrives together in the bag, ready to use.' },
@@ -606,11 +606,11 @@ export const products: Product[] = [
     showSizeGuide: false,
   },
 
-  // ── P08 PETALWRAP™ ───────────────────────────────────────────────────────
+  // ── P08 PETALWRAP ───────────────────────────────────────────────────────
   {
     id: 'petalwrap',
     slug: 'petalwrap',
-    name: 'PetalWrap™ Bamboo Bath Towel',
+    name: 'PetalWrap Bamboo Bath Towel',
     subtitle: 'Bamboo Comfort Towel',
     tagline: '',
     price: 1500,
@@ -620,10 +620,10 @@ export const products: Product[] = [
     description: 'A full-size bamboo comfort towel in a herringbone weave with tassel-finished ends. 58+ inches × 27–28 inches. Softer and more absorbent than standard cotton. Available in four named colours.',
     fullStory: 'A petal is the part of the flower that is both beautiful and fleeting — present precisely when it is needed, soft to the touch, designed only for that moment of contact.\n\nRecovery changes the texture of daily life. The things that were automatic — showering, drying off — require more care and attention. PetalWrap cannot make recovery faster. What it can do is make the few minutes after a shower feel soft, comfortable, and a little more like ordinary self-care.\n\nA towel that feels good against your skin. A colour you chose because you liked it. A tassel-finished end that is simply beautiful for no other reason.',
     images: [
-      { id: 1, src: '/images/catalog/petal leaf/1.PNG', alt: 'PetalWrap™ — view 1' },
-      { id: 2, src: '/images/catalog/petal leaf/2.PNG', alt: 'PetalWrap™ — view 2' },
-      { id: 3, src: '/images/catalog/petal leaf/3.jpeg', alt: 'PetalWrap™ — view 3' },
-      { id: 4, src: '/images/catalog/petal leaf/4.jpeg', alt: 'PetalWrap™ — view 4' },
+      { id: 1, src: '/images/catalog/petal leaf/1.PNG', alt: 'PetalWrap — view 1' },
+      { id: 2, src: '/images/catalog/petal leaf/2.PNG', alt: 'PetalWrap — view 2' },
+      { id: 3, src: '/images/catalog/petal leaf/3.jpeg', alt: 'PetalWrap — view 3' },
+      { id: 4, src: '/images/catalog/petal leaf/4.jpeg', alt: 'PetalWrap — view 4' },
     ],
     stock_status: 'instock',
     featured: false,
@@ -668,9 +668,9 @@ export const products: Product[] = [
     ],
     gentleNote: 'Recovery is lived in the small things. A towel that feels good against your skin. A colour you chose because you liked it. A tassel end that is simply beautiful, for no reason other than that it is.\n\nSmall things. But they are what the days are made of.',
     technicalNames: ['bamboo bath towel', 'soft recovery towel', 'post-surgery bath towel'],
-    seoTitle: 'PetalWrap™ — Bamboo Comfort Towel | Soft Recovery Bath Towel',
+    seoTitle: 'PetalWrap — Bamboo Comfort Towel | Soft Recovery Bath Towel',
     metaDescription: 'Premium bamboo comfort bath towel, 58+ inches with tassel ends and herringbone weave. Soft, absorbent, and gentle on post-surgery skin.',
-    ogTitle: 'PetalWrap™ — Bamboo Comfort Towel | Nuvanaah',
+    ogTitle: 'PetalWrap — Bamboo Comfort Towel | Nuvanaah',
     ogDescription: 'A full-size bamboo comfort towel in a herringbone weave with tassel-finished ends. Softer and more absorbent than standard cotton. Four named colours.',
     faqs: [
       { q: 'How does bamboo compare to cotton?', a: 'Bamboo fiber is softer at the point of contact, more naturally absorbent, and faster drying than equivalent cotton. It also naturally inhibits odour-causing bacteria. These are inherent properties of the fiber, not finishes or treatments that wash out.' },
@@ -684,11 +684,11 @@ export const products: Product[] = [
     showSizeGuide: false,
   },
 
-  // ── P09 DEWLEAF™ ─────────────────────────────────────────────────────────
+  // ── P09 DEWLEAF ─────────────────────────────────────────────────────────
   {
     id: 'dewleaf',
     slug: 'dewleaf',
-    name: 'DewLeaf™ Bamboo Face Towel',
+    name: 'DewLeaf Bamboo Face Towel',
     subtitle: 'Recovery Towel',
     tagline: 'Fresh comfort with every use.',
     price: 0,
@@ -700,8 +700,8 @@ export const products: Product[] = [
     description: 'A compact 12×24 inch recovery towel — soft, quick-drying, and designed for the small, daily moments of personal care that add up during recovery. Four colours. Clean hemmed edges.',
     fullStory: 'Dew is small. Present early. Gone quickly. Doing its quiet work before the day begins.\n\nPersonal care during recovery is a daily series of small moments. Washing your face. Drying your hands. Managing the routine around sensitive areas that need to stay clean. These are not extraordinary moments. They are ordinary ones, repeated many times each day. DewLeaf is made for those moments — not the big ones. The small, repetitive, quiet ones.\n\n"Fresh comfort with every use."',
     images: [
-      { id: 1, src: '/images/catalog/DewLeaf/1.jpeg', alt: 'DewLeaf™ — view 1' },
-      { id: 2, src: '/images/catalog/DewLeaf/2.jpeg', alt: 'DewLeaf™ — view 2' },
+      { id: 1, src: '/images/catalog/DewLeaf/1.jpeg', alt: 'DewLeaf — view 1' },
+      { id: 2, src: '/images/catalog/DewLeaf/2.jpeg', alt: 'DewLeaf — view 2' },
     ],
     stock_status: 'instock',
     featured: false,
@@ -745,9 +745,9 @@ export const products: Product[] = [
     ],
     gentleNote: 'Personal care during recovery is a daily series of small moments. A towel that feels soft each time. That is clean and dry and ready. That is a colour you chose because it felt like you. That is exactly what was needed and nothing more complicated than that.\n\nFresh comfort with every use.',
     technicalNames: ['bamboo face towel', 'recovery hand towel', 'soft face cloth', 'post-surgery face towel'],
-    seoTitle: 'DewLeaf™ — Recovery Face Towel | Soft Bamboo Hand Towel',
+    seoTitle: 'DewLeaf — Recovery Face Towel | Soft Bamboo Hand Towel',
     metaDescription: 'Compact 12×24 inch bamboo recovery face and hand towel. Soft, quick-drying, and gentle on sensitive skin. Four colours.',
-    ogTitle: 'DewLeaf™ — Recovery Towel | Nuvanaah',
+    ogTitle: 'DewLeaf — Recovery Towel | Nuvanaah',
     ogDescription: 'A compact 12×24 inch recovery towel — soft, quick-drying, and designed for the small daily moments of personal care that add up during recovery.',
     faqs: [
       { q: 'How does DewLeaf differ from PetalWrap?', a: 'DewLeaf is 12×24 inches — a compact face and hand towel. PetalWrap is 58+ inches — a full bath towel. They use the same bamboo fiber and the same four colours. Many women use both together.' },
@@ -760,11 +760,11 @@ export const products: Product[] = [
     showSizeGuide: false,
   },
 
-  // ── P10 BROWBLOOM™ ───────────────────────────────────────────────────────
+  // ── P10 BROWBLOOM ───────────────────────────────────────────────────────
   {
     id: 'browbloom',
     slug: 'browbloom',
-    name: 'BrowBloom™ Eyebrow Prosthesis',
+    name: 'BrowBloom Eyebrow Prosthesis',
     subtitle: 'Ready-to-Wear Eyebrows',
     tagline: '',
     price: 1400,
@@ -774,8 +774,8 @@ export const products: Product[] = [
     description: 'Ready-to-wear eyebrows in two shades designed for Indian skin tones. Each brow attaches using a dedicated skin-safe adhesive tape — no drawing, no pencil, no guesswork. Natural shape, lightweight, and reusable. Confidence that begins at the mirror, before the day does.',
     fullStory: 'Eyebrow loss changes the face in ways that are immediately visible and deeply felt. The brows frame the eyes and carry expression. When they are absent, the face can look and feel different in ways that are difficult to explain to others but that are apparent to the woman experiencing it.\n\nBrowBloom is shaped and coloured to look like real brows — not drawn-on, not obvious. The design avoids the stark quality of pencilled replacements. It settles into a natural position and reads as your own from a conversational distance.\n\nCoffee Bean: warm dark brown, calibrated for medium to deeper South Asian skin tones.\nBamboo Woods: soft cool brown, calibrated for lighter to medium South Asian skin tones.',
     images: [
-      { id: 1, src: '/images/catalog/Brow Bloom/1.jpeg', alt: 'BrowBloom™ — view 1' },
-      { id: 2, src: '/images/catalog/Brow Bloom/2.jpeg', alt: 'BrowBloom™ — view 2' },
+      { id: 1, src: '/images/catalog/Brow Bloom/1.jpeg', alt: 'BrowBloom — view 1' },
+      { id: 2, src: '/images/catalog/Brow Bloom/2.jpeg', alt: 'BrowBloom — view 2' },
     ],
     stock_status: 'instock',
     featured: false,
@@ -824,9 +824,9 @@ export const products: Product[] = [
     ],
     gentleNote: 'Eyebrow loss is one of the most quietly significant changes that treatment can bring. It is a loss that is difficult to explain to people who have not experienced it, but that is felt immediately and continuously.\n\nBrowBloom is not a solution to that loss. It is a way of meeting it practically and gently. Of making the morning routine a little shorter, a little easier, a little more like the one you remember.\n\nYou do not have to use it every day. But it is here, when you want it.',
     technicalNames: ['eyebrow prosthesis', 'alopecia eyebrows', 'chemo eyebrows', 'cosmetic eyebrows', 'hair loss eyebrows'],
-    seoTitle: 'BrowBloom™ — Eyebrow Prosthesis | Ready-to-Wear Eyebrows for Hair Loss',
+    seoTitle: 'BrowBloom — Eyebrow Prosthesis | Ready-to-Wear Eyebrows for Hair Loss',
     metaDescription: 'Ready-to-wear eyebrows (eyebrow prosthesis) for alopecia and treatment-related hair loss. Two shades for Indian skin tones. Reusable.',
-    ogTitle: 'BrowBloom™ — Ready-to-Wear Eyebrows | Nuvanaah',
+    ogTitle: 'BrowBloom — Ready-to-Wear Eyebrows | Nuvanaah',
     ogDescription: 'Ready-to-wear eyebrows in two shades designed for Indian skin tones. Natural shape, lightweight, and reusable.',
     faqs: [
       { q: 'Which shade should I choose?', a: 'Coffee Bean is a warm dark brown — well-suited to medium to deeper South Asian skin tones. Bamboo Woods is a soft cool brown — well-suited to lighter to medium South Asian skin tones. If you are between the two, Coffee Bean is the more versatile choice for most Indian complexions.' },
@@ -841,11 +841,11 @@ export const products: Product[] = [
     showSizeGuide: false,
   },
 
-  // ── P11 BLOOMTIPS™ ───────────────────────────────────────────────────────
+  // ── P11 BLOOMTIPS ───────────────────────────────────────────────────────
   {
     id: 'bloomtips',
     slug: 'bloomtips',
-    name: 'BloomTips™ Press-On Nails',
+    name: 'BloomTips Press-On Nails',
     subtitle: 'Comfort Nail Collection',
     tagline: 'Little details. Beautiful confidence.',
     price: 1200,
@@ -855,8 +855,8 @@ export const products: Product[] = [
     description: 'A complete press-on nail kit — 24 nails, adhesive, file, cuticle stick, prep wipe, and reusable storage pouch. Natural-looking finish at home, in under ten minutes, no salon required.',
     fullStory: 'Treatment does many things to the body. The nails are one of the smaller ones — thinning, brittleness, discolouration, sensitivity. But they are noticed. Every time you look at your hands, which is many times a day.\n\nBloomTips is not here to solve the effects of treatment. It is here to address one small part of them. To give you a way to look at your hands and see something chosen and deliberate.\n\n"Little details. Beautiful confidence."',
     images: [
-      { id: 1, src: '/images/catalog/BloomTips/1.jpeg', alt: 'BloomTips™ — view 1' },
-      { id: 2, src: '/images/catalog/BloomTips/2.jpeg', alt: 'BloomTips™ — view 2' },
+      { id: 1, src: '/images/catalog/BloomTips/1.jpeg', alt: 'BloomTips — view 1' },
+      { id: 2, src: '/images/catalog/BloomTips/2.jpeg', alt: 'BloomTips — view 2' },
     ],
     stock_status: 'instock',
     featured: true,
@@ -904,9 +904,9 @@ export const products: Product[] = [
     ],
     gentleNote: 'Treatment does many things to the body. The nails are one of the smaller ones. But you notice them every time you look at your hands, which is many times a day.\n\nLittle details. Beautiful confidence. One fingertip at a time.',
     technicalNames: ['press-on nails', 'chemo nail care', 'treatment nail kit', 'false nails kit'],
-    seoTitle: 'BloomTips™ — Press-On Nails | Nail Care Kit for Cancer Treatment',
+    seoTitle: 'BloomTips — Press-On Nails | Nail Care Kit for Cancer Treatment',
     metaDescription: 'Complete 24-piece press-on nail kit for treatment and recovery. Natural finish at home. Gentle on nails affected by chemotherapy.',
-    ogTitle: 'BloomTips™ — Comfort Nail Collection | Nuvanaah',
+    ogTitle: 'BloomTips — Comfort Nail Collection | Nuvanaah',
     ogDescription: 'A complete press-on nail kit — 24 nails, adhesive, file, cuticle stick, prep wipe, and reusable storage pouch. Natural-looking finish in under ten minutes.',
     faqs: [
       { q: 'Do I need any special tools?', a: 'No. Everything you need is included in the kit. No UV lamp, no specialist equipment. Just the items in the box and your own hands.' },
@@ -921,22 +921,22 @@ export const products: Product[] = [
     showSizeGuide: false,
   },
 
-  // ── P12 BLOOMCROWN™ ──────────────────────────────────────────────────────
+  // ── P12 BLOOMCROWN ──────────────────────────────────────────────────────
   {
     id: 'bloomcrown',
     slug: 'bloomcrown',
-    name: 'BloomCrown™ Cranial Prosthesis',
+    name: 'BloomCrown Cranial Prosthesis',
     subtitle: 'Comfort Wig Collection',
     tagline: 'Designed to help you feel like yourself, every day.',
     price: 12000,
     priceFrom: true,
     categories: [CAT_HAIR],
     categoryNav: 'Hair & Confidence',
-    description: 'A comfort wig collection designed for natural appearance, lightweight fit, and confident everyday wear. Starting from ₹ 12,000. Wig consultations available in Vashi and Thane.',
+    description: 'A comfort wig collection designed for natural appearance, lightweight fit, and confident everyday wear. Starting from ₹ 12,000. Wig consultations available online via WhatsApp.',
     fullStory: 'Hair loss during treatment is one of the most visible and widely discussed changes it brings. It is also one of the most personal.\n\nThe decision about whether to wear a wig, which one, when, and in which contexts is deeply individual. Some women wear one every day from the first days of hair loss. Others prefer scarves. Others choose different options in different situations.\n\nBloomCrown exists for the days when you want the fullest, most natural-looking option available. Not a requirement. Not the right choice for every day. But for the days when it is your choice — when you want to look in the mirror and feel like yourself from the top of your head down — BloomCrown is designed to make that possible.\n\n"Designed to help you feel like yourself, every day."',
     images: [
-      { id: 1, src: '/images/catalog/BloomCrown/1.jpeg', alt: 'BloomCrown™ — view 1' },
-      { id: 2, src: '/images/catalog/BloomCrown/2.jpeg', alt: 'BloomCrown™ — view 2' },
+      { id: 1, src: '/images/catalog/BloomCrown/1.jpeg', alt: 'BloomCrown — view 1' },
+      { id: 2, src: '/images/catalog/BloomCrown/2.jpeg', alt: 'BloomCrown — view 2' },
     ],
     stock_status: 'instock',
     featured: true,
@@ -952,17 +952,17 @@ export const products: Product[] = [
       { title: 'A natural appearance that moves correctly', desc: 'The hair moves as real hair moves. It falls naturally. It responds to the environment the way your own hair would. That naturalness is what allows it to stop being something you manage and become something you simply wear.' },
       { title: 'Lightweight comfort for extended wear', desc: 'Heavier wigs become fatiguing. BloomCrown is constructed for all-day wear — lightweight enough that you stop noticing it is there.' },
       { title: 'Breathable construction', desc: 'The cap is constructed for airflow. Extended daily wear is possible and comfortable.' },
-      { title: 'Wig consultations available', desc: 'In-person wig consultations are available in Vashi and Thane for customers who would like guidance on options, sizing, and styles before choosing.' },
+      { title: 'Wig consultations available', desc: 'Wig consultations are available online via WhatsApp for customers who would like guidance on options, sizing, and styles before choosing.' },
     ],
     keyFeatures: [
       'Natural-looking construction',
       'Lightweight for all-day wear',
       'Breathable cap design',
       'Adjustable fit',
-      'Wig consultations available in Vashi and Thane',
+      'Wig consultations available online via WhatsApp',
       'From ₹ 12,000',
     ],
-    materialsText: 'Designed for natural appearance, lightweight fit, and extended daily wear.\n\nThe cap is adjustable and breathable. The hair is finished to move and behave as naturally as possible. Wig consultations are available in Vashi and Thane if you would like guidance before choosing.',
+    materialsText: 'Designed for natural appearance, lightweight fit, and extended daily wear.\n\nThe cap is adjustable and breathable. The hair is finished to move and behave as naturally as possible. Wig consultations are available online via WhatsApp if you would like guidance before choosing.',
     careText: [
       'Follow included care guide for washing and styling',
       'Store in the included dust bag when not in use',
@@ -978,14 +978,14 @@ export const products: Product[] = [
       'Storage dust bag',
       'Care and styling guide',
     ],
-    gentleNote: 'Hair loss during treatment is one of the most visible changes it brings. The decision about how to respond to it — wig, scarf, nothing at all — is entirely yours. There is no right answer. There is only what feels right for you, on each day.\n\nBloomCrown is here for the days when a wig is what you want. A free consultation is available if you would like guidance before choosing.',
-    technicalNames: ['cranial prosthesis', 'cancer wig', 'chemo wig', 'alopecia wig', 'medical wig', 'hair loss wig'],
-    seoTitle: 'BloomCrown™ — Cancer Wig | Cranial Prosthesis | Alopecia Wig',
+    gentleNote: 'Hair loss during treatment is one of the most visible changes it brings. The decision about how to respond to it — wig, scarf, nothing at all — is entirely yours. There is no right answer. There is only what feels right for you, on each day.\n\nBloomCrown is here for the days when a wig is what you want. A consultation is available online if you would like guidance before choosing.',
+    technicalNames: ['hair wig', 'cancer wig', 'chemo wig', 'alopecia wig', 'medical wig', 'hair loss wig'],
+    seoTitle: 'BloomCrown — Cancer Wig | Cranial Prosthesis | Alopecia Wig',
     metaDescription: 'Comfort wig collection (cranial prosthesis) for cancer, chemotherapy, and alopecia-related hair loss. Natural appearance, lightweight, breathable.',
-    ogTitle: 'BloomCrown™ — Comfort Wig Collection | Nuvanaah',
-    ogDescription: 'A premium comfort wig collection designed for natural appearance, lightweight fit, and confident daily wear. From ₹ 12,000. Free consultation recommended.',
+    ogTitle: 'BloomCrown — Comfort Wig Collection | Nuvanaah',
+    ogDescription: 'A premium comfort wig collection designed for natural appearance, lightweight fit, and confident daily wear. From ₹ 12,000. Consultation available online.',
     faqs: [
-      { q: 'Can I get a wig consultation before ordering?', a: 'Yes. In-person wig consultations are available in Vashi and Thane. We can help you understand available styles, sizing, and options. Reach out on WhatsApp to arrange.' },
+      { q: 'Can I get a wig consultation before ordering?', a: 'Yes. Wig consultations are available online via WhatsApp. We can help you understand available styles, sizing, and options. Reach out on WhatsApp to arrange.' },
       { q: 'Can I order without a consultation?', a: 'Yes. If you are confident in your choice, you can add directly to bag. Reach out to us if you have any questions before ordering.' },
       { q: 'What does "From ₹ 12,000" mean?', a: 'Different styles within the BloomCrown collection are priced from ₹ 12,000 upward depending on the style and construction. Contact us for details on specific styles.' },
       { q: 'How long does it take to receive after ordering?', a: 'Standard delivery typically takes up to 7 business days. For specific styles, please contact us to confirm lead time before ordering.' },
@@ -997,11 +997,11 @@ export const products: Product[] = [
     showSizeGuide: false,
   },
 
-  // ── P13 VINE SUPPORT™ ────────────────────────────────────────────────────
+  // ── P13 VINE SUPPORT ────────────────────────────────────────────────────
   {
     id: 'vine-support',
     slug: 'vine-support',
-    name: 'Vine Support™ Lumpectomy Breast Form',
+    name: 'Vine Support Lumpectomy Breast Form',
     subtitle: 'Soft Recovery Support Form',
     tagline: 'Gentle balance, every day.',
     price: 2200,
@@ -1011,8 +1011,8 @@ export const products: Product[] = [
     description: 'A lightweight soft recovery support form made from breathable bamboo fabric and plant fiber filling, designed to provide gentle balance and everyday comfort after lumpectomy surgery and during lymphedema recovery.',
     fullStory: 'After lumpectomy, the body\'s shape shifts in ways that are subtle but felt continuously. Vine Support is not a heavy prosthetic. It is something quieter — a soft form that sits gently, provides light balance, and disappears into the day.\n\nThe bamboo outer cover stays cool and soft against skin that may still be sensitive. The plant fiber filling is lightweight enough that you stop noticing it is there. The removable cover washes easily and dries quickly, so it is always ready.\n\nVine Support is also gentle enough for use during lymphedema recovery, where skin sensitivity and breathability matter most. It is designed for daily wear — not a clinical solution, but a comfortable, considered companion for wherever you are in recovery.',
     images: [
-      { id: 1, src: '/images/catalog/VineSupport/1.jpeg', alt: 'Vine Support™ — view 1' },
-      { id: 2, src: '/images/catalog/VineSupport/2.jpeg', alt: 'Vine Support™ — view 2' },
+      { id: 1, src: '/images/catalog/VineSupport/1.jpeg', alt: 'Vine Support — view 1' },
+      { id: 2, src: '/images/catalog/VineSupport/2.jpeg', alt: 'Vine Support — view 2' },
     ],
     stock_status: 'instock',
     featured: false,
@@ -1054,18 +1054,18 @@ export const products: Product[] = [
       '1 removable washable cover',
     ],
     gentleNote: 'Recovery after lumpectomy is its own experience — different from full mastectomy, but no less real. The changes to the body\'s shape, however small, are felt.\n\nVine Support is here for the days when a little extra balance makes the difference. Wear it when it helps. Set it aside when it doesn\'t. It will be there when you want it.',
-    technicalNames: ['lumpectomy breast form', 'partial breast form', 'lumpectomy prosthetic', 'soft breast shaper', 'breast symmetry form'],
-    seoTitle: 'Vine Support™ — Lumpectomy Breast Form | Partial Breast Form',
+    technicalNames: ['cancer care lumpectomy bra', 'lumpectomy breast form', 'partial breast form', 'lumpectomy prosthetic', 'soft breast shaper', 'breast symmetry form'],
+    seoTitle: 'Vine Support — Lumpectomy Breast Form | Partial Breast Form',
     metaDescription: 'Lightweight partial breast form (lumpectomy prosthetic) in bamboo and plant fiber. Gentle balance and breathable comfort after lumpectomy and during lymphedema recovery.',
-    ogTitle: 'Vine Support™ — Soft Recovery Support Form | Nuvanaah',
+    ogTitle: 'Vine Support — Soft Recovery Support Form | Nuvanaah',
     ogDescription: 'Lightweight recovery support form with bamboo fabric and plant fiber filling. Gentle balance and breathable comfort for lumpectomy and lymphedema recovery.',
     faqs: [
-      { q: 'What is Vine Support™?', a: 'Vine Support™ is a lightweight comfort support form designed for women recovering after lumpectomy surgery and during lymphedema care. It provides soft, gentle balance for everyday wear.' },
-      { q: 'Who can use Vine Support™?', a: 'It is designed for women looking for soft everyday comfort, gentle balance, and lightweight recovery support — particularly after lumpectomy or during lymphedema recovery.' },
-      { q: 'Is it heavy?', a: 'No. Vine Support™ is designed to feel lightweight and comfortable for everyday use. The plant fiber filling keeps it light without sacrificing its gentle support.' },
-      { q: 'Does it come in a pair?', a: 'No. Vine Support™ is provided as a single support form with one removable cover.' },
+      { q: 'What is Vine Support?', a: 'Vine Support is a lightweight comfort support form designed for women recovering after lumpectomy surgery and during lymphedema care. It provides soft, gentle balance for everyday wear.' },
+      { q: 'Who can use Vine Support?', a: 'It is designed for women looking for soft everyday comfort, gentle balance, and lightweight recovery support — particularly after lumpectomy or during lymphedema recovery.' },
+      { q: 'Is it heavy?', a: 'No. Vine Support is designed to feel lightweight and comfortable for everyday use. The plant fiber filling keeps it light without sacrificing its gentle support.' },
+      { q: 'Does it come in a pair?', a: 'No. Vine Support is provided as a single support form with one removable cover.' },
       { q: 'Is the cover removable?', a: 'Yes. It comes with a removable washable cover for daily hygiene. Remove the cover before washing and hand wash separately in cool water.' },
-      { q: 'Is it a medical prosthetic?', a: 'Vine Support™ is designed as a soft recovery comfort support form for post-surgery balance and everyday confidence. It is not a medical device.' },
+      { q: 'Is it a medical prosthetic?', a: 'Vine Support is designed as a soft recovery comfort support form for post-surgery balance and everyday confidence. It is not a medical device.' },
     ],
     isGiftPopular: false,
     comingSoon: false,

@@ -96,7 +96,7 @@ export default function LymphedemaArticle() {
                     <Heart className="w-12 h-12 mx-auto mb-4 text-white" />
                     <h2 className="text-2xl font-semibold mb-3 text-white">Early Detection is Key</h2>
                     <p className="text-white mb-4">If you notice ANY early signs, contact your doctor immediately. Early treatment can prevent progression.</p>
-                    <a href="tel:+919819461612" className="inline-flex items-center gap-2 bg-white text-teal-700 px-6 py-3 rounded-xl font-semibold">
+                    <a href="tel:+919076041779" className="inline-flex items-center gap-2 bg-white text-teal-700 px-6 py-3 rounded-xl font-semibold">
                         <Phone className="w-5 h-5" /> Get Product Advice
                     </a>
                 </div>

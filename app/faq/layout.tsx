@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'FAQ — Cancer Care Products India | Nuvanaah',
-  description: 'Frequently asked questions about cancer care products, mastectomy bras, chemotherapy accessories. Free consultations available. Shipping, returns, sizing help. Worldwide support.',
+  description: 'Frequently asked questions about cancer care products, mastectomy bras, chemotherapy accessories. Shipping, returns, sizing help. Worldwide support.',
   keywords: ['cancer care FAQ', 'mastectomy bra questions', 'chemotherapy products help', 'Nuvanaah support India'],
   alternates: {
     canonical: 'https://www.nuvanaah.com/faq',

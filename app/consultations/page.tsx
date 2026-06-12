@@ -48,8 +48,8 @@ export default function ConsultationsPage() {
               {[
                 {
                   icon: <MapPin className="w-6 h-6" />,
-                  title: 'Available in Vashi & Thane',
-                  desc: 'In-person wig consultations are available for customers located in Vashi and Thane, India.',
+                  title: 'Available Online Nationwide',
+                  desc: 'Wig and scarf consultations are available online via WhatsApp for customers across India.',
                 },
                 {
                   icon: <MessageCircle className="w-6 h-6" />,
@@ -87,7 +87,7 @@ export default function ConsultationsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { step: '01', title: 'Reach Out', desc: 'Message or call us to let us know you are interested in a wig consultation. We will confirm availability in Vashi or Thane.' },
+              { step: '01', title: 'Reach Out', desc: 'Message or call us to let us know you are interested in a wig or scarf consultation. We will get back to you on WhatsApp.' },
               { step: '02', title: 'We Talk Through Options', desc: 'We will walk you through available wig styles, sizing, and what to expect — at a pace that works for you.' },
               { step: '03', title: 'Choose with Confidence', desc: 'Leave with a clear sense of what is right for you, without pressure.' },
             ].map((s, i) => (
@@ -112,18 +112,18 @@ export default function ConsultationsPage() {
           We are available 24×7. Reach out whenever it suits you.
         </p>
         <p className="text-[#7a6f6a] text-sm mb-10">
-          In-person consultations available in Vashi and Thane, India only.
+          Consultations are available online via WhatsApp — for wigs and scarves with real hair.
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a
-            href="https://wa.me/919819461612?text=I%20would%20like%20to%20book%20a%20wig%20consultation"
+            href="https://wa.me/919076041779?text=I%20would%20like%20to%20book%20a%20wig%20consultation"
             className="flex items-center justify-center gap-3 bg-[#1c1c18] text-white px-8 py-4 rounded-full font-bold transition-all hover:bg-[#333] shadow-md hover:shadow-lg"
           >
             <MessageCircle className="w-5 h-5" /> Message on WhatsApp
           </a>
           <a
-            href="tel:+919819461612"
+            href="tel:+919076041779"
             className="flex items-center justify-center gap-3 bg-white border border-[#ded0bf] text-[#524344] px-8 py-4 rounded-full font-bold transition-all hover:border-[#884d53]/40"
           >
             <Phone className="w-5 h-5" /> Call Us

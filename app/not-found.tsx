@@ -15,8 +15,8 @@ const links = [
   },
   {
     href: '/consultations',
-    label: 'Book a Free Consultation',
-    description: 'Speak with a care specialist, privately',
+    label: 'Wig & Scarf Consultation',
+    description: 'Speak with a care advisor for wigs and headscarves',
   },
   {
     href: '/faq',

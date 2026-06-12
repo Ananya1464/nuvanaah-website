@@ -13,8 +13,8 @@ const steps = [
   {
     icon: Phone,
     number: '02',
-    title: 'Free Consultation',
-    description: 'Book a call with our certified specialists—no obligation, just guidance',
+    title: 'Wig & Scarf Guidance',
+    description: 'Book a call with our care advisors for wigs and headscarves with real hair',
   },
   {
     icon: ShoppingBag,

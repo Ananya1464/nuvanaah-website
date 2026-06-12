@@ -132,7 +132,7 @@ export default function PrivacyPolicyPage() {
               <li><strong>Portability:</strong> Receive your data in a portable format</li>
             </ul>
             <p className="text-gray-700 mt-4">
-              To exercise these rights, contact us at <a href="mailto:support@nuvanaah.com" className="text-teal-600 hover:text-teal-700 font-semibold">support@nuvanaah.com</a> or call <a href="tel:+919819461612" className="text-teal-600 hover:text-teal-700 font-semibold">+91-9819461612</a>
+              To exercise these rights, contact us at <a href="mailto:support@nuvanaah.com" className="text-teal-600 hover:text-teal-700 font-semibold">support@nuvanaah.com</a> or call <a href="tel:+919076041779" className="text-teal-600 hover:text-teal-700 font-semibold">+91-9076041779</a>
             </p>
           </section>
 
@@ -176,8 +176,8 @@ export default function PrivacyPolicyPage() {
               <p className="text-gray-700 mb-4">If you have questions about this privacy policy or your data:</p>
               <div className="space-y-2 text-gray-700">
                 <p><strong>Email:</strong> <a href="mailto:support@nuvanaah.com" className="text-teal-600 hover:text-teal-700">support@nuvanaah.com</a></p>
-                <p><strong>Phone:</strong> <a href="tel:+919819461612" className="text-teal-600 hover:text-teal-700">+91-9819461612</a> | <a href="tel:+919967711116" className="text-teal-600 hover:text-teal-700">+91-9967711116</a></p>
-                <p><strong>WhatsApp:</strong> <a href="https://wa.me/919819461612" className="text-teal-600 hover:text-teal-700" target="_blank" rel="noopener noreferrer">+91-9819461612</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+919076041779" className="text-teal-600 hover:text-teal-700">+91-9076041779</a> | <a href="tel:+919967711116" className="text-teal-600 hover:text-teal-700">+91-9967711116</a></p>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/919076041779" className="text-teal-600 hover:text-teal-700" target="_blank" rel="noopener noreferrer">+91-9076041779</a></p>
                 <p className="mt-4"><strong>Address:</strong><br />
                   Nuvanaah (K-Hair India Pvt. Ltd.)<br />
                   Mumbai, Maharashtra, India</p>

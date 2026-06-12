@@ -383,7 +383,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                         {/* WhatsApp / Call */}
                         <div className="grid grid-cols-2 gap-3 mb-8">
                             <a
-                                href={`https://wa.me/919819461612?text=I'm%20interested%20in%20${encodeURIComponent(product.name)}`}
+                                href={`https://wa.me/919076041779?text=I'm%20interested%20in%20${encodeURIComponent(product.name)}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-green-50 text-green-700 font-medium hover:bg-green-100 transition-colors"
@@ -392,7 +392,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                                 WhatsApp
                             </a>
                             <a
-                                href="tel:+919819461612"
+                                href="tel:+919076041779"
                                 className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-teal-50 text-teal-700 font-medium hover:bg-teal-100 transition-colors"
                             >
                                 <Phone className="w-5 h-5" />
@@ -501,14 +501,14 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <a
-                            href="tel:+919819461612"
+                            href="tel:+919076041779"
                             className="inline-flex items-center justify-center gap-2 bg-white text-teal-700 px-8 py-4 rounded-xl font-semibold hover:bg-cream-50 transition-colors"
                         >
                             <Phone className="w-5 h-5" />
-                            +91-9819461612
+                            +91-9076041779
                         </a>
                         <a
-                            href="https://wa.me/919819461612"
+                            href="https://wa.me/919076041779"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center justify-center gap-2 bg-teal-800 text-white px-8 py-4 rounded-xl font-semibold hover:bg-teal-900 transition-colors"

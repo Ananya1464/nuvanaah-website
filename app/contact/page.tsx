@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
-import { Phone, Mail, MessageCircle, MapPin, Clock, Send } from 'lucide-react'
+import { Phone, Mail, MessageCircle, Clock, Send } from 'lucide-react'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Contact Nuvanaah - Cancer Care Support India | Free Consultation',
-  description: 'Contact Nuvanaah for cancer care products support. Free consultations, product guidance, order help. Phone, WhatsApp, email. Mon-Sat 10AM-6PM IST. Mumbai, India.',
+  title: 'Contact Nuvanaah - Cancer Care Support India',
+  description: 'Contact Nuvanaah for cancer care products support. Product guidance, order help. Phone, WhatsApp, email. Mon-Sat 10AM-6PM IST. Mumbai, India.',
   keywords: ['contact Nuvanaah', 'cancer products support India', 'free consultation'],
 }
 
@@ -34,8 +34,8 @@ export default function ContactPage() {
               </div>
               <h3 className="text-2xl font-semibold text-tertiary-700 mb-4">Call Us</h3>
               <div className="space-y-3 mb-6">
-                <a href="tel:+919819461612" className="block text-lg font-semibold text-primary-600 hover:text-primary-700">
-                  +91-9819461612
+                <a href="tel:+919076041779" className="block text-lg font-semibold text-primary-600 hover:text-primary-700">
+                  +91-9076041779
                 </a>
                 <a href="tel:+919967711116" className="block text-lg font-semibold text-primary-600 hover:text-primary-700">
                   +91-9967711116
@@ -58,12 +58,12 @@ export default function ContactPage() {
               <h3 className="text-2xl font-semibold text-tertiary-700 mb-4">WhatsApp Us</h3>
               <div className="space-y-3 mb-6">
                 <a
-                  href="https://wa.me/919819461612"
+                  href="https://wa.me/919076041779"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block text-lg font-semibold text-secondary-600 hover:text-secondary-700"
                 >
-                  +91-9819461612
+                  +91-9076041779
                 </a>
                 <div className="flex items-center gap-2 text-tertiary-500">
                   <Clock className="w-4 h-4" />
@@ -171,7 +171,7 @@ export default function ContactPage() {
                   <option value="product">Product Question</option>
                   <option value="order">Order Support</option>
                   <option value="sizing">Sizing Help</option>
-                  <option value="consultation">Free Consultation Request</option>
+                  <option value="consultation">Wig &amp; Scarf Consultation Request</option>
                   <option value="partnership">Partnership/Hospital Inquiry</option>
                   <option value="feedback">Feedback or Complaint</option>
                   <option value="other">Other</option>
@@ -292,71 +292,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Office Address & Map Section */}
-      <section className="py-16 bg-gradient-to-b from-surface to-cream-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-light text-tertiary-700 mb-4">
-              Visit Us <span className="font-semibold text-primary-600">(By Appointment Only)</span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Address Details */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-neutral-100">
-              <div className="flex items-start gap-4 mb-6">
-                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-6 h-6 text-primary-600" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-tertiary-700 mb-2">Address</h3>
-                  <p className="text-tertiary-600 leading-relaxed">
-                    Nuvanaah<br />
-                    [Street Address]<br />
-                    [Area], Mumbai – [Pincode]<br />
-                    Maharashtra, India
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 mb-6">
-                <div className="w-12 h-12 bg-neutral-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Clock className="w-6 h-6 text-neutral-600" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-tertiary-700 mb-2">Business Hours</h3>
-                  <p className="text-tertiary-600 leading-relaxed">
-                    Monday - Saturday: 10:00 AM - 6:00 PM IST<br />
-                    Sunday: Closed<br />
-                    <span className="text-sm text-primary-600 font-medium">*Please schedule appointments in advance</span>
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-cream-50 rounded-lg p-4 border border-neutral-200">
-                <h4 className="font-semibold text-tertiary-700 mb-2">Directions:</h4>
-                <ul className="text-sm text-tertiary-600 space-y-1">
-                  <li><strong>Nearest Metro:</strong> [Station Name]</li>
-                  <li><strong>Parking:</strong> Available on premises</li>
-                  <li><strong>Landmark:</strong> [Nearby Landmark]</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Map Placeholder */}
-            <div className="bg-neutral-100 rounded-2xl overflow-hidden shadow-sm border border-neutral-200">
-              <div className="w-full h-full min-h-[400px] flex items-center justify-center bg-gradient-to-br from-primary-50 to-neutral-100">
-                <div className="text-center">
-                  <MapPin className="w-16 h-16 text-primary-600 mx-auto mb-4" />
-                  <p className="text-tertiary-500 font-medium">Google Map Embed</p>
-                  <p className="text-sm text-tertiary-400">Map will be displayed here</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Quick Reference */}
       <section className="py-16 bg-surface">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -385,9 +320,9 @@ export default function ContactPage() {
             </div>
 
             <div className="bg-cream-50 rounded-xl p-6 border border-neutral-200">
-              <h3 className="font-semibold text-tertiary-700 mb-2">Can I visit your store to see products?</h3>
+              <h3 className="font-semibold text-tertiary-700 mb-2">Can I see products before buying?</h3>
               <p className="text-tertiary-600 text-sm leading-relaxed">
-                Our Mumbai office welcomes visitors by appointment. We also have product displays at partner hospitals in major cities.
+                We are an online store only. Detailed product images and descriptions are available on every product page. For wigs and scarves, we offer consultations via WhatsApp.
               </p>
             </div>
 
@@ -420,7 +355,7 @@ export default function ContactPage() {
             Don't hesitate to reach out. No question is too small, and your comfort is our priority.
           </p>
           <a
-            href="https://wa.me/919819461612"
+            href="https://wa.me/919076041779"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-white text-primary-600 hover:bg-neutral-50 px-8 py-4 rounded-full font-semibold transition shadow-lg hover:shadow-xl"

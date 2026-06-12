@@ -138,7 +138,7 @@ export default function ChoosingProsthesisArticle() {
                                 We strongly recommend a professional fitting for your first prosthesis. Our trained fitters can help you find the perfect match for your body.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-3">
-                                <a href="tel:+919819461612" className="inline-flex items-center justify-center gap-2 bg-teal-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-teal-700 transition">
+                                <a href="tel:+919076041779" className="inline-flex items-center justify-center gap-2 bg-teal-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-teal-700 transition">
                                     <Phone className="w-5 h-5" />
                                     Book Free Fitting Consultation
                                 </a>
@@ -283,11 +283,11 @@ export default function ChoosingProsthesisArticle() {
                             Our trained fitters offer free consultation calls. We'll help you find the perfect prosthesis for your body and lifestyle.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="tel:+919819461612" className="inline-flex items-center justify-center gap-2 bg-white text-teal-700 px-8 py-4 rounded-xl font-semibold hover:bg-cream-50 transition">
+                            <a href="tel:+919076041779" className="inline-flex items-center justify-center gap-2 bg-white text-teal-700 px-8 py-4 rounded-xl font-semibold hover:bg-cream-50 transition">
                                 <Phone className="w-5 h-5" />
-                                +91-9819461612
+                                +91-9076041779
                             </a>
-                            <a href="https://wa.me/919819461612" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-teal-800 text-white px-8 py-4 rounded-xl font-semibold hover:bg-teal-900 transition">
+                            <a href="https://wa.me/919076041779" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-teal-800 text-white px-8 py-4 rounded-xl font-semibold hover:bg-teal-900 transition">
                                 <MessageCircle className="w-5 h-5" />
                                 WhatsApp Us
                             </a>

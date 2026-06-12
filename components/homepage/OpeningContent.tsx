@@ -11,7 +11,7 @@ export default function OpeningContent() {
             </p>
 
             <p className="text-lg text-gray-700 leading-relaxed">
-              From Mumbai to Delhi, Bangalore to Pune, Hyderabad to Chennai, we deliver compassionate care products that support your treatment journey. Whether you need chemo port shirts for easy infusion access, lymphedema compression sleeves for post-mastectomy swelling, or drainage bag holders for surgical recovery, Nuvanaah provides medical-grade solutions with dignity and discretion. Free consultations available. Doctor endorsed. Trusted by leading oncology hospitals across India.
+              From Mumbai to Delhi, Bangalore to Pune, Hyderabad to Chennai, we deliver compassionate care products that support your treatment journey. Whether you need chemo port shirts for easy infusion access, lymphedema compression sleeves for post-mastectomy swelling, or drainage bag holders for surgical recovery, Nuvanaah provides medical-grade solutions with dignity and discretion. Appreciated by doctors. Trusted by leading oncology hospitals across India.
             </p>
           </div>
         </div>

@@ -80,7 +80,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
           <div className="bg-white border border-[#ded0bf] rounded-2xl p-8 hover:border-[#884d53]/40 hover:shadow-md transition-all duration-300">
             <Heart className="w-10 h-10 text-[#884d53] mb-5" />
             <h3 className="font-semibold text-lg mb-2 text-[#1c1c18]">Expert Support</h3>
-            <p className="text-[#6a5448] text-sm leading-relaxed">Free consultations available with specialists who understand your journey.</p>
+            <p className="text-[#6a5448] text-sm leading-relaxed">Our care advisors support you at every step of your recovery journey.</p>
           </div>
           <div className="bg-white border border-[#ded0bf] rounded-2xl p-8 hover:border-[#884d53]/40 hover:shadow-md transition-all duration-300">
             <Truck className="w-10 h-10 text-[#884d53] mb-5" />
@@ -97,7 +97,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
               Need help choosing?
             </h2>
             <p className="text-[#524344] text-lg mb-10 max-w-xl mx-auto font-light">
-              Our specialists can help you find the perfect products for your specific phase of recovery. Book a free, completely private consultation.
+              Our specialists can help you find the perfect products for your specific phase of recovery. Reach out privately anytime.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
@@ -105,7 +105,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                 className="inline-flex items-center justify-center gap-2 bg-[#884d53] hover:bg-[#6c363c] text-white px-8 py-4 rounded-full font-medium transition-all shadow-md hover:shadow-lg"
               >
                 <Phone className="w-4 h-4" />
-                Book Free Consultation
+                Wig &amp; Scarf Consultation
               </Link>
             </div>
           </div>

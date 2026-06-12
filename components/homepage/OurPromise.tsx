@@ -17,7 +17,7 @@ const promises = [
   {
     icon: Users,
     title: 'Expert Support',
-    description: 'Free consultations with certified fitters and specialists',
+    description: 'Wig and scarf consultations with knowledgeable care advisors',
   },
   {
     icon: Award,

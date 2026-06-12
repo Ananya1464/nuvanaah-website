@@ -27,7 +27,7 @@ export function getOrganizationSchema(): SchemaMarkup {
     contact: {
       '@type': 'ContactPoint',
       contactType: 'Customer Service',
-      telephone: '+91-9819461612',
+      telephone: '+91-9076041779',
       email: 'hello@nuvanaah.com',
       areaServed: 'IN',
     },

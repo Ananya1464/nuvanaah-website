@@ -740,7 +740,7 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
             {/* CTAs */}
             <div className="flex flex-wrap gap-4">
               <a
-                href="https://wa.me/919819461612"
+                href="https://wa.me/919076041779"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 rounded-full bg-[#25D366] px-8 py-4 font-semibold text-white transition-all hover:-translate-y-0.5 hover:shadow-lg active:scale-95"

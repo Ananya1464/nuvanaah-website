@@ -82,7 +82,7 @@ export default function ChemoSideEffectsArticle() {
                     <h2 className="text-2xl font-semibold text-gray-900 mb-4">Need Chemo Comfort Products?</h2>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link href="/products" className="bg-teal-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-teal-700">Shop Chemo Accessories</Link>
-                        <a href="tel:+919819461612" className="border-2 border-teal-600 text-teal-600 px-6 py-3 rounded-xl font-semibold hover:bg-teal-50 flex items-center justify-center gap-2">
+                        <a href="tel:+919076041779" className="border-2 border-teal-600 text-teal-600 px-6 py-3 rounded-xl font-semibold hover:bg-teal-50 flex items-center justify-center gap-2">
                             <Phone className="w-5 h-5" /> Call for Advice
                         </a>
                     </div>

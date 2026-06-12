@@ -26,7 +26,7 @@ const situationCards = [
   {
     icon: Scissors,
     title: "I'm interested in a wig consultation",
-    description: "Wig guidance available in Vashi and Thane",
+    description: "Wig and scarf guidance available online via WhatsApp",
     category: 'Consultations',
   },
 ]
@@ -49,7 +49,7 @@ const faqData: Record<string, Array<{ q: string; a: string }>> = {
     },
     {
       q: 'Do you have physical stores?',
-      a: 'We currently operate online. In-person wig consultations are available in Vashi and Thane. Reach out to us on WhatsApp to arrange.',
+      a: 'We are an online store only. Wig and scarf consultations are available online via WhatsApp. Reach out to us anytime.',
     },
   ],
   Products: [
@@ -63,7 +63,7 @@ const faqData: Record<string, Array<{ q: string; a: string }>> = {
     },
     {
       q: 'Can I see the products before buying?',
-      a: 'We provide detailed product images and descriptions on each page. For wigs, a consultation in Vashi or Thane is available if you would like to see options in person before deciding.',
+      a: 'We provide detailed product images and descriptions on each page. For wigs and scarves with real hair, an online consultation via WhatsApp is available if you would like guidance before deciding.',
     },
   ],
   'Shipping & Returns': [
@@ -87,11 +87,11 @@ const faqData: Record<string, Array<{ q: string; a: string }>> = {
   Consultations: [
     {
       q: 'What consultations do you offer?',
-      a: 'Nuvanaah offers wig consultations only. Consultations are available for customers in Vashi and Thane, India.',
+      a: 'Nuvanaah offers consultations for wigs (BloomCrown) and scarves with real hair (AirBloom). Consultations are available online via WhatsApp.',
     },
     {
       q: 'How do I book a wig consultation?',
-      a: 'Reach out to us on WhatsApp or call us to arrange a time. Consultations are available for customers in Vashi and Thane.',
+      a: 'Reach out to us on WhatsApp or call us to arrange a time. Consultations are available online for customers nationwide.',
     },
     {
       q: 'Can you help me choose the right wig?',
@@ -311,7 +311,7 @@ export default function FAQPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://wa.me/919819461612"
+                href="https://wa.me/919076041779"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#1c1c18] text-white rounded-full font-medium hover:bg-[#333] transition-colors"
@@ -320,7 +320,7 @@ export default function FAQPage() {
                 WhatsApp
               </a>
               <a
-                href="tel:+919819461612"
+                href="tel:+919076041779"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white border border-[#ded0bf] text-[#524344] rounded-full font-medium hover:border-[#884d53]/40 transition-colors"
               >
                 <Phone className="w-5 h-5" />
@@ -343,7 +343,7 @@ export default function FAQPage() {
         <div className="text-center">
           <h2 className="text-xl font-semibold text-[#1c1c18] mb-3">Looking for wig guidance?</h2>
           <p className="text-[#524344] mb-6">
-            We offer wig consultation and fitting support for customers in Vashi and Thane.
+            We offer wig and scarf consultation and fitting support online via WhatsApp.
           </p>
           <Link
             href="/consultations"

@@ -12,7 +12,7 @@ export default function TrustBadges() {
     },
     {
       icon: Heart,
-      title: 'Doctor Endorsed',
+      title: 'Appreciated by Doctors',
       subtitle: 'Hospital partnerships',
     },
     {

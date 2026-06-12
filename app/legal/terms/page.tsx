@@ -198,8 +198,8 @@ export default function TermsPage() {
               <p className="text-gray-700 mb-4">For questions about these Terms:</p>
               <div className="space-y-2 text-gray-700">
                 <p><strong>Email:</strong> <a href="mailto:support@nuvanaah.com" className="text-teal-600 hover:text-teal-700">support@nuvanaah.com</a></p>
-                <p><strong>Phone:</strong> <a href="tel:+919819461612" className="text-teal-600 hover:text-teal-700">+91-9819461612</a> | <a href="tel:+919967711116" className="text-teal-600 hover:text-teal-700">+91-9967711116</a></p>
-                <p><strong>WhatsApp:</strong> <a href="https://wa.me/919819461612" className="text-teal-600 hover:text-teal-700" target="_blank" rel="noopener noreferrer">+91-9819461612</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+919076041779" className="text-teal-600 hover:text-teal-700">+91-9076041779</a> | <a href="tel:+919967711116" className="text-teal-600 hover:text-teal-700">+91-9967711116</a></p>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/919076041779" className="text-teal-600 hover:text-teal-700" target="_blank" rel="noopener noreferrer">+91-9076041779</a></p>
                 <p className="mt-4"><strong>Business Hours:</strong> Monday - Saturday, 10:00 AM - 6:00 PM IST</p>
               </div>
             </div>

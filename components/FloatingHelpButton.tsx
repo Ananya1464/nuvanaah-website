@@ -64,7 +64,7 @@ export default function FloatingHelpButton() {
 
               {/* Call */}
               <a
-                href="tel:+919819461612"
+                href="tel:+919076041779"
                 className="flex items-center gap-3 p-3 rounded-xl hover:bg-teal-50 transition-colors group"
               >
                 <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -72,7 +72,7 @@ export default function FloatingHelpButton() {
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">Call Us Now</p>
-                  <p className="text-sm text-gray-600">+91-9819461612</p>
+                  <p className="text-sm text-gray-600">+91-9076041779</p>
                 </div>
               </a>
 

@@ -125,15 +125,15 @@ export default function OrderConfirmationPage() {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3 justify-center">
                         <a
-                            href="tel:+919819461612"
+                            href="tel:+919076041779"
                             className="inline-flex items-center justify-center gap-2 text-teal-600 hover:text-teal-700 font-medium"
                         >
                             <Phone className="w-4 h-4" />
-                            +91-9819461612
+                            +91-9076041779
                         </a>
                         <span className="hidden sm:inline text-gray-300">|</span>
                         <a
-                            href="https://wa.me/919819461612"
+                            href="https://wa.me/919076041779"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center justify-center gap-2 text-green-600 hover:text-green-700 font-medium"

@@ -186,11 +186,11 @@ export default function CityPage({ params }: { params: { city: string } }) {
               </h3>
 
               <div className="space-y-6">
-                {/* Free Consultation */}
+                {/* Wig & Scarf Consultation */}
                 <div>
-                  <h4 className="font-semibold text-gray-800 mb-2">Free Consultation</h4>
+                  <h4 className="font-semibold text-gray-800 mb-2">Wig &amp; Scarf Consultation</h4>
                   <p className="text-sm text-gray-600 mb-4">
-                    Speak with our cancer care specialists about your needs.
+                    Speak with our care advisors about wigs and headscarves with real hair.
                   </p>
                   <button
                     onClick={() => setBookingOpen(true)}

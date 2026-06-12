@@ -77,7 +77,7 @@ export default function ShippingPage() {
                 Contact us before placing your order and we will do our best to arrange expedited delivery based on your location and availability.
               </p>
               <a
-                href="https://wa.me/919819461612"
+                href="https://wa.me/919076041779"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1c1c18] text-white rounded-full text-sm font-medium hover:bg-[#333] transition-colors"
@@ -120,7 +120,7 @@ export default function ShippingPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <a
-              href="https://wa.me/919819461612"
+              href="https://wa.me/919076041779"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#1c1c18] text-white rounded-full font-medium hover:bg-[#333] transition-colors"
@@ -129,7 +129,7 @@ export default function ShippingPage() {
               WhatsApp
             </a>
             <a
-              href="tel:+919819461612"
+              href="tel:+919076041779"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white border border-[#ded0bf] text-[#524344] rounded-full font-medium hover:border-[#884d53]/40 transition-colors"
             >
               <Phone className="w-4 h-4" />

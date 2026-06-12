@@ -36,7 +36,6 @@ export default function ProductsClient() {
 
   const priceFilterOptions = [
     { id: 'all', label: 'All prices' },
-    { id: 'under-2000', label: 'Under ₹ 2,000' },
     { id: '2000-5000', label: '₹ 2,000 – ₹ 5,000' },
     { id: 'above-5000', label: '₹ 5,000 and above' },
   ]
@@ -60,7 +59,6 @@ export default function ProductsClient() {
     if (p.id === 'flowsleeve') priceValue = 1575
     if (p.id === 'bloomcrown') priceValue = 12000
 
-    if (priceFilter === 'under-2000') return priceValue < 2000
     if (priceFilter === '2000-5000') return priceValue >= 2000 && priceValue <= 5000
     if (priceFilter === 'above-5000') return priceValue > 5000
 
@@ -97,7 +95,7 @@ export default function ProductsClient() {
             </span>
             <span className="h-3 w-px bg-[#ded0bf] hidden sm:block"></span>
             <span className="flex items-center gap-1.5 font-semibold">
-              <Heart className="w-4 h-4 text-[#884d53]" /> Doctor Endorsed
+              <Heart className="w-4 h-4 text-[#884d53]" /> Appreciated by Doctors
             </span>
             <span className="h-3 w-px bg-[#ded0bf] hidden sm:block"></span>
             <span className="flex items-center gap-1.5 font-semibold">
@@ -203,7 +201,7 @@ export default function ProductsClient() {
                   )}
                   {isFeatured && (
                     <span className="bg-[#446651] text-white text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm">
-                      Free Consultation
+                      Featured
                     </span>
                   )}
                 </div>
@@ -256,7 +254,7 @@ export default function ProductsClient() {
                           )}
                         </p>
                       )}
-                      <p className="text-[10px] text-[#847374] font-medium">Free delivery over ₹ 999</p>
+                      <p className="text-[10px] text-[#847374] font-medium">Free delivery across India</p>
                     </div>
 
                     {product.id === 'bloomcrown' ? (
@@ -291,7 +289,7 @@ export default function ProductsClient() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-sm mx-auto">
             <a
-              href="https://wa.me/919819461612"
+              href="https://wa.me/919076041779"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-[#884d53] hover:bg-[#6e3d42] text-white px-6 py-3 rounded-full font-bold text-xs transition-all shadow-sm flex-1"

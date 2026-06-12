@@ -281,7 +281,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
                 </div>
               ))}
             </div>
-            <p className="text-[10px] text-[#7a6f6a] mt-2">Not sure? <a href="https://wa.me/919819461612" target="_blank" rel="noopener noreferrer" className="text-[#884d53] font-semibold hover:underline">Chat with us →</a></p>
+            <p className="text-[10px] text-[#7a6f6a] mt-2">Not sure? <a href="https://wa.me/919076041779" target="_blank" rel="noopener noreferrer" className="text-[#884d53] font-semibold hover:underline">Chat with us →</a></p>
           </div>
         </div>
       )
@@ -722,7 +722,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
             {product.priceOnRequest ? (
               <div className="space-y-3 pt-1">
                 <a
-                  href="https://wa.me/919819461612"
+                  href="https://wa.me/919076041779"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-[#884d53] hover:bg-[#6e3d42] text-white py-3.5 rounded-full font-semibold flex items-center justify-center gap-2 transition-all text-sm shadow-sm"
@@ -735,13 +735,13 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
               <button disabled className="w-full bg-[rgba(28,28,24,0.3)] text-white py-3.5 rounded-full font-semibold text-sm cursor-not-allowed">
                 Coming Soon
               </button>
-            ) : product.id === 'bloomcrown' ? (
+            ) : (product.id === 'bloomcrown' || product.id === 'airbloom') ? (
               <div className="space-y-2 pt-1">
                 <Link
                   href="/consultations"
                   className="w-full bg-[#884d53] hover:bg-[#6e3d42] text-white py-3.5 rounded-full font-semibold flex items-center justify-center gap-2 transition-all text-sm shadow-sm text-center"
                 >
-                  Book a Free Consultation
+                  Book Wig & Scarf Consultation
                 </Link>
                 <button
                   type="button"
@@ -776,7 +776,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
                 </div>
                 {product.whatsappCTA && product.id === 'willow-support' && (
                   <a
-                    href="https://wa.me/919819461612"
+                    href="https://wa.me/919076041779"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs text-[#884d53] font-semibold hover:underline flex justify-center"
@@ -1172,7 +1172,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
           </div>
           {product.priceOnRequest ? (
             <a
-              href="https://wa.me/919819461612"
+              href="https://wa.me/919076041779"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#884d53] text-white px-5 py-2.5 rounded-full font-semibold text-xs whitespace-nowrap hover:bg-[#6e3d42] transition-all shrink-0"

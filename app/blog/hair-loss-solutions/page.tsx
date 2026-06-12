@@ -96,8 +96,8 @@ export default function HairLossSolutionsArticle() {
 
                 <div className="bg-white border border-gray-200 rounded-2xl p-8 text-center">
                     <h2 className="text-2xl font-semibold text-gray-900 mb-4">Need Help Choosing?</h2>
-                    <a href="tel:+919819461612" className="inline-flex items-center gap-2 bg-teal-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-teal-700">
-                        <Phone className="w-5 h-5" /> Free Consultation Call
+                    <a href="tel:+919076041779" className="inline-flex items-center gap-2 bg-teal-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-teal-700">
+                        <Phone className="w-5 h-5" /> Call Us
                     </a>
                 </div>
             </div>
