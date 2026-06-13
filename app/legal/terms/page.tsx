@@ -107,7 +107,6 @@ export default function TermsPage() {
               <li>Credit/Debit Cards</li>
               <li>UPI Payments</li>
               <li>Net Banking</li>
-              <li>Cash on Delivery (COD) - for eligible orders</li>
             </ul>
           </section>
 

@@ -21,7 +21,7 @@ const features = [
   {
     icon: Wallet,
     title: 'Safe & Easy Payments',
-    description: 'Pay via UPI, Card, or Cash on Delivery.',
+    description: 'Pay securely via UPI, Card, or Netbanking.',
   },
 ]
 

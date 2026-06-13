@@ -25,7 +25,7 @@ folders_map = {
 
 base_data = {
     'comfort-shape': {
-        'name': 'Comfort Shape™',
+        'name': 'BloomForm | Breast Form',
         'subtitle': 'Plant-Fiber Breast Form',
         'categories': ['CAT_RECOVERY'],
         'tags': ['after-surgery', 'prosthetic', 'recovery', 'body-support'],
@@ -37,7 +37,7 @@ base_data = {
         'tagline': 'Straight where it meets the body. Curved where it creates shape.'
     },
     'willow-support': {
-        'name': 'Willow Support™',
+        'name': 'Willow Support | Mastectomy Bra',
         'subtitle': 'Post-Surgery Comfort Bra  |  Set of 2',
         'categories': ['CAT_RECOVERY'],
         'tags': ['after-surgery', 'bra', 'drain-management', 'recovery'],
@@ -49,7 +49,7 @@ base_data = {
         'whatsappCTA': True
     },
     'nature-nest': {
-        'name': 'Nature Nest™',
+        'name': 'Nature Nest | Underarm Pillow',
         'subtitle': 'Underarm Rest Pillow',
         'categories': ['CAT_RECOVERY'],
         'tags': ['after-surgery', 'pillow', 'arm-support', 'recovery'],
@@ -60,7 +60,7 @@ base_data = {
         'variantOptions': ['Wildflower Garden', 'Willow Print', 'Aparajita Petals']
     },
     'airbloom': {
-        'name': 'AirBloom™',
+        'name': 'AirBloom | Chemo Headscarf',
         'subtitle': 'Hair Scarf System',
         'categories': ['CAT_HAIR'],
         'tags': ['hair-loss', 'scarf', 'hair-system', 'confidence'],
@@ -71,7 +71,7 @@ base_data = {
         'variantOptions': ['Dusty Miller', 'Coffee Bean', 'Magnolia', 'Ebony']
     },
     'willow-wrap': {
-        'name': 'Willow Wrap™',
+        'name': 'Willow Wrap | Chemo Headscarf',
         'subtitle': 'Soft Head Scarf Collection',
         'categories': ['CAT_HAIR'],
         'tags': ['hair-loss', 'scarf', 'head-cover', 'confidence'],
@@ -82,7 +82,7 @@ base_data = {
         'variantOptions': ['Wildflower Garden', 'Willow Print', 'Aparajita Petals']
     },
     'flowsleeve': {
-        'name': 'FlowSleeve™',
+        'name': 'FlowSleeve | Lymphedema Sleeve',
         'subtitle': 'Lymphedema Compression Sleeve with Holding Belt',
         'categories': ['CAT_RECOVERY'],
         'tags': ['lymphedema', 'arm-sleeve', 'compression', 'recovery'],
@@ -93,7 +93,7 @@ base_data = {
         'variantOptions': ['Indian', 'Imported']
     },
     'nest-carry': {
-        'name': 'Nest Carry™',
+        'name': 'Nest Carry | Post-Surgery Kit',
         'subtitle': 'Recovery Support Kit',
         'categories': ['CAT_RECOVERY'],
         'tags': ['after-surgery', 'kit', 'recovery', 'gift'],
@@ -103,7 +103,7 @@ base_data = {
         'isGiftPopular': True
     },
     'petalwrap': {
-        'name': 'PetalWrap™',
+        'name': 'PetalWrap | Bamboo Bath Towel',
         'subtitle': 'Comfort Towel Collection',
         'categories': ['CAT_WELLNESS'],
         'tags': ['daily', 'towel', 'bamboo', 'wellness'],
@@ -115,7 +115,7 @@ base_data = {
         'dimensions': '58+ inches × 27–28 inches'
     },
     'dewleaf': {
-        'name': 'DewLeaf™',
+        'name': 'DewLeaf | Bamboo Face Towel',
         'subtitle': 'Recovery Towel Collection',
         'categories': ['CAT_WELLNESS'],
         'tags': ['daily', 'towel', 'bamboo', 'wellness', 'travel'],
@@ -128,7 +128,7 @@ base_data = {
         'comingSoon': True
     },
     'browbloom': {
-        'name': 'BrowBloom™',
+        'name': 'BrowBloom | Eyebrow Prosthesis',
         'subtitle': 'Ready-to-Wear Eyebrows',
         'categories': ['CAT_HAIR'],
         'tags': ['hair-loss', 'eyebrows', 'confidence', 'beauty'],
@@ -139,7 +139,7 @@ base_data = {
         'variantOptions': ['Coffee Bean', 'Bamboo Woods']
     },
     'bloomtips': {
-        'name': 'BloomTips™',
+        'name': 'BloomTips | Press-On Nails',
         'subtitle': 'Comfort Nail Collection',
         'categories': ['CAT_WELLNESS'],
         'tags': ['daily', 'nails', 'confidence', 'beauty', 'wellness'],
@@ -150,7 +150,7 @@ base_data = {
         'tagline': 'Little details. Beautiful confidence.'
     },
     'bloomcrown': {
-        'name': 'BloomCrown™',
+        'name': 'BloomCrown | Medical Wig',
         'subtitle': 'Comfort Wig Collection',
         'categories': ['CAT_HAIR'],
         'priceFrom': True,

@@ -13,6 +13,7 @@ export interface ProductVariation {
 export interface Product {
   id: string | number
   name: string
+  technical?: string
   subtitle?: string
   slug?: string
   description: string

@@ -31,7 +31,7 @@ const shopCategories = [
       { name: 'AirBloom',    slug: 'airbloom',    technical: 'Chemo Headscarf' },
       { name: 'Willow Wrap', slug: 'willow-wrap', technical: 'headscarf' },
       { name: 'BrowBloom',   slug: 'browbloom',   technical: 'Eyebrow Prosthesis' },
-      { name: 'BloomCrown',  slug: 'bloomcrown',  technical: 'hair wig' },
+      { name: 'BloomCrown',  slug: 'bloomcrown',  technical: 'medical wig' },
     ],
   },
   {
@@ -101,8 +101,8 @@ export default function Header() {
       {/* ── ANNOUNCEMENT BAR ── */}
       {!announcementDismissed && (
         <div className="relative flex h-8 w-full items-center justify-center bg-[#884d53] px-12 text-[12px] font-medium tracking-wide text-white">
-          <span className="hidden md:inline">Free shipping across India &nbsp;·&nbsp; COD available &nbsp;·&nbsp; 24×7 support</span>
-          <span className="inline md:hidden">Free shipping in India &nbsp;·&nbsp; COD available</span>
+          <span className="hidden md:inline">Free shipping across India &nbsp;·&nbsp; 24×7 support</span>
+          <span className="inline md:hidden">Free shipping across India</span>
           <button
             onClick={dismissAnnouncement}
             className="absolute right-4 flex h-5 w-5 items-center justify-center text-white/70 transition hover:text-white"

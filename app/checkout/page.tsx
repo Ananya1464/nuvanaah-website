@@ -7,7 +7,7 @@ import { trackPurchase } from '@/lib/analytics'
 import {
   Check, ChevronLeft, ShoppingBag, MapPin, CreditCard,
   ClipboardCheck, Truck, Shield, ArrowRight,
-  Banknote, Smartphone
+  Smartphone
 } from 'lucide-react'
 import { useCart } from '@/lib/cart-context'
 
@@ -54,7 +54,6 @@ export default function CheckoutPage() {
     saveAddress: true,
   })
 
-  const [paymentMethod, setPaymentMethod] = useState<'cod' | 'online'>('cod')
   const [errors, setErrors] = useState<Record<string, string>>({})
 
   // Calculate totals
@@ -361,57 +360,17 @@ export default function CheckoutPage() {
                 </h2>
 
                 <div className="space-y-4">
-                  {/* COD Option */}
-                  <label
-                    className={`flex items-center gap-4 p-6 rounded-2xl border-2 cursor-pointer transition-all ${paymentMethod === 'cod'
-                      ? 'border-teal-500 bg-teal-50'
-                      : 'border-gray-200 hover:border-gray-300'
-                      }`}
-                  >
-                    <input
-                      type="radio"
-                      name="payment"
-                      value="cod"
-                      checked={paymentMethod === 'cod'}
-                      onChange={() => setPaymentMethod('cod')}
-                      className="w-5 h-5 text-teal-500 focus:ring-teal-500"
-                    />
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3">
-                        <Banknote className="w-6 h-6 text-green-600" />
-                        <span className="font-semibold text-gray-900">Cash on Delivery (COD)</span>
-                        <span className="bg-green-100 text-green-700 text-xs font-medium px-2 py-0.5 rounded-full">
-                          Popular
-                        </span>
-                      </div>
-                      <p className="text-gray-600 text-sm mt-1 ml-9">
-                        Pay when your order arrives. No extra charges.
-                      </p>
-                    </div>
-                  </label>
-
                   {/* Online Payment Option */}
-                  <label
-                    className={`flex items-center gap-4 p-6 rounded-2xl border-2 cursor-pointer transition-all ${paymentMethod === 'online'
-                      ? 'border-teal-500 bg-teal-50'
-                      : 'border-gray-200 hover:border-gray-300'
-                      }`}
+                  <div
+                    className="flex items-center gap-4 p-6 rounded-2xl border-2 border-teal-500 bg-teal-50 transition-all"
                   >
-                    <input
-                      type="radio"
-                      name="payment"
-                      value="online"
-                      checked={paymentMethod === 'online'}
-                      onChange={() => setPaymentMethod('online')}
-                      className="w-5 h-5 text-teal-500 focus:ring-teal-500"
-                    />
                     <div className="flex-1">
                       <div className="flex items-center gap-3">
                         <Smartphone className="w-6 h-6 text-blue-600" />
                         <span className="font-semibold text-gray-900">Pay Online</span>
                       </div>
                       <p className="text-gray-600 text-sm mt-1 ml-9">
-                        UPI, Credit/Debit Card, Net Banking
+                        UPI, Credit/Debit Card, Net Banking (Processed securely via Razorpay)
                       </p>
                       <div className="flex gap-2 mt-3 ml-9">
                         <div className="bg-white border border-gray-200 rounded-lg px-3 py-1 text-xs text-gray-600">UPI</div>
@@ -419,17 +378,8 @@ export default function CheckoutPage() {
                         <div className="bg-white border border-gray-200 rounded-lg px-3 py-1 text-xs text-gray-600">Net Banking</div>
                       </div>
                     </div>
-                  </label>
-                </div>
-
-                {/* COD Info */}
-                {paymentMethod === 'cod' && (
-                  <div className="mt-6 bg-amber-50 border border-amber-200 rounded-xl p-4">
-                    <p className="text-sm text-amber-800">
-                      <strong>Note:</strong> Please keep exact change ready. Our delivery partner may not have change for large denominations.
-                    </p>
                   </div>
-                )}
+                </div>
 
                 {/* Buttons */}
                 <div className="mt-8 flex justify-between">
@@ -505,17 +455,8 @@ export default function CheckoutPage() {
                     </button>
                   </div>
                   <div className="bg-gray-50 rounded-xl p-4 flex items-center gap-3">
-                    {paymentMethod === 'cod' ? (
-                      <>
-                        <Banknote className="w-6 h-6 text-green-600" />
-                        <span className="font-medium text-gray-900">Cash on Delivery</span>
-                      </>
-                    ) : (
-                      <>
-                        <CreditCard className="w-6 h-6 text-blue-600" />
-                        <span className="font-medium text-gray-900">Pay Online (Razorpay)</span>
-                      </>
-                    )}
+                    <CreditCard className="w-6 h-6 text-blue-600" />
+                    <span className="font-medium text-gray-900">Pay Online (Razorpay)</span>
                   </div>
                 </div>
 

@@ -113,7 +113,7 @@ export default function CartDrawer() {
 
             {/* Trust chips */}
             <div className="flex gap-2 px-5 py-3 border-b border-[#ded0bf]/40">
-              {['Free shipping in India', 'COD available', '24×7 support'].map(chip => (
+              {['Free shipping in India', 'Quality Assured', '24×7 support'].map(chip => (
                 <span key={chip} className="rounded-full border border-[#ded0bf]/60 bg-white px-2.5 py-1 text-[10px] font-medium text-[#7a6f6a] whitespace-nowrap">
                   {chip}
                 </span>

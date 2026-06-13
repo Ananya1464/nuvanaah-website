@@ -789,7 +789,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
 
             {/* Trust chips */}
             <div className="flex flex-wrap gap-2 pt-1 border-t border-[rgba(28,28,24,0.08)] mt-2">
-              {['Free shipping in India', 'COD available', '24×7 support'].map(chip => (
+              {['Free shipping in India', 'Quality Assured', '24×7 support'].map(chip => (
                 <span key={chip} className="bg-[rgba(28,28,24,0.04)] text-[#7a6f6a] text-[11px] font-medium px-3 py-1.5 rounded-full">
                   {chip}
                 </span>

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.nuvanaah.com'),
   title: 'Cancer Accessories India | Mastectomy Bras, Chemo Shirts | Nuvanaah',
   description:
-    'Premium cancer care accessories for patients in India. Mastectomy bras, breast prosthesis, chemo port shirts, lymphedema sleeves. Free shipping. COD available.',
+    'Premium cancer care accessories for patients in India. Mastectomy bras, breast prosthesis, chemo port shirts, lymphedema sleeves. Free shipping across India.',
   authors: [{ name: 'Nuvanaah Team' }],
   robots: 'index, follow',
   icons: {
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     url: 'https://www.nuvanaah.com',
     title: 'Cancer Accessories India | Mastectomy Bras, Chemo Shirts | Nuvanaah',
     description:
-      'Premium cancer care accessories for patients in India. Mastectomy bras, breast prosthesis, chemo port shirts. Free shipping. COD available.',
+      'Premium cancer care accessories for patients in India. Mastectomy bras, breast prosthesis, chemo port shirts. Free shipping across India.',
     siteName: 'Nuvanaah',
     images: [
       {

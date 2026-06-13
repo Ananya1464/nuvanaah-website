@@ -4,9 +4,9 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import {
-    Heart, Truck, Phone, Check,
+    Heart, Truck, Phone, Check, Shield,
     Plus, Minus, ShoppingCart, Zap, Star, Share2, MessageCircle,
-    Package, RotateCcw, Clock, ChevronRight
+    Clock, ChevronRight
 } from 'lucide-react'
 import { useCart } from '@/lib/cart-context'
 import { useWishlist } from '@/lib/wishlist-context'
@@ -413,20 +413,20 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                             </div>
                             <div className="flex items-center gap-3">
                                 <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center">
-                                    <Package className="w-5 h-5 text-blue-600" />
+                                    <Shield className="w-5 h-5 text-blue-600" />
                                 </div>
                                 <div>
-                                    <p className="font-semibold text-gray-900 text-sm">COD Available</p>
-                                    <p className="text-xs text-gray-500">Pay on delivery</p>
+                                    <p className="font-semibold text-gray-900 text-sm">Quality Assured</p>
+                                    <p className="text-xs text-gray-500">Premium materials</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-3">
                                 <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center">
-                                    <RotateCcw className="w-5 h-5 text-amber-600" />
+                                    <Heart className="w-5 h-5 text-amber-600" />
                                 </div>
                                 <div>
-                                    <p className="font-semibold text-gray-900 text-sm">Easy Returns</p>
-                                    <p className="text-xs text-gray-500">7-day exchange</p>
+                                    <p className="font-semibold text-gray-900 text-sm">Legacy of Care</p>
+                                    <p className="text-xs text-gray-500">Trusted since 1976</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-3">

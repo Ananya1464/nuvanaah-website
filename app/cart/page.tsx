@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Trash2, Plus, Minus, ShoppingBag, ArrowRight, Shield, Truck, CreditCard, Phone } from 'lucide-react'
+import { Trash2, Plus, Minus, ShoppingBag, ArrowRight, Shield, Truck, Phone } from 'lucide-react'
 import { useCart } from '@/lib/cart-context'
 import { trackBeginCheckout } from '@/lib/analytics'
 
@@ -205,8 +205,8 @@ export default function CartPage() {
                     <span>Free Shipping in India</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CreditCard className="h-4 w-4 text-secondary-500" />
-                    <span>COD Available</span>
+                    <Shield className="h-4 w-4 text-secondary-500" />
+                    <span>Quality Assured</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Phone className="h-4 w-4 text-secondary-500" />

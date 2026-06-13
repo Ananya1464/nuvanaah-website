@@ -23,7 +23,7 @@ export default function TrustBadges() {
     {
       icon: Truck,
       title: 'Free Delivery',
-      subtitle: 'COD Available',
+      subtitle: 'Across India',
     },
   ]
 

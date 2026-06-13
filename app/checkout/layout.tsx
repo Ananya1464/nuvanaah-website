@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Checkout — Nuvanaah',
-  description: 'Complete your order securely. COD and online payment available.',
+  description: 'Complete your order securely. Safe online payment available.',
   robots: 'noindex',
 }
 
