@@ -112,7 +112,6 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
   const { addItem } = useCart()
   const { isInWishlist, toggleItem } = useWishlist()
 
-  const isComplimentaryGift = product.isComplimentaryGift === true || product.tags?.includes('gift') === true
 
   // Variant states
   const [selectedColour, setSelectedColour] = useState(product.variantOptions?.[0] || '')
@@ -452,8 +451,8 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
       return (
         <div className="space-y-4">
           <div className="space-y-2">
-            <p className="text-[11px] font-semibold uppercase tracking-widest text-[#7a6f6a]">Style</p>
-            <div role="radiogroup" aria-label="Style" className="flex gap-2 flex-wrap">
+            <p className="text-[11px] font-semibold uppercase tracking-widest text-[#7a6f6a]">{product.variantLabel || 'Style'}</p>
+            <div role="radiogroup" aria-label={product.variantLabel || 'Style'} className="flex gap-2 flex-wrap">
               {product.variantOptions.map(style => (
                 <button key={style} type="button" role="radio" aria-checked={selectedStyle === style}
                   onClick={() => setSelectedStyle(style)}
@@ -505,6 +504,8 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
   let currentPrice = product.price
   if (product.id === 'flowsleeve') {
     currentPrice = selectedVersion === 'Imported' ? 2840 : 1575
+  } else if (product.id === 'bloomcrown') {
+    currentPrice = selectedStyle === '20-22 inches' ? 16000 : 12000
   }
 
   const handleAddToCart = () => {
@@ -515,6 +516,9 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
       if (!selectedSide) return;
       itemName = `${product.name} (${selectedSide})`;
       itemId = `${product.id}-${selectedSide.toLowerCase()}`;
+    } else if (product.id === 'bloomcrown') {
+      itemName = `${product.name} (${selectedStyle})`;
+      itemId = `${product.id}-${selectedStyle.replace(/\s+/g, '-').toLowerCase()}`;
     } else if (product.variantLabel === 'Colour' && selectedColour) {
       itemName = `${product.name} (${selectedColour})`;
       itemId = `${product.id}-${selectedColour.replace(/\s+/g, '-').toLowerCase()}`;
@@ -533,11 +537,9 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
     })
   }
 
-  const priceDisplay = isComplimentaryGift
-    ? 'Complimentary Gift'
-    : product.priceOnRequest
-      ? 'Price on request'
-      : `${product.priceFrom ? 'From ' : ''}₹ ${Number(currentPrice).toLocaleString('en-IN')}`
+  const priceDisplay = product.priceOnRequest
+    ? 'Price on request'
+    : `${product.priceFrom ? 'From ' : ''}₹ ${Number(currentPrice).toLocaleString('en-IN')}`
 
   const stockStatus = product.stock_status
 
@@ -700,7 +702,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
 
             {/* Price + badges */}
             <div className="flex items-center gap-3 flex-wrap pb-5 border-b border-[rgba(28,28,24,0.1)]">
-              <span className={`text-2xl font-semibold ${product.priceOnRequest || isComplimentaryGift ? 'text-[#7a6f6a] text-lg' : 'text-[#1c1c18]'}`}>
+              <span className={`text-2xl font-semibold ${product.priceOnRequest ? 'text-[#7a6f6a] text-lg' : 'text-[#1c1c18]'}`}>
                 {priceDisplay}
               </span>
               {product.priceNote && (
@@ -708,9 +710,9 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
                   {product.priceNote}
                 </span>
               )}
-              {(product.isGiftPopular || isComplimentaryGift) && (
+              {product.isGiftPopular && (
                 <span className="bg-[#884d53]/8 text-[#884d53] text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
-                  {isComplimentaryGift ? 'Complimentary Gift' : 'Popular Gift'}
+                  Popular Gift
                 </span>
               )}
             </div>
@@ -735,22 +737,6 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
               <button disabled className="w-full bg-[rgba(28,28,24,0.3)] text-white py-3.5 rounded-full font-semibold text-sm cursor-not-allowed">
                 Coming Soon
               </button>
-            ) : (product.id === 'bloomcrown') ? (
-              <div className="space-y-2 pt-1">
-                <Link
-                  href="/consultations"
-                  className="w-full bg-[#884d53] hover:bg-[#6e3d42] text-white py-3.5 rounded-full font-semibold flex items-center justify-center gap-2 transition-all text-sm shadow-sm text-center"
-                >
-                  Book Consultation
-                </Link>
-                <button
-                  type="button"
-                  onClick={handleAddToCart}
-                  className="w-full text-center text-xs font-semibold text-[#884d53] hover:underline py-2"
-                >
-                  Already know your style? Add to Bag →
-                </button>
-              </div>
             ) : (
               <div className="space-y-3 pt-1">
                 <div className="flex gap-2">
@@ -1149,11 +1135,9 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
                     <h3 className="text-sm font-semibold text-[#1c1c18] mb-0.5">{p.name}</h3>
                     {p.subtitle && <p className="text-[11px] text-[#7a6f6a] mb-2">{p.subtitle}</p>}
                     <p className="text-sm font-semibold text-[#884d53]">
-                      {p.isComplimentaryGift || p.tags?.includes('gift')
-                        ? 'Complimentary Gift'
-                        : p.priceOnRequest
-                          ? 'Price on request'
-                          : `${p.priceFrom ? 'From ' : ''}₹${Number(p.price).toLocaleString('en-IN')}`}
+                      {p.priceOnRequest
+                        ? 'Price on request'
+                        : `${p.priceFrom ? 'From ' : ''}₹${Number(p.price).toLocaleString('en-IN')}`}
                     </p>
                   </div>
                 </Link>
@@ -1183,11 +1167,6 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
             <button disabled className="bg-[rgba(28,28,24,0.3)] text-white px-5 py-2.5 rounded-full font-semibold text-xs cursor-not-allowed shrink-0">
               Coming Soon
             </button>
-          ) : product.id === 'bloomcrown' ? (
-            <Link href="/consultations"
-              className="bg-[#884d53] text-white px-5 py-2.5 rounded-full font-semibold text-xs whitespace-nowrap hover:bg-[#6e3d42] transition-all text-center shrink-0">
-              Consultation
-            </Link>
           ) : (
             <button
               type="button"
@@ -1204,7 +1183,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
       {/* Lightbox */}
       {isLightboxOpen && productImages.length > 0 && (
         <div
-          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center"
+          className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-center justify-center"
           role="dialog"
           aria-modal="true"
           aria-label="Image viewer"
@@ -1214,7 +1193,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
             type="button"
             onClick={() => setIsLightboxOpen(false)}
             aria-label="Close image viewer"
-            className="absolute top-4 right-4 z-50 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all"
+            className="absolute top-4 right-4 z-[101] w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all"
           >
             <X className="w-5 h-5" />
           </button>

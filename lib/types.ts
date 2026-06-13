@@ -64,7 +64,6 @@ export interface Product {
   whenToUseNote?: string
   // New configuration fields for product page specs
   isGiftPopular?: boolean
-  isComplimentaryGift?: boolean
   tagline?: string
   comingSoon?: boolean
   dimensions?: string

@@ -196,13 +196,15 @@ export default function Hero() {
                 Explore Products
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link
-                href="/consultations"
+              <a
+                href="https://wa.me/919076041779"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center gap-2 bg-white hover:bg-cream-50 text-teal-700 border-2 border-teal-600 px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:-translate-y-0.5"
               >
-                Book Consultation
+                WhatsApp Us
                 <Heart className="w-5 h-5 group-hover:scale-110 transition-transform" />
-              </Link>
+              </a>
             </motion.div>
 
             {/* Government Badge */}

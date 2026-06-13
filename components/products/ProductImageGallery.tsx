@@ -27,7 +27,10 @@ export default function ProductImageGallery({ images, productName }: ProductImag
   return (
     <div className="space-y-4">
       {/* Main Image */}
-      <div className="relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-cream-50 to-sage-50 group">
+      <div 
+        onClick={() => setIsZoomed(true)}
+        className="relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-cream-50 to-sage-50 group cursor-zoom-in"
+      >
         <Image
           src={images[selectedImage]}
           alt={`${productName} - View ${selectedImage + 1}`}
@@ -40,7 +43,7 @@ export default function ProductImageGallery({ images, productName }: ProductImag
 
         {/* Zoom Button */}
         <button
-          onClick={() => setIsZoomed(true)}
+          onClick={(e) => { e.stopPropagation(); setIsZoomed(true); }}
           className="absolute top-4 right-4 bg-white/80 backdrop-blur-sm p-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white shadow-lg"
           aria-label="Zoom image"
         >
@@ -124,7 +127,7 @@ export default function ProductImageGallery({ images, productName }: ProductImag
       {/* Zoom Modal */}
       {isZoomed && (
         <div
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 cursor-zoom-out"
+          className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4 cursor-zoom-out"
           onClick={() => setIsZoomed(false)}
         >
           <div className="relative w-full h-full max-w-6xl max-h-[90vh]">

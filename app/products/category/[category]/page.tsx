@@ -97,16 +97,18 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
               Need help choosing?
             </h2>
             <p className="text-[#524344] text-lg mb-10 max-w-xl mx-auto font-light">
-              Our specialists can help you find the perfect products for your specific phase of recovery. Reach out privately anytime.
+              Our specialists are available 24/7 to help you find the perfect products for your specific phase of recovery. Reach out to us on WhatsApp anytime.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/consultations"
-                className="inline-flex items-center justify-center gap-2 bg-[#884d53] hover:bg-[#6c363c] text-white px-8 py-4 rounded-full font-medium transition-all shadow-md hover:shadow-lg"
+              <a 
+                href="https://wa.me/919076041779"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba56] text-white px-8 py-4 rounded-full font-medium transition-all shadow-md hover:shadow-lg"
               >
                 <Phone className="w-4 h-4" />
-                Wig &amp; Scarf Consultation
-              </Link>
+                WhatsApp Care Team
+              </a>
             </div>
           </div>
         </div>

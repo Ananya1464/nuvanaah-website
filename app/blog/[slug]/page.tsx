@@ -64,10 +64,10 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           <div className="bg-primary-fixed rounded-card p-8 text-center flex flex-col items-center justify-center">
             <CalendarHeart className="text-primary-700 w-10 h-10 mb-4" strokeWidth={1} />
             <h4 className="font-display text-2xl font-bold text-primary-700 mb-2">Need Guidance?</h4>
-            <p className="font-ui text-sm text-primary-700/80 mb-6">Book a free 1-on-1 session with our care experts.</p>
-            <Link href="/consultations" className="rounded-full bg-white px-8 py-3 text-sm font-bold text-primary-700 transition hover:bg-white/90">
-              Book Free Consult
-            </Link>
+            <p className="font-ui text-sm text-primary-700/80 mb-6">Reach out to our care team via WhatsApp for personalized help.</p>
+            <a href="https://wa.me/919076041779" target="_blank" rel="noopener noreferrer" className="rounded-full bg-white px-8 py-3 text-sm font-bold text-primary-700 transition hover:bg-white/90">
+              WhatsApp Us
+            </a>
           </div>
         </div>
       </section>

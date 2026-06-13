@@ -13,9 +13,6 @@ interface ProductCardProps {
   product: Product
 }
 
-const isComplimentaryGift = (product: Product) =>
-  product.isComplimentaryGift === true || product.tags?.includes('gift') === true
-
 export default function ProductCard({ product }: ProductCardProps) {
   const isOutOfStock = product.inStock === false
   const [imageError, setImageError] = useState(false)
@@ -202,13 +199,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           )}
 
           {/* Price */}
-          {isComplimentaryGift(product) ? (
-            <span className="inline-flex rounded-full bg-[#884d53]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#884d53]">
-              Complimentary Gift
-            </span>
-          ) : product.id === 'dewleaf' ? (
-            <p className="text-[13px] font-medium text-[#7a6f6a]">Price on request</p>
-          ) : product.id === 'bloomcrown' ? (
+          {product.id === 'bloomcrown' ? (
             <p className="text-lg font-bold text-[#884d53]">From ₹ 12,000</p>
           ) : (
             <p className="text-lg font-bold text-[#884d53]">

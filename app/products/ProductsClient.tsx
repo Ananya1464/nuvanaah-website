@@ -18,8 +18,7 @@ export default function ProductsClient() {
     { id: 'all', label: 'All Products' },
     { id: 'after-surgery', label: 'After Surgery' },
     { id: 'hair-loss', label: 'Hair & Confidence' },
-    { id: 'daily-comfort', label: 'Everyday Wellness' },
-    { id: 'gift', label: 'Gift Ideas' }
+    { id: 'daily-comfort', label: 'Everyday Wellness' }
   ]
 
   const router = useRouter()
@@ -47,13 +46,11 @@ export default function ProductsClient() {
     if (selectedCategory === 'after-surgery') catMatch = !!p.shopByNeed?.includes('after-surgery')
     else if (selectedCategory === 'hair-loss') catMatch = !!p.shopByNeed?.includes('hair-loss')
     else if (selectedCategory === 'daily-comfort') catMatch = !!p.shopByNeed?.includes('daily-comfort')
-    else if (selectedCategory === 'gift') catMatch = p.isGiftPopular === true || p.isComplimentaryGift === true || !!p.tags?.includes('gift')
     
     if (!catMatch) return false
 
     // Price check
     if (priceFilter === 'all') return true
-    if (p.id === 'dewleaf') return true
 
     let priceValue = Number(p.price)
     if (p.id === 'flowsleeve') priceValue = 1575
@@ -194,9 +191,9 @@ export default function ProductsClient() {
               >
                 {/* Visual Badges */}
                 <div className="absolute top-4 left-4 z-10 flex flex-col gap-1.5">
-                  {(product.isGiftPopular || product.isComplimentaryGift || product.tags?.includes('gift')) && (
+                  {product.isGiftPopular && (
                     <span className="bg-[#884d53] text-white text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm">
-                      {product.isComplimentaryGift ? 'Complimentary Gift' : 'Popular Gift'}
+                      Popular Gift
                     </span>
                   )}
                   {isFeatured && (
@@ -245,27 +242,15 @@ export default function ProductsClient() {
                         <p className="text-base font-bold text-[#884d53]">Price TBC</p>
                       ) : (
                         <p className="text-lg font-bold text-[#1c1c18]">
-                          {(product.isComplimentaryGift || product.tags?.includes('gift')) ? (
-                            <span className="inline-flex rounded-full bg-[#884d53]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#884d53]">
-                              Complimentary Gift
-                            </span>
-                          ) : (
-                            <>{product.priceFrom && 'From '}₹ {Number(product.price).toLocaleString('en-IN')}</>
-                          )}
+                          {product.priceFrom && 'From '}₹ {Number(product.price).toLocaleString('en-IN')}
                         </p>
                       )}
                       <p className="text-[10px] text-[#847374] font-medium">Free delivery across India</p>
                     </div>
 
-                    {product.id === 'bloomcrown' ? (
-                      <span className="text-xs font-bold text-[#884d53] group-hover:underline flex items-center gap-1 transition-all">
-                        Book Consultation <ArrowRight className="w-3.5 h-3.5" />
-                      </span>
-                    ) : (
                       <div className="w-8 h-8 rounded-full bg-[#884d53] group-hover:bg-[#6e3d42] text-white flex items-center justify-center transition-colors shadow-sm">
                         <ArrowRight className="w-4 h-4" />
                       </div>
-                    )}
                   </div>
                 </div>
               </Link>
@@ -285,23 +270,17 @@ export default function ProductsClient() {
             Need guidance choosing a product?
           </h2>
           <p className="text-sm text-[#524344] mb-8 max-w-md mx-auto leading-relaxed">
-            Our care team is here to support you warmly and privately. Reach out anytime for sizing advice or product recommendations.
+            Our care team is here to support you warmly and privately 24/7. Reach out to us on WhatsApp for sizing advice or product recommendations.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-sm mx-auto">
             <a
               href="https://wa.me/919076041779"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-[#884d53] hover:bg-[#6e3d42] text-white px-6 py-3 rounded-full font-bold text-xs transition-all shadow-sm flex-1"
+              className="inline-flex items-center justify-center bg-[#884d53] hover:bg-[#6e3d42] text-white px-8 py-3.5 rounded-full font-bold text-sm transition-all shadow-sm max-w-xs mx-auto w-full"
             >
               Chat on WhatsApp
             </a>
-            <Link
-              href="/consultations"
-              className="inline-flex items-center justify-center bg-white border border-[#ded0bf] hover:border-[#884d53] text-[#524344] px-6 py-3 rounded-full font-bold text-xs transition-all shadow-sm flex-1"
-            >
-              Book Consultation
-            </Link>
           </div>
         </div>
       </div>

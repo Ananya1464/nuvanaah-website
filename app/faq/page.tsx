@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { ChevronDown, ChevronUp, Phone, MessageCircle, Mail, Heart, ShoppingBag, Package, Scissors } from 'lucide-react'
-import Link from 'next/link'
 
 const situationCards = [
   {
@@ -345,12 +344,14 @@ export default function FAQPage() {
           <p className="text-[#524344] mb-6">
             We offer wig and scarf consultation and fitting support online via WhatsApp.
           </p>
-          <Link
-            href="/consultations"
+          <a
+            href="https://wa.me/919076041779"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-[#884d53] hover:bg-[#884d53]/90 text-white font-medium py-3 px-8 rounded-full transition-colors"
           >
-            Book a Wig Consultation
-          </Link>
+            WhatsApp Wig Support
+          </a>
         </div>
       </div>
 

@@ -47,9 +47,11 @@ export default function FloatingHelpButton() {
             </h3>
 
             <div className="space-y-3">
-              {/* Book Consultation */}
-              <Link
-                href="/consultations"
+              {/* WhatsApp Us */}
+              <a
+                href="https://wa.me/919076041779"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
                 className="flex items-center gap-3 p-3 rounded-xl hover:bg-teal-50 transition-colors group"
               >
@@ -57,10 +59,10 @@ export default function FloatingHelpButton() {
                   <Phone className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900">Book a Consultation</p>
-                  <p className="text-sm text-gray-600">Free & confidential</p>
+                  <p className="font-semibold text-gray-900">WhatsApp Care Team</p>
+                  <p className="text-sm text-gray-600">Message us on WhatsApp</p>
                 </div>
-              </Link>
+              </a>
 
               {/* Call */}
               <a

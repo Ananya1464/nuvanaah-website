@@ -70,16 +70,18 @@ export default function CategoryCityPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           <div className="border border-gray-200 rounded-lg p-8 hover:border-amber-300 transition hover:shadow-lg">
             <MessageCircle className="w-12 h-12 text-amber-600 mb-4" />
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Book a Consultation</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">WhatsApp Support</h3>
             <p className="text-gray-600 mb-6">
-              Connect with local specialists in {cityName} for personalized product recommendations
+              Connect with our care team on WhatsApp for personalized product recommendations
             </p>
-            <Link 
-              href="/consultations"
+            <a 
+              href="https://wa.me/919076041779"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-semibold transition"
             >
-              Book Now
-            </Link>
+              Chat on WhatsApp
+            </a>
           </div>
 
           <div className="border border-gray-200 rounded-lg p-8 hover:border-sage-300 transition hover:shadow-lg">

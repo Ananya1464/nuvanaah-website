@@ -115,7 +115,7 @@ export default async function CollectionPage(
               Not sure which product is right for you?
             </h2>
             <p className="text-[#524344] text-lg mb-10 max-w-xl mx-auto font-light">
-              Our care specialists can guide you — privately, warmly, and without pressure.
+              Our care specialists are available 24/7 to guide you warmly and privately. Reach out to us on WhatsApp for sizing advice and product recommendations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -126,12 +126,6 @@ export default async function CollectionPage(
               >
                 WhatsApp Us
               </a>
-              <Link
-                href="/consultations"
-                className="inline-flex items-center justify-center gap-2 bg-[#884d53] hover:bg-[#6c363c] text-white px-8 py-4 rounded-full font-semibold transition-all hover:-translate-y-0.5 hover:shadow-md"
-              >
-                Wig & Scarf Consultation
-              </Link>
             </div>
           </div>
         </div>

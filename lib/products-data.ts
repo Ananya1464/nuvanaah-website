@@ -691,10 +691,9 @@ export const products: Product[] = [
     name: 'DewLeaf | Bamboo Face Towel',
     subtitle: 'Recovery Towel',
     tagline: 'Fresh comfort with every use.',
-    price: 0,
+    price: 1500,
     priceFrom: false,
     priceOnRequest: false,
-    isComplimentaryGift: true,
     categories: [CAT_WELLNESS],
     categoryNav: 'Everyday Wellness',
     description: 'A compact 12×24 inch recovery towel — soft, quick-drying, and designed for the small, daily moments of personal care that add up during recovery. Four colours. Clean hemmed edges.',
@@ -938,6 +937,8 @@ export const products: Product[] = [
     images: [
       { id: 1, src: '/images/catalog/BloomCrown/1.jpeg', alt: 'BloomCrown — view 1' },
       { id: 2, src: '/images/catalog/BloomCrown/2.jpeg', alt: 'BloomCrown — view 2' },
+      { id: 3, src: '/images/catalog/BloomCrown/3.jpeg', alt: 'BloomCrown — view 3' },
+      { id: 4, src: '/images/catalog/BloomCrown/4.jpeg', alt: 'BloomCrown — view 4' },
     ],
     stock_status: 'instock',
     featured: true,
@@ -946,8 +947,8 @@ export const products: Product[] = [
     shopByNeed: ['hair-loss'],
     recoveryStage: ['stage-3', 'stage-4'],
     crossSells: ['browbloom', 'airbloom'],
-    variantLabel: 'Style',
-    variantOptions: ['Long Balayage'],
+    variantLabel: 'Length',
+    variantOptions: ['14-18 inches', '20-22 inches'],
     benefitsList: [
       { title: 'Feeling like yourself in the mirror', desc: 'Looking in the mirror during hair loss and recognising yourself — that is the central purpose of BloomCrown. The natural appearance creates a reflection that feels familiar.' },
       { title: 'A natural appearance that moves correctly', desc: 'The hair moves as real hair moves. It falls naturally. It responds to the environment the way your own hair would. That naturalness is what allows it to stop being something you manage and become something you simply wear.' },
@@ -1088,17 +1089,15 @@ export function getProductBySlug(slug: string): Product | undefined {
   return products.find(p => p.slug === slug)
 }
 
-export function isGiftProduct(product: Product): boolean {
-  return product.isComplimentaryGift === true || product.tags?.includes('gift') === true
+export function isGiftProduct(_product: Product): boolean {
+  return false
 }
 
 export function isPublicProduct(product: Product): boolean {
   if ((product as Product & { published?: boolean }).published === false) return false
 
   const price = Number(product.price)
-  if (Number.isFinite(price) && price > 0) return true
-
-  return isGiftProduct(product)
+  return Number.isFinite(price) && price > 0
 }
 
 export function getPublicProducts(): Product[] {

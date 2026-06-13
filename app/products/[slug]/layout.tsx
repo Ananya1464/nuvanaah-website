@@ -33,7 +33,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 function buildJsonLd(product: Product) {
-  const isComplimentaryGift = product.isComplimentaryGift === true || product.tags?.includes('gift') === true
   const productSchema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -47,7 +46,7 @@ function buildJsonLd(product: Product) {
     offers: {
       '@type': 'Offer',
       priceCurrency: 'INR',
-      price: product.priceOnRequest || isComplimentaryGift || Number(product.price) <= 0 ? undefined : Number(product.price),
+      price: product.priceOnRequest || Number(product.price) <= 0 ? undefined : Number(product.price),
       availability: product.stock_status === 'instock'
         ? 'https://schema.org/InStock'
         : 'https://schema.org/OutOfStock',

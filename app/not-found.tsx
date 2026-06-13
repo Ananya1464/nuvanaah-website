@@ -14,9 +14,9 @@ const links = [
     description: 'Explore our full range of cancer care products',
   },
   {
-    href: '/consultations',
-    label: 'Wig & Scarf Consultation',
-    description: 'Speak with a care advisor for wigs and headscarves',
+    href: 'https://wa.me/919076041779',
+    label: 'WhatsApp Care Team',
+    description: 'Get support or sizing help via WhatsApp',
   },
   {
     href: '/faq',

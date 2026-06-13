@@ -282,12 +282,14 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <Link
-              href="/consultations"
-              className="inline-block bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-full font-medium transition shadow-sm hover:shadow-md"
+            <a
+              href="https://wa.me/919076041779"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-[#884d53] hover:bg-[#6e3d42] text-white px-8 py-3 rounded-full font-medium transition shadow-sm hover:shadow-md"
             >
               Talk to a Care Specialist
-            </Link>
+            </a>
           </div>
         </div>
       </section>
