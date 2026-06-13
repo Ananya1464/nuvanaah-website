@@ -209,7 +209,7 @@ export default function FAQPage() {
               },
             ].map(({ label, example, how }) => (
               <div key={label} className="bg-[#faf7f2] rounded-xl p-5 border border-[#ded0bf]/60">
-                <p className="text-xs font-bold uppercase tracking-wider text-[#884d53] mb-1">{label}</p>
+                <p className="text-[14px] font-bold uppercase tracking-wider text-[#884d53] mb-1">{label}</p>
                 <p className="text-xs text-[#7a6f6a] mb-3">{example}</p>
                 <p className="text-sm text-[#524344] leading-relaxed">{how}</p>
               </div>

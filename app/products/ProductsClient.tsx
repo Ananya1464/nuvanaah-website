@@ -74,7 +74,7 @@ export default function ProductsClient() {
       <div className="bg-gradient-to-b from-[#2c1f1a]/5 via-[#faf7f2]/20 to-[#faf7f2] pt-12 pb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <span className="text-[#884d53] font-bold text-xs uppercase tracking-[0.2em] mb-3 block">
+            <span className="text-[#884d53] font-bold text-[14px] uppercase tracking-[0.2em] mb-3 block">
               Care Designed with Dignity
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-[#1c1c18] mb-4">

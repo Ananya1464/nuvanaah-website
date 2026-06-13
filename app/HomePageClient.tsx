@@ -13,6 +13,8 @@ import {
   Package,
   Headset,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react'
 import { useCart } from '@/lib/cart-context'
 import { useWishlist } from '@/lib/wishlist-context'
@@ -223,7 +225,7 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="mb-5 text-[44px] font-bold leading-[1.08] tracking-[-0.02em] text-white md:text-[56px] lg:text-[64px]"
+                className="mb-5 text-[34px] sm:text-[44px] font-bold leading-[1.1] tracking-[-0.02em] text-white md:text-[56px] lg:text-[64px]"
               >
                 You are more than your diagnosis. Feel like <span className="italic text-[#feb2b9]">yourself</span> again.
               </motion.h1>
@@ -268,7 +270,7 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
         <div className="mx-auto max-w-7xl">
           <FadeInWhenVisible>
             <div className="mb-10 text-center">
-              <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#884d53]">Find your way</p>
+              <p className="mb-2 text-[14px] font-bold uppercase tracking-[0.3em] text-[#884d53]">Find your way</p>
               <h2 className="text-[28px] font-bold text-[#1c1c18] md:text-[34px]">What brings you here today?</h2>
               <p className="mt-3 text-[#524344] max-w-lg mx-auto">Every journey is different. Start with what you are experiencing right now.</p>
             </div>
@@ -354,7 +356,23 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
 
 
       {/* ═══ SECTION 4: FEATURED CAROUSEL ═══ */}
-      <section className="relative overflow-hidden bg-[#f7f3ed] py-16">
+      <section className="relative overflow-hidden bg-[#f7f3ed] py-16 group/carousel">
+        {/* Navigation Arrows */}
+        <button
+          onClick={() => setActiveSlide((prev) => (prev - 1 + carouselSlides.length) % carouselSlides.length)}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full bg-white/80 text-[#1c1c18] shadow-md transition-all hover:bg-white hover:scale-105 active:scale-95 border border-black/5 opacity-100 md:opacity-0 md:group-hover/carousel:opacity-100 duration-300 md:left-8"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+        </button>
+        <button
+          onClick={() => setActiveSlide((prev) => (prev + 1) % carouselSlides.length)}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full bg-white/80 text-[#1c1c18] shadow-md transition-all hover:bg-white hover:scale-105 active:scale-95 border border-black/5 opacity-100 md:opacity-0 md:group-hover/carousel:opacity-100 duration-300 md:right-8"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+        </button>
+
         <div className="mx-auto flex max-w-7xl items-center px-4 lg:px-8">
           <div className="grid w-full grid-cols-1 items-center gap-12 md:grid-cols-2">
             <AnimatePresence mode="wait">
@@ -491,7 +509,7 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
         <div className="mx-auto max-w-7xl">
           <FadeInWhenVisible>
             <div className="mb-14 text-center">
-              <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-[#884d53]">Your path</p>
+              <p className="mb-3 text-[14px] font-bold uppercase tracking-[0.3em] text-[#884d53]">Your path</p>
               <h2 className="text-[28px] font-bold text-white md:text-[34px]">Every stage has the right support.</h2>
             </div>
           </FadeInWhenVisible>
@@ -528,7 +546,7 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
       <section className="bg-[#faf7f2] py-16 px-4 lg:px-8 border-t border-[#ded0bf]/30">
         <div className="mx-auto max-w-3xl text-center">
           <FadeInWhenVisible>
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#884d53] mb-4">The Names Behind the Products</p>
+            <p className="text-[14px] font-bold uppercase tracking-[0.2em] text-[#884d53] mb-4">The Names Behind the Products</p>
             <h2 className="text-2xl sm:text-3xl font-bold text-[#1c1c18] mb-6 leading-snug">
               Named after nature. Designed for you.
             </h2>
@@ -547,7 +565,7 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
         <div className="mx-auto max-w-7xl">
           <FadeInWhenVisible>
             <div className="text-center mb-10">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#884d53] mb-4">Our Colour Palette</p>
+              <p className="text-[14px] font-bold uppercase tracking-[0.2em] text-[#884d53] mb-4">Our Colour Palette</p>
               <h2 className="text-2xl sm:text-3xl font-bold text-[#1c1c18] mb-4 leading-snug">
                 Every colour has a story.
               </h2>
@@ -570,7 +588,7 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
           </FadeInWhenVisible>
 
           <FadeInWhenVisible delay={0.2}>
-            <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 mt-8 text-center">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 text-center">
               {[
                 { name: 'Coffee Bean',   desc: 'Roasted coffee beans', image: '/images/color_options/coffee_bean.PNG' },
                 { name: 'Aparajita',     desc: 'Butterfly Pea Flower', image: '/images/color_options/aparajita.PNG' },
@@ -579,9 +597,7 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
                 { name: 'Jade Vine',     desc: 'Rare Jade Vine flower', image: '/images/color_options/jade_wine.PNG' },
                 { name: 'Magnolia',      desc: 'Soft Magnolia blooms', image: '/images/color_options/mangolia.PNG' },
                 { name: 'Camellia',      desc: 'Camellia flowers', image: '/images/color_options/camellia.PNG' },
-                { name: 'Bamboo Wood',   desc: 'Natural bamboo warmth' },
-                { name: 'Amber Grain',   desc: 'Golden harvest grains' },
-                { name: 'Cotton Cloud',  desc: 'Natural cotton blossoms' },
+                { name: 'Bamboo Wood',   desc: 'Natural bamboo warmth', image: '/images/color_options/bamboo_wood.jpeg' },
               ].map(({ name, desc, image }) => (
                 <div key={name} className="bg-[#faf7f2] rounded-xl px-4 py-5 border border-[#ded0bf]/40 flex flex-col items-center text-center">
                   {image ? (
@@ -624,7 +640,7 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
             </FadeInWhenVisible>
             <FadeInWhenVisible delay={0.1}>
               <div className="space-y-6">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#884d53]">Where the Colours Come From</p>
+                <p className="text-[14px] font-bold uppercase tracking-[0.2em] text-[#884d53]">Where the Colours Come From</p>
                 <h2 className="text-2xl sm:text-3xl font-bold text-[#1c1c18] leading-snug">
                   Rooted in the five elements.
                 </h2>
@@ -634,15 +650,16 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
                 <p className="text-[#524344] text-base leading-relaxed">
                   These are not decorative choices. The colours around you during recovery matter. Warmth over clinical white. Depth over neutral grey. Something chosen, not assigned.
                 </p>
-                <div className="grid grid-cols-5 gap-3 pt-2">
+                <div className="grid grid-cols-5 gap-3 pt-4">
                   {[
-                    { element: 'Earth',  quality: 'Grounded' },
-                    { element: 'Water',  quality: 'Calm' },
-                    { element: 'Fire',   quality: 'Warm' },
-                    { element: 'Air',    quality: 'Light' },
-                    { element: 'Space',  quality: 'Depth' },
-                  ].map(({ element, quality }) => (
-                    <div key={element} className="text-center">
+                    { element: 'Earth',  quality: 'Grounded', bgClass: 'bg-[#5c6e58]' },
+                    { element: 'Water',  quality: 'Calm',     bgClass: 'bg-[#5b8296]' },
+                    { element: 'Fire',   quality: 'Warm',     bgClass: 'bg-[#c85a32]' },
+                    { element: 'Air',    quality: 'Light',    bgClass: 'bg-[#e2e8e4] border border-black/10' },
+                    { element: 'Space',  quality: 'Depth',    bgClass: 'bg-[#131b26]' },
+                  ].map(({ element, quality, bgClass }) => (
+                    <div key={element} className="flex flex-col items-center text-center group/elem">
+                      <div className={`w-10 h-10 rounded-full ${bgClass} mb-2.5 transition-transform duration-300 group-hover/elem:scale-110 shadow-sm`} />
                       <p className="text-xs font-bold text-[#1c1c18]">{element}</p>
                       <p className="text-[10px] text-[#7a6f6a]">{quality}</p>
                     </div>

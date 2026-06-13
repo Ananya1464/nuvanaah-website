@@ -41,7 +41,7 @@ export default function NotFound() {
       {/* Main card */}
       <div className="relative z-10 w-full max-w-lg text-center">
         <div className="mb-3 inline-block rounded-full bg-[#884d53]/10 px-4 py-1.5">
-          <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#884d53]">
+          <span className="text-[14px] font-bold uppercase tracking-[0.18em] text-[#884d53]">
             Page not found
           </span>
         </div>

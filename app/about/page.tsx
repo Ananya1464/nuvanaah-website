@@ -23,7 +23,7 @@ export default function AboutPage() {
       <section className="flex flex-col lg:grid lg:grid-cols-2 lg:h-screen lg:min-h-[600px] w-full">
         <div className="relative h-[70vh] min-h-[400px] w-full lg:h-full">
           <Image
-            src="/images/about/about_hero.png"
+            src="/images/about/about_hero_new_v3.png"
             alt="Flat-lay of warm, soft recovery wear on natural linen, conveying gentle support"
             fill
             priority={true}
@@ -32,22 +32,22 @@ export default function AboutPage() {
           />
         </div>
         <div className="flex h-full flex-col justify-center px-6 py-16 lg:px-20 lg:py-0">
-          <div className="max-w-[480px]">
-            <span className="mb-6 block text-[10px] font-semibold uppercase tracking-widest text-[#884d53]">
+          <div className="max-w-[540px]">
+            <span className="mb-6 block text-[14px] font-bold uppercase tracking-[0.2em] text-[#884d53]">
               Our story
             </span>
-            <h1 className="mb-4 text-[32px] font-medium leading-tight text-[#1c1c18]">
+            <h1 className="mb-5 text-[30px] sm:text-[38px] md:text-[46px] font-semibold leading-[1.15] tracking-tight text-[#1c1c18]">
               Care that supports you through treatment.
             </h1>
-            <p className="mb-8 font-display text-[16px] italic text-[#7a6f6a]">
+            <p className="mb-8 font-display text-[18px] md:text-[20px] italic text-[#7a6f6a]">
               We are here to help you feel like yourself again.
             </p>
-            <p className="mb-8 text-[14px] leading-[1.9] text-[#1c1c18]">
+            <p className="mb-8 text-[16px] md:text-[17px] leading-[1.85] text-[#3c3031]">
               Nuvanaah was built for women navigating cancer treatment and recovery — for the practical needs, the quiet discomforts, and the moments when feeling like yourself matters most. Every product in our range exists because a specific, real need exists. And because the existing options were not good enough.
             </p>
             <Link
               href="/products"
-              className="inline-flex items-center text-[14px] font-medium text-[#1c1c18] hover:text-[#884d53] transition-colors"
+              className="inline-flex items-center text-[16px] font-semibold text-[#1c1c18] hover:text-[#884d53] transition-colors"
             >
               See our products →
             </Link>
@@ -58,13 +58,13 @@ export default function AboutPage() {
       {/* ── ZONE 2: THE WHY ── */}
       <section className="bg-[#f5f0e8] py-20 px-6">
         <div className="mx-auto max-w-[680px] text-center">
-          <span className="mb-10 block text-[10px] font-semibold uppercase tracking-widest text-[#884d53]">
+          <span className="mb-10 block text-[14px] font-bold uppercase tracking-[0.2em] text-[#884d53]">
             Why Nuvanaah exists
           </span>
           <blockquote className="mb-12 font-display text-[22px] italic leading-[1.7] text-[#524344]">
             "Recovery asks a great deal of the body. It asks a great deal of the person inside it, too. The products that surround that period should rise to meet that."
           </blockquote>
-          <div className="mx-auto max-w-[580px] space-y-6 text-[14px] leading-[1.8] text-[#1c1c18]">
+          <div className="mx-auto max-w-[580px] space-y-6 text-[15px] sm:text-[16px] leading-[1.85] text-[#3c3031]">
             <p>
               There are things that happen during cancer treatment that are not part of the treatment itself. The arm that needs a specific position to rest comfortably. The bra that no longer fits or fastens correctly. The face in the mirror that looks different in ways that are hard to describe. The days when getting dressed requires more intention than it used to. These are not medical problems. They are personal ones. And they deserve products designed specifically for them — not adapted from general-purpose alternatives, not clinical and functional, but considered, beautiful, and genuinely useful.
             </p>
@@ -88,16 +88,16 @@ export default function AboutPage() {
             />
           </div>
           <div className="lg:pl-4">
-            <span className="mb-6 block text-[10px] font-semibold uppercase tracking-widest text-[#884d53]">
+            <span className="mb-6 block text-[14px] font-bold uppercase tracking-[0.2em] text-[#884d53]">
               The founder
             </span>
-            <h2 className="mb-1 text-[22px] font-medium leading-snug text-[#1c1c18]">
+            <h2 className="mb-1 text-[26px] sm:text-[30px] font-bold leading-snug text-[#1c1c18]">
               Kanchan Chopra
             </h2>
-            <p className="mb-6 font-display text-[15px] italic text-[#7a6f6a]">
+            <p className="mb-6 font-display text-[16px] sm:text-[18px] italic text-[#7a6f6a]">
               Founder, Nuvanaah
             </p>
-            <div className="space-y-5 text-[14px] leading-[1.9] text-[#1c1c18]">
+            <div className="space-y-5 text-[15px] sm:text-[16px] leading-[1.85] text-[#3c3031]">
               <p className="font-medium text-[15px]">
                 Nuvanaah was born through real conversations with women in recovery.
               </p>
@@ -129,35 +129,35 @@ export default function AboutPage() {
         <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
             <article>
-              <span className="mb-4 block text-[10px] font-semibold uppercase tracking-widest text-[#884d53]">
+              <span className="mb-4 block text-[14px] font-bold uppercase tracking-[0.2em] text-[#884d53]">
                 Comfort
               </span>
               <h3 className="mb-3 text-[18px] font-medium text-[#1c1c18]">
                 Comfort is not a luxury during recovery.
               </h3>
-              <p className="text-[14px] leading-[1.8] text-[#1c1c18]">
+              <p className="text-[15px] sm:text-[16px] leading-[1.8] text-[#3c3031]">
                 It is the condition that makes rest possible — and rest is what makes healing possible. Every product we make is built around that sequence.
               </p>
             </article>
             <article>
-              <span className="mb-4 block text-[10px] font-semibold uppercase tracking-widest text-[#884d53]">
+              <span className="mb-4 block text-[14px] font-bold uppercase tracking-[0.2em] text-[#884d53]">
                 Confidence
               </span>
               <h3 className="mb-3 text-[18px] font-medium text-[#1c1c18]">
                 Confidence is not about appearance.
               </h3>
-              <p className="text-[14px] leading-[1.8] text-[#1c1c18]">
+              <p className="text-[15px] sm:text-[16px] leading-[1.8] text-[#3c3031]">
                 It is about recognition — seeing yourself in the mirror and feeling like the person you have always been, even in changed circumstances.
               </p>
             </article>
             <article>
-              <span className="mb-4 block text-[10px] font-semibold uppercase tracking-widest text-[#884d53]">
+              <span className="mb-4 block text-[14px] font-bold uppercase tracking-[0.2em] text-[#884d53]">
                 Dignity
               </span>
               <h3 className="mb-3 text-[18px] font-medium text-[#1c1c18]">
                 Recovery deserves dignity in every detail.
               </h3>
-              <p className="text-[14px] leading-[1.8] text-[#1c1c18]">
+              <p className="text-[15px] sm:text-[16px] leading-[1.8] text-[#3c3031]">
                 The fabric against your skin. The weight in your bra. The print on the pillow beside you. None of these are small. They are what the days are made of.
               </p>
             </article>
@@ -178,13 +178,13 @@ export default function AboutPage() {
             />
           </div>
           <div className="lg:pr-12">
-            <span className="mb-6 block text-[10px] font-semibold uppercase tracking-widest text-[#884d53]">
+            <span className="mb-6 block text-[14px] font-bold uppercase tracking-[0.2em] text-[#884d53]">
               How we build
             </span>
-            <h2 className="mb-8 max-w-md text-[22px] font-medium leading-snug text-[#1c1c18]">
+            <h2 className="mb-8 max-w-md text-[26px] sm:text-[30px] font-bold leading-snug text-[#1c1c18]">
               Every product starts with a specific need. Not a market category.
             </h2>
-            <div className="max-w-[480px] space-y-6 text-[14px] leading-[1.8] text-[#1c1c18]">
+            <div className="max-w-[480px] space-y-6 text-[15px] sm:text-[16px] leading-[1.85] text-[#3c3031]">
               <p>
                 We do not begin with a product brief. We begin with a person — and a moment in her day that could be better. The arm resting uncomfortably during sleep. The sleeve that slips every twenty minutes. The wig that is too heavy by mid-afternoon. We ask why it is that way, and whether it has to be.
               </p>
@@ -203,7 +203,7 @@ export default function AboutPage() {
       <section className="bg-[#faf7f2] py-16 px-6 lg:px-12">
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
-            <span className="mb-4 block text-[10px] font-semibold uppercase tracking-widest text-[#884d53]">
+            <span className="mb-4 block text-[14px] font-bold uppercase tracking-[0.2em] text-[#884d53]">
               Our products
             </span>
             <h2 className="mb-2 text-[20px] font-medium text-[#1c1c18]">
@@ -229,7 +229,7 @@ export default function AboutPage() {
               <span className="mb-1 text-[10px] font-semibold uppercase tracking-widest text-[#7a6f6a]">
                 Recovery & Body Support
               </span>
-              <h3 className="mb-1 text-[14px] font-medium text-[#1c1c18]">Willow Support</h3>
+              <h3 className="mb-1 text-[14px] font-bold text-[#1c1c18]">Willow Support | Mastectomy Bra</h3>
               <p className="mb-2 text-[12px] text-[#7a6f6a]">Front-Open Pocket Bra</p>
               <p className="mb-3 text-[14px] text-[#1c1c18]">₹ 3,000</p>
               <Link href="/products/willow-support" className="mt-auto text-[13px] text-[#1c1c18] hover:text-[#884d53] transition-colors">
@@ -250,7 +250,7 @@ export default function AboutPage() {
               <span className="mb-1 text-[10px] font-semibold uppercase tracking-widest text-[#7a6f6a]">
                 Hair & Confidence
               </span>
-              <h3 className="mb-1 text-[14px] font-medium text-[#1c1c18]">AirBloom</h3>
+              <h3 className="mb-1 text-[14px] font-bold text-[#1c1c18]">AirBloom | Chemo Headscarf</h3>
               <p className="mb-2 text-[12px] text-[#7a6f6a]">Scarf with Hair System</p>
               <p className="mb-3 text-[14px] text-[#1c1c18]">₹ 3,500</p>
               <Link href="/products/airbloom" className="mt-auto text-[13px] text-[#1c1c18] hover:text-[#884d53] transition-colors">
@@ -271,7 +271,7 @@ export default function AboutPage() {
               <span className="mb-1 text-[10px] font-semibold uppercase tracking-widest text-[#7a6f6a]">
                 Lymphedema Care
               </span>
-              <h3 className="mb-1 text-[14px] font-medium text-[#1c1c18]">FlowSleeve</h3>
+              <h3 className="mb-1 text-[14px] font-bold text-[#1c1c18]">FlowSleeve | Lymphedema Sleeve</h3>
               <p className="mb-2 text-[12px] text-[#7a6f6a]">Lymphedema Sleeve</p>
               <p className="mb-3 text-[14px] text-[#1c1c18]">₹ 1,200</p>
               <Link href="/products/flowsleeve" className="mt-auto text-[13px] text-[#1c1c18] hover:text-[#884d53] transition-colors">
@@ -292,7 +292,7 @@ export default function AboutPage() {
               <span className="mb-1 text-[10px] font-semibold uppercase tracking-widest text-[#7a6f6a]">
                 Rest & Comfort
               </span>
-              <h3 className="mb-1 text-[14px] font-medium text-[#1c1c18]">Nature Nest</h3>
+              <h3 className="mb-1 text-[14px] font-bold text-[#1c1c18]">Nature Nest | Underarm Pillow</h3>
               <p className="mb-2 text-[12px] text-[#7a6f6a]">Underarm Rest Pillow</p>
               <p className="mb-3 text-[14px] text-[#1c1c18]">₹ 1,800</p>
               <Link href="/products/nature-nest" className="mt-auto text-[13px] text-[#1c1c18] hover:text-[#884d53] transition-colors">
@@ -312,13 +312,13 @@ export default function AboutPage() {
       {/* ── ZONE 6: THE COMMITMENT ── */}
       <section className="bg-[#f5f0e8] py-20 px-6">
         <div className="mx-auto max-w-[640px] text-center">
-          <span className="mb-10 block text-[10px] font-semibold uppercase tracking-widest text-[#884d53]">
+          <span className="mb-10 block text-[14px] font-bold uppercase tracking-[0.2em] text-[#884d53]">
             Our commitment
           </span>
           <blockquote className="mb-12 font-display text-[22px] italic leading-[1.7] text-[#524344]">
             "We believe that the products surrounding recovery should feel like they were made by people who understand what recovery actually asks — not by people who see a market category."
           </blockquote>
-          <div className="space-y-6 text-[14px] leading-[1.8] text-[#1c1c18] text-center mx-auto max-w-[580px]">
+          <div className="space-y-6 text-[15px] sm:text-[16px] leading-[1.85] text-[#3c3031] text-center mx-auto max-w-[580px]">
             <p>
               Every product in the Nuvanaah range is tested for the things that matter during recovery: weight, breathability, ease of use, gentleness against healing skin, and the quality that determines whether something is used every day or put aside after a week. These are not the same tests that govern general consumer products. They are specific. They come from listening.
             </p>
@@ -333,13 +333,13 @@ export default function AboutPage() {
       <section className="bg-[#faf7f2] py-16 px-6 lg:px-12">
         <div className="mx-auto max-w-5xl lg:grid lg:grid-cols-2 lg:items-center lg:gap-16">
           <div className="mb-12 lg:mb-0 lg:pr-8">
-            <span className="mb-6 block text-[10px] font-semibold uppercase tracking-widest text-[#884d53]">
+            <span className="mb-6 block text-[14px] font-bold uppercase tracking-[0.2em] text-[#884d53]">
               The name
             </span>
-            <h2 className="mb-6 text-[20px] font-medium text-[#1c1c18]">
+            <h2 className="mb-6 text-[24px] sm:text-[28px] font-bold text-[#1c1c18]">
               Nuvanaah.
             </h2>
-            <div className="space-y-6 text-[14px] leading-[1.8] text-[#1c1c18]">
+            <div className="space-y-6 text-[15px] sm:text-[16px] leading-[1.85] text-[#3c3031]">
               <p>
                 Nuvanaah is drawn from the Sanskrit root <em>nava</em> — meaning new, renewed, fresh. Not recovery in a clinical sense. Returning to yourself. The emergence of something that was there all along.
               </p>
@@ -366,13 +366,13 @@ export default function AboutPage() {
       {/* ── ZONE 8: CONTACT / REACH US ── */}
       <section className="bg-[#1c1c18] py-16 px-6 text-white text-center">
         <div className="mx-auto max-w-[480px]">
-          <span className="mb-6 block text-[10px] font-semibold uppercase tracking-widest text-[#884d53]">
+          <span className="mb-6 block text-[14px] font-bold uppercase tracking-[0.2em] text-[#884d53]">
             Get in touch
           </span>
           <h2 className="mb-6 text-[24px] font-medium">
             We are here.
           </h2>
-          <p className="mb-10 text-[14px] leading-[1.8] text-[rgba(255,255,255,0.65)] mx-auto">
+          <p className="mb-10 text-[15px] sm:text-[16px] leading-[1.85] text-[rgba(255,255,255,0.75)] mx-auto">
             For questions about products, sizing, and which products might be right for where you are in your journey — we are available on WhatsApp and email. Recovery is not something to navigate alone.
           </p>
           <a
