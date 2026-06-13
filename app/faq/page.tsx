@@ -21,7 +21,7 @@ const situationCards = [
     icon: Package,
     title: "I have a question about delivery",
     description: "Shipping, delivery timelines, and international orders",
-    category: 'Shipping & Returns',
+    category: 'Shipping',
   },
   {
     icon: Scissors,
@@ -31,7 +31,7 @@ const situationCards = [
   },
 ]
 
-const faqCategories = ['All', 'General', 'Products', 'Shipping & Returns', 'Payments & Orders', 'Consultations', 'Account']
+const faqCategories = ['All', 'General', 'Products', 'Shipping', 'Payments & Orders', 'Consultations', 'Account']
 
 const faqData: Record<string, Array<{ q: string; a: string }>> = {
   General: [
@@ -66,7 +66,7 @@ const faqData: Record<string, Array<{ q: string; a: string }>> = {
       a: 'We provide detailed product images and descriptions on each page. For wigs and scarves with real hair, an online consultation via WhatsApp is available if you would like guidance before deciding.',
     },
   ],
-  'Shipping & Returns': [
+  Shipping: [
     {
       q: 'Do you offer free shipping?',
       a: 'Yes. We offer free shipping across India.',

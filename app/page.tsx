@@ -28,20 +28,8 @@ const faqItems = [
     a: 'We recommend measuring 6–8 weeks post-surgery. Our care team can guide you through a virtual fitting — WhatsApp us for personalized sizing help.',
   },
   {
-    q: 'Is the packaging really discreet?',
-    a: 'Absolutely. All orders ship in plain, unbranded boxes with no product descriptions visible on the outside. Your privacy is our priority.',
-  },
-  {
     q: 'How do I care for my medical wig?',
     a: 'Wash gently with sulfate-free shampoo every 7–10 wears. Store on a wig stand when not in use. Detailed care instructions are included with every wig purchase.',
-  },
-  {
-    q: 'Do you offer home consultations?',
-    a: 'Yes — we offer both virtual and in-person consultations across major Indian cities. Book through our consultations page or WhatsApp us directly.',
-  },
-  {
-    q: 'What is your return policy?',
-    a: '30-day hassle-free returns on unworn items in original packaging. Wigs and intimate wear can be exchanged for sizing. No questions asked.',
   },
 ]
 

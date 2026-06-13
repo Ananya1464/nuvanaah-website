@@ -302,15 +302,7 @@ export default function ContactPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-cream-50 rounded-xl p-6 border border-neutral-200">
-              <h3 className="font-semibold text-tertiary-700 mb-2">What's your return policy?</h3>
-              <p className="text-tertiary-600 text-sm leading-relaxed">
-                Clothing items can be exchanged within 7 days if unworn and in original packaging. Personal care items (prosthesis, adhesives) cannot be returned due to hygiene.
-              </p>
-              <Link href="/faq" className="text-primary-600 hover:text-primary-700 text-sm font-medium inline-block mt-2">
-                Full Policy →
-              </Link>
-            </div>
+
 
             <div className="bg-cream-50 rounded-xl p-6 border border-neutral-200">
               <h3 className="font-semibold text-tertiary-700 mb-2">Do you ship internationally?</h3>

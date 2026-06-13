@@ -123,15 +123,15 @@ export default function TermsPage() {
 
           <section className="mb-12">
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">6. Returns & Exchanges</h2>
-            <p className="text-gray-700 mb-4">Please refer to our <Link href="/legal/returns" className="text-teal-600 hover:text-teal-700 font-semibold">Returns & Exchange Policy</Link> for detailed information.</p>
+            <p className="text-gray-700 mb-4">
+              Due to the personal and medical nature of our products (wigs, intimate wear, prosthesis), we do not accept any returns, refunds, or exchanges once an order has been shipped.
+            </p>
 
             <div className="bg-amber-50 rounded-lg p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Important Notes</h3>
-              <ul className="list-disc list-inside text-gray-700 space-y-2">
-                <li>Due to hygiene reasons, some products may not be eligible for return after opening</li>
-                <li>Custom-sized or personalized products are non-returnable</li>
-                <li>All returns must be in original, unused condition</li>
-              </ul>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Sizing & Selection Guidance</h3>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                To ensure your satisfaction, please refer to our sizing guides on each product page or connect with our support team on WhatsApp before making your purchase to confirm sizes or product options.
+              </p>
             </div>
           </section>
 

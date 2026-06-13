@@ -59,22 +59,8 @@ export default function CategoryCityPage() {
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 bg-amber-600 rounded-full mt-2"></div>
               <div>
-                <h3 className="font-semibold text-gray-900">In-Person Consultations</h3>
-                <p className="text-gray-700">Meet specialists in your area</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-amber-600 rounded-full mt-2"></div>
-              <div>
                 <h3 className="font-semibold text-gray-900">Partner Hospitals</h3>
                 <p className="text-gray-700">Connected with leading hospitals nearby</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-amber-600 rounded-full mt-2"></div>
-              <div>
-                <h3 className="font-semibold text-gray-900">Easy Pickup & Returns</h3>
-                <p className="text-gray-700">Hassle-free local pickup points</p>
               </div>
             </div>
           </div>
