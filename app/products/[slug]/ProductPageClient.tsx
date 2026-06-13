@@ -539,7 +539,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
 
   const priceDisplay = product.priceOnRequest
     ? 'Price on request'
-    : `${product.priceFrom ? 'From ' : ''}₹ ${Number(currentPrice).toLocaleString('en-IN')}`
+    : `₹ ${Number(currentPrice).toLocaleString('en-IN')}`
 
   const stockStatus = product.stock_status
 

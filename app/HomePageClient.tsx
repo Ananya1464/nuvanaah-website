@@ -56,7 +56,7 @@ const bestSellers = [
   {
     id: 'willow-support',
     category: 'Recovery & Body Support',
-    name: 'Willow Support',
+    name: 'Willow Support | Mastectomy Bra',
     price: 3000,
     priceDisplay: '₹ 3,000 (for a pair)',
     rating: 4.9,
@@ -67,7 +67,7 @@ const bestSellers = [
   {
     id: 'bloomcrown',
     category: 'Hair & Confidence',
-    name: 'BloomCrown',
+    name: 'BloomCrown | Medical Wig',
     price: 12000,
     priceDisplay: 'From ₹ 12,000',
     rating: 4.9,
@@ -78,7 +78,7 @@ const bestSellers = [
   {
     id: 'petalwrap',
     category: 'Everyday Wellness',
-    name: 'PetalWrap',
+    name: 'PetalWrap | Bamboo Bath Towel',
     price: 1500,
     priceDisplay: '₹ 1,500',
     rating: 4.8,
@@ -89,7 +89,7 @@ const bestSellers = [
   {
     id: 'browbloom',
     category: 'Hair & Confidence',
-    name: 'BrowBloom',
+    name: 'BrowBloom | Eyebrow Prosthesis',
     price: 1400,
     priceDisplay: '₹ 1,400',
     rating: 4.9,
