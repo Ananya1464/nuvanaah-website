@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { ChevronDown, ChevronUp, Phone, MessageCircle, Mail, Heart, ShoppingBag, Package, Scissors } from 'lucide-react'
+import { ChevronDown, ChevronUp, Phone, MessageCircle, Mail, Heart, ShoppingBag, Package } from 'lucide-react'
 
 const situationCards = [
   {
@@ -23,14 +23,14 @@ const situationCards = [
     category: 'Shipping',
   },
   {
-    icon: Scissors,
-    title: "I'm interested in a wig consultation",
-    description: "Wig and scarf guidance available online via WhatsApp",
-    category: 'Consultations',
+    icon: MessageCircle,
+    title: "I have a payment or order question",
+    description: "Payment options, secure gateways, and order tracking",
+    category: 'Payments & Orders',
   },
 ]
 
-const faqCategories = ['All', 'General', 'Products', 'Shipping', 'Payments & Orders', 'Consultations', 'Account']
+const faqCategories = ['All', 'General', 'Products', 'Shipping', 'Payments & Orders']
 
 const faqData: Record<string, Array<{ q: string; a: string }>> = {
   General: [
@@ -48,7 +48,11 @@ const faqData: Record<string, Array<{ q: string; a: string }>> = {
     },
     {
       q: 'Do you have physical stores?',
-      a: 'We are an online store only. Wig and scarf consultations are available online via WhatsApp. Reach out to us anytime.',
+      a: 'We are an online store only. Sizing and product support is available online via WhatsApp. Reach out to us anytime.',
+    },
+    {
+      q: 'Are you available to help with support or product questions?',
+      a: 'Absolutely. Our team is available 24×7 to assist with any product-related questions. Reach out to us on WhatsApp or by phone anytime.',
     },
   ],
   Products: [
@@ -62,7 +66,11 @@ const faqData: Record<string, Array<{ q: string; a: string }>> = {
     },
     {
       q: 'Can I see the products before buying?',
-      a: 'We provide detailed product images and descriptions on each page. For wigs and scarves with real hair, an online consultation via WhatsApp is available if you would like guidance before deciding.',
+      a: 'We provide detailed product images and descriptions on each page. For wigs and scarves with real hair, we can share additional pictures or help guide you via WhatsApp if you would like guidance before deciding.',
+    },
+    {
+      q: 'Can you help me choose the right wig or size?',
+      a: 'Yes, we are happy to help you explore wig options, sizing, and style choices online via WhatsApp. Contact us anytime.',
     },
   ],
   Shipping: [
@@ -83,24 +91,7 @@ const faqData: Record<string, Array<{ q: string; a: string }>> = {
       a: 'Yes. International shipping is available. Additional shipping charges apply based on destination and package requirements. Please contact us before placing an international order.',
     },
   ],
-  Consultations: [
-    {
-      q: 'What consultations do you offer?',
-      a: 'Nuvanaah offers consultations for wigs (BloomCrown) and scarves with real hair (AirBloom). Consultations are available online via WhatsApp.',
-    },
-    {
-      q: 'How do I book a wig consultation?',
-      a: 'Reach out to us on WhatsApp or call us to arrange a time. Consultations are available online for customers nationwide.',
-    },
-    {
-      q: 'Can you help me choose the right wig?',
-      a: 'Yes. During a consultation we will help you explore available wig options, discuss sizing, and find a style that feels right for you.',
-    },
-    {
-      q: 'Are you available for general questions outside of consultations?',
-      a: 'Absolutely. Our team is available 24×7 to assist with any product-related questions. Reach out to us on WhatsApp or by phone anytime.',
-    },
-  ],
+
   'Payments & Orders': [
     {
       q: 'What payment methods do you accept?',
@@ -115,32 +106,15 @@ const faqData: Record<string, Array<{ q: string; a: string }>> = {
       a: 'You will receive a tracking link via email and SMS after your order is dispatched. You can also reach out to us for an update at any time.',
     },
     {
+      q: 'How is my data stored and protected?',
+      a: 'We do not require user signup or store personal profiles on our servers. Your cart and checkout details are stored locally as cookies, which helps us reference the items you wish to buy when you reach out to us on WhatsApp to place your order.',
+    },
+    {
       q: 'What if my order is delayed?',
       a: 'Please contact our team directly. We will look into it and keep you updated.',
     },
   ],
-  Account: [
-    {
-      q: 'How do I create an account?',
-      a: 'Click Sign Up and enter your email, password, and name. You can also sign up with Google for faster registration.',
-    },
-    {
-      q: 'Do I need an account to purchase?',
-      a: 'You can check out as a guest, but creating an account helps you track orders, save addresses, and access your order history.',
-    },
-    {
-      q: 'How do I reset my password?',
-      a: 'Click Forgot Password on the login page, enter your email, and we will send a reset link.',
-    },
-    {
-      q: 'Can I have multiple addresses?',
-      a: 'Yes. Save multiple delivery addresses in your account and choose your preferred one during checkout.',
-    },
-    {
-      q: 'How is my data protected?',
-      a: "We comply with India's data protection requirements and use industry-standard security. Your information is never shared with third parties without your consent.",
-    },
-  ],
+
 }
 
 export default function FAQPage() {
