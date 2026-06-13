@@ -572,18 +572,32 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
           <FadeInWhenVisible delay={0.2}>
             <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 mt-8 text-center">
               {[
-                { name: 'Coffee Bean',   desc: 'Roasted coffee beans' },
-                { name: 'Aparajita',     desc: 'Butterfly Pea Flower' },
-                { name: 'Dusty Miller',  desc: 'Silvery Dusty Miller leaves' },
-                { name: 'Ebony',         desc: 'Dark Ebony tree' },
-                { name: 'Jade Vine',     desc: 'Rare Jade Vine flower' },
-                { name: 'Magnolia',      desc: 'Soft Magnolia blooms' },
-                { name: 'Camellia',      desc: 'Camellia flowers' },
+                { name: 'Coffee Bean',   desc: 'Roasted coffee beans', image: '/images/color_options/coffee_bean.PNG' },
+                { name: 'Aparajita',     desc: 'Butterfly Pea Flower', image: '/images/color_options/aparajita.PNG' },
+                { name: 'Dusty Miller',  desc: 'Silvery Dusty Miller leaves', image: '/images/color_options/dusty_miller.PNG' },
+                { name: 'Ebony',         desc: 'Dark Ebony tree', image: '/images/color_options/ebony.jpeg' },
+                { name: 'Jade Vine',     desc: 'Rare Jade Vine flower', image: '/images/color_options/jade_wine.PNG' },
+                { name: 'Magnolia',      desc: 'Soft Magnolia blooms', image: '/images/color_options/mangolia.PNG' },
+                { name: 'Camellia',      desc: 'Camellia flowers', image: '/images/color_options/camellia.PNG' },
                 { name: 'Bamboo Wood',   desc: 'Natural bamboo warmth' },
                 { name: 'Amber Grain',   desc: 'Golden harvest grains' },
                 { name: 'Cotton Cloud',  desc: 'Natural cotton blossoms' },
-              ].map(({ name, desc }) => (
-                <div key={name} className="bg-[#faf7f2] rounded-xl px-4 py-4 border border-[#ded0bf]/40">
+              ].map(({ name, desc, image }) => (
+                <div key={name} className="bg-[#faf7f2] rounded-xl px-4 py-5 border border-[#ded0bf]/40 flex flex-col items-center text-center">
+                  {image ? (
+                    <div className="relative w-16 h-16 mb-4 rounded-full overflow-hidden border border-[#ded0bf]/40 bg-white">
+                      <Image
+                        src={image}
+                        alt={name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-16 h-16 mb-4 rounded-full border border-dashed border-[#ded0bf]/60 bg-white/50 flex items-center justify-center text-[10px] text-[#7a6f6a] italic">
+                      Coming soon
+                    </div>
+                  )}
                   <p className="text-xs font-bold text-[#1c1c18] mb-1">{name}</p>
                   <p className="text-[11px] text-[#7a6f6a] leading-snug">{desc}</p>
                 </div>
