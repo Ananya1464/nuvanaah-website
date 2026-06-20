@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: "All Products — Nuvanaah",
     description: "Recovery bras, breast forms, compression sleeves, hair scarves, wigs, and wellness accessories — thoughtfully designed for women in recovery.",
     siteName: 'Nuvanaah',
-    images: [{ url: 'https://www.nuvanaah.com/images/about/hero-embrace.png', width: 1200, height: 630, alt: 'Nuvanaah Products' }],
+    images: [{ url: 'https://www.nuvanaah.com/logo.jpeg', width: 400, height: 400, alt: 'Nuvanaah Products' }],
   },
   twitter: {
     card: 'summary_large_image',

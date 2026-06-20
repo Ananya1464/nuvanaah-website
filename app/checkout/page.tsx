@@ -526,6 +526,10 @@ export default function CheckoutPage() {
                 <span className="text-xl font-bold text-gray-900">₹ {grandTotal.toLocaleString()}</span>
               </div>
 
+              <p className="text-xs text-gray-400 leading-relaxed mt-3 border-t border-gray-100 pt-3">
+                Certain products (wigs, prosthetics, intimate garments) are non-returnable for hygiene reasons. See our <a href="/legal/shipping" className="text-teal-600 underline">return policy</a>.
+              </p>
+
               {/* Trust Badges */}
               <div className="mt-6 pt-6 border-t border-gray-100 grid grid-cols-2 gap-3 text-xs text-gray-500">
                 <div className="flex items-center gap-2">

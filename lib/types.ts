@@ -16,6 +16,7 @@ export interface Product {
   technical?: string
   subtitle?: string
   slug?: string
+  model?: string
   description: string
   short_description?: string
   price: number | string

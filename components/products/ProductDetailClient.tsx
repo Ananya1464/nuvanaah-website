@@ -305,6 +305,10 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                                 {showSizeError && (
                                     <p className="text-red-500 text-sm mt-2">Please select a size</p>
                                 )}
+                                <p className="text-xs text-gray-400 mt-2 leading-relaxed">
+                                  Sizes are a general guide. Fit may vary based on individual measurements. If you're unsure, refer to our Size Guide or{' '}
+                                  <a href="/contact" className="text-teal-600 underline hover:text-teal-700">contact us</a> — we're happy to help you find the right fit.
+                                </p>
                             </div>
                         )}
 
@@ -368,7 +372,18 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                                 <Zap className="w-5 h-5" />
                                 Buy Now
                             </button>
+
+                            {/* Hygiene Return Notice */}
+                            <p className="text-xs text-gray-400 text-center leading-relaxed mt-1">
+                              🛡️ Please note: For hygiene and safety reasons, certain products (wigs, prosthetics, and intimate garments) cannot be returned or exchanged once opened. Please review our{' '}
+                              <a href="/legal/shipping" className="text-teal-600 underline hover:text-teal-700">return policy</a> before purchasing.
+                            </p>
                         </div>
+
+                        {/* Medical Device Disclaimer */}
+                        <p className="text-xs text-gray-400 leading-relaxed text-center px-2 mb-6">
+                          This product is a comfort and support accessory, not a medical device or treatment. It is not intended to diagnose, treat, cure, or prevent any medical condition. Please follow your healthcare provider's guidance for your recovery plan.
+                        </p>
 
                         {/* OR Divider */}
                         <div className="relative mb-6">

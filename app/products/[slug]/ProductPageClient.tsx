@@ -243,15 +243,19 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
         <div className="space-y-4">
           <div className="space-y-2">
             <p className="text-[11px] font-semibold uppercase tracking-widest text-[#7a6f6a]">Colour</p>
-            <div role="radiogroup" aria-label="Colour" className="flex gap-3">
+            <div role="radiogroup" aria-label="Colour" className="flex gap-5">
               {['Aparajita', 'Ebony', 'Dusty Miller'].map(col => (
                 <button key={col} type="button" role="radio" aria-checked={selectedColour === col}
-                  aria-label={col} onClick={() => setSelectedColour(col)} className="focus:outline-none focus:ring-2 focus:ring-[#884d53] focus:ring-offset-1 rounded-full">
+                  aria-label={col} onClick={() => setSelectedColour(col)}
+                  className="flex flex-col items-center gap-1 focus:outline-none group"
+                >
                   <ColorSwatch name={col} selected={selectedColour === col} />
+                  <span className={`text-[10px] transition-colors ${selectedColour === col ? 'text-[#884d53] font-semibold' : 'text-[#7a6f6a] group-hover:text-[#884d53]/80'}`}>
+                    {col}
+                  </span>
                 </button>
               ))}
             </div>
-            {selectedColour && <p className="text-[11px] text-[#7a6f6a] font-medium">{selectedColour}</p>}
           </div>
           <div className="space-y-2">
             <p className="text-[11px] font-semibold uppercase tracking-widest text-[#7a6f6a]">Size</p>
@@ -293,7 +297,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
           <div className="space-y-2">
             <p className="text-[11px] font-semibold uppercase tracking-widest text-[#7a6f6a]">Version</p>
             <div role="radiogroup" aria-label="Version" className="flex gap-2 flex-wrap">
-              {[['Indian', '₹ 1,575'], ['Imported', '₹ 2,840']].map(([ver, price]) => (
+              {[['Indian', '₹ 1,535'], ['Imported', '₹ 2,840']].map(([ver, price]) => (
                 <button key={ver} type="button" role="radio" aria-checked={selectedVersion === ver}
                   onClick={() => setSelectedVersion(ver)}
                   className={`px-5 py-2.5 rounded-full border text-xs font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-[#884d53] ${
@@ -432,16 +436,19 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
       return (
         <div className="space-y-2">
           <p className="text-[11px] font-semibold uppercase tracking-widest text-[#7a6f6a]">Colour</p>
-          <div role="radiogroup" aria-label="Colour" className="flex gap-3">
+          <div role="radiogroup" aria-label="Colour" className="flex gap-5">
             {product.variantOptions.map(col => (
               <button key={col} type="button" role="radio" aria-checked={selectedColour === col}
                 aria-label={col} onClick={() => setSelectedColour(col)}
-                className="focus:outline-none focus:ring-2 focus:ring-[#884d53] focus:ring-offset-1 rounded-full">
+                className="flex flex-col items-center gap-1 focus:outline-none group"
+              >
                 <ColorSwatch name={col} selected={selectedColour === col} />
+                <span className={`text-[10px] transition-colors ${selectedColour === col ? 'text-[#884d53] font-semibold' : 'text-[#7a6f6a] group-hover:text-[#884d53]/80'}`}>
+                  {col}
+                </span>
               </button>
             ))}
           </div>
-          {selectedColour && <p className="text-[11px] text-[#7a6f6a] font-medium">{selectedColour}</p>}
         </div>
       )
     }
@@ -503,9 +510,15 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
 
   let currentPrice = product.price
   if (product.id === 'flowsleeve') {
-    currentPrice = selectedVersion === 'Imported' ? 2840 : 1575
+    currentPrice = selectedVersion === 'Imported' ? 2840 : 1535
   } else if (product.id === 'bloomcrown') {
-    currentPrice = selectedStyle === '20-22 inches' ? 16000 : 12000
+    if (selectedStyle.includes('20')) {
+      currentPrice = 16007
+    } else if (selectedStyle.includes('22')) {
+      currentPrice = 19103
+    } else {
+      currentPrice = 12101
+    }
   }
 
   const handleAddToCart = () => {
@@ -684,6 +697,11 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
               </p>
               <h1 className="text-3xl sm:text-4xl font-semibold text-[#1c1c18] leading-tight tracking-tight">{product.name}</h1>
               {product.subtitle && <p className="text-sm text-[#7a6f6a] font-medium">{product.subtitle}</p>}
+              {product.model && (
+                <p className="text-xs font-semibold text-[#884d53] uppercase tracking-wider">
+                  Model: {product.model}
+                </p>
+              )}
               {product.tagline && product.id !== 'dewleaf' && (
                 <p className="text-xs italic text-[#7a6f6a]">{product.tagline}</p>
               )}
@@ -710,11 +728,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
                   {product.priceNote}
                 </span>
               )}
-              {product.isGiftPopular && (
-                <span className="bg-[#884d53]/8 text-[#884d53] text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
-                  Popular Gift
-                </span>
-              )}
+
             </div>
 
             {/* Variant selector */}
@@ -1183,12 +1197,17 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
       {/* Lightbox */}
       {isLightboxOpen && productImages.length > 0 && (
         <div
-          className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-center justify-center"
+          className="fixed inset-0 z-[100] flex items-center justify-center"
           role="dialog"
           aria-modal="true"
           aria-label="Image viewer"
-          onClick={() => setIsLightboxOpen(false)}
         >
+          {/* Backdrop overlay - Separated to avoid browser backdrop-filter render bugs */}
+          <div 
+            className="absolute inset-0 bg-black/90 backdrop-blur-md cursor-zoom-out"
+            onClick={() => setIsLightboxOpen(false)}
+          />
+
           <button
             type="button"
             onClick={() => setIsLightboxOpen(false)}
@@ -1198,23 +1217,22 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
             <X className="w-5 h-5" />
           </button>
 
-          <div className="relative w-[90vw] h-[80vh] flex items-center justify-center" onClick={e => e.stopPropagation()}>
-            <Image
+          <div className="relative z-10 w-[90vw] h-[80vh] flex items-center justify-center pointer-events-none">
+            <img
               src={productImages[selectedImage]}
               alt={`${product.name} — full view`}
-              fill
-              className="object-contain"
-              priority
+              className="max-w-[90vw] max-h-[80vh] object-contain pointer-events-auto rounded-lg"
+              onClick={e => e.stopPropagation()}
             />
           </div>
 
           {productImages.length > 1 && (
-            <>
+            <div className="absolute inset-x-4 top-1/2 -translate-y-1/2 flex justify-between pointer-events-none z-20">
               <button
                 type="button"
                 aria-label="Previous image"
                 onClick={e => { e.stopPropagation(); setSelectedImage(prev => (prev - 1 + productImages.length) % productImages.length) }}
-                className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all"
+                className="w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all pointer-events-auto"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
@@ -1222,14 +1240,14 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
                 type="button"
                 aria-label="Next image"
                 onClick={e => { e.stopPropagation(); setSelectedImage(prev => (prev + 1) % productImages.length) }}
-                className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all"
+                className="w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all pointer-events-auto"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
-            </>
+            </div>
           )}
 
-          <div className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-black/40 text-white px-3 py-1 rounded-full text-xs font-medium">
+          <div className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-black/40 text-white px-3 py-1 rounded-full text-xs font-medium z-20">
             {selectedImage + 1} / {productImages.length}
           </div>
         </div>

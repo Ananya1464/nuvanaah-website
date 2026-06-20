@@ -7,8 +7,8 @@ export default function TrustBadges() {
   const badges = [
     {
       icon: Shield,
-      title: '45+ Years Legacy',
-      subtitle: 'Trusted since 1976',
+      title: '45+ Years of Expertise',
+      subtitle: 'K-Hair India, est. 1976',
     },
     {
       icon: Heart,

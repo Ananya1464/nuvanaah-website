@@ -94,7 +94,6 @@ export default function Footer() {
               <li><Link href="/blog" className="text-sm text-white/70 transition-colors hover:text-white">Journal</Link></li>
               <li><Link href="/faq" className="text-sm text-white/70 transition-colors hover:text-white">FAQs</Link></li>
               <li><Link href="/contact" className="text-sm text-white/70 transition-colors hover:text-white">Contact Us</Link></li>
-              <li><a href="https://wa.me/919076041779" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 transition-colors hover:text-white">Wig & Scarf Consultation</a></li>
             </ul>
           </div>
 

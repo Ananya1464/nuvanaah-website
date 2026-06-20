@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: product.ogTitle || title,
       description: product.ogDescription || description,
-      url: 'https://www.nuvanaah.com',
+      url: `https://www.nuvanaah.com/products/${product.slug}`,
       images: product.images?.[0]?.src ? [{ url: product.images[0].src }] : [],
     },
     alternates: {

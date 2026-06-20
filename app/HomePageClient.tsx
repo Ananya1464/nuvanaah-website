@@ -70,8 +70,8 @@ const bestSellers = [
     id: 'bloomcrown',
     category: 'Hair & Confidence',
     name: 'BloomCrown | Medical Wig',
-    price: 12000,
-    priceDisplay: 'From ₹ 12,000',
+    price: 12101,
+    priceDisplay: 'From ₹ 12,101',
     rating: 4.9,
     reviews: 187,
     image: '/images/catalog/BloomCrown/1.jpeg',
@@ -81,8 +81,8 @@ const bestSellers = [
     id: 'petalwrap',
     category: 'Everyday Wellness',
     name: 'PetalWrap | Bamboo Bath Towel',
-    price: 1500,
-    priceDisplay: '₹ 1,500',
+    price: 1535,
+    priceDisplay: '₹ 1,535',
     rating: 4.8,
     reviews: 243,
     image: '/images/catalog/petal leaf/1.PNG',
@@ -92,8 +92,8 @@ const bestSellers = [
     id: 'browbloom',
     category: 'Hair & Confidence',
     name: 'BrowBloom | Eyebrow Prosthesis',
-    price: 1400,
-    priceDisplay: '₹ 1,400',
+    price: 1544,
+    priceDisplay: '₹ 1,544',
     rating: 4.9,
     reviews: 156,
     image: '/images/catalog/Brow Bloom/1.jpeg',
@@ -311,14 +311,16 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
                 accent: '#7a6a38',
               },
             ].map(tile => (
-              <motion.div key={tile.id} variants={staggerItemVariants}>
+              <motion.div key={tile.id} variants={staggerItemVariants} className="h-full">
                 <Link
                   href={tile.href}
-                  className={`group flex flex-col justify-between overflow-hidden rounded-2xl bg-gradient-to-br ${tile.bg} p-5 min-h-[180px] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl`}
+                  className={`group flex flex-col justify-between overflow-hidden rounded-2xl bg-gradient-to-br ${tile.bg} p-5 h-full min-h-[180px] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl`}
                 >
                   <div className="mt-3">
                     <p className="font-bold text-[#1c1c18] text-[15px] leading-snug mb-1">{tile.label}</p>
                     <p className="text-[12px] text-[#524344] leading-snug">{tile.sub}</p>
+                  </div>
+                  <div>
                     <span
                       className="mt-3 inline-block text-[11px] font-semibold uppercase tracking-[0.12em] transition-colors"
                       style={{ color: tile.accent }}

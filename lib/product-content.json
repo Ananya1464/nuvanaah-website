@@ -2449,8 +2449,6 @@
     "whatsIncluded": [
       "1 x BloomCrown Comfort Wig",
       "The wig in your chosen style, constructed and ready for use after any initial setting or styling that may be required. Delivered with the cap pre-adjusted to a standard size; adjustments may be made on receipt.",
-      "Wig Stand",
-      "A wig stand for storage when the wig is not being worn. Storing on a stand maintains the style and the shape of the cap over time.",
       "Care and Styling Guide",
       "A guide covering daily care, washing instructions, styling guidance appropriate to the hair type and construction of your specific wig, and storage recommendations.",
       "Measurement Guidance Card",
@@ -2458,7 +2456,7 @@
     ],
     "howToUse": [
       "Before First Wear",
-      "On receipt, check the wig for any areas where the style or part needs adjustment. Place on the wig stand and allow to settle. Check the cap adjustment to confirm fit before wearing for the first time.",
+      "On receipt, check the wig for any areas where the style or part needs adjustment. Place on a wig stand or equivalent support and allow to settle. Check the cap adjustment to confirm fit before wearing for the first time.",
       "Putting On BloomCrown",
       "If you have remaining hair, smooth it down with a wig cap if preferred, to create an even surface beneath the wig.",
       "Hold the wig at the front and position the front hairline of the wig at your natural hairline position.",
@@ -2469,17 +2467,17 @@
       "During the Day",
       "BloomCrown is designed for full-day wear. If the wig feels as though it has shifted at any point, use both hands at the sides to reposition without lifting. This maintains the naturalness of the hairline position.",
       "Removing BloomCrown",
-      "Lift from the back of the wig forward, using both hands at the sides to guide the wig off evenly. Place immediately on the wig stand to maintain the style."
+      "Lift from the back of the wig forward, using both hands at the sides to guide the wig off evenly. Place immediately on a wig stand or flat surface to maintain the style."
     ],
     "care": [
       "Daily Care",
-      "After each wear, gently detangle with a wide-tooth comb or soft brush, working from the ends upward. Place on the wig stand immediately. This preserves the style and prevents tangling.",
+      "After each wear, gently detangle with a wide-tooth comb or soft brush, working from the ends upward. Place on a wig stand or flat surface immediately. This preserves the style and prevents tangling.",
       "Washing",
-      "Wash when the wig begins to feel less fresh or every two to three weeks with daily wear. Use a mild shampoo or specialist wig shampoo in cool water. Submerge gently, work through lightly, rinse thoroughly, press excess water out gently with a clean towel, and place on the wig stand to air dry completely before wearing again. Do not rub, twist, or wring.",
+      "Wash when the wig begins to feel less fresh or every two to three weeks with daily wear. Use a mild shampoo or specialist wig shampoo in cool water. Submerge gently, work through lightly, rinse thoroughly, press excess water out gently with a clean towel, and allow to air dry completely on a wig stand or clean towel before wearing again. Do not rub, twist, or wring.",
       "Styling",
       "Follow the care guide provided for your specific wig�s construction regarding heat styling. Some BloomCrown styles can be gently heat-styled on low settings; others are better maintained without heat. The included care guide specifies what applies to your wig.",
       "Storage",
-      "Store on the wig stand when not being worn. Keep away from direct sunlight, excessive heat, and damp environments. Do not compress or fold.",
+      "Store on a wig stand or in the included storage dust bag when not being worn. Keep away from direct sunlight, excessive heat, and damp environments. Do not compress or fold.",
       "What Not to Do",
       "Do not use high heat styling tools without checking the care guide first",
       "Do not sleep in the wig",
@@ -2552,15 +2550,15 @@
       },
       {
         "q": "How do I wash it?",
-        "a": "Use mild shampoo in cool water, work through gently, rinse thoroughly, press out excess water without wringing, and air dry on a wig stand. Full instructions are in the included care guide."
+        "a": "Use mild shampoo in cool water, work through gently, rinse thoroughly, press out excess water without wringing, and air dry flat or on a stand. Full instructions are in the included care guide."
       },
       {
         "q": "How long will it last?",
-        "a": "With proper daily care — detangling after each wear, storing on a stand, washing correctly, and avoiding excessive heat — a BloomCrown wig is designed to last many months of daily wear."
+        "a": "With proper daily care — detangling after each wear, storing properly, washing correctly, and avoiding excessive heat — a BloomCrown wig is designed to last many months of daily wear."
       },
       {
         "q": "Do I need a wig stand?",
-        "a": "Yes. A wig stand is included with BloomCrown. Storing the wig on a stand when not in use is the single most important thing you can do to preserve the style and the shape of the cap over time."
+        "a": "While not strictly required, a wig stand (not included) is highly recommended for storing the wig when not in use to preserve the style and the shape of the cap over time. Alternatively, you can store it in the included storage dust bag."
       },
       {
         "q": "Can I sleep in it?",
@@ -2573,6 +2571,132 @@
       {
         "q": "Do you offer a consultation before ordering?",
         "a": "Yes. The Nuvanaah team is available for WhatsApp consultation to help you choose the right style, size, and colour before placing your order. This is particularly recommended for a first BloomCrown purchase."
+      }
+    ]
+  },
+  "oak-crown": {
+    "price": 15000,
+    "tagline": "Inspired by the strength and resilience of the Oak tree.",
+    "seo": {
+      "title": "Oak Crown — Men's Real Hair Wig | Nuvanaah",
+      "metaDescription": "Premium-quality men's real hair wig collection. Lightweight, breathable, and designed for a natural look. Find comfort and confidence.",
+      "ogTitle": "Oak Crown — Men's Comfort Wig | Nuvanaah",
+      "ogDescription": "A premium-quality real hair wig collection for men, designed for comfort, durability, and a natural look."
+    },
+    "overview": "Inspired by the strength and resilience of the Oak tree, Oak Crown is designed for men who value confidence, comfort, and a natural look. Crafted with premium-quality hair and lightweight construction.",
+    "story": "Inspired by the strength and resilience of the Oak tree, Oak Crown is designed for men who value confidence, comfort, and a natural look. Crafted with premium-quality hair and lightweight construction, Oak Crown offers a natural appearance, breathable cap design, and secure, comfortable fit for daily wear. This collection represents a commitment to supporting self-assurance and everyday comfort during recovery.",
+    "features": [
+      {
+        "title": "Premium-Quality Real Hair",
+        "desc": "Crafted with premium-quality real human hair for the most natural appearance, texture, and movement."
+      },
+      {
+        "title": "Lightweight & Breathable Cap",
+        "desc": "Built with a lightweight and highly breathable cap designed to sit comfortably and securely on sensitive skin."
+      }
+    ],
+    "benefits": [
+      {
+        "title": "Confidence & Natural Look",
+        "desc": "A natural parting and realistic hair density give you the confidence of a completely natural reflection."
+      },
+      {
+        "title": "All-Day Comfort",
+        "desc": "Lightweight cap design reduces scalp irritation and heat build-up, allowing for comfortable all-day wear."
+      }
+    ],
+    "materials": "Premium real human hair on a soft, breathable base cap with adjustable straps.",
+    "variants": [
+      "Standard Fit",
+      "Large Fit"
+    ],
+    "whatsIncluded": [
+      "1 x Oak Crown Men's Real Hair Wig",
+      "1 x Breathable Wig Cap",
+      "1 x Reusable Pouch",
+      "1 x Styling and Care Guide"
+    ],
+    "howToUse": [
+      "Prepare your scalp or hair by placing the wig cap.",
+      "Position the wig starting from the front hairline and adjust backward.",
+      "Use the internal adjustment straps to secure a comfortable fit.",
+      "Style gently with a wide-tooth comb."
+    ],
+    "care": [
+      "Wash only when necessary with mild wig shampoo.",
+      "Air dry flat on a clean towel; avoid high heat.",
+      "Store in the included reusable pouch or on a wig stand."
+    ],
+    "faqs": [
+      {
+        "q": "Is the wig made of real human hair?",
+        "a": "Yes, Oak Crown is crafted using premium-quality real human hair for the most natural appearance and movement."
+      },
+      {
+        "q": "How do I care for the real hair wig?",
+        "a": "Wash gently in cool water with specialized wig shampoo, rinse thoroughly, and air dry flat. Avoid high heat styling tools unless specified."
+      }
+    ]
+  },
+  "soft-crown": {
+    "price": 6000,
+    "tagline": "Natural parting with realistic volume.",
+    "seo": {
+      "title": "Soft Crown — Synthetic Wig | Nuvanaah",
+      "metaDescription": "Pre-styled synthetic wig with natural parting, realistic volume, and a comfortable fit. High-quality fiber with natural shine.",
+      "ogTitle": "Soft Crown — Synthetic Wig Collection | Nuvanaah",
+      "ogDescription": "Soft Crown synthetic wig collection. Natural flow, realistic volume, and all-day breathable comfort."
+    },
+    "overview": "Soft Crown is designed for comfort and ease of styling. Natural parting with realistic volume, high-quality fiber with a natural shine, and a soft crown with natural flow & comfortable fit.",
+    "story": "Soft Crown is crafted to provide a natural look and comfortable fit. Designed with high-quality synthetic fiber, it features a natural parting with realistic volume, offering a natural shine and flow. Its lightweight and breathable construction makes it ideal for everyday wear, ensuring a comfortable fit throughout the day.",
+    "features": [
+      {
+        "title": "Natural Parting & Realistic Volume",
+        "desc": "Mimics the appearance of natural hair growth with realistic density and parting."
+      },
+      {
+        "title": "High-Quality Fiber",
+        "desc": "High-temperature synthetic fiber that maintains its pre-styled shape and looks like healthy hair."
+      }
+    ],
+    "benefits": [
+      {
+        "title": "Natural Shine and Flow",
+        "desc": "Matches the natural flow and shine of healthy hair without the synthetic gloss."
+      },
+      {
+        "title": "Lightweight & Secure Fit",
+        "desc": "Soft crown cap wraps gently around the head for a comfortable, breathable, and secure wear."
+      }
+    ],
+    "materials": "High-quality heat-resistant synthetic fiber on a soft elastic mesh cap.",
+    "variants": [
+      "Classic Black",
+      "Natural Brown"
+    ],
+    "whatsIncluded": [
+      "1 x Soft Crown Synthetic Wig",
+      "1 x Wig Cap",
+      "1 x Care Guide"
+    ],
+    "howToUse": [
+      "Prepare your hair or scalp with the wig cap.",
+      "Place the wig from front to back, aligning the hairline.",
+      "Adjust the interior straps for a snug, secure fit."
+    ],
+    "care": [
+      "Wash in cool water with mild synthetic wig shampoo.",
+      "Air dry flat; do not blow dry or apply high heat.",
+      "Brush gently with a wide-tooth comb or wig brush."
+    ],
+    "faqs": [
+      {
+        "q": "Can I apply heat to the Soft Crown synthetic wig?",
+        "a": "No, we recommend avoiding heat styling tools on synthetic fibers to maintain the pre-styled shape and longevity of the wig."
+      },
+      {
+        "q": "How does the soft crown design help?",
+        "a": "The soft crown construction provides a lightweight, flexible fit that conforms to the shape of the head, ensuring all-day breathability and comfort."
       }
     ]
   }

@@ -111,7 +111,7 @@ export default function Hero() {
                   </motion.svg>
                 ))}
               </div>
-              <span className="text-sm font-semibold text-gray-700">45+ Years Trusted Legacy</span>
+              <span className="text-sm font-semibold text-gray-700">K-Hair India's 45+ Year Heritage</span>
             </motion.div>
 
             {/* Main Heading with Staggered Animation */}

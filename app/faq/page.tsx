@@ -58,7 +58,7 @@ const faqData: Record<string, Array<{ q: string; a: string }>> = {
   Products: [
     {
       q: 'How can I find the right size for a bra or breast form?',
-      a: 'Each product page includes a detailed size guide. You are also welcome to reach out to us on WhatsApp — we are happy to help you find the right fit.',
+      a: 'Each product page includes a detailed size guide to help you find the correct fit. For breast forms, you are also welcome to reach out to us on WhatsApp for sizing guidance.',
     },
     {
       q: 'What materials are used in your wigs?',

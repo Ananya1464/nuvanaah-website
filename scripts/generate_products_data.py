@@ -46,7 +46,7 @@ base_data = {
         'crossSells': ['comfort-shape', 'nature-nest', 'nest-carry'],
         'variantLabel': 'Colour',
         'variantOptions': ['Aparajita', 'Ebony', 'Dusty Miller'],
-        'whatsappCTA': True
+        'whatsappCTA': False
     },
     'nature-nest': {
         'name': 'Nature Nest | Underarm Pillow',

@@ -17,17 +17,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = product.seoTitle || product.name
   const description = product.metaDescription || product.description?.substring(0, 160)
 
+  const productUrl = `https://www.nuvanaah.com/products/${product.slug}`
+
   return {
     title: `${title} | Nuvanaah`,
     description,
     openGraph: {
       title: product.ogTitle || title,
       description: product.ogDescription || description,
-      url: 'https://www.nuvanaah.com',
+      url: productUrl,
       images: product.images?.[0]?.src ? [{ url: product.images[0].src }] : [],
     },
     alternates: {
-      canonical: `https://www.nuvanaah.com/products/${product.slug}`,
+      canonical: productUrl,
     },
   }
 }

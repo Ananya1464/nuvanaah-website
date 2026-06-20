@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'FAQ — Cancer Care Products India | Nuvanaah',
     description: 'Frequently asked questions about cancer care products, mastectomy bras, chemotherapy accessories. Shipping, returns, sizing help.',
     siteName: 'Nuvanaah',
-    images: [{ url: 'https://www.nuvanaah.com/images/about/hero-embrace.png', width: 1200, height: 630, alt: 'Nuvanaah FAQ' }],
+    images: [{ url: 'https://www.nuvanaah.com/logo.jpeg', width: 400, height: 400, alt: 'Nuvanaah FAQ' }],
   },
   twitter: {
     card: 'summary_large_image',

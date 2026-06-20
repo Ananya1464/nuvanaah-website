@@ -273,7 +273,7 @@ export default function AboutPage() {
               </span>
               <h3 className="mb-1 text-[14px] font-bold text-[#1c1c18]">FlowSleeve | Lymphedema Sleeve</h3>
               <p className="mb-2 text-[12px] text-[#7a6f6a]">Lymphedema Sleeve</p>
-              <p className="mb-3 text-[14px] text-[#1c1c18]">₹ 1,200</p>
+              <p className="mb-3 text-[14px] text-[#1c1c18]">₹ 1,535</p>
               <Link href="/products/flowsleeve" className="mt-auto text-[13px] text-[#1c1c18] hover:text-[#884d53] transition-colors">
                 See product →
               </Link>
@@ -294,7 +294,7 @@ export default function AboutPage() {
               </span>
               <h3 className="mb-1 text-[14px] font-bold text-[#1c1c18]">Nature Nest | Underarm Pillow</h3>
               <p className="mb-2 text-[12px] text-[#7a6f6a]">Underarm Rest Pillow</p>
-              <p className="mb-3 text-[14px] text-[#1c1c18]">₹ 1,800</p>
+              <p className="mb-3 text-[14px] text-[#1c1c18]">₹ 1,211</p>
               <Link href="/products/nature-nest" className="mt-auto text-[13px] text-[#1c1c18] hover:text-[#884d53] transition-colors">
                 See product →
               </Link>

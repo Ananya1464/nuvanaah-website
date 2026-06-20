@@ -53,8 +53,8 @@ export default function ProductsClient() {
     if (priceFilter === 'all') return true
 
     let priceValue = Number(p.price)
-    if (p.id === 'flowsleeve') priceValue = 1575
-    if (p.id === 'bloomcrown') priceValue = 12000
+    if (p.id === 'flowsleeve') priceValue = 1535
+    if (p.id === 'bloomcrown') priceValue = 12101
 
     if (priceFilter === '2000-5000') return priceValue >= 2000 && priceValue <= 5000
     if (priceFilter === 'above-5000') return priceValue > 5000
@@ -86,22 +86,24 @@ export default function ProductsClient() {
           </div>
 
           {/* Redesigned Trust Badges - Tight single inline row */}
-          <div className="flex flex-wrap items-center justify-center gap-y-2 gap-x-4 sm:gap-x-6 text-[11px] sm:text-xs text-[#524344] mt-6 border-t border-[#ded0bf]/40 pt-4 max-w-4xl mx-auto">
-            <span className="flex items-center gap-1.5 font-semibold">
-              <Shield className="w-4 h-4 text-[#884d53]" /> Skin-Safe
-            </span>
-            <span className="h-3 w-px bg-[#ded0bf] hidden sm:block"></span>
-            <span className="flex items-center gap-1.5 font-semibold">
-              <Heart className="w-4 h-4 text-[#884d53]" /> Appreciated by Doctors
-            </span>
-            <span className="h-3 w-px bg-[#ded0bf] hidden sm:block"></span>
-            <span className="flex items-center gap-1.5 font-semibold">
-              <Truck className="w-4 h-4 text-[#884d53]" /> Free Shipping in India
-            </span>
-            <span className="h-3 w-px bg-[#ded0bf] hidden sm:block"></span>
-            <span className="flex items-center gap-1.5 font-semibold">
-              <Phone className="w-4 h-4 text-[#884d53]" /> Personal Support
-            </span>
+          <div className="border-t border-[#ded0bf]/40 mt-6 pt-4">
+            <div className="flex flex-wrap items-center justify-center gap-y-2 gap-x-4 sm:gap-x-6 text-[11px] sm:text-xs text-[#524344] max-w-4xl mx-auto">
+              <span className="flex items-center gap-1.5 font-semibold">
+                <Shield className="w-4 h-4 text-[#884d53]" /> Skin-Safe
+              </span>
+              <span className="h-3 w-px bg-[#ded0bf] hidden sm:block"></span>
+              <span className="flex items-center gap-1.5 font-semibold">
+                <Heart className="w-4 h-4 text-[#884d53]" /> Appreciated by Doctors
+              </span>
+              <span className="h-3 w-px bg-[#ded0bf] hidden sm:block"></span>
+              <span className="flex items-center gap-1.5 font-semibold">
+                <Truck className="w-4 h-4 text-[#884d53]" /> Free Shipping in India
+              </span>
+              <span className="h-3 w-px bg-[#ded0bf] hidden sm:block"></span>
+              <span className="flex items-center gap-1.5 font-semibold">
+                <Phone className="w-4 h-4 text-[#884d53]" /> Personal Support
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -182,26 +184,14 @@ export default function ProductsClient() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className={`flex ${isFeatured ? 'sm:col-span-2' : ''}`}
               >
               <Link
                 href={`/products/${product.slug || product.id}`}
-                className={`group bg-white rounded-3xl border border-[#ded0bf]/40 overflow-hidden hover:shadow-md transition-all duration-300 flex flex-col relative ${
-                  isFeatured ? 'sm:col-span-2 md:flex-row md:items-stretch' : ''
+                className={`group bg-white rounded-3xl border border-[#ded0bf]/40 overflow-hidden hover:shadow-md transition-all duration-300 flex flex-col w-full relative ${
+                  isFeatured ? 'md:flex-row md:items-stretch' : ''
                 }`}
               >
-                {/* Visual Badges */}
-                <div className="absolute top-4 left-4 z-10 flex flex-col gap-1.5">
-                  {product.isGiftPopular && (
-                    <span className="bg-[#884d53] text-white text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm">
-                      Popular Gift
-                    </span>
-                  )}
-                  {isFeatured && (
-                    <span className="bg-[#446651] text-white text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm">
-                      Featured
-                    </span>
-                  )}
-                </div>
 
                 {/* Product Image */}
                 <div className={`relative bg-[#faf7f2]/40 overflow-hidden flex items-center justify-center border-b border-[#ded0bf]/30 ${

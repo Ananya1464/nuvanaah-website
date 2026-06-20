@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Nuvanaah — Care That Supports You Through Treatment",
     description: "Premium recovery and wellness products for women navigating cancer treatment and post-surgical recovery. Designed with warmth, dignity, and care.",
     siteName: 'Nuvanaah',
-    images: [{ url: 'https://www.nuvanaah.com/images/about/hero-embrace.png', width: 1200, height: 630, alt: 'Nuvanaah — Cancer Recovery Products' }],
+    images: [{ url: 'https://www.nuvanaah.com/logo.jpeg', width: 400, height: 400, alt: 'Nuvanaah — Cancer Recovery Products' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -25,11 +25,11 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     q: 'How do I choose the right bra size after surgery?',
-    a: 'We recommend measuring 6–8 weeks post-surgery. Our care team can guide you through a virtual fitting — WhatsApp us for personalized sizing help.',
+    a: 'We recommend measuring 6–8 weeks post-surgery. Please refer to the detailed size chart on the product page to select your size.',
   },
   {
     q: 'How do I care for my medical wig?',
-    a: 'Wash gently with sulfate-free shampoo every 7–10 wears. Store on a wig stand when not in use. Detailed care instructions are included with every wig purchase.',
+    a: 'Wash gently with sulfate-free shampoo every 7–10 wears. Store in a dust bag or on a stand when not in use. Detailed care instructions are included with every wig purchase.',
   },
 ]
 

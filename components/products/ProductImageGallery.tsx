@@ -124,6 +124,11 @@ export default function ProductImageGallery({ images, productName }: ProductImag
         </div>
       )}
 
+      {/* Product Image Disclaimer */}
+      <p className="text-xs text-gray-400 text-center leading-relaxed px-2">
+        📷 Images are for illustrative purposes only. The actual product may vary slightly in colour, texture, or packaging due to photography lighting, screen display settings, or minor design updates. We always strive to show you the most accurate representation possible.
+      </p>
+
       {/* Zoom Modal */}
       {isZoomed && (
         <div

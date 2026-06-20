@@ -47,9 +47,9 @@ export const metadata: Metadata = {
     siteName: 'Nuvanaah',
     images: [
       {
-        url: 'https://www.nuvanaah.com/images/about/hero-embrace.png',
-        width: 1200,
-        height: 630,
+        url: 'https://www.nuvanaah.com/logo.jpeg',
+        width: 400,
+        height: 400,
         alt: 'Nuvanaah - Cancer Care Products',
       },
     ],

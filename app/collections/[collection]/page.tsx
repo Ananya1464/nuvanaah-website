@@ -25,7 +25,7 @@ export async function generateMetadata(
   return {
     title: `${name} — Comfort & Recovery Products | Nuvanaah`,
     description: `Shop ${name} products at Nuvanaah. Designed for women in recovery — soft, breathable, and thoughtfully made for everyday comfort.`,
-    alternates: { canonical: `https://nuvanaah.com/collections/${collection}` },
+    alternates: { canonical: `https://www.nuvanaah.com/collections/${collection}` },
     openGraph: {
       title: `${name} | Nuvanaah`,
       description: categoryDescriptions[collection] || '',

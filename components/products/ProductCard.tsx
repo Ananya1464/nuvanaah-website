@@ -198,14 +198,9 @@ export default function ProductCard({ product }: ProductCardProps) {
             </div>
           )}
 
-          {/* Price */}
-          {product.id === 'bloomcrown' ? (
-            <p className="text-lg font-bold text-[#884d53]">From ₹ 12,000</p>
-          ) : (
-            <p className="text-lg font-bold text-[#884d53]">
-              {product.priceFrom ? `From ₹${Number(product.price).toLocaleString('en-IN')}` : `₹${Number(product.price).toLocaleString('en-IN')}`}
-            </p>
-          )}
+          <p className="text-lg font-bold text-[#884d53]">
+            {product.priceFrom ? `From ₹${Number(product.price).toLocaleString('en-IN')}` : `₹${Number(product.price).toLocaleString('en-IN')}`}
+          </p>
 
           {/* View Product Link (Hover State) */}
           <div className="mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-150">

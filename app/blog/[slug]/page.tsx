@@ -4,10 +4,69 @@ import ManagingChemoSideEffects from '../articles/ManagingChemoSideEffects';
 import HairLossSolutions from '../articles/HairLossSolutions';
 import LymphedemaManagement from '../articles/LymphedemaManagement';
 import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
 
 import ReadingProgressBar from '@/components/ui/ReadingProgressBar';
 import { Flower, CalendarHeart } from 'lucide-react';
 import Link from 'next/link';
+
+const ARTICLE_META: Record<string, { title: string; description: string; image?: string }> = {
+  'mastectomy-recovery-timeline': {
+    title: 'Mastectomy Recovery Timeline: What to Expect Week by Week | Nuvanaah',
+    description: 'A detailed week-by-week mastectomy recovery guide — pain management, drain care, returning to daily activities, and products that help at each stage.',
+    image: '/images/blog/bamboo-cotton.png',
+  },
+  'choosing-prosthesis': {
+    title: 'How to Choose the Right Breast Prosthesis in India | Nuvanaah',
+    description: 'Your complete guide to finding a breast prosthesis after mastectomy — shapes, weights, materials, sizing, and where to buy in India.',
+    image: '/images/blog/silicone-prosthesis.png',
+  },
+  'managing-chemo-side-effects': {
+    title: 'Managing Chemotherapy Side Effects on Your Skin | Nuvanaah',
+    description: 'Safe, gentle skincare routines for chemotherapy patients. Learn which ingredients to avoid, how to soothe sensitive skin, and products that help.',
+    image: '/images/blog/applying-lotion.png',
+  },
+  'hair-loss-solutions': {
+    title: 'Navigating Hair Loss During Cancer Treatment | Nuvanaah',
+    description: 'Practical and emotional guidance for hair loss during chemotherapy — wigs, headwear, timing, and tips for maintaining confidence and comfort.',
+    image: '/images/blog/dark-wig.png',
+  },
+  'lymphedema-management': {
+    title: 'Understanding and Managing Lymphedema After Breast Cancer | Nuvanaah',
+    description: 'Comprehensive guide to lymphedema after breast cancer surgery — symptoms, early detection, treatment, compression sleeves, and daily management strategies.',
+    image: '/images/blog/compression-sleeve.png',
+  },
+}
+
+export function generateStaticParams() {
+  return Object.keys(ARTICLE_META).map(slug => ({ slug }))
+}
+
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+  const meta = ARTICLE_META[params.slug]
+  if (!meta) return { title: 'Article | Nuvanaah' }
+
+  return {
+    title: meta.title,
+    description: meta.description,
+    alternates: {
+      canonical: `https://www.nuvanaah.com/blog/${params.slug}`,
+    },
+    openGraph: {
+      type: 'article',
+      title: meta.title,
+      description: meta.description,
+      url: `https://www.nuvanaah.com/blog/${params.slug}`,
+      siteName: 'Nuvanaah',
+      images: meta.image ? [{ url: `https://www.nuvanaah.com${meta.image}`, width: 1200, height: 630 }] : [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: meta.title,
+      description: meta.description,
+    },
+  }
+}
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const { slug } = params;

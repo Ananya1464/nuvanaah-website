@@ -21,10 +21,7 @@ Allow: /
 Crawl-delay: 1
 
 # Sitemaps
-Sitemap: https://nuvanaah.com/sitemap.xml
-Sitemap: https://nuvanaah.com/sitemap-products.xml
-Sitemap: https://nuvanaah.com/sitemap-blog.xml
-Sitemap: https://nuvanaah.com/sitemap-cities.xml
+Sitemap: https://www.nuvanaah.com/sitemap.xml
 
 # Block bad bots
 User-agent: SemrushBot
