@@ -1222,8 +1222,8 @@ export const products: Product[] = [
     priceFrom: false,
     categories: [CAT_HAIR],
     categoryNav: 'Hair & Confidence',
-    description: '',
-    fullStory: '',
+    description: 'A ready-to-wear synthetic wig crafted from premium high-temperature fibers, designed for a natural appearance and comfortable daily wear. Lightweight, budget-friendly, and easy to maintain — Soft Crown is pre-styled and ready the moment you put it on.',
+    fullStory: 'Most days, simplicity is what you actually need. Not a complex styling routine. Not a product that requires specialist care. Just something that looks good, feels comfortable, and is ready when you are.\n\nSoft Crown is built around that idea. The premium synthetic fiber is finished to carry a natural shine — not the flat, obviously artificial gloss of standard synthetic wigs, and not the warm-toned quality of real hair either. Something in between: the look of healthy hair without the price or the upkeep.\n\nThe soft crown construction wraps gently around the head. The adjustable, breathable mesh cap sits comfortably without pressure points. The weight is light enough that extended daily wear does not become an exercise in endurance.\n\nPre-styled. Ready to wear. No appointments, no heat tools, no guesswork. You open the box, put it on, and go.',
     images: [
       { id: 1, src: '/images/catalog/SoftCrown/1.jpeg', alt: 'Soft Crown — view 1' },
       { id: 2, src: '/images/catalog/SoftCrown/2.jpeg', alt: 'Soft Crown — view 2' },
