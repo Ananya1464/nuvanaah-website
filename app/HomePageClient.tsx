@@ -36,7 +36,7 @@ const carouselSlides = [
   {
     title: 'Look like yourself. Feel like yourself.',
     description:
-      'Premium medical-grade wigs that move naturally. Rediscover your confidence with breathable, ultra-light construction designed for sensitive scalps.',
+      'Comfort wigs designed for a natural look and feel. Breathable, lightweight construction for sensitive scalps and confident daily wear.',
     button: 'View Hair Collection',
     href: '/products/category/wigs',
     image: '/images/carousel/wig-portrait.png',
@@ -61,8 +61,6 @@ const bestSellers = [
     name: 'Willow Support | Mastectomy Bra',
     price: 3000,
     priceDisplay: '₹ 3,000 (for a pair)',
-    rating: 4.9,
-    reviews: 312,
     image: '/images/catalog/WillowSupport/1.jpeg',
     alt: 'Willow Support — front-open pocket bra',
   },
@@ -72,8 +70,6 @@ const bestSellers = [
     name: 'BloomCrown | Medical Wig',
     price: 12101,
     priceDisplay: 'From ₹ 12,101',
-    rating: 4.9,
-    reviews: 187,
     image: '/images/catalog/BloomCrown/1.jpeg',
     alt: 'BloomCrown — real hair wig collection',
   },
@@ -83,8 +79,6 @@ const bestSellers = [
     name: 'PetalWrap | Bamboo Bath Towel',
     price: 1535,
     priceDisplay: '₹ 1,535',
-    rating: 4.8,
-    reviews: 243,
     image: '/images/catalog/petal leaf/1.PNG',
     alt: 'PetalWrap — bamboo comfort towel',
   },
@@ -94,8 +88,6 @@ const bestSellers = [
     name: 'BrowBloom | Eyebrow Prosthesis',
     price: 1544,
     priceDisplay: '₹ 1,544',
-    rating: 4.9,
-    reviews: 156,
     image: '/images/catalog/Brow Bloom/1.jpeg',
     alt: 'BrowBloom — ready-to-wear eyebrows',
   },
@@ -110,7 +102,7 @@ const journeySteps = [
 
 const testimonials = [
   {
-    quote: "The SoftComfort bra was a lifesaver after my mastectomy. It's so rare to find something that is both medically functional and beautiful.",
+    quote: "The Willow Support bra was exactly what I needed after my mastectomy. Soft, simple to put on, and gentle on sensitive skin.",
     name: 'Anjali K.',
     city: 'Mumbai',
   },
@@ -236,7 +228,7 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
                 transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
                 className="mb-8 max-w-xl text-[17px] leading-7 text-white/85"
               >
-                A sanctuary for recovery essentials designed with clinical precision and high-end retail elegance. We support your journey from treatment to renewal.
+                Recovery essentials designed with care, intention, and the comfort that makes ordinary days easier. Here for every stage of your journey.
               </motion.p>
 
               <motion.div
@@ -297,7 +289,7 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
               {
                 id: 'lymphedema',
                 label: 'Lymphedema Support',
-                sub: 'Fast relief for arm swelling and heaviness',
+                sub: 'Everyday support for arm swelling and heaviness',
                 href: '/products/flowsleeve',
                 bg: 'from-[#e0ede5] to-[#d4e8db]',
                 accent: '#446651',
@@ -341,7 +333,7 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
           {[
             { title: 'Thoughtfully Curated', subtitle: 'Designed for comfort, healing, and dignity', Icon: ShieldCheck },
             { title: 'Free Shipping Across India', subtitle: 'On all orders, no minimum required', Icon: Package },
-            { title: 'Compassionate Guidance', subtitle: 'Support from trained care advisors', Icon: Headset },
+            { title: 'Compassionate Guidance', subtitle: 'Personal support from our team', Icon: Headset },
             { title: 'Gentle on Sensitive Bodies', subtitle: 'Soft materials chosen with care', Icon: Heart },
           ].map(({ title, subtitle, Icon }) => (
             <motion.div key={title} variants={staggerItemVariants} className="group flex flex-col items-center text-center">
@@ -487,8 +479,6 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
                   <Link href={`/products/${product.id}`} className="mb-1 text-base font-semibold text-[#1c1c18] hover:text-[#884d53] transition-colors">
                     {product.name}
                   </Link>
-                  <StarRating rating={product.rating} reviews={product.reviews} />
-
                   <div className="mt-auto flex items-center justify-between pt-4">
                     <div className="text-xl font-bold text-[#884d53]">{product.priceDisplay}</div>
                     <button
@@ -677,7 +667,7 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
       <section className="bg-[#e6e2dc] py-20 px-4 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <FadeInWhenVisible>
-            <h2 className="mb-12 text-center text-[30px] font-bold text-[#1c1c18]">Real Stories from Real Women</h2>
+            <h2 className="mb-12 text-center text-[30px] font-bold text-[#1c1c18]">Words from Our Customers</h2>
           </FadeInWhenVisible>
           <StaggerChildren className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-3" staggerDelay={0.12}>
             {testimonials.map(({ quote, name, city }) => (
@@ -690,6 +680,7 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
               </motion.div>
             ))}
           </StaggerChildren>
+          <p className="mt-4 text-center text-[12px] text-[#7a6f6a]">Names changed to protect customer privacy.</p>
 
         </div>
       </section>

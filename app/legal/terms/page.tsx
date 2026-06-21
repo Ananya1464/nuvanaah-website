@@ -44,7 +44,7 @@ export default function TermsPage() {
           <section className="mb-12">
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. About Nuvanaah</h2>
             <p className="text-gray-700 mb-4">
-              Nuvanaah is operated by <strong>K-Hair India Pvt. Ltd.</strong>, a company with 45+ years of experience in providing quality products for individuals undergoing cancer treatment and recovery.
+              Nuvanaah is operated by <strong>K-Hair India Pvt. Ltd.</strong>, founded by Kanchan Chopra, who brings many years of expertise in the hair, wig, and cancer recovery care space, built through close work with patients and oncology teams.
             </p>
             <p className="text-gray-700">
               Our products are designed to provide comfort, dignity, and support during sensitive health journeys.

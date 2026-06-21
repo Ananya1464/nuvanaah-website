@@ -550,6 +550,7 @@ export const products: Product[] = [
     ogTitle: 'FlowSleeve — Compression Sleeve with Holding Belt | Nuvanaah',
     ogDescription: 'A lymphedema compression sleeve with an adjustable shoulder holding belt that keeps it in place throughout the day. Soft, breathable, and designed for extended daily wear.',
     faqs: [
+      { q: 'What compression level (mmHg) does FlowSleeve provide?', a: 'FlowSleeve provides gentle everyday compression for daily lymphedema management. A specific mmHg compression class is not stated for this product. If your healthcare team has prescribed a specific compression level, please confirm with them that this product meets your prescription before purchasing.' },
       { q: 'What is the difference between Indian and Imported?', a: 'Both versions include the shoulder holding belt and provide the same gentle compression level. The Imported version uses a different fabric construction which some wearers prefer for texture. Both are suitable for everyday wear.' },
       { q: 'Should I consult my doctor before using a compression sleeve?', a: 'Yes. We recommend consulting your lymphedema specialist or healthcare team before starting compression therapy to ensure the compression level is appropriate for your specific situation.' },
       { q: 'How tight should the sleeve feel?', a: 'The sleeve should feel snug but not painful. If you experience numbness, tingling, or increased swelling, remove the sleeve and consult your healthcare team.' },
@@ -800,7 +801,6 @@ export const products: Product[] = [
     ogDescription: 'A compact 12×24 inch recovery towel — soft, quick-drying, and designed for the small daily moments of personal care that add up during recovery.',
     faqs: [
       { q: 'How does DewLeaf differ from PetalWrap?', a: 'DewLeaf is 12×24 inches — a compact face and hand towel. PetalWrap is 58+ inches — a full bath towel. They use the same bamboo fiber and the same four colours. Many women use both together.' },
-      { q: 'Is the price confirmed?', a: 'DewLeaf pricing is currently being confirmed. Register your interest and we will notify you when it is available to order.' },
     ],
     isGiftPopular: false,
     comingSoon: false,
@@ -1148,7 +1148,7 @@ export const products: Product[] = [
     categories: [CAT_HAIR],
     categoryNav: 'Hair & Confidence',
     description: 'Inspired by the strength and resilience of the Oak tree, Oak Crown is designed for men who value confidence, comfort, and a natural look. Crafted with premium-quality hair and lightweight construction, Oak Crown™ offers a seamless blend, realistic appearance, and everyday comfort. Whether you’re looking for fuller coverage, style enhancement, or a confidence boost, our collection is created to look natural and feel effortless.',
-    fullStory: 'Inspired by the strength and resilience of the Oak tree, Oak Crown is designed for men who value confidence, comfort, and a natural look.\n\nCrafted with premium-quality hair and lightweight construction, Oak Crown™ offers a seamless blend, realistic appearance, and everyday comfort. Whether you’re looking for fuller coverage, style enhancement, or a confidence boost, our collection is created to look natural and feel effortless.\n\nWhy Choose Oak Crown?\n\n✓ Natural-looking hairline and blend\n✓ Lightweight and comfortable for daily wear\n✓ Breathable construction\n✓ Easy styling and maintenance\n✓ Designed for a confident, modern look\n\nConfidence Begins Here\n\nAt Nuvanaah, we believe that great hair is more than appearance—it’s about feeling like yourself. Oak Crown™ combines nature-inspired strength with refined craftsmanship to help you look and feel your best every day.\n\nOak Crown\n- Strength. Style. Confidence.',
+    fullStory: 'The oak tree does not fight what comes. It grows through it — rooted, patient, and in time, stronger for having endured.\n\nOak Crown is built around that idea. Not a visual workaround. A considered piece, made with premium-quality hair that moves as real hair moves — naturally, without announcement, without demanding attention.\n\nThe lightweight cap construction stays comfortable through the working day. The breathable base does not trap heat. The hairline is designed for a natural appearance at the distances you actually live at — across a table, in a conversation, in a mirror.\n\nOak Crown is for the man who wants to look like himself. Nothing more, nothing less.',
     images: [
       { id: 1, src: '/images/catalog/OakCrown/1.jpeg', alt: 'Oak Crown — view 1' },
       { id: 2, src: '/images/catalog/OakCrown/2.jpeg', alt: 'Oak Crown — view 2' },

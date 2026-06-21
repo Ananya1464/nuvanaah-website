@@ -252,7 +252,7 @@ export default function AboutPage() {
               </span>
               <h3 className="mb-1 text-[14px] font-bold text-[#1c1c18]">AirBloom | Chemo Headscarf</h3>
               <p className="mb-2 text-[12px] text-[#7a6f6a]">Scarf with Hair System</p>
-              <p className="mb-3 text-[14px] text-[#1c1c18]">₹ 3,500</p>
+              <p className="mb-3 text-[14px] text-[#1c1c18]">₹ 5,000</p>
               <Link href="/products/airbloom" className="mt-auto text-[13px] text-[#1c1c18] hover:text-[#884d53] transition-colors">
                 See product →
               </Link>
