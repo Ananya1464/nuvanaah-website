@@ -39,7 +39,7 @@ export default function MastectomyRecoveryArticle() {
           </h1>
 
           <p className="text-lg text-gray-600 mb-6">
-            Medically Reviewed: Dr. Anjali Sharma, MD, Surgical Oncologist
+            A guide to help you understand what to expect and how to prepare.
           </p>
         </div>
       </div>

@@ -116,7 +116,7 @@ export default function ShippingPage() {
         <div className="bg-white border border-[#ded0bf] rounded-2xl p-8">
           <h2 className="text-xl font-semibold text-[#1c1c18] mb-3">Questions about your delivery?</h2>
           <p className="text-[#524344] mb-6">
-            We are available 24×7. Reach out to us on WhatsApp, by phone, or by email at any time.
+            We are available Monday to Saturday, 10 AM – 6 PM IST. Reach out to us on WhatsApp, by phone, or by email.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <a

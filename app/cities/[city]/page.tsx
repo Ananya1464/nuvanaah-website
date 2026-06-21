@@ -51,7 +51,7 @@ const cityData: Record<string, CityPage> = {
       'Expert cancer care consultation and support services available in Bangalore.',
     consultants: [
       {
-        name: 'Dr. Anjali Nair',
+        name: 'Anjali Nair',
         title: 'Wellness Consultant',
         phone: '+91 98765 43211',
         email: 'anjali.nair@nuvanaah.com',
