@@ -8,7 +8,6 @@ import {
   ArrowRight,
   Heart,
   Plus,
-  Star,
   ShieldCheck,
   Package,
   Headset,
@@ -125,23 +124,6 @@ export type FaqItemType = {
 
 /* ─────────────────────── COMPONENTS ─────────────────────── */
 
-function StarRating({ rating, reviews }: { rating: number; reviews: number }) {
-  return (
-    <div className="flex items-center gap-1.5">
-      <div className="flex items-center gap-0.5">
-        {[1, 2, 3, 4, 5].map((i) => (
-          <Star
-            key={i}
-            className={`h-3.5 w-3.5 ${i <= Math.floor(rating) ? 'fill-amber-400 text-amber-400' : 'fill-gray-200 text-gray-200'}`}
-          />
-        ))}
-      </div>
-      <span className="text-[11px] text-[#524344]">
-        {rating} ({reviews})
-      </span>
-    </div>
-  )
-}
 
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false)
