@@ -487,6 +487,7 @@ export const products: Product[] = [
   {
     id: 'flowsleeve',
     slug: 'flowsleeve',
+    model: 'FSS0210',
     name: 'FlowSleeve | Lymphedema Sleeve',
     subtitle: 'Compression Sleeve with Holding Belt',
     tagline: '',
@@ -568,6 +569,7 @@ export const products: Product[] = [
   {
     id: 'nest-carry',
     slug: 'nest-carry',
+    model: 'NCA1406',
     name: 'Nest Carry | Post-Surgery Kit',
     subtitle: 'Recovery Support Kit',
     tagline: '',
@@ -650,6 +652,7 @@ export const products: Product[] = [
   {
     id: 'petalwrap',
     slug: 'petalwrap',
+    model: 'PWS1707',
     name: 'PetalWrap | Bamboo Bath Towel',
     subtitle: 'Bamboo Comfort Towel',
     tagline: '',
@@ -737,6 +740,7 @@ export const products: Product[] = [
   {
     id: 'dewleaf',
     slug: 'dewleaf',
+    model: 'DLT0712',
     name: 'DewLeaf | Bamboo Face Towel',
     subtitle: 'Recovery Towel',
     tagline: 'Fresh comfort with every use.',
@@ -813,6 +817,7 @@ export const products: Product[] = [
   {
     id: 'browbloom',
     slug: 'browbloom',
+    model: 'BBK05',
     name: 'BrowBloom | Eyebrow Prosthesis',
     subtitle: 'Ready-to-Wear Eyebrows',
     tagline: '',
@@ -895,6 +900,7 @@ export const products: Product[] = [
   {
     id: 'bloomtips',
     slug: 'bloomtips',
+    model: 'BTS1701',
     name: 'BloomTips | Press-On Nails',
     subtitle: 'Comfort Nail Collection',
     tagline: 'Little details. Beautiful confidence.',
@@ -977,6 +983,7 @@ export const products: Product[] = [
   {
     id: 'bloomcrown',
     slug: 'bloomcrown',
+    model: 'BCMK1612',
     name: 'BloomCrown | Medical Wig',
     technical: 'medical wig',
     subtitle: 'Comfort Wig Collection',
@@ -1060,6 +1067,7 @@ export const products: Product[] = [
   {
     id: 'vine-support',
     slug: 'vine-support',
+    model: 'VSMK1701',
     name: 'Vine Support | Lumpectomy Breast Form',
     technical: 'cancer care lumpectomy bra',
     subtitle: 'Soft Recovery Support Form',
@@ -1139,6 +1147,7 @@ export const products: Product[] = [
   {
     id: 'oak-crown',
     slug: 'oak-crown',
+    model: 'OCMK0805',
     name: 'Oak Crown | Men\'s Real Hair Wig',
     subtitle: 'Men\'s Real Hair Wig Collection',
     tagline: 'Inspired by the strength and resilience of the Oak tree.',
@@ -1214,6 +1223,7 @@ export const products: Product[] = [
   {
     id: 'soft-crown',
     slug: 'soft-crown',
+    model: 'SCSK2601',
     name: 'Soft Crown | Synthetic Wig',
     subtitle: 'Comfort Synthetic Wig Collection',
     tagline: 'Natural parting with realistic volume.',
