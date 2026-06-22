@@ -67,7 +67,7 @@ export default function ContactPage() {
                 </a>
                 <div className="flex items-center gap-2 text-tertiary-500">
                   <Clock className="w-4 h-4" />
-                  <span className="text-sm">Mon–Sat, 10 AM – 6 PM IST</span>
+                  <span className="text-sm">24/7 Online Support</span>
                 </div>
               </div>
               <p className="text-sm text-tertiary-500">
