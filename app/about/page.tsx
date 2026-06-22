@@ -231,7 +231,7 @@ export default function AboutPage() {
               </span>
               <h3 className="mb-1 text-[14px] font-bold text-[#1c1c18]">Willow Support | Mastectomy Bra</h3>
               <p className="mb-2 text-[12px] text-[#7a6f6a]">Front-Open Pocket Bra</p>
-              <p className="mb-3 text-[14px] text-[#1c1c18]">₹ 3,000</p>
+              <p className="mb-3 text-[14px] text-[#1c1c18]">₹ 3,020</p>
               <Link href="/products/willow-support" className="mt-auto text-[13px] text-[#1c1c18] hover:text-[#884d53] transition-colors">
                 See product →
               </Link>

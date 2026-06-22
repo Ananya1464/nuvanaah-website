@@ -72,15 +72,15 @@ export default function LymphedemaManagement() {
 </div>
 <div className="p-6 bg-surface flex-grow flex flex-col justify-between">
 <div>
-<h5 className="font-label-md text-label-md text-on-surface mb-2">Nuvaanah Compression Sleeve</h5>
+<h5 className="font-label-md text-label-md text-on-surface mb-2">FlowSleeve | Lymphedema Sleeve</h5>
 <p className="font-caption text-caption text-on-surface-variant mb-6 line-clamp-2">
-                                        Engineered for breathability and comfort, offering gentle, effective support for daily wear.
+                                        Breathable compression sleeve with a shoulder holding belt for comfortable daily wear.
                                     </p>
 </div>
-<button className="w-full bg-[#884D53] text-on-primary font-label-md py-3 rounded-lg hover:bg-primary/90 transition-colors duration-300 flex items-center justify-center gap-2">
-                                    Shop Now
+<a href="/products/flowsleeve" className="w-full bg-[#884D53] text-on-primary font-label-md py-3 rounded-lg hover:bg-primary/90 transition-colors duration-300 flex items-center justify-center gap-2">
+                                    View Product
                                     <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-</button>
+</a>
 </div>
 </div>
 </div>

@@ -68,23 +68,12 @@ export default function MastectomyRecoveryTimeline() {
 </article>
 {/*  Sidebar Widget (Sticky)  */}
 <aside className="col-span-1 lg:col-span-4 xl:col-span-3 lg:sticky lg:top-28 h-fit mt-12 lg:mt-0">
-<div className="bg-surface-container-low rounded-2xl p-6 border border-outline-variant/15 flex flex-col gap-6">
+<div className="bg-surface-container-low rounded-2xl p-6 border border-outline-variant/15 flex flex-col gap-4">
 <h3 className="font-label-md text-label-md text-primary tracking-widest uppercase text-center border-b border-outline-variant/20 pb-4">
-                            Related Products
+                            Recovery Products
                         </h3>
-<a className="group block overflow-hidden rounded-xl bg-surface" href="#">
-<div className="aspect-square w-full overflow-hidden relative">
-<img alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A sophisticated flat-lay product shot of a premium, seamless post-surgery recovery bra in a soft blush or nude tone. It rests on a textured linen background in cream. Beside the bra are subtle, elegant props: a small sprig of dried eucalyptus and a delicate gold chain necklace. Lighting is soft, high-end editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPfOyOYLkh72wgvveYG0uH4y8HEd0pwxmc_y76QYt2w-_UJo3Kues51-DZV2UOYOZUH4SvncIDrR2sbnTg3zL4Lfc5rvJG8seDBURa-pwHSwElGI1kSZUwEoYrM0wEyeWnQbbx4CANKhLKGwd4B0MPzpiOg_6NIc1chhEXQgx4hZn-h1RetMvB-o6e_KjsDmv5x2OEsHgzEYrT-wi0s9cK1mOCUyKRorPqCIVfRRPregKbXkugVbxxI8PrtxMtH6Xsw0uu33ZndD7j"/>
-<div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300"></div>
-</div>
-<div className="p-6 text-center">
-<h4 className="font-headline-sm text-headline-sm text-primary mb-2">The Restorative Bra</h4>
-<p className="font-caption text-caption text-on-surface-variant mb-6">Designed for unparalleled comfort during healing.</p>
-<span className="inline-flex items-center justify-center font-label-md text-label-md text-secondary border border-secondary px-6 py-3 rounded-full hover:bg-secondary hover:text-on-secondary transition-colors duration-300 w-full">
-                                    Shop Now
-                                </span>
-</div>
-</a>
+<p className="text-on-surface-variant text-sm leading-relaxed text-center">Explore our range of post-surgery recovery products — from soft pocket bras and underarm pillows to lymphedema sleeves and breast forms.</p>
+<a className="inline-flex items-center justify-center font-label-md text-label-md text-secondary border border-secondary px-6 py-3 rounded-full hover:bg-secondary hover:text-on-secondary transition-colors duration-300 w-full" href="/products">Browse All Products</a>
 </div>
 </aside>
 </div>

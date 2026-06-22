@@ -280,7 +280,7 @@ export default function ChoosingProsthesisArticle() {
                         <Heart className="w-16 h-16 mx-auto mb-6 opacity-90 text-white" />
                         <h2 className="text-3xl font-semibold mb-4 text-white">Need Personalized Advice?</h2>
                         <p className="text-xl leading-relaxed mb-6 text-white">
-                            Our trained fitters offer free consultation calls. We'll help you find the perfect prosthesis for your body and lifestyle.
+                            We are here to help you think through your options. Reach out on WhatsApp or by phone and we will guide you as best we can.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a href="tel:+919076041779" className="inline-flex items-center justify-center gap-2 bg-white text-teal-700 px-8 py-4 rounded-xl font-semibold hover:bg-cream-50 transition">

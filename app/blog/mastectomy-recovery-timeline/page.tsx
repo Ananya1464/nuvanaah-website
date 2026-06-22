@@ -163,8 +163,8 @@ export default function MastectomyRecoveryArticle() {
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold text-gray-900">Recovery Camisole with Drain Pockets (₹ 2,499)</p>
-                    <p className="text-gray-700 text-sm">Secures drains without pinning to clothes, prevents tugging on tubes</p>
+                    <p className="font-semibold text-gray-900">Willow Support | Mastectomy Bra (₹ 3,020)</p>
+                    <p className="text-gray-700 text-sm">Front-hook closure, soft fabric, discreet inner pocket — designed for the first days after surgery</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -216,8 +216,8 @@ export default function MastectomyRecoveryArticle() {
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-6 h-6 text-teal-600 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-semibold text-gray-900 text-lg">Drainage Bag Holder (₹ 1,299)</p>
-                  <p className="text-gray-700">Hands-free drain management, prevents nighttime tangles, allows easier movement</p>
+                  <p className="font-semibold text-gray-900 text-lg">Nest Carry | Post-Surgery Kit (₹ 1,490)</p>
+                  <p className="text-gray-700">Practical recovery kit — helps organise and carry essentials during the drain management phase</p>
                   <Link href="/products" className="text-teal-600 hover:text-teal-700 font-semibold text-sm mt-2 inline-block">
                     Shop Now →
                   </Link>
@@ -302,11 +302,11 @@ export default function MastectomyRecoveryArticle() {
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-6 h-6 text-teal-600 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-semibold text-gray-900 text-lg">Soft Post-Mastectomy Bra (₹ 2,999)</p>
-                  <p className="text-gray-700 mb-2">First "real" bra after surgery, gentle support without irritation</p>
-                  <p className="text-amber-600 font-semibold text-sm">⚠️ Only after surgeon approval (usually week 6+)</p>
-                  <Link href="/products/category/mastectomy" className="text-teal-600 hover:text-teal-700 font-semibold text-sm mt-2 inline-block">
-                    View Mastectomy Bras →
+                  <p className="font-semibold text-gray-900 text-lg">Willow Support | Mastectomy Bra (₹ 3,020)</p>
+                  <p className="text-gray-700 mb-2">Front-hook closure, breathable plant-fiber fabric, soft inner panel, prosthetic pocket</p>
+                  <p className="text-amber-600 font-semibold text-sm">Only with surgeon clearance (usually week 6+)</p>
+                  <Link href="/products/willow-support" className="text-teal-600 hover:text-teal-700 font-semibold text-sm mt-2 inline-block">
+                    View Product →
                   </Link>
                 </div>
               </div>
@@ -341,8 +341,8 @@ export default function MastectomyRecoveryArticle() {
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-semibold text-gray-900">Silicone Breast Prosthesis (₹ 8,999)</p>
-                    <p className="text-gray-700 text-sm">Restores symmetry, boosts confidence, better posture. Use only after complete healing (6-8 weeks) with surgeon clearance.</p>
+                    <p className="font-semibold text-gray-900">BloomForm | Breast Form (₹ 2,525)</p>
+                    <p className="text-gray-700 text-sm">Plant-fiber breast form that restores balance and silhouette. Lightweight, breathable, gentle on healing skin. Use only after complete healing with surgeon clearance.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -374,8 +374,7 @@ export default function MastectomyRecoveryArticle() {
             <h4 className="font-semibold text-gray-900 mb-3">Products for Long-Term:</h4>
             <ul className="space-y-2 text-gray-700">
               <li>• Multiple Mastectomy Bras (2-3 for rotation)</li>
-              <li>• Lymphedema Compression Sleeve (₹ 1,799) - if nodes removed</li>
-              <li>• Breast Form Adhesive (₹ 1,299) - for special occasions/swimming</li>
+              <li>• FlowSleeve | Lymphedema Sleeve (₹ 1,535) - if lymph nodes removed</li>
             </ul>
           </section>
 

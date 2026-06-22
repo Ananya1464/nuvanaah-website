@@ -18,7 +18,7 @@ export default function ContactPage() {
             We're Here <span className="font-semibold text-primary-600">for You</span>
           </h1>
           <p className="text-xl text-tertiary-600 max-w-2xl mx-auto leading-relaxed">
-            Questions about products? Need sizing help? Just want to talk? Our compassionate team is ready to support you.
+            Questions about products? Need sizing help? Just want to talk? We are here to support you — reach out on WhatsApp or by phone.
           </p>
         </div>
       </section>
@@ -67,7 +67,7 @@ export default function ContactPage() {
                 </a>
                 <div className="flex items-center gap-2 text-tertiary-500">
                   <Clock className="w-4 h-4" />
-                  <span className="text-sm">24/7 Online Support</span>
+                  <span className="text-sm">Mon–Sat, 10 AM – 6 PM IST</span>
                 </div>
               </div>
               <p className="text-sm text-tertiary-500">
@@ -82,8 +82,8 @@ export default function ContactPage() {
               </div>
               <h3 className="text-2xl font-semibold text-tertiary-700 mb-4">Email Us</h3>
               <div className="space-y-3 mb-6">
-                <a href="mailto:care@nuvanaah.com" className="block text-lg font-semibold text-neutral-600 hover:text-neutral-700">
-                  care@nuvanaah.com
+                <a href="mailto:hello@nuvanaah.com" className="block text-lg font-semibold text-neutral-600 hover:text-neutral-700">
+                  hello@nuvanaah.com
                 </a>
                 <div className="flex items-center gap-2 text-tertiary-500">
                   <Clock className="w-4 h-4" />

@@ -28,7 +28,7 @@ const carouselSlides = [
     description:
       'Our post-surgery recovery kits are curated with softest bamboo fabrics and front-closure designs to prioritize your comfort when you need it most.',
     button: 'Explore Recovery Kits',
-    href: '/products/category/post-surgery',
+    href: '/collections/recovery-body-support',
     image: '/images/carousel/recovery-flatlay.png',
     alt: 'Post-surgery recovery items on warm linen',
   },
