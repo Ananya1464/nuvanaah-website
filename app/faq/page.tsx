@@ -52,7 +52,7 @@ const faqData: Record<string, Array<{ q: string; a: string }>> = {
     },
     {
       q: 'Are you available to help with support or product questions?',
-      a: 'Our team is available Monday to Saturday, 10 AM – 6 PM IST. Reach out via WhatsApp or email and we will get back to you as soon as possible.',
+      a: 'Our online support via WhatsApp is available 24/7. For phone or email inquiries, our team is available Monday to Saturday, 10 AM – 6 PM IST. Reach out to us anytime and we will get back to you as soon as possible.',
     },
   ],
   Products: [
@@ -280,7 +280,7 @@ export default function FAQPage() {
               Still need help?
             </h2>
             <p className="text-[#524344] mb-8 max-w-lg mx-auto">
-              If you can't find your answer here, reach out to us. We are available Monday to Saturday, 10 AM – 6 PM IST.
+              If you can't find your answer here, reach out to us. We offer 24/7 online support via WhatsApp. Phone and email support are available Monday to Saturday, 10 AM – 6 PM IST.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
