@@ -230,7 +230,7 @@ export const products: Product[] = [
   {
     id: 'nature-nest',
     slug: 'nature-nest',
-    model: 'NNKM2016 / NNS1304',
+    model: 'NNKM2016',
     name: 'Nature Nest | Underarm Pillow',
     subtitle: 'Underarm Rest Pillow',
     tagline: '',
@@ -577,7 +577,7 @@ export const products: Product[] = [
     subtitle: 'Recovery Support Kit',
     tagline: '',
     price: 1490,
-    model: 'NCA1406',
+    model: 'NCA1406 / NNS1304',
     priceFrom: false,
     categories: [CAT_RECOVERY, CAT_MASTECTOMY],
     categoryNav: 'Recovery & Body Support',
