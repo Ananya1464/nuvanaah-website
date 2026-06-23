@@ -611,7 +611,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
 
           {/* ₹ ₹ Zone 1: Gallery ₹ ₹ */}
           <div className="space-y-3">
-            {/* Main image */}
+            {/* Main image — object-contain ensures full image visibility */}
             <div
               className="relative w-full aspect-square rounded-2xl overflow-hidden bg-white border border-[rgba(28,28,24,0.08)] cursor-zoom-in group shadow-sm"
               onClick={() => setIsLightboxOpen(true)}
