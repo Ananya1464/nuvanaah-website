@@ -35,7 +35,7 @@ export default function ProductImageGallery({ images, productName }: ProductImag
           src={images[selectedImage]}
           alt={`${productName} - View ${selectedImage + 1}`}
           fill
-          className="object-cover"
+          className="object-contain p-4"
           priority
           quality={90}
           sizes="(max-width: 768px) 100vw, 50vw"
