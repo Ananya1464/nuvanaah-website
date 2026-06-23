@@ -46,7 +46,7 @@ export function ProductRelated({ products, articles }: ProductRelatedProps) {
                     alt={product.name}
                     fill
                     sizes="(max-width: 768px) 50vw, 25vw"
-                    className="object-contain p-4 transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
                 <span className="mb-1 text-[10px] font-bold uppercase tracking-widest text-text-tertiary">
