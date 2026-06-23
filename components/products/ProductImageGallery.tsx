@@ -35,7 +35,7 @@ export default function ProductImageGallery({ images, productName }: ProductImag
           src={images[selectedImage]}
           alt={`${productName} - View ${selectedImage + 1}`}
           fill
-          className="object-cover"
+          className="object-contain"
           priority
           quality={90}
           sizes="(max-width: 768px) 100vw, 50vw"
@@ -96,7 +96,7 @@ export default function ProductImageGallery({ images, productName }: ProductImag
                 src={image}
                 alt={`${productName} thumbnail ${index + 1}`}
                 fill
-                className="object-cover"
+                className="object-contain"
                 sizes="(max-width: 768px) 25vw, 15vw"
               />
             </button>
