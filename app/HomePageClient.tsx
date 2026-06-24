@@ -78,7 +78,7 @@ const bestSellers = [
     name: 'PetalWrap | Bamboo Bath Towel',
     price: 1535,
     priceDisplay: '₹ 1,535',
-    image: '/images/catalog/petal leaf/1.PNG',
+    image: '/images/catalog/petal leaf/1.jpeg',
     alt: 'PetalWrap — bamboo comfort towel',
   },
   {
