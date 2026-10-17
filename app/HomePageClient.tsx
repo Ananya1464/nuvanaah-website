@@ -22,6 +22,36 @@ import StaggerChildren, { staggerItemVariants } from '@/components/animations/St
 
 /* ─────────────────────── DATA ─────────────────────── */
 
+const heroSlides = [
+  {
+    image: '/images/hero/hero-banner-3.png',
+    alt: 'Care essentials and support products arranged with white gypsophila flowers',
+    title: 'You are more than your diagnosis.',
+    titleHighlight: 'yourself',
+    subtitle: 'Care essentials designed with warmth, intention, and the comfort that makes ordinary days easier.',
+    cta: 'Shop Care Essentials',
+    href: '/collections/recovery-body-support',
+  },
+  {
+    image: '/images/hero/hero-banner-2.png',
+    alt: 'Headscarves and wigs on mannequin heads, surrounded by white gypsophila flowers',
+    title: 'Look like yourself.',
+    titleHighlight: 'yourself',
+    subtitle: 'Comfort wigs and headscarves designed for a natural look and feel. Breathable, lightweight, and made for confident daily wear.',
+    cta: 'Explore Hair & Confidence',
+    href: '/collections/hair-confidence',
+  },
+  {
+    image: '/images/hero/hero-banner-1.png',
+    alt: 'Bamboo bath towels, press-on nails, and eyebrow prostheses with white flowers',
+    title: 'Gentle comfort for every day.',
+    titleHighlight: 'every day',
+    subtitle: 'Thoughtfully curated everyday essentials — from bamboo-soft towels to nail and brow care — for every stage of your journey.',
+    cta: 'Shop Everyday Wellness',
+    href: '/collections/everyday-wellness',
+  },
+]
+
 const carouselSlides = [
   {
     title: 'Designed for your first days home.',
@@ -56,7 +86,7 @@ const carouselSlides = [
 const bestSellers = [
   {
     id: 'willow-support',
-    category: 'Recovery & Body Support',
+    category: 'Care Essentials',
     name: 'Willow Support | Mastectomy Bra',
     price: 3020,
     priceDisplay: '₹ 3,020 (for a pair)',
@@ -92,13 +122,6 @@ const bestSellers = [
   },
 ]
 
-const journeySteps = [
-  { step: '1', title: 'Diagnosis', description: 'Gathering strength and seeking the right information.' },
-  { step: '2', title: 'Surgery & Recovery', description: 'Immediate postoperative care and gentle healing focus.' },
-  { step: '3', title: 'Chemotherapy', description: 'Managing side effects with comfort and soft materials.' },
-  { step: '4', title: 'Rebuilding Confidence', description: 'Embracing a new chapter with renewed dignity.' },
-]
-
 const testimonials = [
   {
     quote: "The Willow Support bra was exactly what I needed after my mastectomy. Soft, simple to put on, and gentle on sensitive skin.",
@@ -120,6 +143,114 @@ const testimonials = [
 export type FaqItemType = {
   q: string
   a: string
+}
+
+/* ─── Hero banner slide variants ─── */
+const heroBannerVariants = {
+  enter: { opacity: 0, scale: 1.03 },
+  center: { opacity: 1, scale: 1 },
+  exit: { opacity: 0, scale: 0.98 },
+}
+
+function HeroBanner() {
+  const [active, setActive] = useState(0)
+
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setActive((prev) => (prev + 1) % heroSlides.length)
+    }, 6000)
+    return () => window.clearInterval(id)
+  }, [])
+
+  const slide = heroSlides[active]
+
+  // Find which word(s) to italicise in title
+  const highlighted = slide.titleHighlight
+  const parts = slide.title.split(highlighted)
+
+  return (
+    <section className="relative w-full overflow-hidden bg-[#f5ede8]" style={{ aspectRatio: '2087/753' }}>
+      {/* ── Images ── */}
+      <AnimatePresence mode="sync">
+        <motion.div
+          key={`hero-img-${active}`}
+          variants={heroBannerVariants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="absolute inset-0"
+        >
+          <Image
+            src={slide.image}
+            alt={slide.alt}
+            fill
+            priority={active === 0}
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          {/* subtle left gradient so text is readable at all screen sizes */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-transparent" />
+        </motion.div>
+      </AnimatePresence>
+
+      {/* ── Text overlay ── */}
+      <div className="absolute inset-0 flex items-center">
+        <div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="max-w-[520px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`hero-text-${active}`}
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="space-y-5"
+              >
+                <h1 className="text-[28px] sm:text-[38px] lg:text-[50px] font-bold leading-[1.1] tracking-[-0.02em] text-white drop-shadow-sm">
+                  {parts[0]}
+                  <span className="italic text-[#fec5cb]">{highlighted}</span>
+                  {parts[1]}
+                </h1>
+                <p className="text-[15px] sm:text-[17px] leading-7 text-white/85 max-w-md drop-shadow-sm">
+                  {slide.subtitle}
+                </p>
+                <div className="flex flex-wrap items-center gap-4 pt-1">
+                  <Link
+                    href={slide.href}
+                    className="rounded-full bg-[#884d53] px-7 py-3.5 font-semibold text-white shadow-[0_12px_36px_rgba(136,77,83,0.35)] transition-all hover:-translate-y-0.5 hover:shadow-xl text-sm sm:text-base"
+                  >
+                    {slide.cta}
+                  </Link>
+                  <Link
+                    href="/about"
+                    className="group flex items-center gap-2 rounded-full px-5 py-3.5 font-semibold text-white transition-colors hover:bg-white/10 text-sm sm:text-base"
+                  >
+                    Our Story
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* ── Dot indicators ── */}
+            <div className="mt-8 flex items-center gap-2.5">
+              {heroSlides.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActive(i)}
+                  aria-label={`Go to slide ${i + 1}`}
+                  className={`rounded-full transition-all duration-300 ${
+                    i === active ? 'w-7 h-2.5 bg-white' : 'w-2.5 h-2.5 bg-white/40 hover:bg-white/60'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
 }
 
 /* ─────────────────────── COMPONENTS ─────────────────────── */
@@ -174,70 +305,7 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
     <main className="min-h-screen bg-[#fdf9f3] text-[#1c1c18]">
 
       {/* ═══ SECTION 1: HERO ═══ */}
-      <section className="relative flex flex-col lg:block lg:h-[100vh] lg:min-h-[600px] lg:max-h-[900px] w-full bg-[#1c1c18]">
-        
-        {/* Image Container */}
-        <div className="relative h-[55vh] min-h-[400px] w-full lg:absolute lg:inset-0 lg:h-full">
-          <Image
-            src="/images/hero-homepage-v3.png"
-            alt="Serene, dignified young Indian woman with a soft half-smile in a beautifully designed warm home, conveying gentle rebuilding"
-            fill
-            priority={true}
-            sizes="(max-width: 768px) 100vw, 100vw"
-            className="object-cover object-center lg:object-[75%_center]"
-          />
-          {/* Desktop gradient - only visible on lg screens */}
-          <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent w-2/3" />
-        </div>
-
-        {/* Text Container */}
-        <div className="relative z-10 flex h-full items-center bg-[#1c1c18] px-4 py-16 sm:px-6 lg:bg-transparent lg:px-8 lg:py-0">
-          <div className="mx-auto w-full max-w-7xl">
-            <div className="max-w-2xl">
-
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="mb-5 text-[34px] sm:text-[44px] font-bold leading-[1.1] tracking-[-0.02em] text-white md:text-[56px] lg:text-[64px]"
-              >
-                You are more than your diagnosis. Feel like <span className="italic text-[#feb2b9]">yourself</span> again.
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="mb-8 max-w-xl text-[17px] leading-7 text-white/85"
-              >
-                Recovery essentials designed with care, intention, and the comfort that makes ordinary days easier. Here for every stage of your journey.
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="mb-10 flex flex-wrap items-center gap-4"
-              >
-                <Link
-                  href="/products"
-                  className="rounded-full bg-[#884d53] px-8 py-4 font-semibold text-white shadow-[0_18px_48px_rgba(136,77,83,0.3)] transition-all hover:-translate-y-0.5 hover:shadow-xl"
-                >
-                  Shop Collection
-                </Link>
-                <Link
-                  href="/about"
-                  className="group flex items-center gap-2 rounded-full px-6 py-4 font-semibold text-white transition-colors hover:bg-white/10 lg:hover:bg-black/20"
-                >
-                  Our Story
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </motion.div>
-
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroBanner />
 
       {/* ═══ SECTION 2: SHOP BY NEED ═══ */}
       <section className="bg-white py-16 px-4 lg:px-8">
@@ -250,39 +318,31 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
             </div>
           </FadeInWhenVisible>
 
-          <StaggerChildren className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-4">
+          <StaggerChildren className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:grid-cols-3">
             {[
               {
-                id: 'after-surgery',
-                label: 'After Surgery',
-                sub: 'Comfort and support for your recovery journey',
-                href: '/shop-by-need/after-surgery',
+                id: 'care-essentials',
+                label: 'Care Essentials',
+                sub: 'Comfort, support, and thoughtful design for daily needs',
+                href: '/collections/recovery-body-support',
                 bg: 'from-[#f2e8e0] to-[#ede0d4]',
                 accent: '#884d53',
               },
               {
-                id: 'hair-loss',
-                label: 'Managing Hair Loss',
-                sub: 'Feel like yourself during treatment',
-                href: '/shop-by-need/hair-loss',
+                id: 'hair-confidence',
+                label: 'Hair & Confidence',
+                sub: 'Breathable wigs, headscarves, and natural coverage',
+                href: '/collections/hair-confidence',
                 bg: 'from-[#e8edf2] to-[#d9e4ed]',
                 accent: '#4a6fa5',
               },
               {
-                id: 'lymphedema',
-                label: 'Lymphedema Support',
-                sub: 'Everyday support for arm swelling and heaviness',
-                href: '/products/flowsleeve',
+                id: 'everyday-wellness',
+                label: 'Everyday Wellness',
+                sub: 'Gentle products for sensitive skin and personal care',
+                href: '/collections/everyday-wellness',
                 bg: 'from-[#e0ede5] to-[#d4e8db]',
                 accent: '#446651',
-              },
-              {
-                id: 'daily-comfort',
-                label: 'Daily Comfort',
-                sub: 'Gentle products for sensitive skin',
-                href: '/shop-by-need/daily-comfort',
-                bg: 'from-[#f0ecdf] to-[#e8e2cf]',
-                accent: '#7a6a38',
               },
             ].map(tile => (
               <motion.div key={tile.id} variants={staggerItemVariants} className="h-full">
@@ -478,44 +538,6 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
         </div>
       </section>
 
-      {/* ═══ SECTION 6: JOURNEY TIMELINE ═══ */}
-      <section className="bg-[#1c1c18] py-20 px-4 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <FadeInWhenVisible>
-            <div className="mb-14 text-center">
-              <p className="mb-3 text-[14px] font-bold uppercase tracking-[0.3em] text-[#884d53]">Your path</p>
-              <h2 className="text-[28px] font-bold text-white md:text-[34px]">Every stage has the right support.</h2>
-            </div>
-          </FadeInWhenVisible>
-
-          {/* Mobile: vertical stack / Desktop: horizontal row */}
-          <div className="relative">
-            {/* Connecting line — desktop only */}
-            <div className="absolute left-0 right-0 top-[28px] hidden h-px bg-white/10 md:block" />
-
-            <StaggerChildren className="grid grid-cols-1 gap-4 md:grid-cols-4 md:gap-6" staggerDelay={0.12}>
-              {journeySteps.map(({ step, title, description }, i) => (
-                <motion.div key={step} variants={staggerItemVariants} className="relative flex gap-5 rounded-2xl border border-white/8 bg-white/5 p-6 md:flex-col md:gap-4">
-                  {/* Step number */}
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#884d53] text-[13px] font-bold text-white md:h-11 md:w-11">
-                    {step}
-                  </div>
-                  {/* Vertical connector — mobile only */}
-                  {i < journeySteps.length - 1 && (
-                    <div className="absolute left-[38px] top-[64px] bottom-[-16px] w-px bg-white/10 md:hidden" />
-                  )}
-                  <div>
-                    <h3 className="mb-1 text-[15px] font-semibold text-white">{title}</h3>
-                    <p className="text-[13px] leading-relaxed text-white/55">{description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </StaggerChildren>
-          </div>
-        </div>
-      </section>
-
-
       {/* ═══ SECTION 6B: NAMING PHILOSOPHY ═══ */}
       <section className="bg-[#faf7f2] py-16 px-4 lg:px-8 border-t border-[#ded0bf]/30">
         <div className="mx-auto max-w-3xl text-center">
@@ -525,7 +547,7 @@ export default function HomePageClient({ faqItems }: { faqItems: FaqItemType[] }
               Named after nature. Designed for you.
             </h2>
             <p className="text-[#524344] text-base sm:text-lg leading-relaxed mb-4">
-              Every Nuvanaah product is named after something from the natural world — a willow that bends without breaking, a petal that is soft by design, a vine that finds its way through. The names are not decorative. They are a reminder of what recovery looks like: gradual, adaptive, and always moving toward something.
+              Every Nuvanaah product is named after something from the natural world — a willow that bends without breaking, a petal that is soft by design, a vine that finds its way through. The names are not decorative. They are a reminder of what gentle care and healing look like: gradual, adaptive, and always moving toward comfort.
             </p>
             <p className="text-[#7a6f6a] text-sm leading-relaxed">
               Each product also carries the clinical name it is known by — so whether you search for a breast prosthesis, a mastectomy bra, a cranial prosthesis, or a lymphedema sleeve, you will always find what you are looking for.

@@ -97,6 +97,9 @@ export default function CartPage() {
                             {item.name}
                           </Link>
                         </h3>
+                        {item.variant && (
+                          <p className="text-sm text-[#884d53] font-medium">{item.variant}</p>
+                        )}
                         <p className="text-sm text-tertiary-400">SKU: {item.id.toUpperCase()}</p>
                       </div>
                       <button

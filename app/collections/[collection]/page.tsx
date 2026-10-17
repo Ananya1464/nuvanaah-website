@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Phone } from 'lucide-react'
 import {
   getProductsByCategory,
@@ -11,6 +12,12 @@ import ProductCard from '@/components/products/ProductCard'
 
 // ─── VALID COLLECTION SLUGS ──────────────────────────────────────────────────
 const VALID_COLLECTIONS = ['recovery-body-support', 'hair-confidence', 'everyday-wellness']
+
+const bannerMap: Record<string, string> = {
+  'recovery-body-support': '/images/banners/body_support_all_products_banner.jpg',
+  'hair-confidence':       '/images/banners/hair_all_products_banner.jpg',
+  'everyday-wellness':     '/images/banners/everyday_wellness_all_products_banner.jpg',
+}
 
 // ─── SEO ─────────────────────────────────────────────────────────────────────
 export async function generateStaticParams() {
@@ -57,8 +64,18 @@ export default async function CollectionPage(
     <div className="min-h-screen bg-[#faf7f2]">
 
       {/* ── HEADER ── */}
-      <div className="bg-gradient-to-b from-[#2c1f1a] to-[#3a2820] text-white py-20 sm:py-28 px-4">
-        <div className="max-w-7xl mx-auto">
+      <div className="relative bg-[#2c1f1a] text-white py-24 sm:py-32 px-4 overflow-hidden">
+        <div className="absolute inset-0 opacity-40">
+          <Image
+            src={bannerMap[collection]}
+            alt={name}
+            fill
+            priority
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+        </div>
+        <div className="relative max-w-7xl mx-auto z-10">
           {/* Breadcrumb */}
           <nav className="mb-6 flex items-center gap-2 text-[12px] text-white/50" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -70,13 +87,13 @@ export default async function CollectionPage(
             {name}
           </h1>
           {description && (
-            <p className="text-lg text-white/70 max-w-2xl leading-relaxed font-light">{description}</p>
+            <p className="text-lg text-white/80 max-w-2xl leading-relaxed font-light">{description}</p>
           )}
           <div className="mt-6 flex items-center gap-3 flex-wrap">
-            <span className="rounded-full bg-white/10 px-4 py-1.5 text-[13px] font-medium text-white/80">
+            <span className="rounded-full bg-white/10 px-4 py-1.5 text-[13px] font-medium text-white/90">
               {collectionProducts.length} {collectionProducts.length === 1 ? 'product' : 'products'}
             </span>
-            <span className="rounded-full bg-white/10 px-4 py-1.5 text-[13px] font-medium text-white/80">
+            <span className="rounded-full bg-white/10 px-4 py-1.5 text-[13px] font-medium text-white/90">
               Free shipping in India
             </span>
           </div>

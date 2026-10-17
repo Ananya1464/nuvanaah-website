@@ -116,7 +116,7 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
   // Variant states
   const [selectedColour, setSelectedColour] = useState(product.variantOptions?.[0] || '')
   const [selectedPrint, setSelectedPrint] = useState(product.variantOptions?.[0] || '')
-  const [selectedSize, setSelectedSize] = useState('M')
+  const [selectedSize, setSelectedSize] = useState('')
   const [selectedVersion, setSelectedVersion] = useState('Indian')
   const [selectedShade, setSelectedShade] = useState(product.variantOptions?.[0] || 'Coffee Bean')
   const [selectedStyle, setSelectedStyle] = useState(product.variantOptions?.[0] || 'Long Balayage')
@@ -345,6 +345,20 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
             )}
           </div>
 
+          <div className="space-y-2">
+            <p className="text-[11px] font-semibold uppercase tracking-widest text-[#7a6f6a]">Size</p>
+            <div role="radiogroup" aria-label="Size" className="flex flex-wrap gap-2">
+              {['32/36', '34/38', '36/40', '38/42', '40/44', '42/46', '44/48'].map(sz => (
+                <button key={sz} type="button" role="radio" aria-checked={selectedSize === sz}
+                  onClick={() => setSelectedSize(sz)}
+                  className={`px-3 py-2 rounded-full border text-xs font-bold transition-all focus:outline-none focus:ring-2 focus:ring-[#884d53] ${
+                    selectedSize === sz ? 'bg-[#884d53] text-white border-[#884d53]' : 'bg-white border-[rgba(28,28,24,0.2)] text-[#1c1c18] hover:border-[#884d53]/50'
+                  }`}>{sz}</button>
+              ))}
+            </div>
+            <p className="text-[10px] text-[#7a6f6a]">Format: Underbust / Full Chest (in inches). See guide below.</p>
+          </div>
+
           {/* Find Your Size */}
           <div className="bg-[#faf7f2] rounded-xl p-4 border border-[#ded0bf]/60">
             <p className="text-[11px] font-bold text-[#884d53] uppercase tracking-wider mb-3">Find Your Size — Just 2 Measurements</p>
@@ -522,28 +536,38 @@ export default function ProductPageClient({ product, prevProduct, nextProduct }:
   }
 
   const handleAddToCart = () => {
-    let itemName = product.name;
+    const itemName = product.name;
     let itemId = String(product.id);
-    
+    let variant = '';
+
     if (product.id === 'bloomform') {
       if (!selectedSide) return;
-      itemName = `${product.name} (${selectedSide})`;
-      itemId = `${product.id}-${selectedSide.toLowerCase()}`;
+      variant = selectedSize ? `${selectedSide} · Size ${selectedSize}` : selectedSide;
+      itemId = `${product.id}-${selectedSide.toLowerCase()}${selectedSize ? `-${selectedSize}` : ''}`;
+    } else if (product.id === 'willow-support') {
+      variant = selectedColour + (selectedSize ? ` · Size ${selectedSize}` : '');
+      itemId = `${product.id}-${selectedColour.replace(/\s+/g, '-').toLowerCase()}${selectedSize ? `-${selectedSize}` : ''}`;
     } else if (product.id === 'bloomcrown') {
-      itemName = `${product.name} (${selectedStyle})`;
+      variant = selectedStyle;
       itemId = `${product.id}-${selectedStyle.replace(/\s+/g, '-').toLowerCase()}`;
+    } else if (product.id === 'flowsleeve') {
+      variant = selectedVersion;
+      itemId = `${product.id}-${selectedVersion.toLowerCase()}`;
+    } else if (product.id === 'browbloom') {
+      variant = selectedShade;
+      itemId = `${product.id}-${selectedShade.replace(/\s+/g, '-').toLowerCase()}`;
     } else if (product.variantLabel === 'Colour' && selectedColour) {
-      itemName = `${product.name} (${selectedColour})`;
+      variant = selectedColour;
       itemId = `${product.id}-${selectedColour.replace(/\s+/g, '-').toLowerCase()}`;
     } else if (product.variantLabel === 'Print' && selectedPrint) {
-      itemName = `${product.name} (${selectedPrint})`;
+      variant = selectedPrint;
       itemId = `${product.id}-${selectedPrint.replace(/\s+/g, '-').toLowerCase()}`;
     }
 
-    addItem({ id: itemId, name: itemName, price: Number(currentPrice), image: productImages[0] })
+    addItem({ id: itemId, name: itemName, price: Number(currentPrice), image: productImages[0], variant: variant || undefined })
     trackAddToCart({
       id: itemId,
-      name: itemName,
+      name: variant ? `${itemName} (${variant})` : itemName,
       category: product.categories?.[0]?.name ?? 'Wellness',
       price: Number(currentPrice),
       quantity: 1,

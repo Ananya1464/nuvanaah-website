@@ -412,6 +412,9 @@ export default function CheckoutPage() {
                         </div>
                         <div className="flex-1">
                           <p className="font-medium text-gray-900">{item.name}</p>
+                          {item.variant && (
+                            <p className="text-sm text-[#884d53] font-medium">{item.variant}</p>
+                          )}
                           <p className="text-sm text-gray-500">Qty: {item.quantity}</p>
                         </div>
                         <p className="font-semibold text-gray-900">₹ {(item.price * item.quantity).toLocaleString()}</p>
@@ -496,9 +499,14 @@ export default function CheckoutPage() {
               {/* Items Preview */}
               <div className="space-y-3 mb-4 max-h-48 overflow-y-auto">
                 {items.map((item) => (
-                  <div key={item.id} className="flex justify-between text-sm">
-                    <span className="text-gray-600 truncate flex-1 mr-2">{item.name} × {item.quantity}</span>
-                    <span className="text-gray-900 font-medium">₹ {(item.price * item.quantity).toLocaleString()}</span>
+                  <div key={item.id} className="flex justify-between text-sm gap-2">
+                    <div className="flex-1 min-w-0">
+                      <p className="text-gray-600 truncate">{item.name} × {item.quantity}</p>
+                      {item.variant && (
+                        <p className="text-[#884d53] text-xs font-medium truncate">{item.variant}</p>
+                      )}
+                    </div>
+                    <span className="text-gray-900 font-medium shrink-0">₹ {(item.price * item.quantity).toLocaleString()}</span>
                   </div>
                 ))}
               </div>

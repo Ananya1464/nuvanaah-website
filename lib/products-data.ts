@@ -8,7 +8,7 @@ import { Product } from './types'
 
 // ─── CATEGORY MAPPINGS ──────────────────────────────────────────────────────
 export const categoryMappings: { [key: string]: string } = {
-  'recovery-body-support': 'Recovery & Body Support',
+  'recovery-body-support': 'Care Essentials',
   'hair-confidence':       'Hair & Confidence',
   'everyday-wellness':     'Everyday Wellness',
   'mastectomy-care':       'Mastectomy Care',
@@ -16,7 +16,7 @@ export const categoryMappings: { [key: string]: string } = {
 }
 
 export const categoryDisplayNames: { [key: string]: string } = {
-  'recovery-body-support': 'Recovery & Body Support',
+  'recovery-body-support': 'Care Essentials',
   'hair-confidence':       'Hair & Confidence',
   'everyday-wellness':     'Everyday Wellness',
   'mastectomy-care':       'Mastectomy Care',
@@ -24,15 +24,15 @@ export const categoryDisplayNames: { [key: string]: string } = {
 }
 
 export const categoryDescriptions: { [key: string]: string } = {
-  'recovery-body-support': 'Products designed to support physical comfort during and after surgery — from prosthetics and bras to pillows and recovery kits.',
+  'recovery-body-support': 'Products designed to support physical comfort during and after surgery — from prosthetics and bras to pillows and care kits.',
   'hair-confidence':       'Products for head coverage, facial appearance, and the confidence that comes from feeling like yourself during treatment-related hair loss.',
-  'everyday-wellness':     'Products for daily care, personal hygiene, and the small beauty details that contribute to feeling like yourself during recovery and beyond.',
+  'everyday-wellness':     'Products for daily care, personal hygiene, and the small beauty details that contribute to feeling like yourself during treatment and beyond.',
   'mastectomy-care':       'Products for women who have had a mastectomy — breast forms, pocket bras, post-surgery support, drain management, and lymphedema care.',
   'lumpectomy-care':       'Products for women who have had a lumpectomy — soft recovery bras, light breast forms for symmetry, underarm pillows, and compression for lymphedema management.',
 }
 
 // ─── CATEGORY OBJECTS ───────────────────────────────────────────────────────
-const CAT_RECOVERY   = { id: 1, name: 'Recovery & Body Support', slug: 'recovery-body-support' }
+const CAT_RECOVERY   = { id: 1, name: 'Care Essentials', slug: 'recovery-body-support' }
 const CAT_HAIR       = { id: 2, name: 'Hair & Confidence',       slug: 'hair-confidence' }
 const CAT_WELLNESS   = { id: 3, name: 'Everyday Wellness',       slug: 'everyday-wellness' }
 const CAT_MASTECTOMY = { id: 4, name: 'Mastectomy Care',         slug: 'mastectomy-care' }
@@ -52,7 +52,7 @@ export const products: Product[] = [
     price: 2525,
     priceFrom: false,
     categories: [CAT_RECOVERY, CAT_MASTECTOMY, CAT_LUMPECTOMY],
-    categoryNav: 'Recovery & Body Support',
+    categoryNav: 'Care Essentials',
     description: 'A lightweight plant-fiber breast form thoughtfully designed to support comfort, balance and confidence after breast surgery. Sold individually — choose Left or Right. Made with plant-fiber filling and a breathable plant-fiber outer fabric, BloomForm feels soft against the body while helping reduce heat build-up during daily wear.',
     fullStory: 'BloomForm is built on a simple insight: shape does not require weight. Most breast forms achieve their silhouette through density — heavy materials that hold their form by mass alone. BloomForm achieves the same result through geometry. The flat inner surface sits stable against the chest wall. The curved outer face creates a soft, rounded silhouette beneath clothing. Between them: plant fiber, air, and 10–20 grams.\n\nThe result is a form that disappears during wear. No pull on the bra. No heat building against the skin. No awareness of it by mid-afternoon. You put it on, and you stop thinking about it. That is not a small thing. That is what comfort actually means.',
     images: [
@@ -151,7 +151,7 @@ export const products: Product[] = [
     priceNote: '(for a pair)',
     priceFrom: false,
     categories: [CAT_RECOVERY, CAT_MASTECTOMY],
-    categoryNav: 'Recovery & Body Support',
+    categoryNav: 'Care Essentials',
     description: 'A post-surgery mastectomy bra made from ultra-soft plant-fiber fabric, designed to make getting dressed feel ordinary again. Front-hook closure. Discreet prosthetic pocket.',
     fullStory: 'After breast surgery, the things that used to be automatic require thought. Getting dressed is one of them. Willow Support was designed so that at least the bra is not an obstacle. The front-hook closure means you do not need help putting it on. The soft inner comfort panel means the hooks never touch the skin. The adjustable straps fit a body that is still changing week by week.\n\nThe discreet corner side pocket — approximately three inches wide, invisible from outside — exists for women using a prosthetic. It is not visible. It is not complicated to use. It is simply there, when needed.',
     images: [
@@ -232,7 +232,7 @@ export const products: Product[] = [
     price: 1211,
     priceFrom: false,
     categories: [CAT_RECOVERY, CAT_MASTECTOMY, CAT_LUMPECTOMY],
-    categoryNav: 'Recovery & Body Support',
+    categoryNav: 'Care Essentials',
     description: 'A soft underarm pillow shaped specifically for the arm and side of the body during rest after breast surgery. Plant-fiber filled, cool against skin, with a removable washable cover in three printed designs.',
     fullStory: 'A nest is one of nature\'s most intentional structures. Not built for beauty — though it often has it. Built for one purpose: to hold something that needs protecting, with exactly the right amount of support.\n\nAfter breast surgery, the arm on the affected side needs a specific position during rest — not too close to the body, not too far, supported but not pressed. A rolled towel is too firm. A standard pillow is too large and soft. Neither is shaped for the job. Nature Nest is shaped for the job.',
     images: [
@@ -479,7 +479,7 @@ export const products: Product[] = [
     price: 1535,
     priceFrom: false,
     categories: [CAT_RECOVERY, CAT_MASTECTOMY, CAT_LUMPECTOMY],
-    categoryNav: 'Recovery & Body Support',
+    categoryNav: 'Care Essentials',
     description: 'A lymphedema compression sleeve with an adjustable shoulder holding belt that keeps it in place throughout the day — without constant readjustment. Soft, breathable, and designed for the full working day.',
     fullStory: 'Most compression sleeves rely on the sleeve\'s own elasticity to stay on the arm. This works at rest. It does not work during a normal day. The sleeve slides. You readjust. It slides again.\n\nFlowSleeve\'s adjustable shoulder holding belt attaches at the top of the sleeve and passes over the shoulder. The sleeve stays where it belongs — during movement, during work, during all the activities that make up a day. That is not a secondary feature. It is the reason FlowSleeve exists.',
     images: [
@@ -560,7 +560,7 @@ export const products: Product[] = [
     price: 1490,
     priceFrom: false,
     categories: [CAT_RECOVERY, CAT_MASTECTOMY],
-    categoryNav: 'Recovery & Body Support',
+    categoryNav: 'Care Essentials',
     description: 'A Recovery Support Kit created to help women keep important recovery essentials organized, accessible, and close at hand during everyday life. Provides greater convenience, reduced stress, and the confidence of having what you need within easy reach.',
     fullStory: 'Recovery often comes with many small practical needs. NestCarry helps keep important items organized and within reach, allowing you to focus more on your wellbeing and less on managing supplies.\n\nNestCarry was created to help women keep important recovery essentials organized, accessible, and close at hand during everyday life. The emotional benefit is not the bag itself — it is greater convenience, greater organization, reduced stress, and the confidence of having important items within easy reach as you move through recovery.',
     images: [
@@ -717,15 +717,15 @@ export const products: Product[] = [
     slug: 'dewleaf',
     model: 'DLT0712',
     name: 'DewLeaf | Bamboo Face Towel',
-    subtitle: 'Recovery Towel',
+    subtitle: 'Everyday Essential',
     tagline: 'Fresh comfort with every use.',
     price: 1490,
     priceFrom: false,
     priceOnRequest: false,
     categories: [CAT_WELLNESS],
     categoryNav: 'Everyday Wellness',
-    description: 'A compact 12×24 inch recovery towel — soft, quick-drying, and designed for the small, daily moments of personal care that add up during recovery. Four colours. Clean hemmed edges.',
-    fullStory: 'Dew is small. Present early. Gone quickly. Doing its quiet work before the day begins.\n\nPersonal care during recovery is a daily series of small moments. Washing your face. Drying your hands. Managing the routine around sensitive areas that need to stay clean. These are not extraordinary moments. They are ordinary ones, repeated many times each day. DewLeaf is made for those moments — not the big ones. The small, repetitive, quiet ones.\n\n"Fresh comfort with every use."',
+    description: 'A compact 12×24 inch everyday towel — soft, quick-drying, and designed to fit easily into a handbag, backpack, or travel kit. Made from premium bamboo fiber with clean hemmed edges.',
+    fullStory: 'Everyday essentials should be easy to carry, gentle on the skin, and practical for daily life. Dew leaf Towel was created as a compact, reusable towel that fits easily into a handbag, backpack, or travel kit without taking up much space.\n\nMade from premium bamboo fiber, it is naturally soft, highly absorbent, breathable, and quick-drying. Bamboo fabric is also naturally odor-resistant, making it ideal for repeated everyday use while remaining fresh and comfortable.\n\nThe towel is carefully stitched on all four sides for added durability and long-lasting use. Whether you’re at the hospital, travelling, at work, or simply on the go, it is always easy to carry and ready when you need it.\n\nThe true value of Dew leaf Towel is its combination of softness, convenience, sustainability, and reusability—offering a simple everyday essential that is kind to your skin and kinder to the environment.',
     images: [
       { id: 1, src: '/images/catalog/DewLeaf/1.jpeg', alt: 'DewLeaf — view 1' },
       { id: 2, src: '/images/catalog/DewLeaf/2.jpeg', alt: 'DewLeaf — view 2' },
@@ -741,11 +741,11 @@ export const products: Product[] = [
     variantLabel: 'Colour',
     variantOptions: ['Camellia', 'Aparajita', 'Magnolia', 'Jade Vine'],
     benefitsList: [
-      { title: 'The right size for daily personal care', desc: '12×24 inches: large enough for face and hands, compact enough to keep by the sink, fold into a bag, or carry to appointments.' },
+      { title: 'The right size for daily life', desc: '12×24 inches: large enough for face and hands, compact enough to keep by the sink, fold into a bag, or take on the go.' },
       { title: 'Soft and quick-drying', desc: 'Bamboo fiber dries faster than cotton and stays softer through repeated daily use. Always ready. Never stiff.' },
-      { title: 'Gentle against sensitive skin', desc: 'Smooth surface. No rough texture against areas that may be reactive or tender during recovery.' },
+      { title: 'Gentle on the skin', desc: 'Naturally soft, smooth bamboo fiber that is gentle and soothing for everyday skin care.' },
       { title: 'Four colours that feel like a choice', desc: 'Camellia, Aparajita, Magnolia, Jade Vine. The same palette as PetalWrap. One for every day of the week, or one that is simply yours.' },
-      { title: 'Travel-friendly', desc: 'Folds to almost nothing. Goes everywhere recovery goes.' },
+      { title: 'Travel-friendly', desc: 'Folds to almost nothing. Fits easily into any handbag, backpack, or travel kit.' },
     ],
     keyFeatures: [
       '24 inches × 12 inches',
@@ -768,15 +768,15 @@ export const products: Product[] = [
       'Dry away from direct sunlight',
     ],
     whatsIncluded: [
-      'DewLeaf recovery towel (in selected colour)',
+      'DewLeaf Everyday Towel (in selected colour)',
       'Care guide',
     ],
-    gentleNote: 'Personal care during recovery is a daily series of small moments. A towel that feels soft each time. That is clean and dry and ready. That is a colour you chose because it felt like you. That is exactly what was needed and nothing more complicated than that.\n\nFresh comfort with every use.',
-    technicalNames: ['bamboo face towel', 'recovery hand towel', 'soft face cloth', 'post-surgery face towel'],
-    seoTitle: 'DewLeaf — Recovery Face Towel | Soft Bamboo Hand Towel',
-    metaDescription: 'Compact 12×24 inch bamboo recovery face and hand towel. Soft, quick-drying, and gentle on sensitive skin. Four colours.',
-    ogTitle: 'DewLeaf — Recovery Towel | Nuvanaah',
-    ogDescription: 'A compact 12×24 inch recovery towel — soft, quick-drying, and designed for the small daily moments of personal care that add up during recovery.',
+    gentleNote: 'Everyday essentials should be simple, high-quality, and kind to your skin. DewLeaf is created to bring a small moment of comfort and softness to your daily routine, wherever life takes you.\n\nFresh comfort with every use.',
+    technicalNames: ['bamboo face towel', 'everyday hand towel', 'soft face cloth', 'compact travel towel'],
+    seoTitle: 'DewLeaf — Everyday Bamboo Towel | Soft Hand Towel',
+    metaDescription: 'Compact 12×24 inch premium bamboo everyday towel. Soft, highly absorbent, and quick-drying. Perfect for travel, work, and daily comfort. Four colours.',
+    ogTitle: 'DewLeaf — Everyday Towel | Nuvanaah',
+    ogDescription: 'A compact 12×24 inch everyday towel made from premium bamboo fiber. Soft, highly absorbent, quick-drying, and gentle on the skin.',
     faqs: [
       { q: 'How does DewLeaf differ from PetalWrap?', a: 'DewLeaf is 12×24 inches — a compact face and hand towel. PetalWrap is 58+ inches — a full bath towel. They use the same bamboo fiber and the same four colours. Many women use both together.' },
     ],
@@ -1043,7 +1043,7 @@ export const products: Product[] = [
     price: 2210,
     priceFrom: false,
     categories: [CAT_RECOVERY, CAT_LUMPECTOMY],
-    categoryNav: 'Recovery & Body Support',
+    categoryNav: 'Care Essentials',
     description: 'A lightweight soft recovery support form made from breathable bamboo fabric and plant fiber filling, designed to provide gentle balance and everyday comfort after lumpectomy surgery and during lymphedema recovery.',
     fullStory: 'After lumpectomy, the body\'s shape shifts in ways that are subtle but felt continuously. Vine Support is not a heavy prosthetic. It is something quieter — a soft form that sits gently, provides light balance, and disappears into the day.\n\nThe bamboo outer cover stays cool and soft against skin that may still be sensitive. The plant fiber filling is lightweight enough that you stop noticing it is there. The removable cover washes easily and dries quickly, so it is always ready.\n\nVine Support is also gentle enough for use during lymphedema recovery, where skin sensitivity and breathability matter most. It is designed for daily wear — not a clinical solution, but a comfortable, considered companion for wherever you are in recovery.',
     images: [

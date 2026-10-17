@@ -11,7 +11,7 @@ import SearchOverlay from '@/components/search/SearchOverlay'
 // ─── SHOP MEGA-MENU DATA ─────────────────────────────────────────────────────
 const shopCategories = [
   {
-    name: 'Recovery & Body Support',
+    name: 'Care Essentials',
     slug: 'recovery-body-support',
     description: 'For surgery, healing, and physical comfort',
     products: [

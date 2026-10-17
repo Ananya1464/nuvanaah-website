@@ -80,7 +80,7 @@ export default function Footer() {
           <div>
             <h4 className="mb-6 font-display text-lg font-semibold tracking-wide text-white">Shop</h4>
             <ul className="space-y-4">
-              <li><Link href="/products/category/recovery-body-support" className="text-sm text-white/70 transition-colors hover:text-white">Recovery & Body Support</Link></li>
+              <li><Link href="/products/category/recovery-body-support" className="text-sm text-white/70 transition-colors hover:text-white">Care Essentials</Link></li>
               <li><Link href="/products/category/hair-confidence" className="text-sm text-white/70 transition-colors hover:text-white">Hair & Confidence</Link></li>
               <li><Link href="/products/category/everyday-wellness" className="text-sm text-white/70 transition-colors hover:text-white">Everyday Wellness</Link></li>
             </ul>
